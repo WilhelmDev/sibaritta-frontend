@@ -1,0 +1,243 @@
+.PartnerCalendar {
+  position: relative;
+  color: #686561;
+
+  @screen laptop {
+    color: #e2d3c3;
+  }
+
+  .movile {
+    @screen laptop {
+      display: none;
+    }
+  }
+
+  .laptop {
+    display: none;
+
+    @screen laptop {
+      display: block;
+    }
+  }
+
+  .rdp {
+    @apply flex justify-center items-center;
+  }
+
+  .partner-calendar-day-picker-movile {
+    @apply bg-[#2F2A32] p-[1rem] rounded-[1rem] w-auto h-auto flex flex-col justify-center items-center z-[100];
+
+    position: absolute;
+    /* top: calc(100% + 20vw); */
+    /* top: calc(70vw*1.1); */
+    top: 31rem;
+    left: calc(50% + 44.4vw);
+    transform: translate(-50%, -50%);
+
+    @screen tablet {
+      top: 38rem;
+      left: calc(50% + 46.5vw);
+      transform: translate(-50%, -50%);
+    }
+
+    @screen laptop {
+      display: none;
+    }
+  }
+
+  .content-day_simpleb {
+    @apply w-[4rem] h-[4rem];
+
+    @screen tablet {
+      @apply w-[7rem] h-[7rem];
+    }
+  }
+  .content-day_dateb {
+    /* color: #e2d3c3; */
+
+    /* color: rgb(111 107 111); */
+
+    @screen tablet {
+      font-size: 2.3rem;
+    }
+  }
+  .header_calendar-monthb {
+    @apply w-full h-full flex text-[2.5rem] justify-end gap-[0.5rem];
+
+    @screen tablet {
+      @apply w-full h-full flex text-[3.5rem] justify-end;
+    }
+
+    & div {
+      font-weight: 700;
+      font-size: 2rem !important;
+      text-transform: capitalize;
+      display: flex;
+      color: #e2d3c3;
+
+      @screen tablet {
+        font-size: 3.2rem !important;
+      }
+    }
+  }
+
+  .calendar-month_btnb {
+    color: #e2d3c3;
+  }
+
+  .rdp-day_selected,.rdp-day_selected:focus-visible,.rdp-day_selected:hover{
+
+    color: #e2d3c3;
+
+  }
+
+  .rdp-month.rdp-caption.start.rdp-caption_end {
+  }
+
+  .rdp-cell {
+    @apply w-[5rem] h-[5rem] text-[1.6rem];
+  }
+
+  .experiencia-homeb-general-container.rdp-day {
+    @apply w-auto;
+  }
+  .rdp-day {
+    /* width: 4.9rem;
+    height: 4.9rem; */
+    width: 100%;
+    max-width: calc(14.7rem * var(--scale));
+    max-height: calc(15rem * var(--scale));
+
+    @screen laptop {
+      width: calc(12.15rem * var(--scale));
+      height: calc(9.4rem * var(--scale));
+      max-width: calc(14.7rem * var(--scale));
+      max-height: calc(15rem * var(--scale));
+    }
+  }
+
+  .contetn-day_datab-container {
+    display: none;
+
+    @screen laptop {
+      display: block;
+    }
+  }
+
+  .partner-calendar-movil-container {
+    /* width: 20rem!important; */
+  }
+
+  .rdp-months {
+    width: auto !important;
+    height: auto !important;
+  }
+  .experiencia-homeb-general-container.rdp-tbody {
+    width: 20rem !important;
+  }
+
+  .PartnerCalendarMovil.rdp-cell {
+    width: auto !important;
+  }
+
+  .experiencia-homeb-general-container
+    .content-day_simpleb[aria-selected="true"] {
+    width: 4rem !important;
+  }
+
+  .rdp-head_cell {
+    display: none;
+  }
+
+  .rdp-caption {
+    width: auto !important;
+    height: auto !important;
+    margin-bottom: 1.5 rem;
+  }
+
+  .rdp-caption_label {
+    width: auto !important;
+    height: auto !important;
+    font-size: 2rem;
+  }
+
+  .rdp-nav_button {
+    width: auto !important;
+    height: auto !important;
+  }
+
+  /* .rdp-cell {
+    width: 2rem !important;
+  } */
+
+  .rdp-button_reset.rdp-button.rdp-day {
+    width: 4rem !important;
+    height: 4rem !important;
+    font-size: 1.6rem;
+
+    @screen tablet {
+      width: 7rem !important;
+      height: 7rem !important;
+    }
+  }
+
+  button.rdp-button_reset.rdp-button.rdp-day.rdp-day_selected {
+    background-color: #252127 !important;
+    color: #e1d4c4 !important;
+  }
+
+  .rdp-day_selected {
+    @apply w-[4rem] h-[4rem];
+    color: #e1d4c4!important;
+    
+
+    @screen tablet {
+      @apply w-[6.9rem] h-[6.9rem];
+    }
+
+    @screen laptop{
+
+      color: #37323a !important;
+
+
+    }
+  }
+
+  .partner-calendar-movil-footer {
+    @apply flex flex-col gap-[1.5rem] border-t-2 border-[#393533] h-auto w-full justify-end;
+  }
+
+  .partner-calendar-movil-footer-top {
+    @apply flex justify-center content-center gap-[1rem];
+  }
+
+  .footer-button {
+    @apply flex justify-center items-center gap-[1rem] w-[50%] bg-[#F89C53] rounded-[1rem] h-[4rem] mt-[2rem];
+
+    .text-3x {
+      @apply text-[1.5rem]  font-bold text-[#252127];
+    }
+
+    .image {
+      @apply w-[1rem] h-[1.5rem]   text-[#252127];
+    }
+
+    .text-36 {
+      @apply w-[3rem] h-[3rem] text-[1.5rem]  font-bold mb-[-1px]  text-[#252127] bg-[white] rounded-[50%] flex justify-center items-center;
+    }
+  }
+
+  .partner-calendar-movil-footer-bot {
+    @apply flex justify-center items-center text-[1.5rem] font-bold text-[#252127] gap-[1rem] w-[100%] bg-[white] rounded-[1rem] h-[4rem];
+  }
+
+  /* .p-toggleable-content {
+    display: none;
+  }
+
+  #pr_id_24_content_0{
+
+    display: none;
+
+  } */
+}

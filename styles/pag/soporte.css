@@ -1,0 +1,160 @@
+.contact-general-container{
+
+  display: flex;
+justify-content: center;
+align-items: center;
+
+}
+
+.contact {
+  @apply bg-[#252127] pt-[10rem] ;
+  /* width: 100%; */
+
+  @screen laptop {
+    margin-top: calc(-17.5rem * var(--scale));
+    width: 200em;
+  }
+}
+.contact-container {
+  @apply px-[2rem] ;
+  @screen laptop {
+    @apply flex px-0 ;
+    /* margin: 0 auto; */
+    padding-top: calc(10rem * var(--scale));
+    /* width: calc(170rem * var(--scale)); */
+    padding-bottom: calc(12.9rem * var(--scale));
+  }
+}
+.contact-h2 {
+  @apply font-bold text-[#E1D4C4] pt-[4.2rem];
+  @screen laptop {
+    @apply pt-0;
+  }
+}
+.contact-input {
+  @apply flex flex-col gap-[1.2rem];
+  label {
+    @apply text-[1.8rem] font-bold text-[#E1D4C4] leading-[1.8rem];
+    @screen laptop {
+      font-size: calc(1.8rem * var(--scale));
+    }
+  }
+  @screen laptop {
+    @apply w-full;
+  }
+}
+.container-form {
+  @apply flex flex-col gap-[2rem] pt-[5rem] pb-[4.4rem];
+  @screen laptop {
+    @apply pb-[.5rem];
+    padding-top: calc(5rem * var(--scale));
+    gap: calc(3.2rem * var(--scale));
+  }
+}
+.profile-textarea {
+  @apply h-[15.3rem];
+  border-radius: 1rem;
+  @screen laptop {
+    height: calc(15.8rem * var(--scale));
+  }
+}
+.contact-button {
+  @apply bg-[#4D3452] w-full py-[2rem] text-[1.6rem] text-[#F0EFEB] font-lato font-semibold;
+  border-radius: 1rem;
+  @screen laptop {
+    @apply w-[31.2rem];
+  }
+}
+
+.contact-select {
+  @apply w-full flex justify-between items-center cursor-pointer;
+  background: #2f2a32;
+  border-radius: 1rem;
+  padding: 1rem 2rem;
+  span {
+    @apply font-lato text-[#E1D4C4] text-[1.8rem] font-bold;
+  }
+  i {
+    @apply text-[#E1D4C4] -rotate-90 !text-[1.5rem] duration-500 ease-in-out;
+    &.rotate-active {
+      @apply rotate-90;
+    }
+  }
+}
+.submenu {
+  width: 100%;
+  height: auto;
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.25);
+  background: #2f2a32;
+  border-radius: 0.625rem;
+  @apply mt-[1rem];
+}
+.container-submenu {
+  @apply flex flex-col  w-full gap-[.8rem] items-center cursor-pointer  rounded-lg py-[1rem];
+
+  span {
+    @apply text-[1.5rem] font-bold text-[#E1D4C4]  p-[1rem] duration-300 ease-in-out;
+
+    &:hover {
+      @apply bg-[#4D3452] rounded-md;
+    }
+  }
+}
+.contact-image {
+  @apply w-full;
+  @screen laptop {
+    @apply hidden;
+  }
+}
+
+.contact-title {
+  @screen laptop {
+    @apply font-lato font-bold text-[#E1D4C4];
+    padding-right: calc(11rem * var(--scale));
+    padding-bottom: calc(3.8rem * var(--scale));
+  }
+}
+
+.contact-buttom {
+  @screen laptop {
+    @apply text-center bg-[#E1D4C4] text-[1.6rem] text-[#252127] font-lato font-normal;
+    width: calc(33.1rem * var(--scale));
+    height: calc(5.2rem * var(--scale));
+    border-radius: 1rem;
+  }
+}
+
+.container-buttom {
+  @apply hidden;
+  @screen laptop {
+    @apply flex flex-col items-end;
+    gap: calc(1.5rem * var(--scale));
+  }
+}
+
+.contac-imagedesk {
+  @apply hidden;
+  @screen laptop {
+    @apply block overflow-hidden;
+    width: calc(65rem * var(--scale));
+    height: calc(26.7rem * var(--scale));
+    border-radius: 0rem 1rem 1rem 0rem;
+  }
+}
+.contact-destok {
+  @screen laptop {
+    @apply flex flex-col;
+    gap: calc(10.4rem * var(--scale));
+    padding-right: calc(5rem * var(--scale));
+  }
+}
+
+.index-containerButtom {
+  @apply flex items-center justify-center  gap-[1rem] cursor-pointer text-[#E1D4C4] font-semibold text-[2.5rem];
+  @screen laptop {
+    @apply justify-end items-center;
+    padding-right: calc(1.5rem * var(--scale));
+    font-size: calc(2.5rem * var(--scale));
+    gap: calc(1rem * var(--scale));
+  }
+}

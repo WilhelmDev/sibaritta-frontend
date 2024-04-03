@@ -1,0 +1,14 @@
+.CustomCaption{
+
+    @apply flex justify-between items-center ;
+
+
+    .header_calendar-contentb{
+
+        display: flex;
+
+
+    }
+
+
+}

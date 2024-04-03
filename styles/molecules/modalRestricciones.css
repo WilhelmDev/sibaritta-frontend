@@ -1,0 +1,42 @@
+.restricciones-modal{
+    @apply bg-[#2F2A32] !w-[90%] !p-[3rem];
+    @screen tablet{
+        @apply !w-[80%] ;
+    }
+    @screen laptop{
+       @apply !w-[45%]
+    }
+    .p-dialog-header {
+        @apply  bg-[#2F2A32]
+    }
+    .p-dialog-content {
+      @apply grid place-items-center !bg-[#2F2A32] gap-[3rem];
+    }
+    .p-dialog-header-icons {
+        @apply  text-[#E1D4C4] ;
+      }
+  }
+
+ .conten-restricciones{
+    @apply flex flex-col font-lato gap-[1rem];
+    padding-right: 1rem;
+    @screen laptop{
+        @apply w-[99%];
+        gap: calc(1.5rem * var(--scale));
+    }
+    & h2{
+        @apply text-[2rem] text-[#E1D4C4] font-lato;
+        @screen laptop{
+            @apply font-lato font-extrabold text-[#E1D4C4];
+            font-size: calc(2rem * var(--scale));
+            text-transform: uppercase;
+        }
+    }
+    & p{
+        @apply text-[1.1rem] font-lato text-[#E1D4C4];
+        @screen laptop{
+            @apply font-lato  text-[#E1D4C4];
+        font-size: calc(1.2rem * var(--scale)); 
+        }
+    }
+ }

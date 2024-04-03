@@ -1,0 +1,401 @@
+.reservacion-container{
+  display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.reservacion {
+  @apply bg-[#252127] flex flex-col;
+  @screen tablet {
+    @apply flex-row justify-between;
+  }
+  @screen laptop {
+    @apply flex;
+    margin-top: calc(-18rem * var(--scale));
+    width: 200em;
+  }
+}
+
+.reservacion-image {
+  @apply h-[36rem];
+  @screen tablet {
+    @apply hidden;
+  }
+}
+
+.reservacion-image_desktop {
+  @apply hidden;
+  @screen tablet {
+    @apply hidden;
+  }
+  @screen laptop {
+    @apply block w-[45rem] h-auto;
+  }
+}
+
+.reserva_before {
+  @apply w-full h-full absolute bottom-0 bg-gradient-to-l from-transparent to-[#252127];
+}
+
+.reservations_container {
+  @apply flex flex-col h-auto;
+  @screen tablet {
+    @apply w-full  mt-[15rem];
+  }
+  @screen laptop {
+    @apply flex-wrap overflow-hidden;
+    padding-top: calc(10rem * var(--scale));
+    padding-bottom: calc(5rem * var(--scale));
+    padding-left: calc(3rem * var(--scale));
+    padding-right: calc(3rem * var(--scale));
+  }
+}
+
+.reservations_container_btn {
+  @apply w-full h-auto flex flex-col py-[1rem] px-[2rem] 
+    gap-[1.5rem] mt-[-1rem];
+  @screen tablet {
+    @apply flex-row items-start;
+  }
+  @screen laptop {
+    padding-top: calc(1rem * var(--scale));
+    padding-bottom: calc(1rem * var(--scale));
+    padding-left: calc(2rem * var(--scale));
+    padding-right: calc(2rem * var(--scale));
+    gap: calc(1.5rem * var(--scale));
+    margin-top: calc(-1rem * var(--scale));
+  }
+}
+
+.reservation_tnb_actules {
+  @apply w-full h-[5.2rem]    text-center font-lato rounded-[1rem] font-bold leading-normal text-[1.6rem]  duration-300 ease-in-out;
+  @screen tablet {
+    @apply w-[31.2rem];
+  }
+  @screen laptop {
+    width: calc(31.2rem * var(--scale));
+    height: calc(5.2rem * var(--scale));
+    font-size: calc(1.6rem * var(--scale));
+  }
+}
+
+.reservation_tnb_pasadas {
+  @apply w-full h-[5.2rem] bg-[#2F2A32] text-[#E1D4C4]   text-center font-lato rounded-[1rem] font-bold leading-normal text-[1.6rem]  duration-300 ease-in-out;
+  @screen tablet {
+    @apply w-[31.2rem];
+  }
+  @screen laptop {
+    width: calc(31.2rem * var(--scale));
+    height: calc(5.2rem * var(--scale));
+    font-size: calc(1.6rem * var(--scale));
+  }
+}
+
+.container_reservacion_actual {
+  @apply flex flex-col;
+  @screen tablet {
+    @apply flex-row  flex-wrap;
+  }
+  @screen laptop {
+    @apply min-h-[75rem];
+    /* height : calc(72.1rem * var(--scale)); */
+  }
+}
+
+.container_reservacion_pasada {
+  @apply flex flex-col;
+  @screen tablet {
+    @apply flex-row  flex-wrap;
+  }
+  @screen laptop {
+    @apply w-full min-h-[75rem];
+    /* height : calc(72.1rem * var(--scale)); */
+  }
+}
+
+.container_card {
+  @apply w-full py-[4rem]  px-[2rem];
+  @screen tablet {
+    @apply w-[50%];
+  }
+  @screen laptop {
+    max-width: calc(65rem * var(--scale));
+    padding-left: calc(2rem * var(--scale));
+    padding-right: calc(2rem * var(--scale));
+    padding-top: calc(4rem * var(--scale));
+    padding-bottom: calc(4rem * var(--scale));
+  }
+}
+
+.container_card_experiencia {
+  @apply text-[#E1D4C4] font-lato   font-bold leading-normal text-left 
+  py-[1.5rem];
+  @screen laptop {
+    padding-top: calc(1.5rem * var(--scale));
+    padding-bottom: calc(1.5rem * var(--scale));
+  }
+}
+.reservation_titulo_two- {
+  @apply hidden;
+  @screen tablet {
+    @apply flex items-center   justify-between gap-[1rem] h-[10.6rem] w-full;
+  }
+}
+.one-reservation- {
+  @apply bg-[#4D3452] w-[7.1rem] h-[7.1rem] rounded-full grid place-items-center;
+  @screen laptop {
+    width: calc(7.1rem * var(--scale));
+    height: calc(7.1rem * var(--scale));
+  }
+}
+
+.two-resevation-_--- {
+  @apply flex   flex-col   gap-[.5rem];
+  @screen laptop {
+    width: calc(20rem * var(--scale));
+  }
+  & h3 {
+    @apply text-[#F89C53]   font-lato font-extrabold leading-normal;
+    @screen laptop {
+      /* font-size: calc(2.4rem *var(--scale)); */
+    }
+  }
+  & h5 {
+    @apply  text-[#E1D4C4] font-lato font-normal;
+    
+  }
+}
+
+.three-reservation--_- {
+  @apply flex  flex-col gap-[.5rem];
+  @screen laptop {
+    width: calc(34rem * var(--scale));
+    gap: calc(0.5rem * var(--scale));
+  }
+  & h3 {
+    @apply text-[#F89C53]   font-lato font-extrabold leading-normal;
+    @screen laptop {
+    }
+  }
+  & p {
+    @apply text-[#E1D4C4]  font-lato font-normal;
+    @screen laptop {
+      /* font-size:   * var(--scale)); */
+    }
+  }
+}
+
+.fecha_reservation_reserva {
+  @apply text-[#E1D4C4] font-lato font-medium text-[1.5rem];
+  @screen laptop {
+    font-size: calc(1.8rem * var(--scale));
+  }
+}
+
+.logo_reservations_id {
+  @apply grid place-items-center;
+  @screen tablet {
+    @apply w-[4rem] h-[4rem] p-[.5rem];
+  }
+  @screen laptop {
+
+    padding: calc(0.5rem * var(--scale));
+  }
+}
+
+.reservation_box {
+  @apply flex flex-col gap-[1rem];
+  @screen tablet {
+    @apply hidden;
+  }
+  @screen laptop {
+    gap: calc(1rem * var(--scale));
+  }
+}
+
+.reservation_box_text {
+  @apply flex flex-col gap-[1rem];
+  @screen laptop {
+    gap: calc(1rem * var(--scale));
+  }
+}
+
+.reservacion_titulo {
+  @apply w-full min-h-[50rem] rounded-[1.5rem] border border-[#4D3452] flex flex-col 
+    p-[2rem] gap-[3rem];
+  @screen laptop {
+    padding: calc(2rem * var(--scale));
+    gap: calc(3rem * var(--scale));
+    min-height: calc(50rem * var(--scale));
+  }
+}
+
+.reservacion_titulo_h3 {
+  @apply font-lato font-extrabold leading-[2.2rem] text-[1.8rem] 
+    text-[#E1D4C4];
+  @screen laptop {
+    font-size: calc(1.8rem * var(--scale));
+    line-height: calc(2.2rem * var(--scale));
+  }
+}
+
+.reservacion_titulo_ciudad {
+  @apply font-lato text-[1.8rem] font-normal leading-normal text-[#F89C53];
+  @screen laptop {
+    font-size: calc(1.8rem * var(--scale));
+  }
+}
+
+.reservacion_card_imagen {
+  @apply w-full h-[15.5rem]  bg-cover bg-center rounded-[1rem] relative bg-[url("/profile/reservaciones/reserva.jpg")];
+}
+
+.container_card_info {
+  @apply w-full  rounded-[1rem] bg-[#2F2A32] flex flex-col  p-[2rem];
+  @screen laptop {
+    gap: calc(1.5rem * var(--scale));
+    padding: calc(1.5rem * var(--scale));
+    padding: calc(2rem * var(--scale));
+  }
+}
+.container_card_info_caja {
+  @apply grid gap-[.5rem];
+  @screen laptop {
+    @apply flex justify-between items-center;
+    gap: calc(0.5rem * var(--scale));
+  }
+}
+
+.container_card_info_p {
+  @apply font-lato text-[1.4rem] font-normal leading-normal text-[#E1D4C4];
+  @screen laptop {
+    font-size: calc(1.4rem * var(--scale));
+  }
+}
+
+.container_card_info_h2 {
+  @apply font-lato text-[1.8rem] font-bold leading-normal text-[#F89C53];
+  @screen laptop {
+    font-size: calc(1.4rem * var(--scale));
+  }
+}
+
+.clasifiacion_card- {
+  @apply flex flex-col  justify-center items-center gap-[1rem] py-[1rem];
+  & p {
+    @apply text-[#F89C53]   text-[1.3rem] font-lato font-normal;
+    @screen laptop {
+      font-size: calc(1.8rem * var(--scale));
+    }
+  }
+  & button {
+    @apply w-full bg-[#4D3452] h-[4.5rem] rounded-[1rem] text-[#F0EFEB]  
+    text-[1.1rem] font-lato font-bold;
+    @screen laptop {
+      font-size: calc(1.6rem * var(--scale));
+      height: calc(4rem * var(--scale));
+      border-radius: calc(1rem * var(--scale));
+    }
+  }
+}
+
+.clasifiacion_card-two {
+  @apply flex flex-col  justify-center items-center gap-[1rem] py-[1rem];
+  & p {
+    @apply text-[#F89C53]   text-[1.3rem] font-lato font-normal;
+    @screen laptop {
+      font-size: calc(1.8rem * var(--scale));
+    }
+  }
+  & button {
+    @apply w-full bg-[#242424] h-[4.5rem] rounded-[1rem] text-[#E1D4C4]  
+    text-[1.1rem] font-lato font-bold;
+    @screen laptop {
+      font-size: calc(1.6rem * var(--scale));
+      height: calc(4.5rem * var(--scale));
+      border-radius: calc(1rem * var(--scale));
+    }
+  }
+}
+
+.response-rating_response {
+  @apply flex flex-col items-center gap-[1rem];
+  @screen laptop {
+    gap: calc(1.5rem * var(--scale));
+  }
+  & p {
+    @apply text-[#F89C53] font-lato font-bold  text-[1.2rem];
+    @screen laptop {
+      font-size: calc(1.9rem * var(--scale));
+    }
+  }
+}
+
+.response-rating_response__ {
+  @apply bg-[#252026] rounded-[1rem] p-[1rem] font-lato text-[1rem] text-[#E1D4C4] w-full h-[7rem] text-center;
+  @screen laptop {
+    font-size: calc(1.5rem * var(--scale));
+    padding: calc(1rem * var(--scale));
+  }
+}
+
+.btn-coments-order {
+  @apply w-full h-[3.7rem] bg-[#4D3452] text-[#E1D4C4] font-lato text-[1rem] 
+  font-bold rounded-[1rem];
+  @screen laptop {
+    height: calc(3.7rem * var(--scale));
+    font-size: calc(1.6rem * var(--scale));
+    border-radius: calc(1rem * var(--scale));
+  }
+}
+
+.btn-cancel-reservation {
+  @apply hidden  gap-[2rem] items-center;
+  @screen tablet {
+    @apply flex;
+  }
+  & p {
+    @apply text-[#E1D4C4]  w-[40%] font-lato font-bold leading-[1.6rem]  text-center 
+    text-[1.1rem];
+    @screen laptop {
+      font-size: calc(1.6rem * var(--scale));
+      line-height: calc(1.6rem * var(--scale));
+    }
+  }
+}
+
+.descrition-cancel-reservation-btn {
+  @apply w-[60%]  flex flex-col text-[1.2rem] leading-[2.2rem] font-medium;
+  & h6 {
+    @screen laptop {
+      @apply font-semibold text-[#E1D4C4]  ;
+      font-size: calc(1.4rem * var(--scale));
+      line-height: calc(2.3rem * var(--scale));
+    }
+  }
+  & h6{
+    @apply text-[1rem] underline leading-[2.2rem];
+    @screen laptop {
+      @apply underline font-normal text-[#E1D4C4];
+      font-size: calc(1.4rem * var(--scale));
+      line-height: calc(2.4rem * var(--scale));
+    }
+  }
+}
+.btn-cancel-_--_reservation {
+  @apply w-full bg-transparent border h-[3.8rem] rounded-[1rem] text-[#E1D4C4] text-[1rem] 
+  font-lato font-bold;
+  @screen tablet {
+    @apply hidden;
+  }
+}
+
+.btn-restricciones-reservation {
+  @apply w-full bg-[#4D3452] h-[3.8rem] rounded-[1rem] text-[#E1D4C4] text-[1rem] 
+  font-lato font-bold;
+  @screen laptop {
+    font-size: calc(1.6rem * var(--scale));
+    height: calc(4rem * var(--scale));
+    border-radius: calc(1rem * var(--scale));
+  }
+}

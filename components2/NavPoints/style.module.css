@@ -1,0 +1,46 @@
+.nav_points {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  padding-right: 3rem;
+  z-index: 1;
+}
+
+.nav_points div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  gap: 2.9rem;
+}
+
+.point {
+  all: unset;
+  color: var(--c-3);
+  padding: 0.5rem;
+  font-weight: bolder;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.point__active {
+  color: var(--c-2);
+  font-weight: lighter;
+}
+
+.inactivePoint {
+  display: inline-flex;
+  transform: scale(0.9);
+}
+
+@media (width<1000px) {
+  .nav_points {
+    padding-right: 1rem;
+  }
+}

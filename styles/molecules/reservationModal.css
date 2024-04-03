@@ -1,0 +1,50 @@
+.reservacion_modal{
+    .p-dialog-header {
+        @apply  bg-[#2F2A32]
+    }
+    .p-dialog-content {
+      @apply grid place-items-center !bg-[#2F2A32] gap-[3rem];
+    }
+    .p-dialog-header-icons {
+        @apply  text-[#F0EFEB] ;
+      }
+  }
+
+  .reservation_p-one{
+   @apply text-[#E1D4C4] font-lato text-[1.4rem] font-medium leading-[2.4rem] text-center;
+   @screen tablet{
+     @apply w-[45.3rem] text-[2.19rem] leading-[3.5rem]; 
+   }
+}
+
+
+ .reservation_p{
+    @apply text-[#E1D4C4] font-lato text-[1.4rem] font-medium leading-[2.4rem] text-center;
+    @screen tablet{
+      @apply w-[35.3rem] text-[1.6rem]; 
+    }
+ }
+
+ .reservation_tbns{
+    @apply flex flex-col gap-[1.5rem] p-[2rem];
+    @screen tablet {
+      @apply p-[2rem];
+    }
+    @screen laptop {
+        @apply  flex-row-reverse;
+        gap: calc(1rem * var(--scale));
+        padding: calc(2rem * var(--scale));
+    }
+ }
+
+
+
+ .reservation_tbn_cancelar{
+    @apply  h-[6rem] bg-[#E1D4C4] rounded-[1rem] text-center px-[3rem] py-[1rem]
+    text-[#4D3452] font-lato text-[1.6rem] font-medium;
+ }
+
+ .reservation_tbn_vovler{
+    @apply h-[6rem]  rounded-[1rem] text-center px-[3rem] 
+    py-[1rem] text-[#E1D4C4] font-lato text-[1.6rem] border font-medium;
+ }

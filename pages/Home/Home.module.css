@@ -1,0 +1,8 @@
+.main {
+  min-height: 100vh;
+  position: relative;
+  @screen laptop{
+    margin-top: calc(-17.4rem * var(--scale));
+  }
+ 
+}

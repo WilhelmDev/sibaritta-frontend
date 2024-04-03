@@ -1,0 +1,302 @@
+.InitReservationModalPartner {
+  .PartnerCalendarMovil {
+    @apply flex flex-col justify-center;
+
+    position: absolute;
+    z-index: 100;
+    padding: 2rem;
+    border-radius: 0; 
+
+    background-color: transparent;
+    width: 100% !important;
+    height: auto !important;
+    top:15rem;
+    left: 0rem;
+
+    @screen tablet {
+      /* margin-top: 100vw; */
+      top: 0rem;
+    }
+
+    .partner-calendar-movil-container {
+    }
+
+    .rdp-months {
+      width: auto !important;
+      height: auto !important;
+    }
+
+    .rdp-head_cell {
+      display: none;
+    }
+
+    .rdp-caption {
+      width: auto !important;
+      height: auto !important;
+      margin-bottom: 1.5 rem;
+    }
+
+    .rdp-caption_label {
+      width: auto !important;
+      height: auto !important;
+      font-size: 2rem;
+    }
+
+    .rdp-nav_button {
+      width: auto !important;
+      height: auto !important;
+    }
+
+    .rdp-cell {
+      width: 2rem !important;
+    }
+
+    .rdp-button_reset.rdp-button.rdp-day {
+      width: 4rem !important;
+      height: 4rem !important;
+      font-size: 1.6rem;
+
+      @screen tablet {
+        width: 7rem !important;
+        height: 7rem !important;
+      }
+    }
+
+    button.rdp-button_reset.rdp-button.rdp-day.rdp-day_selected {
+      background-color: #252127 !important;
+      color: #e1d4c4 !important;
+    }
+
+    .partner-calendar-movil-footer {
+      @apply w-[100%] flex flex-col gap-[1.5rem] rounded-b-[1rem] border-t-2 bg-[#2F2A32] border-[#393533] h-[13rem] justify-center items-center;
+    }
+
+    .partner-calendar-movil-footer-top {
+      @apply w-[95%] flex justify-center content-center gap-[1rem];
+    }
+
+    .footer-button {
+      @apply flex justify-center items-center gap-[1rem] w-[50%] bg-[#F89C53] rounded-[1rem] h-[4rem];
+
+      .text-3x {
+        @apply text-[1.5rem]  font-bold text-[#252127];
+      }
+
+      .image {
+        @apply w-[1rem] h-[1.5rem]   text-[#252127];
+      }
+
+      .text-36 {
+        @apply w-[3rem] h-[3rem] text-[1.5rem]  font-bold mb-[-1px]  text-[#252127] bg-[white] rounded-[50%] flex justify-center items-center;
+      }
+    }
+
+    .partner-calendar-movil-footer-bot {
+      @apply flex justify-center items-center text-[1.5rem] font-bold text-[#252127] gap-[1rem] w-[95%] bg-[white] rounded-[1rem] h-[4rem];
+    }
+
+    .experiencia-homeb-general-container.content-day_simpleb[aria-selected="true"] {
+      background-color: aliceblue !important;
+    }
+
+    .content-day_simpleb[aria-selected="true"] {
+      background-color: aliceblue !important;
+    }
+
+    .experiencia-homeb-general-container
+      .content-day_simpleb[aria-selected="true"] {
+      background-color: aliceblue !important;
+    }
+
+    .rdp-button_reset .rdp-button .rdp-day .rdp-day_selected {
+      background-color: aliceblue !important;
+    }
+
+    .initail_reservation {
+      .p-dialog-header {
+        @apply !bg-[#252127];
+      }
+
+      .p-dialog-content {
+        @apply grid place-items-center !bg-[#252127] gap-[3rem];
+      }
+
+      .p-dialog-header-icons {
+        @apply text-[#F0EFEB];
+      }
+    }
+
+    .initail_reservation_calendar {
+      @apply w-full h-full rounded-[1.5rem] px-[2rem];
+    }
+
+    .initail_reservation_calendar h2 {
+      @apply text-[#E1D4C4] font-lato text-[2.4rem] font-bold py-[1rem];
+    }
+
+    .InitReservationModalPartner .PartnerCalendarMovil .fecha .rdp-tbody .rdp-day:not(.rdp-day_selected){
+
+      font-size: 15rem;
+
+    }
+
+
+    .details_calendar_options {
+      @apply w-full flex flex-col gap-[1.5rem] justify-center items-center;
+
+      @screen laptop {
+        @apply flex-row;
+        gap: calc(1.5rem * var(--scale));
+      }
+    }
+
+    .add_user_update_ {
+      @apply flex items-center gap-[1rem] bg-[#2F2A32] p-[1rem] rounded-[1rem] w-full mt-[1.5rem];
+    }
+
+    .add_user_img- {
+      @apply w-[15.6rem] h-[8rem] bg-[#37323A] grid place-items-center rounded-[1rem];
+    }
+
+    .add_user_img- img {
+      @apply w-[3rem] h-[3rem];
+    }
+
+    .add_user_amount_ {
+      @apply w-full h-[8.6rem] flex flex-col items-center justify-center gap-[1rem];
+    }
+
+    .add_user_increment_ {
+      @apply flex items-center justify-between w-[80%] gap-[1rem];
+    }
+
+    .add_user_increment_further- {
+      @apply w-[3.6rem] h-[3.6rem] rounded-[1rem] bg-[#F89C53] grid place-items-center;
+    }
+
+    .add_user_increment_further- img {
+      @apply w-[1.8rem] h-[1.8rem];
+    }
+
+    .details__btns {
+      @apply flex flex-col w-full gap-[1.5rem];
+    }
+
+    .details__btns_one {
+      @apply bg-[#F89C53] w-full h-[4.2rem] text-[1.8rem] text-[#4D3452] font-semibold rounded-[1rem];
+    }
+
+    .details__btns_two {
+      @apply bg-[#2F2A32] w-full h-[4.2rem] text-[1.8rem] text-[#E1D4C4] font-semibold rounded-[1rem];
+    }
+
+    .rdp {
+      --rdp-accent-color: #252127 !important;
+      --rdp-background-color: #4d3452 !important;
+    }
+
+    .fecha {
+      @apply bg-[#2F2A32] font-inter w-full rounded-t-[1rem];
+      heigth: 47.3rem;
+
+      .rdp-table {
+        max-width: 100%;
+      }
+      .rdp {
+        @apply font-inter w-full mx-auto;
+      }
+
+      .rdp-month {
+        @apply w-full h-[100%] !bg-[#2F2A32] text-[#E1D4C4] font-bold !important;
+        border-radius: 15px !important;
+        padding: 1rem !important;
+      }
+
+      .rdp-caption_label {
+        @apply font-bold p-0;
+        font-size: 2rem !important;
+        text-transform: capitalize;
+      }
+
+      .rdp-caption {
+        padding-bottom: 2rem !important;
+      }
+
+      .rdp-table {
+        @apply w-full;
+        margin: 0 auto !important;
+      }
+
+      .rdp-head {
+        font-size: 1.6rem !important;
+      }
+
+      .rdp-cell {
+        @apply font-medium font-inter;
+        font-size: 1.6rem !important;
+        padding-top: 0.7rem;
+        padding-bottom: 0.7rem;
+
+        margin: 0 auto;
+      }
+
+      .rdp-head_cell {
+        @apply font-medium font-inter;
+        font-size: 1.6rem !important;
+        margin: 0 auto;
+      }
+
+      .rdp-weeknumber,
+      .rdp-day {
+        margin: 0 auto !important;
+        width: 3.6rem !important;
+        height: 3.6rem !important;
+        @apply max-w-[5.6rem];
+      }
+      .rdp-tbody .rdp-day:not(.rdp-day_selected) {
+        @apply text-[#6F6B6F] cursor-not-allowed text-[4vw] ;
+        
+      }
+    }
+
+    .rdp-button:hover:not([disabled]):not(.rdp-day_selected) {
+
+
+      background-color: #F89C53!important;
+
+    }
+
+
+    .reserva_modal_btns {
+      @apply flex flex-col  justify-center gap-[1rem] border-b border-[#2F2A32];
+    }
+
+    .reserva_modal_btn_hora {
+      @apply flex flex-wrap  gap-[1.5rem];
+    }
+
+    .btn {
+      @apply bg-[#F89C53] h-[4.4rem] w-[14.2rem] rounded-[1rem] text-[#252127] text-[2rem] font-semibold font-lato;
+    }
+
+    .btn_two {
+      @apply bg-[#EAEAEA] h-[4.4rem] w-[14.2rem] font-lato rounded-[1rem] text-[2rem] font-semibold text-[#000000];
+    }
+
+    .reserva_modal_btns p {
+      @apply w-[70%] m-auto text-[#E1D4C4] text-center font-lato text-[1.7rem] font-normal;
+    }
+
+    .reserva_modal_footer {
+      @apply flex flex-col w-full gap-[1rem] py-[2rem];
+    }
+
+    .reserva_modal_footer button {
+      @apply bg-[#4D3452] h-[5rem] rounded-[5rem] text-[#FFF] font-lato text-[2rem] font-bold;
+    }
+
+    .reserva_modal_footer h3 {
+      @apply mt-4 m-auto text-[#F0EFEB] text-[1rem] font-lato  text-center;
+    }
+  }
+}

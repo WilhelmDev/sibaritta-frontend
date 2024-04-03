@@ -1,0 +1,24 @@
+.homeAbout {
+  @apply hidden;
+  @screen laptop {
+    @apply w-[71%] m-auto  min-h-[78rem] flex   justify-center gap-[10rem]  py-[3rem];
+  }
+}
+.homeAbout_contendor {
+  @apply min-w-[95rem] min-h-[48.8rem]  flex pt-[2rem];
+}
+
+.homeAbout_contendor_datos {
+  @apply w-[50%]  flex flex-col items-start justify-center gap-[5rem];
+}
+
+.homeAbout_contendor_datos_h3 {
+  @apply text-[#E1D4C4] text-[3rem] font-bold leading-normal  h-[7rem];
+}
+
+.homeAbout_contendor_datos_p {
+  @apply text-[#E1D4C4] text-[1.6rem] font-semibold leading-[2.4rem];
+}
+.homeAbout_contendor_datos_btn {
+  @apply w-[31.2rem] h-[5rem] text-center rounded-[5rem] bg-[#F89C53] text-[#252127] font-bold leading-normal text-[1.6rem];
+}

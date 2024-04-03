@@ -1,0 +1,77 @@
+.paymentHistoryCard {
+  @apply p-[2rem] mt-[2.5rem] rounded-[1.5rem];
+  border: 1px solid #4d3452;
+
+  @screen laptop {
+    @apply p-0;
+    margin-top: calc(2.5rem * var(--scale));
+    border: none;
+  }
+
+  &-title {
+    @apply font-lato font-extrabold text-[1.8rem] leading-[2.2rem] text-[#E1D4C4];
+
+    @screen laptop {
+      font-size: calc(2.4rem * var(--scale));
+      line-height: calc(2.88rem * var(--scale));
+    }
+  }
+
+  &-subtitle {
+    @apply font-lato font-normal text-[1.8rem] leading-[2.16rem] text-[#F89C53] mt-[0.3rem];
+
+    @screen laptop {
+      font-size: calc(1.8rem * var(--scale));
+      line-height: calc(2.16rem * var(--scale));
+      margin-top: calc(0.65rem * var(--scale));
+    }
+  }
+
+  &-content {
+    @apply bg-[#2F2A32] rounded-[1rem] mt-[2rem] p-[1.5rem] flex flex-col gap-[1rem];
+
+    @screen laptop {
+      margin-top: calc(3rem * var(--scale));
+      padding: calc(1.5rem * var(--scale));
+      gap: calc(2rem * var(--scale));
+    }
+
+    &-field {
+      @apply flex flex-col gap-[0.5rem];
+
+      @screen laptop {
+        @apply flex-row justify-between;
+      }
+
+      h5 {
+        @apply font-lato font-normal text-[1.4rem] leading-[1.68rem] text-[#E1D4C4];
+
+        @screen laptop {
+          font-size: calc(1.4rem * var(--scale));
+          line-height: calc(1.68rem * var(--scale));
+        }
+      }
+
+      p {
+        @apply font-lato font-bold text-[1.8rem] leading-[2.16rem] text-[#F89C53];
+
+        @screen laptop {
+          font-size: calc(1.4rem * var(--scale));
+          line-height: calc(1.68rem * var(--scale));
+        }
+      }
+    }
+  }
+
+  button {
+    @apply bg-[#4D3452] rounded-[1rem] h-[4.5rem] p-[2rem] font-lato font-bold text-[1.6rem] leading-[1.92rem] text-[#F0EFEB] flex items-center justify-center w-full mt-[2rem] cursor-pointer;
+
+    @screen laptop {
+      margin-top: calc(2rem * var(--scale));
+      height: calc(4.5rem * var(--scale));
+      padding: calc(2rem * var(--scale));
+      font-size: calc(1.6rem * var(--scale));
+      line-height: calc(1.92rem * var(--scale));
+    }
+  }
+}

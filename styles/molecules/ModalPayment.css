@@ -1,0 +1,57 @@
+.ModalPayment {
+  .p-dialog-header {
+    @apply bg-[#2F2A32];
+  }
+  .p-dialog-content {
+    @apply bg-[#2F2A32];
+  }
+  &-title {
+    @apply font-lato font-bold text-[1.8rem] leading-[2.16rem] text-[#E1D4C4];
+  }
+
+  &-text {
+    @apply font-lato font-bold text-[1.4rem] leading-[2.4rem] text-[#F0EFEB] mt-[3.5rem];
+  }
+
+  &-container {
+    @apply flex flex-col;
+
+    &-img {
+      @apply mt-[3.5rem];
+      /* @apply h-[14.4rem]; */
+
+      @screen laptop {
+        width: calc(33.5rem * var(--scale));
+        height: calc(18.5rem * var(--scale));
+      }
+    }
+
+    &-form {
+      @apply flex flex-col gap-[0.5rem] mt-[2rem];
+
+      .payment-input {
+        @apply bg-[#2F2A32] h-[5.3rem] rounded-[1rem] p-[1.5rem] font-lato font-normal text-[1.4rem] leading-[1.4rem] text-[#E1D4C4];
+      }
+    }
+
+    button {
+      @apply bg-[#E1D4C4] mt-[3.5rem] rounded-[1rem] h-[5.8rem] font-lato font-bold text-[1.6rem] leading-[1.92rem] text-[#4D3452];
+
+      @screen laptop {
+        height: calc(5.5rem * var(--scale));
+        font-size: calc(1.6rem * var(--scale));
+        line-height: calc(1.92rem * var(--scale));
+      }
+    }
+  }
+}
+
+.input-error {
+  @apply text-red-600 !text-[1.25rem] leading-[2rem];
+  @screen laptop {
+    font-size: calc(1.3rem * var(--scale)) !important;
+    line-height: calc(2.1rem * var(--scale));
+  }
+}
+
+ 

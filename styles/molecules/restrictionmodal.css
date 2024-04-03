@@ -1,0 +1,47 @@
+.resttriction_modal{ 
+    .p-dialog-header {
+        @apply  bg-[#2F2A32]
+    }
+    .p-dialog-content {
+      @apply grid place-items-center !bg-[#2F2A32] gap-[2rem] py-[2rem];
+      @screen laptop{
+        padding-top: calc(2rem * var(--scale));
+        padding-bottom: calc(4rem * var(--scale));
+      }
+    }
+    .p-dialog-header-icons {
+        @apply  text-[#F0EFEB] ;
+      }
+  }
+
+
+  .resttriction_modal_btns{
+    @apply flex flex-col items-center gap-[1.5rem] w-full h-auto  px-[2rem];
+    @screen laptop{
+      @apply flex-row justify-between w-full
+    }
+  }
+
+  .resttriction_modal_btn_one{
+    @apply p-[1rem] text-center bg-[#37323A] rounded-[1rem] h-[4.4rem] 
+    w-[90%]  text-[1.6rem] font-lato  font-normal leading-[2.4rem] text-[#E1D4C4] ;
+    @screen laptop{
+      @apply w-full 
+    }
+  }
+
+  .resttriction_modal_btn_two{
+    @apply text-center  rounded-[1rem] h-[4.4rem] text-[1.6rem] 
+    w-[90%] font-lato border border-[#37323A]  font-normal leading-[2.4rem] 
+    text-[#E1D4C4] p-[1rem] ;
+    @screen laptop{
+      @apply w-[15.9rem]
+    }
+  }
+  .resttriction_modal_btn_close{
+    @apply border text-center  rounded-[1rem] h-[4.4rem] w-[80%]  
+    text-[1.6rem] font-lato text-[#E1D4C4] p-[1rem] border-[#E1D4C4];
+    @screen laptop{
+      @apply w-[91%] 
+    }
+  }

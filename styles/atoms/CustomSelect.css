@@ -1,0 +1,9 @@
+.CustomSelect {
+  @apply flex flex-col  w-[13rem] bg-[#2f2A32];
+  span {
+    @apply font-lato text-[1.5rem] p-[1rem] font-medium duration-300 ease-in-out;
+    &:hover {
+      @apply font-lato text-[1.5rem] text-[#F89C53] p-[1rem]  font-medium cursor-pointer;
+    }
+  }
+}

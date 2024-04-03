@@ -1,0 +1,54 @@
+[
+  {
+    "id": 1,
+    "images": [
+      {
+        "resolution": "small",
+        "path": "https://source.unsplash.com/random/150x150"
+      },
+      {
+        "resolution": "large",
+        "path": "https://source.unsplash.com/random/600x600"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "images": [
+      {
+        "resolution": "small",
+        "path": "https://source.unsplash.com/random/150x150"
+      },
+      {
+        "resolution": "large",
+        "path": "https://source.unsplash.com/random/600x600"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "images": [
+      {
+        "resolution": "small",
+        "path": "https://source.unsplash.com/random/150x150"
+      },
+      {
+        "resolution": "large",
+        "path": "https://source.unsplash.com/random/600x600"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "images": [
+      {
+        "resolution": "small",
+        "path": "https://source.unsplash.com/random/150x150"
+      },
+      {
+        "resolution": "large",
+        "path": "https://source.unsplash.com/random/600x600"
+      }
+    ]
+  }
+]

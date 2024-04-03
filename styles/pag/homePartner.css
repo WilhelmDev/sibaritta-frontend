@@ -1,0 +1,35 @@
+.partner-home-container {
+  margin-top: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+  padding-left: 3rem;
+  padding-right: 3rem;
+
+  @screen laptop {
+
+  } 
+
+  .homePartnerContainerGeneral{
+
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 193em;
+    padding-left: 21rem;
+    padding-right: 21rem;
+    padding-top: 4rem;
+
+  }
+
+  .homePartnerContainer{
+
+    width: 100%;
+
+  }
+}

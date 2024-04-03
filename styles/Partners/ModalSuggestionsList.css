@@ -1,0 +1,7 @@
+
+.box-suggestion-partner{
+    @apply flex h-full flex-col justify-around ;
+}
+ .texto-color{
+    @apply  text-[#2F2A30] font-extrabold drop-shadow-[1px_2px_0px_#E1D4C4];
+ }

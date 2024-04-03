@@ -1,0 +1,29 @@
+.modal-mensaje-recovery{
+    @apply !bg-[#2F2A32] ;
+    .p-dialog-header {
+        @apply bg-[#2F2A32];
+      }
+      .p-dialog-content {
+        @apply !bg-[#2F2A32] grid place-content-center;
+      }
+      .p-dialog-header-icons {
+        @apply text-[#ffffff] ;
+      }
+      
+    }
+
+
+    .box-mensaje-recovery{
+        @apply bg-[#2F2A32] ;
+        
+    }
+
+    .modal-mensaje-recovery{
+    h3 {
+        @apply px-[2rem] text-center h-full  text-[1.6rem] font-lato font-extrabold  !text-[white] m-auto;
+        @screen laptop{
+            font-size: calc(2.3rem * var(--scale));
+        }
+    }
+    
+    }

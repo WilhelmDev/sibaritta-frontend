@@ -1,0 +1,35 @@
+.recovery_modal {
+  .p-dialog-header {
+    @apply bg-[#2F2A32];
+  }
+  .p-dialog-content {
+    @apply bg-[#2F2A32];
+  }
+  .p-dialog-header-icons {
+    @apply text-[#ffffff];
+  }
+}
+
+.recovery_box_ {
+  @apply w-full h-auto p-[rem] flex flex-col items-center justify-center gap-[2rem];
+}
+
+.recovery_box_title {
+  @apply text-[#4D3452] text-[2rem] font-lato  font-bold;
+}
+
+.recovery_box_indication {
+  @apply text-[#4D3452] text-[1.8rem] font-lato font-semibold  text-center;
+}
+
+.recovery_btns {
+  @apply w-[80%] h-auto flex flex-col gap-[2rem];
+}
+
+.recovery_btns input {
+  @apply h-[4rem] w-full text-[#4D3452] bg-[#ffffff] text-[1.5rem] font-lato rounded-[1rem] pl-[1rem];
+}
+
+.recovery_btns button {
+  @apply h-[4rem] w-full bg-[#4D3452] text-[#ffffff] text-[1.5rem] font-lato font-normal rounded-[1rem];
+}

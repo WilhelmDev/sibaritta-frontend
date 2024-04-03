@@ -1,0 +1,21 @@
+.modal-cancel {
+  .p-dialog-header {
+    .p-dialog-header-icons {
+      @apply hidden;
+    }
+  }
+}
+.modal-cancel-h2 {
+  @apply w-[90%] text-[1.5rem] text-[#fff] py-[1rem] font-normal font-lato;
+  @screen laptop {
+    @apply w-[70%] ;
+    font-size: calc(1.8rem * var(--scale)) !important;
+  }
+}
+
+.modal-cancel-container {
+  @apply  flex flex-col gap-[1rem] px-[.5rem] py-[1rem] text-[#fff] text-[1.5rem] font-lato font-normal;
+  @screen laptop {
+    font-size: calc(1.9rem * var(--scale)) !important;
+  }
+}

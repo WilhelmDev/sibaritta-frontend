@@ -1,0 +1,215 @@
+
+
+.payments {
+  @apply w-[100%] h-screen;
+  
+  @screen laptop {
+    @apply flex relative h-auto;
+    margin-top: calc(-18rem * var(--scale));
+    width: 200em;
+    
+  }
+
+  &-img {
+    @apply h-[36rem];
+
+    @screen laptop {
+      @apply hidden;
+    }
+  }
+
+  &-img-desktop {
+    @apply hidden;
+
+    @screen laptop {
+      @apply flex;
+      width: calc(45.4rem * var(--scale));
+    }
+  }
+
+  &-container {
+    @apply py-[3rem] w-[95%] m-auto;
+
+    @screen laptop {
+      @apply w-full m-0;
+      padding-top: calc(25.7rem * var(--scale));
+      padding-left: calc(8.1rem * var(--scale));
+      padding-right: calc(10rem * var(--scale));
+      padding-bottom: calc(11.1rem * var(--scale));
+    }
+
+    .container-general {
+      @screen laptop {
+        width: unset;
+        max-width: unset;
+        padding: 2rem;
+      }
+    }
+    }
+  }
+
+  .paymenst-box-notifis--_{
+    @apply flex flex-col gap-[1.5rem] bg-[#2F2A32]  h-auto py-[2rem] ;
+    @screen laptop {
+      height: calc(83rem * var(--scale));
+      gap: calc(4rem * var(--scale));
+      padding-top: calc(2rem * var(--scale));
+    padding-bottom: calc(2rem * var(--scale));
+    }
+  }
+
+.paymets-notify{
+  @apply flex  justify-between py-[1rem]
+}
+.paymets-notify h2 {
+  @apply text-[#E1D4C4] text-[1.6rem] font-lato font-bold ;
+  @screen laptop{
+    font-size: calc(2.5rem * var(--scale));
+  }
+}
+.paymets-notify-btns{
+  @apply flex items-center gap-[1rem]  ;
+  @screen laptop{
+    gap: calc(2rem * var(--scale));
+  }
+}
+
+.paymets-notify-btns button {
+  @apply w-[6rem] h-[2.5rem] text-[#252127] bg-[#F89C53] rounded-[1rem] font-lato font-bold text-[1rem] ;
+  @screen laptop{
+    width: calc(15rem * var(--scale));
+    height: calc(5.2rem * var(--scale));
+    font-size: calc(1.6rem * var(--scale));
+  }
+}
+
+.paymets-notify-btns .btns-two-notify-{
+  @apply w-[6rem] h-[2.5rem] text-[#252127] bg-[#E1D4C4] rounded-[1rem] font-lato font-bold text-[1rem] ;
+  @screen laptop{
+    width: calc(15rem * var(--scale));
+    height: calc(5.2rem * var(--scale));
+    font-size: calc(1.6rem * var(--scale));
+  }
+}
+
+.unread_notifications{
+  @apply flex flex-col   gap-[.5rem];
+  @screen laptop{
+    gap: calc(3rem * var(--scale));
+  }
+  & h3{
+    @apply text-[#F89C53] font-lato text-[1.2rem] font-bold leading-[1.8rem];
+    @screen laptop{
+      font-size: calc(2.1rem * var(--scale));
+      line-height: calc(1.8rem * var(--scale));
+      gap: calc(2rem * var(--scale));
+}
+    }
+  }
+
+
+.unread_notifications{
+  @apply flex ;
+}
+.box_notify-alert{
+  @apply flex flex-col  overflow-y-scroll p-[1rem] gap-[1rem];
+  @screen tablet{
+    @apply flex flex-col gap-[1rem]
+  }
+  @screen laptop{
+    @apply flex flex-col;
+    height: calc(18rem * var(--scale));
+    gap: calc(2.5rem * var(--scale));
+  }
+}
+
+.box_notify-alert-Two{
+  @apply flex flex-col  overflow-y-scroll p-[1rem] gap-[1rem];
+  @screen tablet{
+    @apply flex flex-col gap-[1rem]
+  }
+  @screen laptop{
+    @apply flex flex-col;
+    height: calc(60rem * var(--scale));
+    gap: calc(2.5rem * var(--scale));
+  }
+}
+
+.unread_notifications--{
+  @apply flex justify-between items-center;
+  & h4 {
+    @apply text-[#E1D4C4] font-lato text-[1.1rem] font-bold leading-[1.8rem] ;
+    @screen laptop{
+      font-size: calc(1.8rem * var(--scale));
+      line-height: calc(1.8rem * var(--scale));
+    }
+  }
+ 
+}
+
+.unread_notifications--btns{
+  @apply flex gap-[1rem] ;
+  @screen laptop{
+    gap: calc(1rem * var(--scale));
+  }
+}
+.btn--notify-unread-1{
+  @apply bg-[#252127] w-[8rem] h-[3rem] text-[#E1D4C4] font-lato text-[1rem] font-medium rounded-[1rem];
+  @screen laptop{
+    width: calc(14.2rem * var(--scale));
+    height: calc(5.2rem * var(--scale));
+    font-size: calc(1.6rem * var(--scale));
+    border-radius: calc(1rem * var(--scale));
+  }
+}
+.btn--notify-unread {
+  @apply bg-[#E1D4C4] text-[#252127] w-[5rem]  h-[3rem] rounded-[1rem];
+  @screen laptop{
+    width: calc(10.1rem * var(--scale));
+    height: calc(5.2rem * var(--scale));
+    font-size: calc(1.6rem * var(--scale));
+    border-radius: calc(1rem * var(--scale));
+  }
+}
+
+.launch-notification{
+  @apply  flex flex-col gap-[1rem] h-auto; 
+}
+
+.notification-launch-{
+  @apply  border-t border-b border-[#736E68] flex items-center justify-between 
+  py-[1rem];
+  @screen laptop{
+    padding-top: calc(3rem * var(--scale));
+    padding-bottom: calc(3rem * var(--scale));
+}
+& p{
+  @apply text-[#E1D4C4] font-lato text-[1rem] font-bold  leading-[1.8rem] ;
+  @screen laptop {
+    font-size: calc(1.8rem * var(--scale));
+    line-height: calc(1.8rem * var(--scale));
+  }
+}
+  }
+
+
+
+.notification-btns-launch{
+ @apply flex gap-[1rem] ;
+ @screen laptop{
+ gap: calc(1.5rem * var(--scale));
+}
+}
+
+
+.container_partner_notifications{
+  @apply pt-[30rem] pb-[5rem] w-[95%] m-auto;
+
+  @screen laptop {
+    @apply w-full m-0;
+    padding-top: calc(2.7rem * var(--scale));
+    padding-left: calc(11.1rem * var(--scale));
+    padding-right: calc(11rem * var(--scale));
+    padding-bottom: calc(11.1rem * var(--scale));
+  }
+}

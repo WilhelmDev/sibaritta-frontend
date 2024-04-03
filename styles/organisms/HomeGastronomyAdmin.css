@@ -1,0 +1,224 @@
+.HomeGastronomyAdmin {
+  width: 100%;
+
+  /* .partner-home-container{
+
+        width: 100%!important;
+    } */
+
+  .main-container {
+    display: flex;
+    flex-direction: column;
+
+    gap: 3rem;
+
+    @screen laptop {
+      margin-bottom: calc(15rem * var(--scale));
+      gap: 6rem;
+      margin: 0 auto;
+      justify-content: center;
+      align-content: center;
+    }
+  }
+
+  .main-container-1 {
+    display: flex;
+    flex-direction: column;
+    /* 
+    background-color: #f89c53; */
+    width: 100%;
+    gap: 3rem;
+    align-items: center;
+    justify-content: center;
+
+    @screen laptop {
+      width: calc(149rem * var(--scale));
+      margin: 0 auto;
+    }
+  }
+
+  .main-container-1-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    padding-left: calc(0.3rem * var(--scale));
+    padding-right: calc(0.3rem * var(--scale));
+    width: 100%;
+
+    @screen tablet {
+      padding-left: calc(0.8rem * var(--scale));
+      padding-right: calc(0.8rem * var(--scale));
+    }
+
+    @screen laptop {
+      flex-direction: row;
+      padding-left: calc(1rem * var(--scale));
+      padding-right: calc(1rem * var(--scale));
+    }
+    justify-content: space-between;
+  }
+
+  .main-container-1-top-1 {
+    display: flex;
+    align-items: center;
+    gap: calc(1rem * var(--scale));
+    margin-bottom: calc(1rem * var(--scale));
+  }
+
+  .main-container-1-top-1-image-container {
+    display: flex;
+    align-items: center;
+    width: calc(4.2rem * var(--scale));
+    height: calc(4.2rem * var(--scale));
+    gap: calc(1rem * var(--scale));
+    border-right: 0.2rem solid #e1d4c4;
+  }
+
+  .main-container-1-top-1-image {
+    width: 3rem;
+    height: 3rem;
+
+    @screen laptop {
+      width: calc(2.8rem * var(--scale));
+      height: calc(2.8rem * var(--scale));
+    }
+  }
+
+  .main-container-1-top-1-separator {
+    display: flex;
+    align-items: center;
+    font-size: 3rem;
+
+    @screen laptop {
+    }
+  }
+
+  .main-container-1-top-1-text {
+    display: flex;
+    align-items: center;
+    font-size: 2.5rem;
+    font-weight: 600;
+
+    @screen laptop {
+      font-size: calc(4rem * var(--scale));
+    }
+  }
+
+  .main-container-1-top-2 {
+    background-color: #4d3452;
+    border-radius: 0.4rem;
+  }
+
+  .container-button-sucursal {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #4d3452;
+    border-radius: 1rem;
+    padding-left: 2.2rem;
+    padding-right: 2.2rem;
+    /* padding-top: 1rem;
+    padding-bottom: 1rem; */
+    height: 4.4rem;
+    width: 70%;
+
+    @screen laptop {
+      display: none;
+    }
+  }
+
+  .button-sucursal-button {
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+
+  .vVector-image {
+    width: 1.2rem;
+    height: auto;
+  }
+
+  .main-container-1-top-3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 1rem;
+    color: #4d3452;
+    font-size: 1.8rem;
+    font-weight: 600;
+    border-radius: 1rem;
+    padding-left: 2.2rem;
+    padding-right: 2.2rem;
+    /* padding-top: 1rem;
+    padding-bottom: 1rem; */
+    height: 4.4rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: #f89c53;
+
+    @screen laptop {
+      font-size: calc(1.8rem * var(--scale));
+      height: calc(4.4rem * var(--scale));
+      width: calc(27rem * var(--scale));
+      padding-left: calc(2.5rem * var(--scale));
+      padding-right: calc(2.5rem * var(--scale));
+      padding-top: calc(1rem * var(--scale));
+      padding-bottom: calc(1rem * var(--scale));
+    }
+  }
+
+  .main-container-1-top-3-2 {
+    @screen laptop {
+      display: none;
+    }
+  }
+
+  /* .main-container-2-top-3 {
+    display: none;
+  } */
+
+  @media (min-width: 600px) and (max-width: 1200px) {
+    .main-container-1-bot-cards {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .card_datos-partner {
+    width: 100%;
+  }
+
+  .main-container-1-bot-cards {
+    display: flex;
+    flex-wrap: wrap;
+    /* flex-direction: column; */
+    gap: calc(3rem * var(--scale));
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    @screen laptop {
+      height: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: inherit;
+      width: 100%;
+
+      @screen tablet {
+        width: 47.5%;
+      }
+
+      @screen laptop {
+        width: 23.1%;
+        height: auto;
+      }
+    }
+  }
+}

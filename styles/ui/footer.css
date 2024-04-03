@@ -1,0 +1,89 @@
+.homeFooter-container{
+  @apply bg-[#161417] w-full h-auto;
+
+  @screen laptop{
+    display: flex;
+justify-content: center;
+align-items: center;
+
+
+  }
+}
+
+.homeFooter{
+@apply w-[99%] m-auto;
+
+
+
+
+  @screen laptop{
+
+
+  }
+
+
+}
+.homeFooter_info{
+  @apply w-full h-auto  flex flex-col items-center gap-[4rem] py-[2rem] ;
+  @screen tablet{
+    @apply flex-row justify-between items-start w-[98%] m-auto;
+  }
+  @screen tabletlg{
+    @apply w-[98%] ;
+  }
+
+
+}
+.homeFooter_info_datos{
+@apply flex w-[30%] flex-col  gap-[1rem] items-center ;
+
+@screen tablet{
+
+  @apply items-end;
+
+}
+
+}
+
+.homeFooter_info_datos_h2{
+  @apply text-[#F89C53] text-center font-lato  font-extrabold leading-normal
+  ;
+}
+
+
+.homeFooter_info_datos_p{
+  @apply text-[#E1D4C4] font-lato text-center text-[1.8rem] font-bold leading-normal;
+  @screen tabletlg{
+    @apply text-right
+  }
+}
+
+.home_footer_copy{
+  @apply  w-full h-auto flex
+  gap-[2rem]  py-[2rem] px-[2rem];
+  @screen tabletlg {
+    @apply  flex-row justify-center;
+  }
+
+
+}
+
+.home_footer_copy_terminos{
+  @apply flex flex-col
+  gap-[2rem];
+  @screen tabletlg {
+    @apply flex-row justify-between
+  }
+}
+.home_footer_copy_p{
+  @apply text-[#E1D4C4] font-lato text-[1.8rem] font-bold  leading-normal ;
+  text-align: center;
+
+
+  @screen laptop{
+
+    text-align: left;
+
+
+  }
+}

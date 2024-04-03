@@ -1,0 +1,149 @@
+.example_section {
+  height: 110vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  
+}
+
+.container {
+  @apply flex flex-col ;
+  gap: 6rem;
+  width: 100%;
+  z-index: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+ 
+  @screen tablet {
+  @apply flex-row-reverse  items-center;
+  }
+}
+
+
+.container h3 {
+  @apply text-[2.5rem] pt-[3rem] font-lato font-bold ;
+  @screen laptop{
+    font-size: calc(4.3rem * var(--scale));
+    font-weight: 400;
+  }
+
+}
+.container ul {
+    @apply bg-[#ffffff28] p-[3rem] rounded-lg;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  @screen laptop{
+    padding: calc(5rem * var(--scale));
+  }
+}
+.container li {
+  @apply font-lato  font-normal  ;
+  font-size: 2rem;
+  @screen laptop{
+    font-size: calc(2.9rem * var(--scale));
+    line-height: normal;
+    font-weight: 400;
+  }
+}
+
+
+.containers{
+  @apply flex flex-col ;
+  gap: 14rem;
+  width: 90%;
+  z-index: 0;
+
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  margin-bottom: 0;
+  padding-left: 0;
+  
+
+
+  @screen laptop{
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 14rem;
+    width: 100%;
+  
+    margin-bottom: calc(-9rem * var(--scale));
+    padding-left: calc(7rem * var(--scale));
+  
+    justify-content: center;
+    align-items: center;
+
+    
+  }
+}
+
+
+.containers h3 {
+  @apply font-lato font-bold ;
+  font-size: calc(4rem * var(--scale));
+  text-align: center;
+
+
+  @screen laptop{
+    font-size: calc(4.9rem * var(--scale));
+    font-weight: 400;
+    width: calc(59.4rem * var(--scale));
+    height: calc(6rem * var(--scale));
+    margin-top: calc(-11rem * var(--scale));
+
+  }
+
+}
+
+.containers ul {
+  @apply bg-[#ffffff28] p-[3rem] rounded-lg items-center;
+display: flex;
+flex-direction: column;
+gap: 3rem;
+@screen laptop{
+  @apply h-auto ;
+  padding-left: calc(4.5rem * var(--scale));
+  padding-top: calc(3.6rem * var(--scale));
+  width: calc(79.9rem * var(--scale));
+  height: calc(58.7rem * var(--scale));
+}
+}
+
+.containers p {
+
+  font-style: italic;
+    font-weight: 600;
+    letter-spacing: -0.1rem;
+    font-size: calc(3.6rem * var(--scale));
+    text-align: center;
+    
+
+
+
+
+  @screen laptop{
+
+    font-size: calc(3.6rem * var(--scale));
+    margin-top: calc(12.3rem * var(--scale));
+    font-style: italic;
+    font-weight: 600;
+    letter-spacing: -0.1rem;
+
+  }
+}
+
+.containers li {
+  @apply font-lato  font-normal  ;
+  font-size: calc(1.7rem * var(--scale));
+  @screen laptop{
+    @apply leading-[10rem];
+    font-size: calc(2.5rem * var(--scale));
+    line-height: normal;
+    font-weight: 400;
+  }
+}
+

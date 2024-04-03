@@ -1,0 +1,120 @@
+.example_section {
+  height: 110vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.container {
+  @apply flex flex-col;
+  gap: 6rem;
+  width: 100%;
+  z-index: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: left;
+
+  @screen tablet {
+    @apply flex-row-reverse  items-center;
+  }
+}
+
+.container h3 {
+  @apply text-[2.5rem] pt-[3rem] font-lato font-bold;
+  justify-content: left;
+  @screen laptop {
+    font-size: calc(4.3rem * var(--scale));
+    font-weight: 400;
+  }
+}
+.ul-reservation {
+  @apply bg-[#ffffff28] p-[3rem] rounded-lg;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  justify-content: left;
+  @screen laptop {
+    padding: calc(5rem * var(--scale));
+  }
+}
+.container li {
+  @apply font-lato  font-normal;
+  font-size: 2rem;
+  justify-content: left;
+  @screen laptop {
+    font-size: calc(2.9rem * var(--scale));
+    line-height: normal;
+    font-weight: 400;
+  }
+}
+
+.containers {
+  display: flex;
+  flex-direction: column;
+  gap: 14rem;
+  width: 80%;
+  z-index: 0;
+  justify-content: left;
+  align-items: center;
+  gap: 5rem;
+  margin-bottom: 0;
+  padding-left: 0;
+
+  @screen laptop {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 14rem;
+    width: 100%;
+    margin-bottom: calc(-9rem * var(--scale));
+    padding-left: calc(7rem * var(--scale));
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.containers h3 {
+  @apply font-lato font-bold;
+  font-size: calc(4rem * var(--scale));
+  justify-content: left;
+
+  @screen laptop {
+    font-size: calc(4.9rem * var(--scale));
+    font-weight: 400;
+    width: calc(59.4rem * var(--scale));
+    height: calc(6rem * var(--scale));
+    margin-top: calc(-11rem * var(--scale));
+  }
+}
+
+.containers ul {
+  @apply bg-[#ffffff28] p-[3rem] rounded-lg;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  justify-content: left;
+  text-align: left;
+  list-style-type: disc;
+
+  @screen laptop {
+    @apply h-auto;
+    padding-left: calc(4.5rem * var(--scale));
+    padding-top: calc(3.6rem * var(--scale));
+    width: calc(93.4rem * var(--scale));
+    height: calc(51rem * var(--scale));
+  }
+}
+
+.containers li {
+  @apply font-lato  font-normal;
+  font-size: calc(1.7rem * var(--scale));
+
+  @screen laptop {
+    @apply leading-[10rem];
+    font-size: calc(2.5rem * var(--scale));
+    line-height: normal;
+    font-weight: 400;
+    text-align: left;
+  }
+}

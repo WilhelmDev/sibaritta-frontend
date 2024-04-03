@@ -1,0 +1,152 @@
+.box-mainsibaritta_business {
+  @apply w-full h-auto  mt-[6rem] p-[1rem] relative;
+  @screen laptop {
+    @apply pb-[5rem] mt-0;
+    padding-top: calc(7rem * var(--scale));
+  }
+}
+.partnet_modal_create {
+  @apply fixed  right-10 bg-[#E1D4C4] rounded-full flex items-center
+    justify-evenly  cursor-pointer  duration-300 ease-in-out  hover:bg-[#f7f2ee];
+  @screen laptop {
+    width: calc(28rem * var(--scale));
+    height: calc(8rem * var(--scale));
+  }
+  padding:10px 15px;
+  bottom: 15px;
+  & h3 {
+    font-size:16px!important;
+    @apply text-[#4D3452];
+    @screen tablet {
+      @apply text-[1.6rem];
+    }
+    @screen laptop {
+      @apply text-[#4D3452];
+      font-size: calc(2rem * var(--scale));
+    }
+  }
+}
+
+.logo_modal_partner {
+  @apply w-[2.5rem] h-[2.5rem];
+  position: relative;
+  top: 1px;
+  right: -4px;
+  @screen laptop {
+    width: calc(3.5rem * var(--scale));
+    height: calc(3.5rem * var(--scale));
+  }
+}
+
+.box_sibaritta_business_dates {
+  @apply w-full h-full  flex flex-col gap-[2rem] px-[1rem];
+  @screen laptop {
+    gap: calc(10rem * var(--scale));
+    padding-left: calc(10rem * var(--scale));
+    padding-right: calc(10rem * var(--scale));
+  }
+}
+
+.infor_sibarrita_business-one {
+  @apply w-full h-auto flex flex-col gap-[1rem];
+  @screen tablet {
+    @apply flex-row;
+  }
+  @screen laptop {
+    gap: calc(7rem * var(--scale));
+  }
+}
+
+.box_bussines-title-description {
+  @apply flex flex-col  items-center;
+  @screen tablet {
+    @apply w-[50%] ;
+  }
+
+
+  & h2 {
+    @apply text-[#E1D4C4]  font-lato font-bold;
+    margin-bottom: 15px;
+  }
+  & p {
+    font-size: 18px;
+    @apply text-[#E1D4C4] font-lato font-normal;
+
+
+  }
+}
+
+.infor_sibarrita_business-two {
+  @apply w-full h-auto  flex flex-col gap-[1rem];
+  @screen tablet {
+    @apply flex-row;
+  }
+  @screen laptop {
+    gap: calc(7rem * var(--scale));
+  }
+}
+.information_sibaritta_two- {
+  @apply flex flex-col gap-[1rem];
+  @screen tablet {
+    @apply w-[50%];
+  }
+  @screen laptop {
+    @apply gap-[2rem];
+  }
+
+  & h2 {
+    @apply text-[#E1D4C4]  font-lato font-bold;
+
+  }
+}
+
+.box-box-descript {
+  @apply flex flex-col gap-[1rem] px-[.5rem];
+  @screen laptop {
+    @apply justify-around  h-full gap-[2rem];
+  }
+}
+
+.box-descript-infos-_- {
+  @apply flex   gap-[1rem];
+  & span {
+    @apply w-[.5rem] h-[.5rem] mt-[.5rem] bg-[#e6e5e5] rounded-full;
+    @screen laptop {
+      width: calc(0.5rem * var(--scale));
+      height: calc(0.5rem * var(--scale));
+      margin-top: calc(1rem * var(--scale));
+    }
+  }
+  & p {
+    @apply w-[100%]   font-lato font-normal;
+    font-size: 18px;
+  }
+}
+
+.business-sibaritta_imagen {
+  @apply w-full h-[25rem] rounded-[1.5rem] bg-[url("/home/professional-cheese-sommelier-food-shop-handsome-bearded-worker-cheese-store-weared-apron-background-shelves-with-cheese.jpg")] bg-cover bg-center;
+  @screen tablet {
+    @apply w-[50%];
+  }
+  @screen laptop {
+    height: calc(48rem * var(--scale));
+  }
+}
+
+.business-sibaritta_imagen-two {
+  @apply w-full h-[20rem] rounded-[1.5rem] bg-[url("/home/bartender-interacting-with-customers.jpg")] bg-cover bg-center;
+  @screen tablet {
+    @apply w-[50%]  h-auto;
+  }
+  /* @screen laptop {
+    height: calc(86.4rem * var(--scale));
+  } */
+}
+
+.box-texto-agenda-sibaritta-business {
+  @apply w-full h-auto grid place-items-center text-[#E1D4C4]
+  text-[2.5rem] font-lato font-extrabold;
+  @screen laptop {
+    font-size: calc(5rem * var(--scale));
+  }
+}

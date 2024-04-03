@@ -1,0 +1,75 @@
+.modal-bebida-checkout {
+  @apply !bg-[#2F2A32];
+  .p-dialog-header {
+    @apply !bg-[#2F2A32];
+  }
+  .p-dialog {
+    @apply !bg-[#2F2A32];
+  }
+  .p-dialog-content {
+    @apply !bg-[#2F2A32];
+  }
+  .p-dialog-header-icons {
+    @apply !bg-[#2F2A32] text-[#F0EFEB];
+  }
+}
+
+.checkout-modal-bebida {
+  @apply text-[1rem] flex  flex-col items-center justify-center gap-[1rem] py-[2rem];
+}
+
+.checkout-modal-bebida .title {
+  @apply text-[2rem] text-[#E1D4C4] font-semibold font-lato;
+  @screen laptop {
+    font-size: calc(3.5rem * var(--scale));
+  }
+}
+
+.checkout-modal-bebida .precio- {
+  @apply text-[#E1D4C4] text-[1.5rem] font-lato font-medium;
+  @screen laptop {
+    font-size: calc(2.5rem * var(--scale));
+  }
+}
+
+.modal-checkout-add-bebida {
+  @apply bg-[#37323A] w-[25rem] h-[9.9rem]  rounded-[1rem] flex flex-col 
+    justify-around items-center;
+}
+
+.modal-checkout-add-bebida p {
+  @apply text-[1.5rem] text-[#E1D4C4];
+  @screen laptop {
+    font-size: calc(2rem * var(--scale));
+  }
+}
+
+.modal-add-checkout-bebida {
+  @apply flex justify-between items-center  w-[12.8rem] h-[3.6rem];
+}
+
+.modal-minus-checkout_ {
+  @apply w-[3.6rem] h-[3.6rem] text-[2.5rem] bg-[#F0EFEB]   flex justify-center items-center pb-[.5rem] rounded-[1rem] cursor-pointer;
+}
+
+.modal-amount-checkout-_ {
+  @apply text-[2rem] text-[#E1D4C4];
+}
+
+.modal-update-_-checkout {
+  @apply w-[3.6rem] h-[3.6rem] text-[2.5rem] bg-[#F89C53]  flex justify-center items-center  pb-[.5rem] rounded-[1rem] cursor-pointer text-[#F0EFEB];
+}
+
+.modal-btn-checkout-_ {
+  @apply w-[25rem] h-[4.9rem] flex  items-center justify-between;
+}
+
+.modal-cancel-checkout- {
+  @apply border-[#E1D4C4] border w-[10rem] h-[4rem] rounded-[1rem] text-[#E1D4C4]
+    text-[1.5rem] font-lato font-medium;
+}
+
+.modal-keep-checkout- {
+  @apply bg-[#E1D4C4]  w-[10rem] h-[4rem] rounded-[1rem] text-[#37323A]
+    text-[1.5rem] font-lato font-medium;
+}

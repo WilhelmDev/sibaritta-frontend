@@ -1,0 +1,317 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "./pag/";
+@import "./reset.css";
+@import "./molecules/";
+@import "./organisms/";
+@import "./ui/";
+@import "./atoms/";
+@import "./admin/";
+/* @import "./components/"; */
+
+@import "scale.css";
+@import "icons.css";
+@import "container.css";
+@import "./molecules/";
+@import "./organisms/";
+@import "./ui/";
+@import "./atoms/";
+
+@import "scale.css";
+@import "icons.css";
+@import "container.css";
+
+@import "./colors.css";
+@import "./animations.css";
+@import "./Partners";
+
+:root {
+  --variante-h2: 3.5rem;
+  --variante-h3: 2.5rem;
+  --variante-h4: 2.2rem;
+  --variante-h5: 1.8rem;
+  --variante-parrafo: 1.6rem;
+  --variante-h6: 1.4rem;
+  --texto--pequeño: 1rem;
+  --text-grande: 4rem;
+  --text-extraBol: 5rem;
+  --text-thirty: 3rem;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  @apply !mr-0;
+  &.no-scroll {
+    @apply overflow-hidden;
+  }
+  font-family: "Lato", sans-serif!important;
+}
+input,
+select,
+textarea {
+  @apply w-full border-none bg-none;
+
+  &:focus {
+    @apply outline-none;
+  }
+}
+
+textarea {
+  resize: none;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+  background-color: transparent;
+  background-image: none;
+}
+
+.main-page {
+  animation-name: fadeIn;
+  animation-duration: 0.6s;
+  animation-timing-function: ease-in;
+  background-image: var(--bg-img);
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.main-page1 {
+  animation-name: fadeIn;
+  animation-duration: 0.4s;
+  animation-timing-function: ease-in;
+  background-image: var(--bg-img);
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+body {
+  overflow-y: scroll; /* Muestra la barra de desplazamiento vertical incluso si no es necesario */
+  scrollbar-width: thin; /* Ancho de la barra de desplazamiento en navegadores Firefox */
+  /* scrollbar-color: #888888 #f0f0f0; Color de la barra de desplazamiento en Firefox */
+}
+
+/* Estilos adicionales para la barra de desplazamiento en navegadores WebKit (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #e1d4c4;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #4d3452;
+}
+
+.p-sidebar-icons {
+  button {
+    svg {
+      @apply w-[1.5rem] h-[1.5rem];
+    }
+  }
+}
+
+.p-rating .p-rating-item:focus {
+  outline: 0 none;
+  outline-offset: 0;
+  box-shadow: none;
+}
+#getbutton-whatsapp {
+  background-color: #f89c53 !important;
+  animation: pulse 1.5s infinite; /* 1.5s de duración, repetición infinita */
+}
+
+.cA-Ddva {
+  background-color: #f89c53 !important;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.p-dialog .p-dialog-content {
+  background: none;
+}
+
+.p-dropdown {
+  @apply h-[4.4rem] text-[#E1D4C4] font-lato !bg-[#2f2a32];
+}
+.p-inputwrapper {
+  @apply rounded-[10px] overflow-hidden;
+}
+.p-dropdown-items {
+  background-color: #2f2a32 !important;
+}
+.p-dropdown-label {
+  @apply flex justify-center items-center text-[1.5rem] font-semibold font-lato;
+
+  @apply bg-[#37323A] text-[#E1D4C4];
+  @screen laptop {
+    font-size: calc(1.8rem * var(--scale));
+  }
+}
+.p-dropdown-trigger {
+  @apply bg-[#37323A];
+}
+.p-dropdown-item {
+  @apply py-[1rem] text-[#E1D4C4] font-lato pl-[1rem]  text-[1.5rem] font-semibold;
+}
+
+.p-dropdown:not(.p-disabled).p-focus {
+  @apply shadow-none;
+}
+.p-dropdown-panel .p-dropdown-items .p-dropdown-item.p-highlight {
+  @apply !bg-[#4D3452];
+}
+
+.p-dropdown-item {
+  &:hover {
+    @apply !bg-[#4D3452] rounded-md;
+  }
+}
+
+.car-payment {
+  @apply p-[1rem] py-[1.5rem] bg-[#37323A] rounded-[1rem];
+}
+.CardField {
+  @apply h-[10rem];
+}
+.ElementsApp .InputElement.is-invalid {
+  @apply !bg-black;
+}
+
+.p-rating-item svg {
+  @apply w-[2.4rem] h-[2.4rem];
+  color: var(--c-4) !important;
+
+  @screen laptop {
+    width: calc(2.5rem * var(--scale));
+    height: calc(2.5rem * var(--scale));
+  }
+}
+.rdp-day_selected,
+.rdp-day_selected:focus-visible,
+.rdp-day_selected:hover {
+  color: #37323a !important;
+  opacity: 1;
+}
+
+.rdp-day_selected {
+  @apply !bg-[#F89C53];
+}
+
+.rdp-button:hover:not([disabled]):not(.rdp-day_selected) {
+  background-color: transparent !important  ;
+}
+
+h2 {
+  font-size: 2.5rem;
+  @screen tablet {
+    font-size: 3.5rem;
+  }
+  @screen laptop {
+    font-size: calc(var(--variante-h2) * var(--scale));
+  }
+}
+
+h3{
+  @apply text-[1.5rem] ;
+  @screen laptop{
+    font-size: calc(var(--variante-h3) * var(--scale))!important;
+  }
+}
+
+h4{
+  @apply  font-lato text-[1.5rem] ;
+  @screen laptop{
+    font-size: calc(2rem * var(--scale)) !important;
+  }
+}
+
+h5{
+  @apply text-[1.5rem] ;
+  @screen laptop{
+    font-size: calc(var(--variante-h5) * var(--scale)) !important;
+  }
+}
+
+h6{
+  @screen tablet{
+    @apply text-[1.6rem];
+  }
+  @screen laptop{
+    font-size: calc(var(--variante-h6) * var(--scale));
+  }
+}
+
+p {
+  @apply text-[1.6rem];
+  @screen tablet{
+    @apply text-[1.6rem];
+  }
+  @screen laptop {
+    font-size: calc(var(--variante-parrafo) * var(--scale));
+  }
+}
+@import "./responsive";
+
+
+.containers-width-general{
+  @apply w-[85.5%] m-auto ;
+}
+
+
+.p-toast-message  {
+@apply bg-[#4D3452] p-[1rem] text-[#E1D4C4] font-lato font-bold text-[1.3rem];
+& svg{
+  @apply text-[#E1D4C4] ;
+}
+}
+
+.p-toast-message-content{
+
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}

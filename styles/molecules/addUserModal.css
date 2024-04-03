@@ -1,0 +1,100 @@
+.add_user {
+  .p-dialog-header {
+    @apply bg-[#2F2A32];
+  }
+  .p-dialog-content {
+    @apply !bg-[#2F2A32];
+  }
+  .p-dialog-header-icons {
+    @apply text-[#F0EFEB];
+  }
+}
+
+.add_user_modal_add {
+  @apply w-full  h-auto p-[2rem] flex flex-col items-center justify-center gap-[2rem];
+  @screen laptop {
+    @apply m-auto;
+    padding: calc(2rem * var(--scale));
+    gap: calc(2rem * var(--scale));
+    width: calc(45.4rem * var(--scale));
+    heigth: calc(9rem * var(--scale));
+  }
+}
+.add_user_update_modal {
+  @apply flex justify-center items-center  p-[1.5rem] bg-[#37323A] w-full
+    min-h-[9.9rem]  rounded-[1rem] gap-[2rem];
+  @screen tablet {
+    @apply w-[65%] flex justify-around items-center;
+  }
+  @screen laptop {
+    padding: calc(1.2rem * var(--scale));
+    gap: calc(2rem * var(--scale));
+    width: calc(32.4rem * var(--scale));
+    height: calc(9.9rem * var(--scale));
+  }
+}
+
+.add_user_img {
+  @apply bg-[#2F2A32] p-[1rem] rounded-[1.5rem] w-[13rem] h-[8.6rem] grid place-items-center;
+  @screen laptop {
+    width: calc(7.6rem * var(--scale));
+    height: calc(7.6rem * var(--scale));
+  }
+}
+.add_user_img img {
+  @screen laptop {
+    width: calc(3.6rem * var(--scale));
+  }
+}
+.add_user_amount {
+  @apply flex flex-col gap-[1rem];
+}
+
+.add_user_amount_person {
+  @apply text-[1.6rem]  text-[#F0EFEB]  font-semibold leading-[2.4rem];
+  @screen laptop {
+    font-size: calc(1.6rem * var(--scale));
+    line-height: calc(2.4rem * var(--scale));
+  }
+}
+
+.add_user_increment {
+  @apply flex  justify-around;
+}
+
+.add_user_increment_less {
+  @apply p-[1rem] w-[3.6rem] h-[3.6rem] rounded-[1rem] bg-[#F0EFEB] 
+    text-[#252127]  text-center font-bold;
+}
+
+.add_user_increment_number {
+  @apply p-[1rem] font-semibold leading-[1.4rem] font-lato text-[#F0EFEB];
+  @screen laptop {
+    font-size: calc(2.4rem * var(--scale));
+  }
+}
+
+.add_user_increment_further__ {
+  @apply p-[1rem] w-[3.6rem] h-[3.6rem] rounded-[1rem] bg-[#F89C53] 
+    text-[#F0EFEB]  text-center font-bold;
+}
+.add_user_p {
+  @apply text-[#F0EFEB] font-lato text-[1.6rem] font-normal text-center;
+}
+
+.add_user_btns {
+  @apply flex flex-col items-center gap-[1.5rem] w-full;
+  @screen laptop {
+    @apply flex-row;
+  }
+}
+
+.add_user_one {
+  @apply bg-[#E1D4C4]  w-[26rem]  h-[4.5rem] text-center 
+    rounded-[1rem] text-[#4D3452] font-lato text-[1.6rem] font-semibold;
+}
+
+.add_user_two {
+  @apply border text-[#E1D4C4] w-[26rem] h-[4.5rem] text-center text-[1.6rem] font-semibold
+    rounded-[1rem];
+}

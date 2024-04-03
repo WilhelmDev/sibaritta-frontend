@@ -1,0 +1,17 @@
+.PartnerMarinCalendar{
+
+    @apply w-full ;
+
+    .PartnerMarinCalendar-Container{
+
+        @apply w-full h-full ;
+
+        @screen laptop{
+
+            margin-left: calc(-1rem *var(--scale));
+
+        }
+
+    }
+
+}

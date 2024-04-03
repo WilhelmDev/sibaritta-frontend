@@ -1,0 +1,99 @@
+.ModalSession-container {
+  @apply flex flex-col gap-[1.5rem] pb-[5rem];
+}
+
+.ModalSession-title {
+  @apply  text-center text-[#4D3452] font-bold font-lato;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 48px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+.ModalSession-text {
+  @apply  text-center text-[#A59484] font-bold font-lato;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: center;
+
+}
+.modalSession-span {
+  color: #4d3452;
+  @apply text-[1.5rem] block text-center text-[#4D3452] font-normal font-lato underline;
+}
+.modalSession-button {
+  @apply text-[1.5rem] block text-center text-[#F0EFEB] bg-[#4D3452] font-normal font-lato py-[1rem] px-[4rem];
+  border-radius: 5rem;
+  /* @screen laptop {
+    @apply hidden;
+  } */
+}
+.modalSession-buttons {
+  @apply text-[1.5rem] block text-center  bg-[#e1d4c4] font-normal font-lato py-[1rem] px-[4rem];
+  border-radius: 5rem;
+  @screen laptop {
+    @apply hidden;
+  }
+}
+.modalSession-buttons .option span{
+  @apply text-[#4d3452]   text-[1.5rem] font-bold;
+}
+.modalSession-buttons .buttons-icon{
+  @apply text-[#4d3452]   text-[1.5rem] font-bold;
+}
+
+.facebook-icon {
+  @apply !bg-[#FFF]  w-[10rem] h-[10rem] text-[#000] font-lato font-bold !text-[1.1rem] p-[.5rem] laptop:p-[2rem] flex justify-center items-center flex-col;
+  i {
+    @apply text-[#3C5A9A] text-[3rem];
+    @screen laptop {
+      @apply text-[4rem];
+    }
+  }
+  @screen laptop {
+    font-size: calc(1.6rem * var(--scale)) !important ;
+    width: calc(15.6rem * var(--scale));
+    height: calc(15.6rem * var(--scale));
+  }
+  border-radius: 1rem;
+  background: #fff;
+}
+
+.google-buttom {
+  @apply !bg-[#FFF] w-[10rem] h-[10rem] text-[#000] font-lato font-bold !text-[1.1rem] flex justify-center items-center flex-col;
+  i {
+    @apply text-[#3C5A9A] text-[3rem];
+  }
+  border-radius: 1rem;
+  background: #fff;
+
+  @screen laptop {
+    font-size: calc(1.6rem * var(--scale)) !important ;
+    width: calc(15.6rem * var(--scale));
+    height: calc(15.6rem * var(--scale));
+  }
+}
+
+.container-socials {
+  @apply flex justify-center gap-[0rem] pt-[3.4rem] pb-[1.4rem];
+  button{
+    margin-right: 15px;
+  }
+  span{
+    margin-left: 15px;
+  }
+}
+
+.modalsession {
+  .p-dialog-header {
+    background: #f0efeb;
+  }
+  .p-dialog-content {
+    @apply p-0;
+  }
+  .p-dialog-header-icons {
+    @apply absolute right-[2rem] top-[2rem];
+  }
+}

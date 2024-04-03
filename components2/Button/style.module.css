@@ -1,0 +1,14 @@
+.button {
+  all: unset;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  background: var(--c-2);
+  color: var(--c-6);
+  display: flex;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  background: var(--c-5);
+}

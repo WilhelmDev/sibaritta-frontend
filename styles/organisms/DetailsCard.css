@@ -1,0 +1,137 @@
+.DetailsCardDestok-container{
+
+  display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.Details-slider-image {
+  @apply h-[42.9rem] w-full;
+  @screen tablet {
+    @apply h-[60rem] w-full;
+  }
+  &::before {
+    @apply absolute top-0 left-0 w-full h-full;
+    content: "";
+    background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.2) 0%,
+      rgba(0, 0, 0, 0.2) 100%
+    );
+  }
+}
+.HomeCharac-pagination {
+  @apply cursor-pointer absolute flex justify-center w-full  gap-[.5rem] bottom-[2.2rem] z-[99];
+  .swiper-pagination-bullet {
+    @apply w-[0.8rem] h-[0.8rem]  rounded-full block;
+    background: rgba(217, 217, 217, 0.2);
+  }
+  .swiper-pagination-bullet-active {
+    @apply w-[0.8rem] h-[0.8rem] block;
+    background: #d9d9d9;
+  }
+}
+/* details destok */
+
+.DetailsCardDestok {
+  @apply hidden;
+  @screen laptop {
+    @apply flex flex-col;
+    margin-top: calc(-17.5rem * var(--scale));
+    width: 200em;
+  }
+}
+.DetailsCardDestok-image {
+  @screen laptop {
+    height: calc(79rem * var(--scale));
+    @apply w-full relative;
+
+    &.isActiveess {
+      animation: fadeIn 1s ease-in-out;
+      opacity: 1;
+
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  &::before {
+    @apply absolute top-0 left-0 w-full h-full;
+    content: "";
+    background: linear-gradient(180deg, #252127 0%, rgba(37, 33, 39, 0) 100%);
+  }
+}
+
+/* card */
+.CardDetails-image {
+  @screen laptop {
+    width: 100%;
+    height: calc(16.5rem * var(--scale));
+    border: 5px solid #252127;
+    @apply relative overflow-hidden cursor-pointer;
+    border-radius: 1.5rem;
+    transition: all 0.3s ease-in-out; /* Adjust the duration and easing as needed */
+    &::before {
+      @apply absolute top-0 left-0 w-full h-full overflow-hidden;
+      content: "";
+      background: linear-gradient(
+        0deg,
+        rgba(37, 33, 39, 0.8) 0%,
+        rgba(37, 33, 39, 0.8) 100%
+      );
+      box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+      transition: all 0.3s ease-in-out; /* Adjust the duration and easing as needed */
+      border-radius: 1rem;
+    }
+  }
+
+  &:hover {
+    &::before {
+      background: none;
+    }
+  }
+}
+
+.container-image-small {
+  @screen laptop {
+    margin-top: calc(-9rem * var(--scale));
+
+    padding-left: calc(7.5rem * var(--scale));
+    padding-right: calc(7.5rem * var(--scale));
+  }
+}
+
+.DetailsCardDestok-logo {
+  @screen laptop {
+    @apply rounded-full overflow-hidden;
+    border: 5px solid var(--Purple, #4d3452);
+    width: calc(12.4rem * var(--scale));
+    height: calc(12.4rem * var(--scale));
+  }
+}
+
+.container-logo {
+  @screen laptop {
+    @apply flex absolute gap-[2rem] items-center;
+    top: calc(30rem * var(--scale));
+    left: calc(9rem * var(--scale));
+  }
+}
+.container-text-details {
+  @screen laptop {
+    h2 {
+      @apply text-[#E1D4C4] font-bold ;
+    }
+    h5 {
+      @apply text-[#E1D4C4] text-[1.8rem] font-light font-lato flex gap-[1rem]   items-center;
+      i {
+        @apply text-[1rem];
+      }
+    }
+  }
+}

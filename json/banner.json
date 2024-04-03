@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "video": "https://www.youtube.com/watch?v=QvypZSdjO8M&list=RDQvypZSdjO8M&start_radio=1&rv=0qw7ll6qF0I",
+    "img": "/home/gastrowhite.png",
+    "titulo": "Gastronomía",
+    "precio": "600"
+  },
+  {
+    "id": 2,
+    "video": "https://www.youtube.com/watch?v=QvypZSdjO8M&list=RDQvypZSdjO8M&start_radio=1&rv=0qw7ll6qF0I",
+    "img": "/home/concierge.png",
+    "titulo": "Concierge",
+    "precio": "800"
+  },
+  {
+    "id": 3,
+    "video": "/home/banner/video3.mp4",
+    "img": "/home/bienStar.png",
+    "titulo": "Drinks & Catas",
+    "precio": "700"
+  },
+  {
+    "id": 4,
+    "video": "/home/banner/video2.mp4",
+    "img": "/home/vuelos.png",
+    "titulo": "Vuelos privados",
+    "precio": "900"
+  }
+]

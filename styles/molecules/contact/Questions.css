@@ -1,0 +1,48 @@
+.question-card {
+  @apply pt-[5rem] flex flex-col gap-[1.2rem];
+}
+
+.Questions-title {
+  @apply text-[#E1D4C4] font-bold;
+}
+.Questions-content {
+  @apply bg-[#2F2A32] p-[2rem];
+  border-radius: 1rem;
+
+  p {
+    @apply text-[1.6rem] font-lato font-normal leading-[2.5rem] text-[#E1D4C4];
+    @screen laptop {
+      font-size: calc(1.6rem * var(--scale));
+      line-height: calc(2.5rem * var(--scale));
+    }
+  }
+}
+.container-question {
+  @apply pb-[8.1rem];
+  @screen laptop {
+    @apply pb-0;
+  }
+}
+.Questions {
+  @screen laptop {
+    @apply border-l-2 border-[#3E3940];
+    padding-left: calc(5rem * var(--scale));
+    width: calc(85.1rem * var(--scale));
+  }
+}
+.question-input {
+  @screen laptop {
+    width: calc(33.75rem * var(--scale));
+  }
+}
+.question-buttoms {
+  @apply text-[1.6rem] text-[#E1D4C4] font-semibold font-lato flex justify-end items-center gap-[1rem] pt-[4.2rem] pb-[1rem];
+  @screen laptop {
+    @apply bg-[#2F2A32] text-[#E1D4C4] font-lato text-[1.6rem] font-semibold flex justify-center items-center cursor-pointer;
+    padding-top: calc(1rem * var(--scale));
+    padding-bottom: calc(1rem * var(--scale));
+    padding-left: calc(5rem * var(--scale));
+    padding-right: calc(5rem * var(--scale));
+    border-radius: 1rem;
+  }
+}

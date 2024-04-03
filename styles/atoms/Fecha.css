@@ -1,0 +1,21 @@
+.p-calendar.p-component.p-inputwrapper {
+  background-color: transparent;
+  @apply absolute top-0 left-0 w-full h-full;
+
+  input {
+    color: transparent;
+    background-color: transparent;
+    cursor: pointer;
+  }
+}
+
+.p-inputtext:enabled:focus {
+  box-shadow: none;
+  border: none;
+}
+
+/* .p-datepicker.table.td.p-datepicker-today {
+  & > span.p-highlight {
+    color: red;
+  }
+} */

@@ -1,0 +1,62 @@
+.partner-reservation-ventas{
+    @apply !bg-[#2F2A32] w-full;
+    .p-dialog-header {
+        @apply bg-[#2F2A32];
+      }
+      .p-dialog-content {
+        @apply !bg-[#2F2A32];
+      }
+      .p-dialog-header-icons {
+        @apply text-[#ffffff] ;
+      }
+      
+    }
+
+
+    .box-datos-part{
+        @apply w-full h-[100%] bg-[red];
+    }
+
+    .two-resevation-_---{
+
+      h2{
+
+        font-size: calc(2rem * var(--scale));
+        color: rgb(225, 212, 196);
+
+      }
+
+      p{
+
+        font-size: calc(1.5rem * var(--scale));
+        color: rgb(225, 212, 196);
+
+      }
+    }
+
+    /* .two-resevation{      
+    } */
+
+    .container_card_experiencia{
+
+      font-size: calc(2.5rem *var(--scale));
+      margin: 0;
+      padding-top: 0;
+      margin-top: -0.5rem;
+
+    }
+
+    .three-reservation--_-{
+
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+
+    }
+
+
+/* 
+    .partner-reservation-ventas-modal{
+
+
+    } */

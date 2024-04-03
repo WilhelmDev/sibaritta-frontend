@@ -1,0 +1,84 @@
+.register-Partner-modal-{
+   @apply w-full h-full ;
+    .p-dialog-header {
+        @apply !bg-[#F0EFEB] ;
+      }
+      .p-dialog-content {
+        @apply p-0 !bg-[#F0EFEB];
+      }
+      .p-dialog-header-icons {
+        @apply !bg-[#F0EFEB] absolute right-[2rem] top-[2rem];
+      }
+}
+
+.infos-{
+    @apply flex flex-col gap-[1rem] ; 
+    & h2 {
+        @apply text-[#252127] font-lato font-extrabold text-[1.4rem];
+        @screen tablet{
+            @apply text-[1.8rem];
+        }
+        @screen laptop{
+            font-size: calc(2.5rem  * var(--scale));
+        }
+    }
+    & p{
+        @apply text-[#252127] font-lato font-bold text-[1rem];
+        @screen tablet{
+            @apply text-[1.4rem];
+        }
+        @screen laptop{
+            font-size: calc(1.8rem  * var(--scale));
+        }
+    }
+    & span {
+        @apply text-[#252127] font-lato  text-[1rem];
+        @screen tablet{
+            @apply text-[1.3rem];
+        }
+        @screen laptop{
+            font-size: calc(1.5rem  * var(--scale));
+        }
+    }
+}
+
+
+
+.partner-register-input-name-cargo{
+    @apply flex gap-[1rem] ;
+    & input {
+        @apply py-[.5rem] rounded-lg px-[.5rem] font-lato font-semibold;
+        @screen laptop{
+            padding-top: calc(1rem * var(--scale));
+            padding-bottom:  calc(1rem * var(--scale));
+            gap: calc(1rem * var(--scale));
+        }
+    }
+   
+}
+
+
+
+
+.box_partnet_register_inputs{
+        @apply flex flex-col h-auto  gap-[1rem] justify-between  ;
+        @screen laptop{
+            gap: calc(1rem * var(--scale));
+        }
+}
+
+
+.partner-register-btons{
+    @apply flex flex-col gap-[1rem] text-center items-center justify-center ;
+    @screen laptop{
+        padding-top: calc(1rem * var(--scale));
+    padding-bottom: calc(1rem * var(--scale));
+    }
+    & button{
+        @apply bg-[#4D3452] rounded-full text-[white] px-[7rem] py-[.8rem]
+        font-lato font-extrabold text-[1.2rem] ;
+    }
+    & p {
+        @apply text-[#393533] font-lato text-[1.2rem] font-medium ; 
+    }
+}

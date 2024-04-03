@@ -1,0 +1,159 @@
+ {
+    "id": 1,
+    "branch_id": 1,
+    "slug": "comida-con-mi-esposa",
+    "name": "Comida con mi esposa",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ut pretium nisi. Duis id orci eleifend neque vel",
+    "address": "Jirón Tacna 200 Santiago de Surco, Lima",
+    "dress_code": "Formal",
+    "regular_price": "201",
+    "duration": "2",
+    "cancelation": "10",
+    "parking": "Parking 1.0",
+    "aditionals": "Sin adicionales",
+    "age": "Todos",
+    "status": "active",
+    "thumbnail": "/home/card/fondo.jpg",
+    "gallery": "/home/card/fondo.jpg|/home/card/fondo.jpg|/home/card/fondo.jpg",
+    "fk_category": 1,
+    "seats": 30,
+    "events": [
+      {
+        "id": 1,
+        "type": "pickup",
+        "seats": 4,
+        "date": "2024-01-15T05:00:00.000Z",
+        "hour": 10,
+        "minute": 30,
+        "price": "50",
+        "status": "active",
+        "fk_experience_id": 1
+      },
+      {
+        "id": 2,
+        "type": "presencial",
+        "seats": 4,
+        "date": "2024-01-15T05:00:00.000Z",
+        "hour": 8,
+        "minute": 30,
+        "price": "100",
+        "status": "active",
+        "fk_experience_id": 1
+      },
+      {
+        "id": 3,
+        "type": "presencial",
+        "seats": 21,
+        "date": "2024-01-15T05:00:00.000Z",
+        "hour": 16,
+        "minute": 23,
+        "price": "140",
+        "status": "active",
+        "fk_experience_id": 1
+      },
+      {
+        "id": 4,
+        "type": "presencial",
+        "seats": 14,
+        "date": "2024-01-15T05:00:00.000Z",
+        "hour": 12,
+        "minute": 23,
+        "price": "200",
+        "status": "active",
+        "fk_experience_id": 1
+      },
+      {
+        "id": 5,
+        "type": "pickup",
+        "seats": 8,
+        "date": "2024-01-15T05:00:00.000Z",
+        "hour": 13,
+        "minute": 30,
+        "price": "50",
+        "status": "active",
+        "fk_experience_id": 1
+      },
+      {
+        "id": 6,
+        "type": "pickup",
+        "seats": 15,
+        "date": "2024-01-15T05:00:00.000Z",
+        "hour": 7,
+        "minute": 30,
+        "price": "70",
+        "status": "active",
+        "fk_experience_id": 1
+      },
+      {
+        "id": 7,
+        "type": "presencial",
+        "seats": 15,
+        "date": "2024-01-16T05:00:00.000Z",
+        "hour": 4,
+        "minute": 23,
+        "price": "70",
+        "status": "active",
+        "fk_experience_id": 1
+      },
+      {
+        "id": 8,
+        "type": "presencial",
+        "seats": 10,
+        "date": "2024-01-16T05:00:00.000Z",
+        "hour": 17,
+        "minute": 15,
+        "price": "320",
+        "status": "active",
+        "fk_experience_id": 1
+      },
+      {
+        "id": 9,
+        "type": "pickup",
+        "seats": 4,
+        "date": "2024-01-16T05:00:00.000Z",
+        "hour": 12,
+        "minute": 22,
+        "price": "10",
+        "status": "active",
+        "fk_experience_id": 1
+      }
+    ],
+    "images": ["/img/card.jpg","/img/card.jpg","/img/card.jpg","/img/card.jpg","/img/card.jpg","/img/card.jpg","/img/card.jpg","/img/card.jpg"],
+    "suggestions": [
+      {
+        "id": 5,
+        "name": "sugerencia1",
+        "description": "Descripcion de la sugerencia",
+        "regular_price": "200",
+        "images": []
+      },
+      {
+        "id": 6,
+        "name": "sugerencia2",
+        "description": "Descripcion de la sugerencia",
+        "regular_price": "240",
+        "images": []
+      },
+      {
+        "id": 7,
+        "name": "sugerencia3",
+        "description": "Descripcion de la sugerencia",
+        "regular_price": "440",
+        "images": []
+      },
+      {
+        "id": 8,
+        "name": "sugerencia4",
+        "description": "Descripcion de la sugerencia",
+        "regular_price": "640",
+        "images": []
+      },
+      {
+        "id": 9,
+        "name": "sugerencia5",
+        "description": "Descripcion de la sugerencia",
+        "regular_price": "230",
+        "images": []
+      }
+    ]
+  }

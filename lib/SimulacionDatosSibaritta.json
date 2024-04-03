@@ -1,0 +1,153 @@
+[
+  {
+    "idDeReserva": "A2F3G5H7K8L9",
+    "fechaDePago": "",
+    "montoPagado": "",
+    "metodoDePago": "Transferencia",
+    "fechaDeReserva": "2022-02-01",
+    "comprobanteDePago":"Descargar",
+    "comision":"",
+    "estadoDelPago": ""
+  },
+  {
+    "idDeReserva": "B3D4E6F8H9J0",
+    "fechaDePago": "2024-11-15",
+    "montoPagado": "4657",
+    "metodoDePago": "Visa",
+    "fechaDeReserva": "2021-11-10",
+    "comprobanteDePago":"Descargar",
+    "comision":"357",
+    "estadoDelPago": "Pagado"
+  },
+
+  {
+    "idDeReserva": "C1G2H3K5L7N9",
+    "fechaDePago": "2024-01-22",
+    "montoPagado": "6321",
+    "metodoDePago": "Efectivo",
+    "fechaDeReserva": "2022-01-18",
+    "comprobanteDePago":"Pendiente",
+    "comision":"232",
+    "estadoDelPago": "Pendiente"
+  },
+  {
+    "idDeReserva": "D4F6G8J0K2L3",
+    "fechaDePago": "2024-03-07",
+    "montoPagado": "4144",
+    "metodoDePago": "Transferencia",
+    "fechaDeReserva": "2022-03-05",
+    "comprobanteDePago":"Descargar",
+    "comision":"111",
+    "estadoDelPago": "Pagado"
+  },
+  {
+    "idDeReserva": "E5G7H9J0K2L4",
+    "fechaDePago": "2024-12-10",
+    "montoPagado": "5555",
+    "metodoDePago": "Efectivo",
+    "fechaDeReserva": "2021-12-05",
+    "comprobanteDePago":"Pendiente",
+    "comision":"658",
+    "estadoDelPago": "Pendiente"
+  },
+  {
+    "idDeReserva": "F8H9J0K2L4N6",
+    "fechaDePago": "2024-04-01",
+    "montoPagado": "7677",
+    "metodoDePago": "PayPal",
+    "fechaDeReserva": "2022-03-28",
+    "comprobanteDePago":"Pendiente",
+    "comision":"761",
+    "estadoDelPago": "Pagado"
+  },
+  {
+    "idDeReserva": "G5H7K9L0N2P3",
+    "fechaDePago": "",
+    "montoPagado": "",
+    "metodoDePago": "Transferencia",
+    "fechaDeReserva": "2022-02-15",
+    "comprobanteDePago":"Pendiente",
+    "comision":"",
+    "estadoDelPago": ""
+  },
+  {
+    "idDeReserva": "H7J0K2L4N6P8",
+    "fechaDePago": "",
+    "montoPagado": "",
+    "metodoDePago": "Transferencia",
+    "fechaDeReserva": "2021-10-25",
+    "comprobanteDePago":"Descargar",
+    "comision":"",
+    "estadoDelPago": ""
+  },
+  {
+    "idDeReserva": "J0K2L4N6P8R9",
+    "fechaDePago": "2024-01-08",
+    "montoPagado": "3111",
+    "metodoDePago": "Transferencia",
+    "fechaDeReserva": "2022-01-03",
+    "comprobanteDePago":"Pendiente",
+    "comision":"",
+    "estadoDelPago": "Pagado"
+  },
+  {
+    "idDeReserva": "K2L4N6P8R9T1",
+    "fechaDePago": "2024-03-18",
+    "montoPagado": "4866",
+    "metodoDePago": "Bitcoin",
+    "fechaDeReserva": "2022-03-15",
+    "comprobanteDePago":"Pendiente",
+    "comision":"40",
+    "estadoDelPago": "Pendiente"
+  },
+  {
+    "idDeReserva": "L4N6P8R9T1V3",
+    "fechaDePago": "2024-11-30",
+    "montoPagado": "7311",
+    "metodoDePago": "Transferencia",
+    "fechaDeReserva": "2021-11-28",
+    "comprobanteDePago":"Pendiente",
+    "comision":"800",
+    "estadoDelPago": "Pendiente"
+  },
+  {
+    "idDeReserva": "M6P8R9T1V3X5",
+    "fechaDePago": "2024-04-15",
+    "montoPagado": "3621",
+    "metodoDePago": "Efectivo",
+    "fechaDeReserva": "2022-04-10",
+    "comprobanteDePago":"Descargar",
+    "comision":"100",
+    "estadoDelPago": "Pendiente"
+  },
+  {
+    "idDeReserva": "N6P8R9T1V3X5Z7",
+    "fechaDePago": "2024-01-01",
+    "montoPagado": "7111",
+    "metodoDePago": "MasterCard",
+    "fechaDeReserva": "2021-12-28",
+    "comprobanteDePago":"Descargar",
+    "comision":"200",
+    "estadoDelPago": "Pagado"
+  },
+  {
+    "idDeReserva": "P8R9T1V3X5Z7A2",
+    "fechaDePago": "",
+    "montoPagado": "",
+    "metodoDePago": "Transferencia",
+    "fechaDeReserva": "2022-02-10",
+    "comprobanteDePago":"Descargar",
+    "comision":"",
+    "estadoDelPago": ""
+  },
+  {
+    "idDeReserva": "R9T1V3X5Z7A2B3",
+    "fechaDePago": "2024-12-25",
+    "montoPagado": "6185",
+    "metodoDePago": "Transferencia",
+    "fechaDeReserva": "2021-12-20",
+    "comprobanteDePago":"Descargar",
+    "comision":"500",
+    "estadoDelPago": "Pagado"
+  }
+]

@@ -1,0 +1,223 @@
+.header-partner-container-main{
+
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.header-partner-container-child{
+
+  
+  width: 200em;
+
+}
+
+.control-move-movil {
+  height: 20rem;
+
+  @screen laptop {
+    display: none;
+  }
+}
+
+.header-partner-general-container {
+  /* background-image: url("/header_partner/bistectIaBackgroundMovilLivianed.png"); */
+  background-size: cover;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: calc(44.7rem * var(--scale));
+  align-items: center;
+  padding-bottom: calc(6rem * var(--scale));
+  position: absolute;
+  margin-top: -20rem;
+
+  @screen laptop {
+    /* background-image: url("/assets/partner_ui1.png"); */
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    height: calc(55.2rem * var(--scale));
+    justify-content: center;
+    align-items: center;
+    padding-bottom: calc(6rem * var(--scale));
+    margin-top: 0rem;
+    position: static;
+  }
+}
+
+.header-general-container-1 {
+  display: flex;
+  margin-bottom: auto;
+  width: 100%;
+  justify-content: space-between;
+  padding-top: calc(0.5rem * var(--scale));
+
+  padding-right: calc(1.5rem * var(--scale));
+
+  @screen laptop {
+    display: flex;
+    margin-bottom: auto;
+    width: 100%;
+    justify-content: space-between;
+    padding-top: calc(4.2rem * var(--scale));
+    padding-left: calc(11.7rem * var(--scale));
+    padding-right: calc(11rem * var(--scale));
+  }
+}
+
+.header-general-image-left {
+  width: calc(20.4rem * var(--scale));
+  padding-top: calc(4.2rem * var(--scale));
+
+  @screen laptop {
+    width: calc(30.4rem * var(--scale));
+    padding-top: calc(4.2rem * var(--scale));
+  }
+}
+
+.header-general-right {
+  padding-top: calc(4rem * var(--scale));
+
+  @screen laptop {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: calc(2.1rem * var(--scale));
+  }
+}
+
+.header-general-text-1 {
+  font-size: calc(2.4rem * var(--scale));
+  text-align: right;
+  line-height: 1.2;
+  display: none;
+
+  @screen laptop {
+    font-size: calc(2.4rem * var(--scale));
+    text-align: right;
+    line-height: 1.2;
+  }
+}
+
+.header-general-text-2 {
+  font-size: calc(2.4rem * var(--scale));
+  font-weight: 700;
+  line-height: 1.2;
+  display: none;
+
+  @screen laptop {
+    display: block;
+    font-size: calc(2.4rem * var(--scale));
+    font-weight: 700;
+    line-height: 1.2;
+  }
+}
+
+.header-general-image-right-1 {
+  width: calc(13.8rem * var(--scale));
+  height: calc(13.8rem * var(--scale));
+  background-color: #252127;
+  display: none;
+  place-items: center;
+
+  border-radius: 50%;
+  object-fit: cover;
+
+  @screen laptop {
+    width: calc(13.8rem * var(--scale));
+    height: calc(13.8rem * var(--scale));
+    background-color: #252127;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+}
+
+.header-general-image-right-image-1 {
+  width: 72%;
+  height: auto;
+  margin-top: -0.5rem;
+
+  @screen laptop {
+    width: 72%;
+    height: auto;
+    margin-top: -0.5rem;
+  }
+}
+
+.header-general-image-right-2 {
+  width: calc(3.8rem * var(--scale));
+  height: calc(3.8rem * var(--scale));
+
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  object-fit: cover;
+
+  @screen laptop {
+    width: calc(13.8rem * var(--scale));
+    height: calc(13.8rem * var(--scale));
+    background-color: #252127;
+    display: none;
+    place-items: center;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+}
+
+.header-general-image-right-image-2 {
+  width: 72%;
+  height: auto;
+  margin-top: -0.5rem;
+
+  @screen laptop {
+    width: 72%;
+    height: auto;
+    margin-top: -0.5rem;
+  }
+}
+
+.header-partner-in-image-general {
+  display: flex;
+  flex-direction: column;
+
+  @screen laptop {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.header-general-container-2 {
+  display: none;
+
+  @screen laptop {
+    display: flex;
+    width: 79%;
+    margin-top: auto;
+    justify-content: space-between;
+  }
+}
+
+.text-header-bottom {
+  font-size: calc(1.8rem * var(--scale));
+  font-weight: 400;
+
+  @screen laptop {
+    font-size: calc(1.8rem * var(--scale));
+    font-weight: 400;
+  }
+}
+
+
+
+.containerrrr{
+
+  @screen laptop{
+    display: none;
+  }
+
+}

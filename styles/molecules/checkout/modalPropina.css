@@ -1,0 +1,30 @@
+.modal-own_box {
+    @apply !bg-[#2F2A32];
+  .p-dialog-header {
+    @apply !bg-[#2F2A32] ;
+  }
+  .p-dialog{
+    @apply !bg-[#2F2A32] ;
+  }
+  .p-dialog-content {
+    @apply !bg-[#2F2A32];
+  }
+  .p-dialog-header-icons {
+    @apply !bg-[#2F2A32] text-[#F0EFEB];
+  }
+}
+
+
+.box-own_{
+    @apply flex flex-col items-center gap-[1.5rem] ;
+    @screen laptop{
+        gap: calc(2.5rem * var(--scale));
+    }
+}
+
+.box-own_ h2{
+    @apply text-[2rem] text-[#E1D4C4] font-lato font-bold ;
+    @screen laptop{
+        font-size: calc(3rem * var(--scale));
+    }
+}

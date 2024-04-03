@@ -1,0 +1,38 @@
+stages:
+  - build_image
+  - deploy
+
+variables:
+  DOCKER_IMAGE_NAME: "sibaritta/sibaritta-frontend"
+  DOCKER_IMAGE_TAG: "latest"
+  CI_REGISTRY: "registry.gitlab.com"
+
+build_image:
+  stage: build_image
+  image: docker:latest
+  services:
+    - docker:dind
+  script:
+    - docker --version # Verificar la versión de Docker
+    - echo $CI_REGISTRY_USER
+    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
+    - echo -n "$ENV_FILE" > .env
+    - docker build --build-arg WWWGROUP='1000' -t $CI_REGISTRY/$DOCKER_IMAGE_NAME:$DOCKER_IMAGE_TAG  .
+    - docker push $CI_REGISTRY/$DOCKER_IMAGE_NAME:$DOCKER_IMAGE_TAG
+deploy:
+  stage: deploy
+  script:
+    - echo -n "$ENV_FILE" > .env
+    - apt-get update -qy
+    - apt-get install -y openssh-client
+    - mkdir -p /root/.ssh
+    - echo "$SSH_PRIVATE_KEY" > /root/.ssh/id_rsa  # Agregar la llave privada
+    - chmod 600 /root/.ssh/id_rsa  # Establecer los permisos adecuados
+    - scp -o StrictHostKeyChecking=no -i /root/.ssh/id_rsa ./docker-compose-production.yml $SSH_USER@$SSH_SERVER:/home/sibaritas-docker-web/
+    - scp -o StrictHostKeyChecking=no -i /root/.ssh/id_rsa ./.env $SSH_USER@$SSH_SERVER:/home/sibaritas-docker-web/
+    - ssh -o StrictHostKeyChecking=no -i /root/.ssh/id_rsa $SSH_USER@$SSH_SERVER 'cd /home/sibaritas-docker-web/ && docker compose -f docker-compose-production.yml pull && docker compose -f docker-compose-production.yml up -d --remove-orphans --force-recreate'
+
+  only:
+    - mvp
+
+

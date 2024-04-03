@@ -1,0 +1,136 @@
+.Header {
+  @apply h-[6.5rem] w-full pl-4 top-0 flex items-center fixed bg-transparent;
+  transition: background 0.8s ease;
+  z-index: 400;
+
+  &-Logo {
+    @apply hidden;
+    @screen laptop {
+      @apply flex;
+    }
+  }
+
+  &-Logo2 {
+    @screen laptop {
+      @apply hidden;
+    }
+  }
+
+  &-phone {
+    @apply h-[3.8rem] w-auto pl-[0.7rem] pr-[1.2rem] py-[1rem] !text-white right-32 font-semibold bg-primary text-[1.6rem] absolute flex items-center  gap-[0.8rem] rounded-l-full rounded-r-full;
+    z-index: 2;
+
+    &-thumb {
+      @apply bg-white w-[3rem] h-[3rem]  rounded-full flex items-center justify-center;
+      img {
+        @apply w-[50%] h-[50%] object-contain;
+      }
+    }
+
+    @screen laptop {
+      @apply hidden;
+    }
+  }
+
+  &-menuIcon {
+    @apply absolute z-[110];
+    right: 0;
+
+    &.isActive {
+      top: 1.3rem;
+      right: 0rem;
+    }
+
+    @screen laptop {
+      @apply hidden;
+    }
+  }
+
+  &-ctn {
+    @apply h-full w-full mx-auto;
+
+    @screen laptop {
+      width: 90% !important;
+      max-width: 170rem !important;
+    }
+  }
+
+  &.background-transparent {
+    @apply text-[#E1D4C4] ;
+    @screen laptop {
+      box-shadow: none;
+
+      .-ul > li {
+        @apply text-[#E1D4C4] font-lato font-medium;
+        @screen laptop {
+          font-size: calc(1.8rem * var(--scale));
+        }
+      }
+    }
+  }
+
+  &.background-white {
+    @apply bg-[#4D3452];
+    @screen laptop {
+      height: 100%;
+      @apply bg-[#4D3452];
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+      &::before {
+        opacity: 0;
+        transition: opacity 0.8s ease-in-out;
+      }
+
+      . {
+        height: calc(4rem * var(--scale));
+        transition: all 0.3s ease-in-out;
+      }
+    }
+  }
+  &.background-negro{
+    background: #252127;
+    box-shadow: -1px 10px 17px -7px rgba(0,0,0,0.75);
+    -webkit-box-shadow: -1px 10px 17px -7px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 10px 17px -7px rgba(0,0,0,0.75);
+
+  }
+  &-overlay {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    @apply fixed inset-0 w-full left-0 top-0 bg-black/40 pointer-events-none h-screen;
+    z-index: -1;
+    @screen laptop {
+      @apply hidden;
+    }
+
+    &.isActive {
+      opacity: 1;
+      @apply pointer-events-auto;
+    }
+  }
+
+  /**=======LAPTOP===============**/
+
+  @screen laptop {
+    @apply bg-transparent flex items-center !sticky rounded-none;
+    transition: background-color 0.25s ease;
+    left: 0;
+    padding:50px 0;
+    transform: translateX(0);
+    top: 0;
+    width: 100%;
+    .logoCont {
+      img{
+        width: 250px!important;
+      }
+    }
+    &-ctn {
+      height: auto;
+    }
+  }
+}
+.-ul-li.profile {
+  @screen laptop {
+    @apply  !text-[#4D3452];
+  }
+}

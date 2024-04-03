@@ -1,0 +1,96 @@
+.box_sldier_sibarita {
+  @apply w-full h-[99.9vh] bg-[url("/slider/slider-home.jpg")] relative bg-cover bg-center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sldier-sibarita-da-fusioned{
+
+  display:none;
+
+  @screen tablet{
+    display:none;
+  }
+
+  
+
+  @screen laptop{
+    position: absolute;
+    display:block;
+  top: calc(-26vw * var(--scale));
+  left: calc(-48rem * var(--scale));
+  width: calc(125rem * var(--scale));
+  z-index: 100;
+  }
+
+}
+
+.sldier-sibarita-da {
+  @apply rotate-[-35deg] left-[-7rem]  top-[7rem] absolute;
+  width: 70%;
+  display: none;
+  
+  @screen tablet{
+    @apply rotate-[-35deg] w-[40%]  left-[-18rem];
+    
+    
+  }
+  @screen laptop {
+    @apply rotate-[-11deg] ;
+    top: calc(1vw * var(--scale));
+    left: calc(2vw * var(--scale));
+    display:block;
+    width: calc(56rem * var(--scale));
+    display: none;
+    /* width:30%; */
+  }
+}
+
+.gastro-sibarita-logo {
+  @apply w-[40%];
+  
+  @screen tablet{
+    @apply w-[35%] ;
+  }
+  @screen laptop {
+    width: calc(35rem * var(--scale));
+    height: calc(35rem * var(--scale));
+    display: none;
+    
+  }
+}
+
+.sldier_sibarita_info- {
+  @apply absolute  z-[10] top-[24rem]  flex flex-col  items-center w-[80%] h-auto;
+   
+  @screen tablet{
+    @apply flex-row  ;
+  }
+  @screen laptop {
+    width:100%;
+    display:flex;           
+    justify-content:center;
+    align-items:center;
+    background-color:aqua;
+  }
+
+  & h2 {
+    @apply text-[#E1D4C4] text-center text-[1.7rem] font-lato font-medium;
+    text-align: left;
+    margin-left: 4rem;
+    @screen tablet{
+        @apply w-[50%]  ;
+        font-size: calc(2.3rem * var(--scale))
+    }
+    @screen laptop {
+      @apply font-medium;
+      margin-bottom: calc(-50rem * var(--scale));
+      margin-right: calc(-17rem * var(--scale));
+      font-size: calc(4rem * var(--scale));
+      width: calc(53rem * var(--scale));
+      height: calc(27rem * var(--scale));
+      line-height: 1.2;
+    }
+  }
+}

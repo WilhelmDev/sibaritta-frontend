@@ -1,0 +1,77 @@
+
+.experiencie_user{
+    .p-dialog-header {
+        @apply  bg-[#2F2A32];
+    }
+    .p-dialog-content {
+      @apply  !bg-[#2F2A32] ;
+    }
+    .p-dialog-header-icons {
+        @apply  text-[#F0EFEB] ;
+      }
+  }
+  
+
+  .experiencie_user_container{
+    @apply flex flex-col items-center justify-center p-[3rem] gap-[1.5rem] ;
+  }
+
+  .experiencie_user_fields{
+    @apply flex flex-col items-center gap-[1.5rem] ;
+    @screen tablet{
+        @apply w-full
+    }
+  }
+
+
+  .experiencie_user_p{
+    @apply text-[#F89C53] font-lato text-[2rem]  font-medium leading-[2.4rem]
+    text-left w-full;
+  } 
+
+  .experiencie_user_area{
+    @apply p-[1.5rem] w-[26rem] text-[1.6rem] rounded-[1rem] bg-[#37323A] text-[#E1D4C4];
+    @screen tablet{
+        @apply w-full
+    }
+  }
+
+  .experiencie_user_stars{
+    @apply flex flex-col justify-around items-center w-full h-[7.3rem];
+    @screen tablet{
+        @apply flex-row justify-between
+    }
+  }
+  .experiencie_user_stars_p{
+    @apply font-lato text-[1.8rem] font-bold leading-[2.4rem] text-[#E1D4C4];
+  }
+  
+
+  /* .p-rating-item svg{
+    @apply !text-[#F89C53] w-[2.4rem] h-[2.4rem] ;
+    @screen laptop{
+      width: calc(2.5rem * var(--scale));
+      height: calc(2.5rem * var(--scale));
+    }
+  } */
+
+
+  .experiencie_user_btns{
+    @apply flex  gap-[1.5rem] w-full justify-center ;
+  }
+
+  .experiencie_user_btns_one{
+    @apply border border-[#E1D4C4] h-[4.5rem] rounded-[1rem] w-[12.5rem]
+    text-[1.6rem] font-lato font-bold leading-3 text-[#E1D4C4];
+    @screen tablet{
+        @apply w-full
+    }
+  }
+
+  .experiencie_user_btns_two{
+    @apply bg-[#E1D4C4]  h-[4.5rem] rounded-[1rem] w-[12.5rem]
+    text-[1.6rem] font-lato font-bold leading-3 text-[#4D3452];
+    @screen tablet{
+        @apply w-full
+    }
+  }

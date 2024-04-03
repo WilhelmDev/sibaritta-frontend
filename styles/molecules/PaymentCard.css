@@ -1,0 +1,82 @@
+.paymentCard {
+  @apply bg-[#5b4d63b0] rounded-[1rem] p-[2rem];
+
+  @screen laptop {
+    padding: calc(2rem * var(--scale));
+  }
+
+  &-card {
+    @apply bg-gradient-to-r from-cyan-500 to-blue-500 rounded-[1.5rem] h-[15.4rem] p-[2rem];
+
+    @screen laptop {
+      height: calc(18.5rem * var(--scale));
+      width: calc(33.5rem * var(--scale));
+    }
+
+    &-name {
+      @apply font-lato font-normal text-[1.4rem] leading-[1.68rem] tracking-[0.3rem] text-[#E1D4C4];
+
+      @screen laptop {
+        font-size: calc(1.5rem * var(--scale));
+        line-height: calc(1.68rem * var(--scale));
+      }
+    }
+
+    &-number {
+      @apply font-lato font-normal text-[1.4rem] leading-[1.68rem]  text-[#E1D4C4] mt-[0.6rem] flex items-center gap-[1.5rem];
+
+      span {
+        @apply relative text-[2rem] top-[0.4rem];
+
+        @screen laptop {
+          font-size: calc(2.2rem * var(--scale));
+          top: calc(0.5rem * var(--scale));
+        }
+
+        &::after {
+          content: '-';
+          position: absolute;
+          right: -1.1rem;
+          top: -0.6rem;
+        }
+      }
+
+      @screen laptop {
+        font-size: calc(1.5rem * var(--scale));
+        line-height: calc(1.68rem * var(--scale));
+        margin-top: calc(0.75rem * var(--scale));
+      }
+    }
+  }
+
+  &-options {
+    @apply mt-[2.5rem] flex items-center;
+
+    p {
+      @apply font-lato font-normal text-[1.4rem] leading-[1.68rem] tracking-[-0.03rem] text-[#E1D4C4] w-[58%];
+
+      @screen laptop {
+        font-size: calc(1.5rem * var(--scale));
+        line-height: calc(1.78rem * var(--scale));
+      }
+    }
+
+    &-btns {
+      @apply w-[42%] flex justify-end items-center gap-[2.5rem];
+
+      @screen laptop {
+        gap: calc(2.5rem * var(--scale));
+      }
+
+      &-delete {
+        @apply w-[4.4rem] h-[4.4rem] rounded-[1rem] bg-[#F0EFEB] flex items-center justify-center text-[1.8rem];
+
+        @screen laptop {
+          height: calc(4.4rem * var(--scale));
+          width: calc(4.4rem * var(--scale));
+          font-size: calc(1.8rem * var(--scale));
+        }
+      }
+    }
+  }
+}

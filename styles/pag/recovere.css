@@ -1,0 +1,67 @@
+.recovery {
+  @apply flex justify-center items-center w-full bg-[#252127] pt-[15rem] p-[3rem];
+  @screen tablet {
+    @apply h-screen;
+  }
+  @screen laptop {
+    @apply mt-[-9rem];
+    padding-bottom: calc(10rem * var(--scale));
+  }
+}
+
+.bxo-image {
+  @apply w-[55%] h-[8rem];
+  @screen laptop {
+    height: calc(9rem * var(--scale));
+  }
+}
+
+.recovery_box {
+  @apply bg-[#2F2A32] rounded-[1rem]  h-auto w-full flex flex-col   items-center justify-center gap-[2rem] py-[2rem];
+  @screen tablet {
+    @apply w-[60%];
+  }
+  @screen laptop {
+    @apply w-auto;
+    gap: calc(3rem * var(--scale));
+    padding-bottom: calc(3rem * var(--scale));
+    padding-top: calc(3rem * var(--scale));
+    padding-left: calc(3rem * var(--scale));
+
+    padding-right: calc(3rem * var(--scale));
+  }
+}
+.recovery_box h2 {
+  @apply text-[#F89C53] text-[2.3rem] font-lato font-bold;
+  @screen laptop {
+    font-size: calc(3rem * var(--scale));
+  }
+}
+
+.recovery_form {
+  @apply flex flex-col gap-[2rem] w-full p-[1.5rem];
+  @screen laptop {
+    width: calc(50rem * var(--scale));
+    heigth: calc(60rem * var(--scale));
+    gap: calc(3rem * var(--scale));
+  }
+}
+
+.recovery_inputs {
+  @apply flex flex-col gap-[2rem];
+}
+
+.recovery_inputs label {
+  @apply text-[#F89C53] text-[1.6rem] font-lato;
+}
+.recovery_inputs input {
+  @apply h-[3.5rem] rounded-[1rem] bg-[#252127] text-[#F89C53];
+}
+
+.recovery_btn {
+  @apply w-full bg-[#252127] h-[3.5rem] rounded-[1rem] text-[#DDD0C1] text-[1.7rem];
+  @screen laptop {
+    heigth: calc(4rem * var(--scale));
+    gap: calc(2rem * var(--scale));
+  }
+}

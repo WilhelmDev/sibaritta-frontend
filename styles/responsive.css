@@ -1,0 +1,1057 @@
+
+
+.card_datos_header_conten {
+  path{
+    fill: var(--naranja);
+  }
+}
+
+.Home_main__sb_YB{
+  overflow-x: hidden;
+}
+.p-dialog-mask{
+  background: #000;
+}
+.homeBusiness_carrusel_card_conten img {
+  @apply w-auto h-auto;
+  /* @screen laptop{
+    width: calc(20rem * var(--scale));
+  } */
+}
+.box_bussines-title-description{
+  justify-content: center;
+  h2{
+    line-height: normal;
+  }
+}
+.box-texto-agenda-sibaritta-business{
+    margin-bottom: 45px;
+}
+
+.change{
+  .openMenu{
+   opacity: 0;
+  }
+  .closeMenu{
+    opacity: 1!important;
+  }
+}
+.box-mainsibaritta_business{
+  width: 80%;
+  margin: auto;
+}
+.d-none{
+  opacity: 0;
+}
+.openMenu{
+  transition: all .5s;
+}
+.closeMenu{
+  position: relative;
+  left: -12px;
+  transition: all .5s;
+}
+.contenedorExperiencia{
+  padding-top: 100px;
+}
+.mba-5{
+  margin-bottom: 20px;
+}
+.icon-scroll{
+  margin: auto;
+  bottom: -36%;
+  left: 0;
+  right: 0;
+}
+h2{
+  @apply text-[#E1D4C4] font-lato  font-semibold leading-normal;
+  font-weight: 600!important;
+}
+h3{
+  font-size: 1.5rem!important;
+  line-height: normal;
+}
+
+.homeSocial{
+  padding-top: 80px;
+}
+.card-impar{
+  padding-bottom: 5px;
+}
+.homeSocial_info-icons{
+  path{
+    fill: var(--crema);
+  }
+}
+.homeFooter_info{
+  margin: 0;
+}
+
+.contenedorExperiencia  {
+  .card_titulo{
+    h2{
+      display: flex;
+      justify-content: center;
+      margin-left: 12px;
+      align-items: center;
+      svg{
+        margin: 0 15px;
+      }
+    }
+  }
+}
+.pl-0{
+  padding-left: 0;
+}
+.pr-0{
+  padding-right: 0;
+}
+.alertasGlobal{
+  color: var(--naranja)!important;
+  margin: -10px 0;
+  font-weight: 500!important;
+  margin-bottom: 0px;
+}
+.pt-1{
+  padding-top: 10px;
+}
+.bold-400{
+      font-weight: 400!important;
+}
+.socio-register-message-box{
+  svg{
+    font-size: 25px;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 25px;
+  }
+  path{
+    fill:#f89c53;
+  }
+}
+.p-dialog-header{
+  position: relative;
+  .p-dialog-header-icon{
+    position: absolute;
+    /* top: -15px;
+    right: -5px; */
+    top: 10px;
+    right: 15px;
+    svg{
+      width: 25px;
+      height: 40px;
+
+    }
+  }
+}
+.container-socials{
+  button{
+    line-height: normal;
+    color: #252127;
+  }
+  img{
+    margin-bottom: 10px;
+  }
+}
+.modalsession {
+  padding-top: 60px!important;
+}
+.add_user_increment_less_{
+  background: var(--crema)!important;
+  path{
+    fill:var(--crema);
+  }
+}
+.plusSugerencia{
+  path{
+    fill:#ccc;
+  }
+}
+.detail_pick_one_img{
+  path{
+    fill: var(--naranja );
+  }
+}
+.card_restricciones_info-{
+  margin-right: 25px;
+}
+body{
+  @apply  font-lato font-medium;
+}
+.detail_card_restricciones{
+  justify-content: space-between;
+}
+.datails_page{
+  padding-bottom: 150px;
+}
+.profile-card{
+  opacity:0;
+}
+.bonesReservar{
+  display: flex;
+  button{
+    margin: 0 5px;
+    &:nth-child(1){
+      margin-left: 0;
+    }
+    &:nth-child(2){
+      margin-right: 0;
+    }
+  }
+}
+.details_location_gps {
+  iframe{
+    height: 95%;
+  }
+}
+.internaExperiencia{
+  &__card{
+    display: flex;
+    justify-content: space-between;
+    justify-content: space-between;
+    margin:0;
+    justify-content: space-between;
+  }
+}
+.checkoutContenedor{
+  padding-top: 80px;
+  padding-bottom: 80px;
+  h3 {
+    @apply text-[#E1D4C4] font-lato font-extrabold;
+
+  }
+}
+.logosibarita-foter-logo  {
+  img{
+    width: 250px;
+  }
+}
+.homeFooter_info{
+  padding-top: 70px;
+  padding-bottom: 50px;
+}
+.homeSocial_info-icons {
+  svg{
+    width: 25px;
+  }
+}
+.homeBanner{
+  position: relative;
+  &::before{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    content: "";
+    background: linear-gradient(0deg, #252127 0%, rgba(37, 33, 39, 0) 30%);
+
+  }
+}
+.graciasGeneral{
+  &__card{
+      padding-top: 150px;
+      padding-bottom: 200px;
+      .box-content-register-message {
+        margin-bottom: 60px;
+      }
+      p{
+        font-size: 24px;
+        line-height: normal;
+      }
+  }
+}
+.suggestion_time{
+  text-align: right;
+}
+.footer-checkout{
+  p{
+    line-height: inherit;
+  }
+}
+.footer-checkout{
+  margin-top: 12px;
+}
+.graciasCard{
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+.reserva-exitosaQr{
+  p{
+    line-height: normal;
+  }
+  h6{
+    line-height: normal;
+  }
+}
+
+.iniciarReserva{
+  position: fixed;
+  width: 90%;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  right: 0;
+  .modalSession-buttons{
+    border-radius: 10px 10px 0px 0px;
+    width: 100%;
+    .detail_pick_one{
+      justify-content: center;
+    }
+  }
+}
+@media (max-width: 575.98px) {
+  .reserva-exitosaQr{
+    margin-bottom: 20px;
+  }
+  .graciasCard{
+    padding-bottom: 20px;
+    .space-x-4{
+      display: block;
+    }
+    .reserva_exitosa-container{
+      width: 100%;
+      padding-top: 25px;
+      margin: 0;
+    }
+    .reservas_card {
+      width: 100%;
+      margin: 0;
+    }
+  }
+  .order_datos  {
+    justify-content: space-between;
+
+    .order_datos_price{
+      justify-content:flex-end;
+    }
+  }
+  .cheackout_details_pay{
+    height: auto;
+  }
+  .cheackout_details_pay{
+    margin: 14px 0 0 0;
+  }
+  .checkout_time {
+    margin-bottom: 25px;
+    h2{
+      p{
+        text-align: right;
+      }
+    }
+  }
+  .checkoutContenedor{
+    padding-top: 125px!important;
+    h3{
+          margin-top: 25px;
+    }
+    .space-x-4{
+      display: block;
+      article{
+        width: auto;
+      }
+    }
+  }
+  .homeSocial {
+    padding-top: 25px;
+  }
+  .details_card_experenci, .details_card_restaurant, .details_location_gps {
+    width: 100%!important;
+  }
+  .reservations_container_btn{
+    margin-top: 0;
+    button{
+      display: inline-block;
+      width: 46%;
+      margin: 0 5px;
+      font-size: 14px;
+    }
+  }
+  .add_user_img-{
+    svg{
+      width: 38px;
+    }
+  }
+  .cardMoreSugerencia{
+    width: 60%;
+    margin: auto;
+  }
+  .cardsito{
+    padding-bottom: 0;
+  }
+  .cardsito_info {
+    margin-top: 140px;
+    gap: 1rem
+  }
+  .suggestion_time {
+    p{
+        font-size: 18px;
+    }
+  }
+  .reserva_modal_footer{
+    h3{
+      font-size: 14px!important;
+    }
+  }
+  .details__btns {
+    gap: 0.2rem;
+  }
+  .bonesReservar{
+    display: flex;
+    margin-bottom: 10px;
+    button{
+      margin: 5px;
+      &:nth-child(1){
+        margin-left: 0;
+      }
+      &:nth-child(2){
+        margin-right: 0;
+      }
+    }
+  }
+  .datails_page {
+    padding-bottom: 0px!important;
+  }
+  .datails_locaiton_address {
+    width: 100%!important;
+  }
+  .detail_card_restricciones{
+    display: block;
+    &__list{
+      margin-right: 0px;
+      h4{
+        margin-bottom: -0;
+      }
+    }
+
+  }
+  .datails_duration_one{
+    h5{
+      font-size: 20px;
+    }
+  }
+  .details_page_title{
+    h2{
+      text-align: left;
+    }
+  }
+  .modalSession-buttons {
+    padding: 13px 15px;
+    .buttons-icon {
+      font-size: 2.5rem;
+    }
+    svg{
+      width: 20px;
+    }
+    .option {
+      span {
+        font-size: 19px;
+      }
+    }
+  }
+
+
+  h2{
+    text-align: center;
+    width: 100%;
+  }
+  h3 {
+      font-size: 1.9rem!important;
+  }
+  .homeSocial_info-icons {
+    svg{
+      width: 25px;
+    }
+  }
+  .logosibarita-foter-logo{
+    width: 76%;
+  }
+  .homeFooter_info{
+    padding: 0;
+  }
+  .home_footer_copy{
+    padding-top: 5rem;
+    padding-bottom: 3rem;
+
+  }
+  .home_footer_copy_p{
+    font-size: 16px;
+    font-weight: 400;
+  }
+  .homeFooter_info_datos_p{
+    font-size: 16px;
+    font-weight: 400;
+  }
+  .card_titulo  {
+    h2{
+      font-size: 2.3rem!important;
+    }
+  }
+  .contenedorExperiencia  {
+    .card_titulo{
+      h2{
+        display: flex;
+        justify-content: center;
+        margin-left: 12px;
+        align-items: center;
+        svg{
+          margin: 0 15px;
+        }
+      }
+    }
+  }
+  .homeFooter_info_datos{
+    width: 100%;
+  }
+  .home_footer_copy{
+    justify-content: center;
+  }
+  .homeSocial_info_h3{
+    font-size: 18px;
+    width: 100%;
+  }
+
+  .card_titulo{
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+    gap: initial;
+    margin-bottom: 25px;
+  }
+  .HomeGallery-prev{
+    left: 35%;
+    bottom: 10%;
+    display: none;
+  }
+  .HomeGallery-next{
+    bottom: 10%;
+    right: 35%;
+    display: none;
+
+  }
+  .homeBusiness_carrusel_card_conten{
+    width: 100%;
+    height: 110px;
+  }
+  .gastronomi-two{
+    display: none!important;
+  }
+  .card_datos{
+    height: 295px;
+  }
+  .card_datos_footer_icon{
+    display: none;
+  }
+  .card-inters{
+    height: auto;
+    border:0;
+  }
+  .card-inters-cont{
+    height: 70%;
+  }
+  .card-inters-info{
+    height: auto;
+    padding-top: 0;
+  }
+  .container-general{
+    padding: 20px;
+  }
+  .Header{
+    height: auto;
+    padding: 10px 0 0 20px;
+  }
+  .Header-menuIcon{
+    top: 0;
+  }
+}
+.modalsession{
+  p{
+    .span{
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 21px;
+      letter-spacing: 0em;
+      text-align: center;
+      color: #252127;
+      display: block;
+      margin-top: 11px;
+    }
+  }
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+  h2{
+    text-align: center;
+    width: 100%;
+  }
+  h3 {
+      font-size: 1.9rem!important;
+  }
+  .homeSocial_info-icons {
+    svg{
+      width: 25px;
+    }
+  }
+  .logosibarita-foter-logo{
+    width: 76%;
+  }
+  .homeFooter_info{
+    padding: 0;
+  }
+  .home_footer_copy{
+    padding-top: 5rem;
+    padding-bottom: 3rem;
+
+  }
+  .home_footer_copy_p{
+    font-size: 16px;
+    font-weight: 400;
+  }
+  .homeFooter_info_datos_p{
+    font-size: 16px;
+    font-weight: 400;
+  }
+  .card_titulo  {
+    h2{
+      font-size: 2.3rem!important;
+    }
+  }
+  .contenedorExperiencia  {
+    .card_titulo{
+      h2{
+        display: flex;
+        justify-content: center;
+        margin-left: 12px;
+        align-items: center;
+        svg{
+          margin: 0 15px;
+        }
+      }
+    }
+  }
+  .homeFooter_info_datos{
+    width: 100%;
+  }
+  .home_footer_copy{
+    justify-content: center;
+  }
+  .homeSocial_info_h3{
+    font-size: 18px;
+    width: 100%;
+  }
+
+  .card_titulo{
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+    gap: initial;
+    margin-bottom: 25px;
+  }
+  .HomeGallery-prev{
+    left: 35%;
+    bottom: 10%;
+    display: none;
+  }
+  .HomeGallery-next{
+    bottom: 10%;
+    right: 35%;
+    display: none;
+
+  }
+  .homeBusiness_carrusel_card_conten{
+    width: 100%;
+  }
+  .gastronomi-two{
+    display: none!important;
+  }
+  .card_datos{
+    height: 295px;
+  }
+  .card_datos_footer_icon{
+    display: none;
+  }
+  .card-inters{
+    height: auto;
+    border:0;
+  }
+  .card-inters-cont{
+    height: 70%;
+  }
+  .card-inters-info{
+    height: auto;
+    padding-top: 0;
+  }
+  .container-general{
+    padding: 20px;
+  }
+  .Header{
+    height: auto;
+    padding: 10px 0 0 20px;
+  }
+  .Header-menuIcon{
+    top: 0;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  h2{
+    text-align: center;
+    width: 100%;
+  }
+  h3 {
+      font-size: 1.9rem!important;
+  }
+  .homeSocial_info-icons {
+    svg{
+      width: 25px;
+    }
+  }
+  .logosibarita-foter-logo{
+    width: 76%;
+  }
+  .homeFooter_info{
+    padding: 0;
+  }
+  .home_footer_copy{
+    padding-top: 5rem;
+    padding-bottom: 3rem;
+
+  }
+  .home_footer_copy_p{
+    font-size: 16px;
+    font-weight: 400;
+  }
+  .homeFooter_info_datos_p{
+    font-size: 16px;
+    font-weight: 400;
+  }
+  .card_titulo  {
+    h2{
+      font-size: 2.3rem!important;
+    }
+  }
+  .contenedorExperiencia  {
+    .card_titulo{
+      h2{
+        display: flex;
+        justify-content: center;
+        margin-left: 12px;
+        align-items: center;
+        svg{
+          margin: 0 15px;
+        }
+      }
+    }
+  }
+  .homeFooter_info_datos{
+    width: 100%;
+  }
+  .home_footer_copy{
+    justify-content: center;
+  }
+  .homeSocial_info_h3{
+    font-size: 18px;
+    width: 100%;
+  }
+
+  .card_titulo{
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+    gap: initial;
+    margin-bottom: 25px;
+  }
+  .HomeGallery-prev{
+    left: 35%;
+    bottom: 10%;
+    display: none;
+  }
+  .HomeGallery-next{
+    bottom: 10%;
+    right: 35%;
+    display: none;
+
+  }
+  .homeBusiness_carrusel_card_conten{
+    width: 100%;
+  }
+  .gastronomi-two{
+    display: none!important;
+  }
+  .card_datos{
+    height: 295px;
+  }
+  .card_datos_footer_icon{
+    display: none;
+  }
+  .card-inters{
+    height: auto;
+    border:0;
+  }
+  .card-inters-cont{
+    height: 70%;
+  }
+  .card-inters-info{
+    height: auto;
+    padding-top: 0;
+  }
+  .container-general{
+    padding: 20px;
+  }
+  .Header{
+    height: auto;
+    padding: 10px 0 0 20px;
+  }
+  .Header-menuIcon{
+    top: 0;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .homeFooter_info{
+    a{
+      font-size: 14px!important;
+    }
+    p{
+      font-size: 14px!important;
+    }
+  }
+  .HomeGallery-prev, .HomeGallery-next{
+    top: 42%;
+  }
+  .homeBusiness_carrusel_card_conten img {
+    width: 100px;
+  }
+
+  .container-general {
+      width: 80%;
+  }
+  h3{
+    font-size: 1.6rem!important;
+    line-height: normal;
+  }
+  .Header{
+    height: 95px!important;
+  }
+
+}
+
+@media (min-width: 1200px) and (max-width: 1450px){
+  .reserva-exitosaQr{
+    height: auto;
+    margin-top: 25px;
+    margin-bottom: 5px;
+  }
+  .reserva_exitosa-container{
+    .w-full{
+      height: auto;
+      padding: 10px 0;
+      gap: 1.2rem;
+    }
+  }
+  .code-reserva-exitosa-h2{
+    font-size: 16px!important;
+  }
+  .checkoutContenedor {
+      padding-top: 25px;
+      padding-bottom: 50px;
+  }
+  .suggestion_time{
+    p{
+      font-size: 16px;
+    }
+  }
+  .details_calendar{
+    .details_btns{
+      gap:0;
+
+    }
+
+    h6{
+      font-weight: 400;
+      font-size: 14px;
+    }
+  }
+  .title-modalidate  {
+      gap: 0;
+
+  }
+  .checkout_main {
+      padding-top: 75px;
+  }
+  .modalsession{
+    padding-left: 0px!important;
+    padding-right: 0px!important;
+
+    .p-dialog-content{
+      overflow: hidden;
+      padding: 0 30px!important;
+      padding-top: 5px!important;
+    }
+  }
+  .rdp-tbody{
+    button{
+      font-size: 15px!important;
+    }
+  }
+  .title_update_add_invita---{
+    margin-bottom: 10px;
+  }
+  .details_btn_hora{
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .box-counter-_max- {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    span{
+      font-size: 17px;
+    }
+    i{
+      font-size: 10px;
+    }
+  }
+  .card_info_btn{
+    span{
+      font-size: 14px;
+    }
+  }
+  .box-counter-_min-{
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    span{
+      font-size: 17px;
+    }
+    svg{
+      width: 20px;
+    }
+  }
+  .reserva_modal_btn_hora {
+    .btn_two{
+      font-size: 14px;
+      padding: 8px 12px;
+      width: auto;
+      height: auto;
+    }
+
+  }
+  .internaExperiencia{
+    &__card{
+      gap: 0!important;
+
+    }
+
+    .datils_page_content  {
+      padding-right: 25px;
+    }
+
+  }
+
+  .partnet_modal_create {
+    h3{
+          font-size: 1rem!important;
+    }
+  }
+  .internaExperiencia{
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+  .datails_page {
+    padding-bottom: 0;
+  }
+  .rdp-cell{
+    height: 12px;
+  }
+
+  .fecha_calendar_react {
+    height: auto!important;
+    margin-bottom: 0;
+    .rdp-head_cell{
+      font-size: 12px;
+      @screen laptop {
+        font-size: calc(1.6rem  * var(--scale)) !important;
+      }
+    }
+    .rdp-day{
+      height: 30px!important;
+      max-width: 30px!important;
+    }
+    .rdp-month{
+      padding: calc(1.5rem * var(--scale)) !important;
+    }
+  }
+
+  .bonesReservar{
+    display: flex;
+    button{
+      margin: 0 5px;
+      &:nth-child(1){
+        margin-left: 0;
+      }
+      &:nth-child(2){
+        margin-right: 0;
+      }
+    }
+  }
+  .box_social_details_data{
+    margin-top: 35px;
+  }
+  .detail_card_restricciones {
+    margin-top: 20px;
+    margin-bottom: 15px;
+  }
+  .datails_page_container {
+    padding-bottom: 100px;
+  }
+  .homeFooter_info{
+    a{
+      font-size: 14px!important;
+    }
+    p{
+      font-size: 14px!important;
+    }
+  }
+  .HomeGallery-prev, .HomeGallery-next{
+    top: 42%;
+  }
+  .homeBusiness_carrusel_card_conten img {
+    width: 100px;
+  }
+
+  .container-general {
+      width: 80%;
+  }
+  h3{
+    font-size: 1.6rem!important;
+    line-height: normal;
+  }
+  .Header{
+    height: 95px!important;
+  }
+}
+@media (min-width: 1451px) {
+
+  .modalsession {
+    padding-top: 50px;
+  }
+  .suggestion_time{
+    p{
+      font-size: 20px;
+    }
+  }
+  .internaExperiencia{
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+  .title_update_add_invita---{
+    margin-top: 0;
+  }
+  .datils_page_content  {
+    padding-right: 25px;
+  }
+  .title-modalidate{
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}

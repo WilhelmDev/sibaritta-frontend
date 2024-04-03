@@ -1,0 +1,19 @@
+.modal-auto-play {
+    @apply shadow-none ;
+  .p-dialog-header {
+    @apply !bg-transparent ;
+  }
+
+  .p-dialog-content {
+    @apply grid place-items-center !bg-transparent gap-[3rem];
+  }
+
+  .p-dialog-header-icons {
+    @apply text-[#F9AA5F] py-[.5rem];
+  }
+
+  .p-icon{
+    @apply w-[2rem] h-[2rem];
+  }
+
+}

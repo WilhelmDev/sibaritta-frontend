@@ -1,0 +1,61 @@
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.image_container {
+  @apply flex flex-col items-center w-full gap-[4rem]  absolute 
+  top-[-15rem]  self-start items-end;
+  @screen tablet {
+    @apply flex-row gap-[2rem];
+    font-weight: lighter;
+
+    position: absolute;
+  }
+
+  @screen laptop {
+    @apply flex-row gap-[2rem] self-start items-end;
+    font-weight: lighter;
+    position: absolute;
+    left: calc(-25rem * var(--scale));
+    top: calc(-28rem * var(--scale));
+  }
+}
+
+.image_container img {
+  @apply rotate-[45deg] w-[40rem]  h-[40rem];
+  @screen tablet {
+    @apply rotate-0;
+  }
+  @screen laptop {
+    @apply rotate-0;
+    width: calc(73rem * var(--scale));
+    height: calc(73rem * var(--scale));
+  }
+}
+
+.text {
+  font-size: 1.6rem;
+  padding-bottom: 5rem;
+  line-height: 2rem;
+  @screen laptop {
+    font-size: calc(3.2rem * var(--scale));
+    line-height: calc(4rem * var(--scale));
+  }
+}
+
+/* @media (width < 1000px) {
+  .image_container {
+   
+    left: -200px;
+    top: -180px;
+  }
+  .text {
+    font-size: 1.6rem;
+    line-height: 2rem;
+  }
+} */

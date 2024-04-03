@@ -1,0 +1,40 @@
+.partners {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  position: relative;
+}
+.partners__title {
+  z-index: 0;
+  font-size: 2rem;
+  @screen laptop {
+    font-size: calc(4rem * var(--scale));
+
+  }
+}
+
+.swiper_partners {
+  width: 80%;
+  padding-right: 30px;
+  border: 1px solid transparent;
+}
+
+.item_card {
+  border: 1px solid var(--c-2);
+  border-radius: 1rem;
+  padding: 1rem;
+  width: 200px;
+  height: 110px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-button-prev {
+  background: red;
+  color: red;
+  transform: translateX(-200px);
+}

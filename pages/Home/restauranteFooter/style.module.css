@@ -1,0 +1,21 @@
+.container {
+  @apply flex items-center justify-center text-[1.6rem];
+  right: 0;
+  bottom: 0;
+  display: flex;
+  position: fixed;
+  z-index: 1;
+  padding-bottom: 2rem;
+  padding-right: 15rem;
+  gap: 1rem;
+  text-decoration: none;
+  @screen laptop {
+    @apply  flex items-center justify-center;
+    font-size: calc(1.6rem *  var(--scale));
+  }
+ 
+}
+
+.flecha {
+  font-size:3rem;
+}

@@ -1,0 +1,14 @@
+.logoCont {
+  /* @apply cursor-pointer absolute top-[0.6rem] left-[2.4rem]; */
+  @apply cursor-pointer;
+  z-index: 100;
+  height: 6.06rem;
+  width: 17.24rem;
+
+  @screen laptop {
+    width: calc(30.4rem * var(--scale));
+    height: calc(8.52rem * var(--scale));
+    /* left: calc(19.5rem * var(--scale));
+    top: calc(0rem * var(--scale)); */
+  }
+}

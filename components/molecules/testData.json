@@ -1,0 +1,153 @@
+{
+    "address": "Direccion de la Mixología Cool",
+    "aditionals": "Sin adicionales",
+    "age": "Todos",
+    "branch_id": null,
+    "calification_number": 0,
+    "calification_ranking": 0,
+    "cancelation": "2",
+    "checkin": "10pm",
+    "description": "Experiencia de Mixología Cool",
+    "dress_code": "Formal",
+    "duration": "2",
+    "events": [
+      {
+        "date": "2024-03-01T05:00:00.000Z",
+        "fk_experience_id": 2,
+        "hour": 9,
+        "id": 17,
+        "minute": 30,
+        "price": "100",
+        "seats": 100,
+        "status": "active",
+        "type": "presencial"
+      },
+      {
+        "date": "2024-03-02T05:00:00.000Z",
+        "fk_experience_id": 2,
+        "hour": 11,
+        "id": 18,
+        "minute": 30,
+        "price": "100",
+        "seats": 97,
+        "status": "active",
+        "type": "pickup"
+      },
+      {
+        "date": "2024-03-05T05:00:00.000Z",
+        "fk_experience_id": 2,
+        "hour": 13,
+        "id": 19,
+        "minute": 30,
+        "price": "100",
+        "seats": 100,
+        "status": "active",
+        "type": "presencial"
+      },
+      {
+        "date": "2024-03-10T05:00:00.000Z",
+        "fk_experience_id": 2,
+        "hour": 15,
+        "id": 20,
+        "minute": 30,
+        "price": "100",
+        "seats": 100,
+        "status": "active",
+        "type": "pickup"
+      },
+      {
+        "date": "2024-03-20T05:00:00.000Z",
+        "fk_experience_id": 2,
+        "hour": 19,
+        "id": 21,
+        "minute": 30,
+        "price": "100",
+        "seats": 100,
+        "status": "active",
+        "type": "presencial"
+      },
+      {
+        "date": "2024-03-25T05:00:00.000Z",
+        "fk_experience_id": 2,
+        "hour": 21,
+        "id": 22,
+        "minute": 30,
+        "price": "100",
+        "seats": 100,
+        "status": "active",
+        "type": "pickup"
+      },
+      {
+        "date": "2024-03-30T05:00:00.000Z",
+        "fk_experience_id": 2,
+        "hour": 23,
+        "id": 23,
+        "minute": 30,
+        "price": "100",
+        "seats": 83,
+        "status": "active",
+        "type": "presencial"
+      },
+      {
+        "date": "2024-03-30T05:00:00.000Z",
+        "fk_experience_id": 2,
+        "hour": 22,
+        "id": 24,
+        "minute": 30,
+        "price": "100",
+        "seats": 79,
+        "status": "active",
+        "type": "pickup"
+      }
+    ],
+    "fk_category": 1,
+    "fk_city": 1,
+    "id": 2,
+    "images": [],
+    "name": "Mixología Cool",
+    "parking": "Parking 1.5",
+    "partner": {
+      "address": "Address Partner2",
+      "business_email": "partner2@sibaritta.com",
+      "comercial_name": "Partner2",
+      "commission": "20.00",
+      "createdAt": "2024-02-28T22:59:52.000Z",
+      "curp": "777",
+      "description": "Descripcion Partner2",
+      "fk_user_id": 45,
+      "full_name": "Partner2",
+      "id": 2,
+      "phone1": "9999999",
+      "phone2": null,
+      "postal_code": "12232",
+      "responsable_name": "Resp Partner2",
+      "rfc": "3333",
+      "status": "active",
+      "updatedAt": "2024-02-28T22:59:53.000Z"
+    },
+    "partner_image": "http://localhost:8000/uploads/1707476631671-IvanTapia_Circle_small_.jpg",
+    "politica": "Esta es la política de la experiencia Mixología Cool",
+    "regular_price": "400",
+    "seats": 100,
+    "slug": "mixologia-cool",
+    "smoking_zone": "No fumar",
+    "status": "active",
+    "suggestions": [
+      {
+        "description": "Chicha de puro maiz peruano",
+        "id": 2,
+        "images": [],
+        "name": "Chicha morada",
+        "regular_price": "200"
+      },
+      {
+        "description": "Sugerencia1 descripcion",
+        "id": 3,
+        "images": [],
+        "name": "Sugerencia1",
+        "regular_price": "100"
+      }
+    ],
+    "urlmap": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1951.1798121171505!2d-76.82168810105505!3d-12.01874456504275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c3d12afa9c23%3A0x8a9da7f852624412!2sAte!5e0!3m2!1ses!2spe!4v1682536947100!5m2!1ses!2spe"
+  }
+  

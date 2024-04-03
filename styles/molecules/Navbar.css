@@ -1,0 +1,238 @@
+.isActive {
+  @apply !opacity-100;
+}
+.Navbar-ul-li:hover {
+  @apply !opacity-100;
+}
+
+.nav-btn {
+  @apply hidden;
+  @screen laptop {
+    display: block;
+    margin-right: calc(1.2rem * var(--scale));
+  }
+}
+
+/* PRINCIPAL */
+.Navbar {
+  padding-top: 8rem;
+  padding-bottom: 2rem;
+  border-radius: 0 0 1.5rem 1.5rem;
+  transform: translateY(-120%);
+  transition: transform 0.3s ease;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  @apply fixed top-0 right-0  bg-[#252127];
+
+  &.isActive {
+    transform: translateY(0%);
+
+    @screen laptop {
+      transform: translateY(0);
+    }
+  }
+
+  &-socials {
+    @apply absolute top-[8%] right-32;
+    i {
+      @apply text-[2.3rem];
+    }
+
+    @screen laptop {
+      @apply hidden;
+    }
+  }
+
+  &-logo {
+    @apply absolute top-6 left-10 mt-0;
+    img {
+      @apply w-[16rem];
+    }
+    @screen laptop {
+      @apply hidden;
+    }
+  }
+
+  &-ul {
+    margin-top: 20rem;
+    font-size: 1.55rem;
+    @apply font-normal flex flex-col;
+
+    li {
+
+      padding: 0.4rem 0;
+      transition: color 0.5s ease;
+      @apply px-12 py-4 relative cursor-pointer font-[300] font-lato capitalize text-center !text-[#E1D4C4];
+      position: relative;
+      text-decoration: none;
+      color: #ffff;
+
+      i {
+        @apply hidden;
+      }
+      span {
+        @apply hidden;
+      }
+
+      &.perfil {
+        @screen laptop {
+          @apply bg-[#E1D4C4] rounded-[1rem] !text-[#4D3452] relative;
+          padding: calc(1rem * var(--scale)) calc(2.5rem * var(--scale));
+          padding-right: calc(4.5rem * var(--scale));
+
+          &::before {
+            content: "\e902";
+            position: absolute;
+            font-family: "icomoon";
+            color: #4d3452;
+            top: calc(1.1rem * var(--scale));
+            right: calc(-3rem * var(--scale)) !important;
+          }
+        }
+      }
+
+      &.profile {
+        @screen laptop {
+          @apply bg-[#E1D4C4] rounded-[1rem] !text-[#4D3452] relative;
+          padding: calc(1rem * var(--scale)) calc(2.5rem * var(--scale));
+
+          &::before {
+            display: none;
+          }
+
+          &::after {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .Navbar-ul-li.isActive,
+    .Navbar-ul-contact-li.isActive {
+      @apply text-[#4D3452] font-normal bg-[#E1D4C4];
+      @screen laptop {
+        @apply text-[#E1D4C4] !font-[500] bg-transparent;
+      }
+    }
+  }
+
+  @screen laptop {
+    @apply static inset-auto rounded-xl p-0 mx-auto flex items-center justify-between transform-none bg-transparent;
+    height: auto;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    /* width: calc(150rem * var(--scale)); */
+    transition: all 0.3s ease-in-out;
+    width: 100%;
+    &-ctn {
+      @apply flex justify-end items-center;
+      .Navbar-ul {
+        @apply flex flex-row justify-end items-center m-0 p-0;
+        gap: calc(4rem * var(--scale));
+        font-size: calc(1.8rem * var(--scale));
+
+        &-li {
+          @apply block m-0 p-0 h-fit font-[400] text-[#E1D4C4];
+          border-top: 0;
+          /* &::after {
+            @apply bg-[#E1D4C4] rounded-lg;
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: -10px;
+            height: 3px;
+            transition-property: left, right;
+            transition-duration: 0.3s;
+            transition-timing-function: ease-out;
+          }
+
+          &:hover::before,
+          &:hover::after,
+          &.isActive::before,
+          &.isActive::after {
+            left: 20%;
+            right: 20%;
+          } */
+        }
+
+        &-contact {
+          @apply bg-[#E1D4C4] transition-all ease-in-out rounded-none text-white m-0 p-0;
+          border-radius: 1rem;
+
+          font-size: calc(1.9rem * var(--scale));
+          transition-duration: 0.2s;
+
+          &-li {
+            @apply m-0 flex items-center gap-[0.75rem] !text-[#4D3452] font-lato font-semibold;
+
+            padding: calc(0.95rem * var(--scale)) calc(2.5rem * var(--scale));
+
+            @screen laptop {
+              font-size: calc(1.8rem * var(--scale));
+            }
+            .arrow {
+              cursor: pointer;
+              display: inline-block;
+              height: 12px;
+              margin-left: 0.5rem;
+              position: relative;
+              transition: width 0.2s ease;
+              vertical-align: middle;
+              width: 12px;
+
+              &::after {
+                border-right: 2px solid currentColor;
+                border-top: 2px solid currentColor;
+                content: "";
+                display: block;
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%) rotate(45deg);
+                height: 10px;
+                width: 10px;
+
+                @screen laptop {
+                  width: calc(0.8rem * var(--scale));
+                  height: calc(0.8rem * var(--scale));
+                }
+              }
+
+              &::before {
+                border-bottom: 2px solid currentColor;
+                content: "";
+                left: 0;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 100%;
+              }
+            }
+
+            &:hover {
+              .arrow {
+                width: 15px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.hide-desktop {
+  @screen laptop {
+    display: none;
+  }
+}
+/*
+.isActivess {
+   @apply bg-black;
+} */
+.Navbar-ul-li.profile {
+  @apply   !bg-[#E1D4C4] font-lato font-extrabold  !text-[#4D3452];
+  @screen laptop{
+@apply !text-[#4D3452] ;
+  }
+}

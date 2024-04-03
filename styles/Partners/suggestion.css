@@ -1,0 +1,153 @@
+.suggestion_box{
+    @apply  w-full h-[85rem] bg-[#2F2A30]  p-[2rem] ;
+    @screen tablet{
+        @apply w-[100%] h-[45rem] ;
+    }
+    @screen laptop {
+        @apply   mt-0;
+        padding: calc(5rem * var(--scale));
+        width: calc(147.2rem * var(--scale));
+        height: calc(70.9rem * var(--scale));
+    }
+}
+
+
+.suggestion-form{
+    @apply flex flex-col w-full  gap-[2rem];
+    @screen tablet{
+        @apply w-full h-auto  flex-row justify-between;
+    }
+    
+}
+
+
+.suggestion-form-file{
+    @apply w-full h-[40rem]  ;
+    @screen tablet{
+        @apply w-full h-[40rem] ;
+    }
+    @screen laptop{
+        height: calc(59.3rem * var(--scale));
+        width: calc(51.7rem * var(--scale));
+    }
+}
+
+
+.suggestion-form-data{
+    @apply w-full h-[10rem] gap-[3rem] flex flex-col  justify-between;
+    @screen laptop{
+        @apply  h-auto   ;
+        width: calc(80.7rem * var(--scale));
+    }
+}
+
+.suggestion-form-data-nombre{
+    @apply flex flex-col gap-[1rem] ;
+    & h5{
+        @apply  text-[#F89C53] font-lato font-normal text-[1.5rem];
+        @screen laptop{
+            @apply  text-[#F89C53] font-lato font-normal;
+            font-size: calc(1.8rem * var(--scale));
+            line-height: calc(1.5rem * var(--scale));
+        }
+    }
+    & input{
+        @apply   bg-[#3a343d] text-[#FFF]  rounded-[.5rem] py-[1rem] px-[2rem];
+        @screen laptop{
+            @apply   bg-[#3a343d] text-[#FFF]  rounded-[.5rem] ;
+            font-size: calc(2.5rem * var(--scale));
+            width: calc(18.6rem * var(--scale));
+            height: calc(1.5rem * var(--scale));
+            font-size: calc(1.5rem * var(--scale));
+            line-height: calc(1.3rem * var(--scale));
+            padding-top: calc(2rem * var(--scale));
+            padding-bottom: calc(2rem * var(--scale));
+            padding-left: calc(1rem * var(--scale));
+            padding-right: calc(1rem * var(--scale));
+            line-height: calc(1.4rem * var(--scale));
+        }
+    }
+}
+
+
+.suggestion-form-description{
+    @apply w-full    flex flex-col gap-[1rem];
+    @screen laptop{
+        width: calc(80.7rem * var(--scale));
+    }
+    & h5{
+        @apply  text-[#F89C53] font-lato font-normal text-[1.5rem];
+        @screen laptop{
+            @apply  text-[#F89C53] font-lato font-normal;
+            font-size: calc(1.8rem * var(--scale));
+            line-height: calc(1.5rem * var(--scale));
+        }
+    }
+    & textarea {
+        @apply   bg-[#3a343d] text-[#FFF]  rounded-[.5rem] p-[1rem];
+        @screen laptop{
+            @apply bg-[#3a343d] w-[99.7%] p-[1rem] text-[#FFF]  font-lato font-medium;
+            height: calc(15.15rem * var(--scale));
+            font-size: calc(1.7rem * var(--scale));
+        }
+    }
+}
+
+
+
+
+.suggestion-form-price{
+    @apply w-full    flex flex-col gap-[2rem];
+    @screen laptop{
+        width: calc(80.7rem * var(--scale));
+    }
+    & h5{
+        @apply  text-[#F89C53] font-lato font-normal text-[1.5rem];
+        @screen laptop{
+            @apply  text-[#F89C53] font-lato font-normal;
+            font-size: calc(1.8rem * var(--scale));
+            line-height: calc(1.5rem * var(--scale));
+        }
+    }
+    & input{
+        @apply   bg-[#3a343d] text-[#FFF]  rounded-[.5rem] p-[1rem];
+        @screen laptop{
+            @apply   bg-[#3a343d] text-[#FFF] font-lato font-semibold rounded-[.5rem] ;
+            font-size: calc(2.5rem * var(--scale));
+            width: calc(18.6rem * var(--scale));
+            height: calc(1.5rem * var(--scale));
+            font-size: calc(1.5rem * var(--scale));
+            line-height: calc(1.3rem * var(--scale));
+            padding-top: calc(2rem * var(--scale));
+            padding-bottom: calc(2rem * var(--scale));
+            padding-left: calc(1rem * var(--scale));
+            padding-right: calc(1rem * var(--scale));
+            line-height: calc(1.4rem * var(--scale));
+        }
+    }
+}
+
+
+.suggestion-form-btns{
+    @apply flex justify-between items-center ;
+    @screen laptop{
+        @apply flex justify-between items-center ;
+    }
+    & button {
+        @apply w-[15rem] rounded-[1rem] h-[3.4rem] text-[1.2rem] bg-[#F89C53]  text-[#252127] font-sans 
+        font-semibold;
+        @screen laptop{
+            font-size: calc(1.8rem * var(--scale)) ;
+            border-radius: calc(1rem * var(--scale));
+            width: calc(27rem * var(--scale));
+            height: calc(4.4rem * var(--scale));
+        }
+    }
+    & h5 {
+        @apply text-[#F89C53] font-lato text-[1.2rem] cursor-pointer ;
+        @screen laptop{
+            font-size: calc(1.8rem * var(--scale)) ;
+            
+        }
+    }
+}

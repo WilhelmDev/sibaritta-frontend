@@ -1,0 +1,33 @@
+.fade-container .swiper-slide-prev,
+.fade-container .swiper-slide-next {
+  animation: desvanecer 1s linear both;
+  width: 100%;
+}
+
+.swiper-slide{
+  width: 100%;
+
+}
+
+.fade-container .swiper-slide-active {
+  animation: aparecer 0.8s linear both;
+  width: 100%;
+}
+
+@keyframes desvanecer {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.2;
+  }
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0.2;
+  }
+  to {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,40 @@
+.header {
+  padding: 0 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 110px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  gap: 2rem;
+  z-index: 1;
+}
+
+.nav {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  color: var(--c-2);
+}
+
+.link {
+  all: unset;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.link:hover {
+  color: var(--c-5);
+}
+
+@media (width < 1000px) {
+  .header {
+    padding: 0 1rem;
+  }
+
+  .nav {
+    gap: 1.2rem;
+  }
+}

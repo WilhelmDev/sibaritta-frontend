@@ -1,0 +1,303 @@
+[
+  {
+    "calification_ranking": "5.0",
+    "calification_number": "15",
+    "dress_code": "Cena Chef",
+    "name": "Seratta Gourmand Market",
+    "seats":"40",
+    "events": [
+      {
+        "type": "presencial"
+      },
+      {
+        "type": "presencial"
+      },
+      {
+        "type": "pickup"
+      },
+      {
+        "type": "presencial"
+      },
+      {
+        "type": "pickup"
+      },
+      {
+        "type": "pickup"
+      },
+      {
+        "type": "presencial"
+      }
+    ],
+    "media": [
+      {
+        "resolution": "normal",
+        "path": "/partner_home/cardBackground1.jpg"
+      },
+      {
+        "resolution": "normal",
+        "path": "/partner_home/cardBackground1.jpg"
+      }
+    ]
+  },
+  {
+    "calification_ranking": "4.9",
+    "calification_number": "50",
+    "dress_code": "Cena Chef",
+    "name": "Seratta Gourmand Market",
+    "seats":"40",
+    "events": [
+      {
+        "type": "presencial"
+      },
+      {
+        "type": "presencial"
+      },
+      {
+        "type": "presencial"
+      },
+      {
+        "type": "pickup"
+      },
+      {
+        "type": "pickup"
+      },
+      {
+        "type": "presencial"
+      },
+      {
+        "type": "pickup"
+      },
+      {
+        "type": "pickup"
+      }
+    ],
+    "media": [
+      {
+        "resolution": "normal",
+        "path": "/partner_home/cardBackground2.jpg"
+      },
+      {
+        "resolution": "normal",
+        "path": "/partner_home/cardBackground2.jpg"
+      }
+    ]
+  },
+  {
+    "calification_ranking": "3.7",
+    "calification_number": "40",
+    "dress_code": "Cena Chef",
+    "name": "Seratta Gourmand Market",
+    "seats":"40",
+    "events": [
+      {
+        "type": "presencial"
+      },
+      {
+        "type": "presencial"
+      },
+      {
+        "type": "pickup"
+      },
+      {
+        "type": "presencial"
+      },
+      {
+        "type": "pickup"
+      },
+      {
+        "type": "pickup"
+      },
+      {
+        "type": "presencial"
+      }
+    ],
+    "media": [
+      {
+        "resolution": "normal",
+        "path": "/partner_home/cardBackground3.jpg"
+      },
+      {
+        "resolution": "normal",
+        "path": "/partner_home/cardBackground3.jpg"
+      }
+    ]
+  },
+  {
+    "calification_ranking": "1.8",
+    "calification_number": "30",
+    "dress_code": "Cena Chef",
+    "name": "Seratta Gourmand Market",
+    "seats":"40",
+    "events": [
+      {
+        "type": "pickup"
+      },
+      {
+        "type": "pickup"
+      },
+      {
+        "type": "presencial"
+      }
+    ],
+    "media": [
+      {
+        "resolution": "normal",
+        "path": "/partner_home/cardBackground4.jpg"
+      },
+      {
+        "resolution": "normal",
+        "path": "/partner_home/cardBackground4.jpg"
+      }
+    ]
+  },{
+    "calification_ranking": "5.0",
+    "calification_number": "15",
+    "dress_code": "Cena Chef",
+    "name": "Seratta Gourmand Market",
+    "seats":"40",
+    "events": [
+      {
+        "type": "presencial"
+      },
+      {
+        "type": "presencial"
+      },
+      {
+        "type": "pickup"
+      },
+      {
+        "type": "presencial"
+      },
+      {
+        "type": "pickup"
+      },
+      {
+        "type": "pickup"
+      },
+      {
+        "type": "presencial"
+      }
+    ],
+    "media": [
+      {
+        "resolution": "normal",
+        "path": "/partner_home/cardBackground1.jpg"
+      },
+      {
+        "resolution": "normal",
+        "path": "/partner_home/cardBackground1.jpg"
+      }
+    ]
+  },
+  {
+    "calification_ranking": "4.9",
+    "calification_number": "50",
+    "dress_code": "Cena Chef",
+    "name": "Seratta Gourmand Market",
+    "seats":"40",
+    "events": [
+      {
+        "type": "presencial"
+      },
+      {
+        "type": "presencial"
+      },
+      {
+        "type": "presencial"
+      },
+      {
+        "type": "pickup"
+      },
+      {
+        "type": "pickup"
+      },
+      {
+        "type": "presencial"
+      },
+      {
+        "type": "pickup"
+      },
+      {
+        "type": "pickup"
+      }
+    ],
+    "media": [
+      {
+        "resolution": "normal",
+        "path": "/partner_home/cardBackground2.jpg"
+      },
+      {
+        "resolution": "normal",
+        "path": "/partner_home/cardBackground2.jpg"
+      }
+    ]
+  },
+  {
+    "calification_ranking": "3.7",
+    "calification_number": "40",
+    "dress_code": "Cena Chef",
+    "name": "Seratta Gourmand Market",
+    "seats":"40",
+    "events": [
+      {
+        "type": "presencial"
+      },
+      {
+        "type": "presencial"
+      },
+      {
+        "type": "pickup"
+      },
+      {
+        "type": "presencial"
+      },
+      {
+        "type": "pickup"
+      },
+      {
+        "type": "pickup"
+      },
+      {
+        "type": "presencial"
+      }
+    ],
+    "media": [
+      {
+        "resolution": "normal",
+        "path": "/partner_home/cardBackground3.jpg"
+      },
+      {
+        "resolution": "normal",
+        "path": "/partner_home/cardBackground3.jpg"
+      }
+    ]
+  },
+  {
+    "calification_ranking": "1.8",
+    "calification_number": "30",
+    "dress_code": "Cena Chef",
+    "name": "Seratta Gourmand Market",
+    "seats":"40",
+    "events": [
+      {
+        "type": "pickup"
+      },
+      {
+        "type": "pickup"
+      },
+      {
+        "type": "presencial"
+      }
+    ],
+    "media": [
+      {
+        "resolution": "normal",
+        "path": "/partner_home/cardBackground4.jpg"
+      },
+      {
+        "resolution": "normal",
+        "path": "/partner_home/cardBackground4.jpg"
+      }
+    ]
+  }
+]

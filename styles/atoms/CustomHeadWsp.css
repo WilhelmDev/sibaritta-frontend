@@ -1,0 +1,35 @@
+.whatsapp-logo-container{
+  @apply right-[2rem] bottom-[1rem];
+    width: 5.4rem;
+    height: 5.4rem;
+    position:fixed;
+    /* animation: breathe 0.45s infinite alternate; */
+    background-color: #F89C53;
+    z-index: 100;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* box-shadow: 0px 0px 0px 5px #f89d5342; */
+    right: 15px;
+    bottom: 80px;
+
+    @screen laptop{
+      right: 50px;
+      bottom: 120px
+    }
+}
+
+@keyframes breathe {
+    from {
+      transform: scale(1); /* Tamaño normal */
+    }
+    to {
+      transform: scale(1.1); /* Tamaño aumentado */
+    }
+  }
+
+  .whatsapp-logo-svg {
+    width: 50%; /* Ajusta el tamaño del logo según sea necesario */
+    height: 50%;
+  }

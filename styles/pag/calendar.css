@@ -1,0 +1,85 @@
+.Calendar {
+  @screen laptop {
+
+    @apply flex flex-col items-center justify-center ;
+
+  }
+
+  .partner-main-calendar {
+    @apply font-lato;
+
+    width: 100%;
+
+
+    .experiencia-homeb-general-container {
+      /* @apply flex flex-col ;  */
+      display: flex;
+      flex-direction: column;
+
+    }
+
+    .partner-main-calendar-header-buttons {
+      @apply flex;
+
+      width: 80%;
+      margin: 0 auto;
+      gap: calc(1.5rem * var(--scale));
+      margin-bottom: 1rem;
+
+
+      & h5 {
+        width: calc(20.6rem * var(--scale));
+        height: calc(4.4rem * var(--scale));
+      }
+    }
+
+    .button-1 {
+      @apply bg-[#F89C53] rounded-[1rem];
+
+      width: calc(20.6rem * var(--scale));
+      height: calc(4.4rem * var(--scale));
+
+      & h5 {
+        @apply text-[#252127] font-medium;
+
+        width: auto;
+        height: auto;
+      }
+    }
+
+    .button-2 {
+      @apply bg-[#4D3452] rounded-[1rem];
+
+      width: calc(20.6rem * var(--scale));
+      height: calc(4.4rem * var(--scale));
+
+      & h5 {
+        width: auto;
+        height: auto;
+      }
+    }
+
+    .PartnerExperiences.experiencia-homeb-general-container.experiencia-homeb{
+
+      width: 100%;
+
+    }
+  }
+  
+  .PartnerExperiences{
+
+    min-height: 10rem;
+
+  }
+
+  .PartnerMarinCalendar{
+
+    @screen laptop{
+
+      width: auto;
+
+    }
+
+  }
+
+}

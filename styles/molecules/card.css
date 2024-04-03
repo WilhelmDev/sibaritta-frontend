@@ -1,0 +1,405 @@
+.card {
+  @apply w-full h-auto flex-col justify-evenly;
+  display: none !important;
+  @screen laptop {
+    display: flex !important;
+    @apply !w-full;
+    height: calc(32.8rem * var(--scale)) !important;
+  }
+}
+
+.card-inters {
+  @apply w-full h-[49.2rem] border-[0.3rem] border-[#4D3452] rounded-[2.5rem] overflow-hidden;
+
+  @screen laptop {
+    border: 2px solid #393533;
+    height: calc(49.2rem * var(--scale));
+  }
+
+  &-cont {
+    @apply flex flex-col w-full h-full duration-300 ease-in-out bg-cover bg-center rounded-[2.5rem];
+  }
+}
+
+.card-inters:hover .card-inters-cont {
+  @apply h-[55%];
+
+  @screen laptop {
+    @apply h-[65%];
+  }
+}
+
+.card_contenedor {
+  @apply flex flex-wrap items-center w-full gap-[5rem] min-h-[9.4rem];
+
+  @screen laptop {
+    @apply flex-nowrap;
+  }
+}
+.card_titulo {
+  @apply flex items-center w-[50.2rem] h-[3.8rem] gap-[1rem];
+  @screen laptop {
+    @apply w-full;
+  }
+}
+.card_line {
+  @apply w-[0.1rem] h-full  bg-[#E1D4C4];
+}
+.card_titulo_gastronomy {
+  @apply !font-lato !font-semibold   text-[#E1D4C4] ;
+ 
+}
+.card_btns {
+  @apply flex;
+  @screen laptop {
+    @apply grid grid-cols-4 gap-[2rem];
+  }
+}
+
+.card_experiencia {
+  @apply flex flex-col w-full py-[2rem] gap-[3rem];
+}
+.card_contenido {
+  @apply w-full grid grid-cols-1  gap-[2rem]  h-[49.2rem];
+  @screen laptop {
+    @apply grid-cols-4;
+  }
+}
+
+.card_datos {
+  @apply flex flex-col justify-between items-center p-[2rem] w-full relative h-[49.2rem] rounded-[2.5rem]  bg-cover bg-center cursor-pointer duration-300 ease-in-out;
+
+  @screen laptop {
+    height: calc(49.2rem * var(--scale));
+  }
+
+  &_header {
+    @apply w-full flex justify-end;
+
+    &_conten {
+      @apply flex items-center justify-end py-[0.9rem] rounded-[5rem] px-[1rem] gap-[0.4rem] w-auto h-[3.4rem] bg-[#252127];
+
+      @screen laptop {
+        height: calc(3.42rem * var(--scale));
+        padding: calc(0.5rem * var(--scale)) calc(1rem * var(--scale));
+      }
+
+      &_icon {
+        @apply w-[1.9rem] h-[1.9rem];
+
+        @screen laptop {
+          width: calc(1.9rem * var(--scale));
+          height: calc(1.9rem * var(--scale));
+        }
+      }
+
+      &_h3 {
+        @apply text-[#E1D4C4] text-[1.6rem] font-bold leading-[1.92rem];
+
+        @screen laptop {
+          font-size: calc(1.6rem * var(--scale));
+          line-height: calc(1.92rem * var(--scale));
+        }
+      }
+    }
+  }
+
+  &_footer {
+    @apply w-full flex flex-col z-20;
+
+    &_h3 {
+      @apply text-[#F0EFEB] text-[2.4rem] font-normal leading-[2.88rem];
+
+      @screen laptop {
+        font-size: calc(2.4rem * var(--scale));
+        line-height: calc(2.88rem * var(--scale));
+      }
+    }
+
+    &_conten {
+      @apply flex items-center justify-between;
+
+      &_h2 {
+        @apply text-[#F0EFEB] text-[2.4rem] font-extrabold leading-[2.88rem];
+
+        @screen laptop {
+          font-size: calc(2.4rem * var(--scale));
+          line-height: calc(2.88rem * var(--scale));
+        }
+      }
+    }
+
+    &_user {
+      @apply flex gap-[1rem] items-center;
+
+      img {
+        max-width: unset;
+      }
+
+      &_users {
+        @apply w-[4.1rem] h-[4.1rem] bg-[#F89C53] rounded-full grid place-items-center text-[1.5rem] font-bold leading-[2rem];
+
+        @screen laptop {
+          height: calc(4.1rem * var(--scale));
+          width: calc(4.1rem * var(--scale));
+          font-size: calc(1.5rem * var(--scale));
+        }
+      }
+    }
+
+    &_icon {
+      @apply w-full flex justify-center;
+    }
+  }
+}
+
+.card_inter {
+  @apply w-full  grid grid-cols-1 h-[32.8rem];
+  @screen laptop {
+    @apply grid-cols-2;
+  }
+}
+
+.card_inter_before {
+  @apply w-full h-full z-0 rounded-[2.3rem] absolute  bottom-0 bg-gradient-to-b from-transparent to-[#252127];
+}
+
+.card_inter_header {
+  @apply w-full flex   justify-end;
+}
+.card_inter_header_puntajes {
+  @apply flex items-center justify-end py-[0.9rem] rounded-[5rem] px-[1rem] gap-[0.4rem] w-[10rem] h-[3.4rem] bg-[#252127];
+}
+
+.card_inter_header_h3 {
+  @apply w-[5.5rem] h-[2.2rem] text-[white] text-[1.6rem] font-bold leading-normal;
+}
+
+.card_inter_footer {
+  @apply w-full flex flex-col z-0 p-[2rem];
+}
+
+.card_inter_footer_h3 {
+  @apply text-[#F0EFEB] text-[2.4rem] font-normal leading-normal;
+}
+
+.card_inter_footer_chef {
+  @apply flex items-center justify-between;
+}
+.card_inter_footer_chef_h2 {
+  @apply text-[#F0EFEB] text-[2.4rem] font-extrabold leading-normal;
+}
+
+.card_inter_users {
+  @apply flex gap-[1rem] items-center;
+}
+.card_inter_puntos {
+  @apply w-[4.1rem] h-[4.1rem] bg-[#F89C53] rounded-full grid place-items-center text-[1.5rem] font-bold leading-[2rem];
+}
+.card_inter_footer_icon {
+  @apply w-full flex justify-center;
+}
+
+.gastronomy-input {
+  @apply cursor-pointer h-[4.4rem] w-full rounded-[10px] flex items-center  justify-center bg-[#37323A] font-lato text-[white] text-center font-semibold leading-normal text-[1.5rem] px-[1.5rem] relative;
+  white-space: nowrap;
+  article {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  @screen laptop {
+    height: calc(4.4rem * var(--scale));
+    font-size: calc(1.8rem * var(--scale));
+    line-height: calc(2.16rem * var(--scale));
+    width: calc(19.2rem * var(--scale));
+  }
+}
+.Dropdown-des {
+  @screen laptop {
+    height: calc(4.4rem * var(--scale));
+    font-size: calc(1.8rem * var(--scale));
+    line-height: calc(2.16rem * var(--scale));
+    width: calc(19.2rem * var(--scale));
+  }
+}
+
+.cardInter-card {
+  @apply flex w-full h-full duration-300 ease-in-out rounded-[2.5rem] border-[#4D3452] border-[.3rem] cursor-pointer overflow-hidden;
+
+  article {
+    @apply p-[2rem] flex flex-col items-center justify-between;
+    @screen laptop {
+      width: calc(73rem * var(--scale));
+    }
+  }
+
+  @screen laptop {
+    width: calc(73rem * var(--scale));
+    border: 2px solid #393533;
+  }
+
+  &-datos {
+    @apply flex flex-col w-full relative h-[32.8rem] bg-cover bg-center duration-300 ease-in-out;
+
+    @screen laptop {
+      height: calc(32.8rem * var(--scale)) !important;
+    }
+  }
+}
+
+/* .card:hover .cardInter-card {
+  @apply h-[55%];
+
+  @screen laptop {
+    @apply h-[65%];
+  }
+} */
+
+.card-empty {
+  @apply w-full h-full flex items-end p-[2rem];
+
+  @screen laptop {
+    padding: calc(2rem * var(--scale));
+  }
+
+  p {
+    @apply font-lato font-light text-[#A59484] text-[3rem] leading-[3.5rem];
+
+    @screen laptop {
+      font-size: calc(3.5rem * var(--scale));
+      line-height: calc(4rem * var(--scale));
+    }
+  }
+}
+
+.cardInter-empty {
+  @apply hidden;
+
+  @screen laptop {
+    @apply flex h-full rounded-[1rem] font-lato font-light text-[#A59484] items-end;
+    border: 2px solid #393533;
+    padding: calc(3rem * var(--scale));
+    font-size: calc(3.5rem * var(--scale));
+    line-height: calc(4rem * var(--scale));
+  }
+}
+
+.users-input {
+  @apply !absolute w-[19.2rem] h-[20rem] p-[1rem] bg-[#F0EFEB] rounded-[1.5rem] z-50 flex flex-col items-center justify-evenly top-[5rem];
+
+  @screen laptop {
+    width: calc(19.2rem * var(--scale));
+    height: calc(20rem * var(--scale));
+    top: calc(5rem * var(--scale));
+  }
+
+  &-img {
+    @apply w-[11.2rem] h-[11.2rem] bg-[#FFF] rounded-[1.5rem] grid place-items-center;
+
+    @screen laptop {
+      width: calc(11.2rem * var(--scale));
+      height: calc(11.2rem * var(--scale));
+    }
+  }
+
+  &-btns {
+    @apply flex items-center gap-5 mt-[1rem];
+
+    &-btn {
+      @apply flex items-center justify-center z-[100] w-[3.4rem] h-[3.6rem] rounded-[1rem] bg-[white] font-bold text-[2rem] text-[#252127];
+
+      @screen laptop {
+        width: calc(3.4rem * var(--scale));
+        height: calc(3.4rem * var(--scale));
+      }
+    }
+
+    &-number {
+      @apply font-lato text-center text-[2.4rem] font-semibold leading-[1.4rem] text-[#252127];
+
+      @screen laptop {
+        font-size: calc(2.2rem * var(--scale));
+      }
+    }
+  }
+}
+
+.card-inters-info {
+  @apply w-full h-[22rem] cursor-pointer bg-[#252127] flex flex-col items-center gap-[1rem] justify-center p-[2rem];
+
+  @screen laptop {
+    height: calc(16.4rem * var(--scale));
+    gap: calc(2rem * var(--scale));
+    padding: calc(2rem * var(--scale));
+  }
+
+  &-description {
+    @apply w-full h-[7.2rem] text-[#E1D4C4] font-lato  font-normal leading-[2.4rem];
+
+    @screen laptop {
+     
+      line-height: calc(2.4rem * var(--scale));
+    }
+  }
+
+  &-footer {
+    @apply w-full h-[2.5rem] flex items-center justify-between;
+
+    div {
+      @apply flex items-center gap-2;
+
+      h5 {
+        @apply !text-[#F89C53] font-lato text-[1.8rem] font-normal leading-normal;
+
+        @screen laptop {
+          
+          line-height: calc(2.16rem * var(--scale));
+        }
+      }
+
+      h5 {
+        @apply text-[#E1D4C4] font-lato  font-bold leading-normal;
+
+        @screen laptop {
+          
+          line-height: calc(2.16rem * var(--scale));
+        }
+      }
+    }
+  }
+}
+
+.card_datos_footer_p {
+  @screen laptop {
+    @apply font-normal;
+    width: calc(20.6rem * var(--scale));
+  }
+}
+
+.card_datos_footer_containertext {
+  @screen laptop {
+    @apply flex flex-col;
+  }
+}
+
+.text-card_inter {
+  @apply text-[#A59484] text-[2.5rem]   px-[2.5rem]  pb-[3rem] flex justify-end;
+  @screen laptop {
+    font-size: calc(3.5rem * var(--scale));
+    line-height: calc(4rem * var(--scale));
+    padding-left: calc(3rem * var(--scale));
+    padding-right: calc(3rem * var(--scale));
+    padding-bottom: calc(3rem * var(--scale));
+  }
+}
+
+.card_datos_header_conten {
+  @apply flex items-center justify-center;
+}
+
+.cardEmpitySmall {
+  @apply flex items-end;
+}

@@ -1,0 +1,14 @@
+.Medium {
+  @screen laptop {
+    width: calc(85.1rem * var(--scale));
+    padding-left: calc(5rem * var(--scale));
+    @apply border-l-2 border-[#3E3940];
+  }
+}
+.conta-inpu {
+  @apply flex flex-col gap-[1.5rem];
+
+  @screen laptop {
+    @apply flex-row;
+  }
+}

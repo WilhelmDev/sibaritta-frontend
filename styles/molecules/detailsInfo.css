@@ -1,0 +1,728 @@
+.datails_page_container{
+  display: flex;
+justify-content: center;
+align-items: center;
+
+}
+
+.datails_page {
+  @apply bg-[#252127]  flex flex-col p-[2rem] w-full h-auto;
+
+  @screen laptop {
+    @apply flex-row;
+    padding: calc(2rem var(--scale));
+    padding-top: calc(20rem * var(--scale));
+    padding-bottom: calc(20rem * var(--scale));
+    margin-top: calc(-10rem * var(--scale));
+    padding-left: calc(10.5rem * var(--scale));
+    padding-right: calc(6.7rem * var(--scale));
+    gap: calc(2rem * var(--scale));
+    padding-bottom: calc(1.3rem * var(--scale));
+    /* background-color: white; */
+    justify-content: space-between;
+  }
+}
+.add_user_update {
+  @apply flex m-auto  justify-between bg-[#37323A] rounded-[1.5rem] w-full  items-center p-[1.5rem];
+  @screen laptop {
+    width: calc(32rem * var(--scale));
+    padding: calc(1.5rem * var(--scale));
+  }
+}
+
+.add_user_increment- {
+  @apply flex items-center justify-between;
+}
+
+.title_update_add_invita--- {
+  @apply h-auto grid justify-start w-full;
+  & .txt {
+    @apply text-[#E1D4C4] font-lato font-bold ;
+
+  }
+}
+
+.add_user_increment_less_ {
+  @apply w-[3.6rem] h-[3.6rem] !bg-[#F0EFEB] rounded-[1rem] grid place-items-center;
+  @screen laptop {
+    @apply justify-center;
+    width: calc(3.6rem * var(--scale));
+    height: calc(3.6rem * var(--scale));
+  }
+}
+
+.add_user_increment_less_ img {
+  @screen laptop {
+    width: calc(1.8rem * var(--scale));
+    height: calc(1.8rem * var(--scale));
+  }
+}
+
+.add_user_increment_number_ {
+  @apply text-[#E1D4C4] font-lato font-semibold grid place-items-center;
+  @screen laptop {
+    font-size: calc(2.4rem * var(--scale));
+    font-weight: 600;
+    line-height: calc(1.4rem * var(--scale));
+  }
+}
+
+.add_user_increment_further {
+  @apply bg-[#F89C53] rounded-[1rem] grid place-items-center;
+  @screen laptop {
+    width: calc(3.6rem * var(--scale));
+    height: calc(3.6rem * var(--scale));
+  }
+}
+
+.add_user_increment_further img {
+  @screen laptop {
+    width: calc(1.8rem * var(--scale));
+    height: calc(1.8rem * var(--scale));
+  }
+}
+
+.datils_page_content {
+  @apply w-full h-auto flex flex-col gap-[4rem];
+  @screen laptop {
+    @apply gap-0;
+  }
+}
+.datails_page-options {
+  @apply flex flex-col  gap-[4.1rem];
+  @screen laptop {
+    @apply flex-row;
+    @apply justify-between;
+  }
+}
+.details_page_title {
+  @apply flex justify-between items-center ;
+  @screen tablet {
+    @apply flex  flex-col items-start justify-start;
+    gap: calc(0.5rem * var(--scale));
+  }
+}
+
+.details_page_title h2 {
+  @apply text-[#E1D4C4] font-lato   font-extrabold w-[15rem];
+  @screen laptop {
+    @apply w-full;
+  }
+}
+
+.details_page_city {
+  @apply flex flex-col;
+}
+
+.details_page_city h3 {
+  @apply text-[#F89C53]   font-lato font-normal leading-normal text-end;
+  @screen laptop {
+    @apply text-[#E1D4C4] ;
+    line-height: calc(1.5rem * var(--scale));
+
+  }
+}
+
+.details_page_info {
+  @apply flex items-center gap-[1rem];
+  @screen tablet {
+    @apply hidden;
+  }
+}
+.details_page_info span {
+  @apply text-[#E1D4C4] text-[1.8rem]   font-lato  font-normal
+  leading-[1.4rem];
+  @screen laptop {
+    margin-bottom: 0rem;
+  }
+}
+
+.details_page-info_two {
+  @apply flex justify-end gap-[1rem] items-center pt-[2rem];
+  @screen tablet {
+    @apply hidden;
+  }
+}
+
+.details_page-info_two span {
+  @apply text-[#E1D4C4] text-[1.8rem] font-normal leading-[1.4rem];
+}
+.detail_option_pick {
+  @apply flex justify-between;
+  @screen laptop {
+    gap: calc(3rem * var(--scale));
+  }
+}
+
+.detail_pick_one {
+  @apply flex items-center gap-[1rem];
+}
+
+.detail_pick_one_img {
+  @apply w-[7rem] h-[7rem] !bg-[#2F2A32] rounded-[1rem] grid place-items-center;
+  @screen laptop {
+    width: calc(8rem * var(--scale));
+    height: calc(8rem * var(--scale));
+  }
+}
+
+/* .presencial_naram_container{
+
+  @screen laptop{
+
+    width: calc(1rem * var(--scale));
+    height: calc(1rem * var(--scale));
+
+  }
+
+} */
+
+.option span {
+  @apply text-[#E1D4C4] text-[1.8rem] font-lato font-normal leading-normal;
+  @screen laptop {
+    font-size: calc(1.8rem * var(--scale));
+    font-weight: 400;
+  }
+}
+.option h4 {
+  @apply text-[#E1D4C4] text-[1.8rem] font-lato font-extrabold  leading-normal;
+  @screen laptop {
+    font-size: calc(1.8rem * var(--scale));
+    font-weight: 800;
+  }
+}
+
+.optionTwo span {
+  @apply text-[#E1D4C4] text-[1.8rem] font-lato font-normal leading-normal;
+  @screen laptop {
+    font-size: calc(1.8rem * var(--scale));
+    font-weight: 400;
+  }
+}
+
+.optionTwo h4 {
+  @apply text-[#E1D4C4] text-[1.8rem] font-lato font-extrabold  leading-normal;
+  @screen laptop {
+    font-size: calc(1.8rem * var(--scale));
+    font-weight: 800;
+  }
+}
+
+.datails_durations {
+  @apply w-full flex justify-between ;
+  @screen laptop {
+    gap: calc(1rem * var(--scale));
+    justify-content: start;
+    /* padding: 2rem 0rem; */
+  }
+}
+
+.datails_duration_one {
+  @apply flex  ;
+  @screen laptop {
+    padding-top: calc(1rem * var(--scale));
+    padding-bottom: calc(1rem * var(--scale));
+  }
+}
+
+.datails_duration_one h5 {
+  @apply text-[#E1D4C4] font-lato  font-normal;
+}
+.datails_duration_one h5 {
+  @apply text-[#E1D4C4] font-lato  font-bold;
+
+}
+
+.details_cards {
+  @apply flex flex-col gap-[4rem];
+  @screen tablet {
+    @apply flex-row;
+    padding-top: calc(4rem * var(--scale));
+    padding-bottom: calc(2rem * var(--scale));
+    gap: calc(4rem * var(--scale));
+  }
+}
+
+.details_card_experenci {
+  @apply flex flex-col  gap-[1rem];
+
+}
+
+.details_card_experenci img {
+  border-radius: 1rem;
+  @apply w-full h-[25.2rem] object-cover;
+  @screen laptop {
+    /* width: calc(71rem * var(--scale)); */
+    height: calc(25rem * var(--scale));
+  }
+}
+
+.details_card_experenci h3 {
+  @apply text-[#F89C53] font-lato font-bold;
+
+}
+
+
+
+.datails_card_loren p {
+  @apply text-[#E1D4C4]  font-lato font-normal leading-[2.4rem];
+  @screen laptop {
+    line-height: calc(2.4rem * var(--scale));
+  }
+}
+
+.details_card_restaurant {
+  @apply flex flex-col  gap-[1rem];
+  @screen laptop {
+    gap: calc(1rem * var(--scale));
+    /* width: calc(39.4rem * var(--scale)); */
+  }
+}
+
+.details_card_restaurant img {
+  @apply w-full h-[25.2rem];
+  @screen laptop {
+    height: calc(25rem * var(--scale));
+    /* width: calc(39.5rem * var(--scale)); */
+  }
+}
+
+.details_card_restaurant h3 {
+  @apply text-[#F89C53] font-lato text-[2.4rem] font-bold;
+
+}
+.details_card_restaurant p {
+  @apply text-[#E1D4C4]  font-lato font-normal leading-[2.4rem];
+  @screen laptop {
+    line-height: calc(2.4rem * var(--scale));
+  }
+}
+
+.detail_card_restricciones {
+
+  @apply flex   w-[100%];
+  @screen tablet {
+    @apply w-[100%];
+  }
+}
+
+.card_restricciones_info- {
+  @apply flex flex-col ;
+  margin-bottom: 12px;
+  & h4 {
+    @apply text-[#F89C53]   !font-semibold;
+  }
+  & .h5x {
+    @apply text-[#E1D4C4]  !font-extrabold ;
+  }
+
+}
+
+.datils_location {
+  @apply w-full h-auto   flex flex-col items-center gap-[2rem];
+  @screen tablet {
+    @apply flex-row w-full;
+  }
+  @screen laptop {
+    /* width: calc(114.4rem * var(--scale)); */
+    padding-top: calc(1.6rem * var(--scale));
+  }
+}
+
+.details_location_gps {
+  border-radius: 1rem;
+  @apply overflow-hidden h-[24.6rem] w-full;
+
+  @screen laptop {
+    @apply overflow-hidden  w-full;
+
+    /* width: calc(75.8rem * var(--scale)); */
+    height: calc(24rem * var(--scale));
+  }
+}
+
+.datails_locaiton_address {
+  @apply w-full h-[25.6rem] rounded-[1rem] bg-[#2F2A32] p-[2rem] flex flex-col
+    gap-[1.5rem];
+  @screen tablet {
+    @apply w-[30em];
+  }
+  @screen laptop {
+    height: auto;
+    width: calc(36.7rem * var(--scale));
+    padding: calc(2rem * var(--scale));
+    gap: calc(1.5rem * var(--scale));
+  }
+}
+
+.datails_locaiton_ {
+  @apply h-[8.6rem] p-[1rem] flex flex-col gap-[0.5rem];
+
+  @screen laptop {
+    padding: calc(1rem * var(--scale));
+    @apply h-auto;
+  }
+}
+.datails_locaiton_ h6 {
+  @apply text-[#F89C53] font-lato text-[1.4rem] font-normal;
+  @screen laptop {
+    font-weight: 400;
+  }
+}
+
+.datails_locaiton_ h5 {
+  @apply text-[#E1D4C4] text-[1.8rem] font-lato  font-normal leading-[2.2rem];
+  @screen laptop {
+    line-height: calc(2.2rem * var(--scale));
+  }
+}
+
+.datails_locaiton_parkin {
+  @apply  p-[1rem] flex flex-col gap-[0.5rem];
+
+  @screen laptop {
+    padding: calc(1rem * var(--scale));
+    @apply h-auto;
+  }
+}
+.datails_locaiton_parkin h6 {
+  @apply text-[#F89C53] font-lato text-[1.4rem] font-normal leading-normal;
+  @screen laptop {
+    font-weight: 400;
+    line-height: calc(1.5rem * var(--scale));
+  }
+}
+.datails_locaiton_parkin h5 {
+  @apply text-[#E1D4C4] text-[1.8rem] font-lato  font-normal leading-[2.2rem];
+  @screen laptop {
+    font-weight: 400;
+    line-height: calc(2.2rem * var(--scale));
+  }
+}
+
+.datails_locaiton_political {
+  @apply flex items-center justify-between  p-[1rem]  w-full h-[4.4rem];
+  @screen laptop {
+    height: calc(2.7rem * var(--scale));
+    padding: calc(1rem * var(--scale));
+  }
+}
+
+.datails_locaiton_political h6 {
+  @apply text-[#F89C53] font-lato text-[1.4rem] font-normal leading-normal;
+  @screen laptop {
+    font-weight: 400;
+    line-height: calc(1.5rem * var(--scale));
+  }
+}
+
+.social_details_redes {
+  @apply w-full grid place-items-center pt-[4.1rem] pb-[6.7rem];
+  @screen laptop {
+    @apply pt-[1.5rem] pb-0;
+    padding-bottom: calc(7.7rem * var(--scale));
+  }
+}
+.box_icons_ {
+  @apply w-[5.1rem] h-[5.1rem] grid place-items-center;
+  @screen laptop {
+    width: calc(7rem * var(--scale));
+    height: calc(7rem * var(--scale));
+  }
+}
+.social_details_redes_box {
+  @apply w-[26.4rem] h-[9.2rem] flex items-center justify-center;
+  @screen tablet {
+    @apply w-[50rem] h-[7rem];
+  }
+  @screen laptop {
+    width: calc(100rem * var(--scale));
+    height: calc(7rem * var(--scale));
+    /* margin-top: calc(8rem * var(--scale)); */
+  }
+}
+.details_box_social_icons {
+  @apply flex gap-[2rem] items-center;
+}
+
+.box_social_details_data {
+  @apply flex flex-col items-center  gap-[2rem];
+  @screen tablet {
+    @apply flex-row;
+    padding-top: calc(1.6rem * var(--scale));
+  }
+}
+
+.box_social_details_data h3 {
+  @apply text-center  text-[#E1D4C4] font-lato  font-bold leading-[2.5rem]
+  w-[17.3rem];
+
+  @screen laptop {
+    width: calc(45rem * var(--scale));
+  }
+}
+
+.details_social_icons {
+  @apply w-[2.1rem] h-[2.1rem] flex justify-center items-center;
+  @screen laptop {
+    width: calc(3.3rem * var(--scale));
+    height: calc(3.3rem * var(--scale));
+  }
+}
+
+.details_calendar {
+  height: auto;
+  @screen laptop {
+    @apply   flex-col  border-[.3rem] border-[#4D3452] rounded-[1.5rem];
+    width: calc(57.2rem * var(--scale));
+    padding: calc(3rem * var(--scale));
+  }
+}
+
+.detaild_calendar_box {
+  @screen laptop {
+    @apply flex flex-col;
+    background: red;
+    gap: calc(3rem * var(--scale));
+    height: calc(105.7rem * var(--scale));
+  }
+}
+
+.details_calendar h2 {
+  @apply text-[#E1D4C4] font-lato  font-bold;
+  @screen laptop {
+    font-size: calc(3rem * var(--scale));
+  }
+}
+
+.details_calendar_options {
+  @apply flex  items-center justify-between p-0;
+  @screen laptop {
+    @apply flex-row;
+    width: calc(32rem * var(--scale));
+    gap: calc(2rem * var(--scale));
+  }
+}
+
+.title-modalidate {
+  @apply w-full h-auto flex flex-col gap-[.5rem];
+  @screen laptop {
+    height: auto;
+  }
+  & h4 {
+    @apply font-lato font-bold text-[1.4rem] text-[#E1D4C4] py-[.5rem];
+
+  }
+  & h6 {
+    @apply font-lato font-extrabold text-[1.4rem];
+
+  }
+}
+
+.title-modalidate-user- {
+  @apply w-full h-[4rem] flex items-center;
+  @screen laptop {
+    height: auto;
+  }
+  & h4 {
+    @apply font-lato font-extrabold text-[1.3rem];
+    @screen laptop {
+      @apply font-lato font-extrabold;
+      font-size: calc(1.6rem * var(--scale));
+    }
+  }
+}
+
+.details_calendar_btns {
+  @apply flex flex-col gap-[1rem] w-full;
+  /* @screen laptop {
+    width: calc(22rem * var(--scale));
+    gap: calc(1.9rem * var(--scale));
+  } */
+}
+
+.details_calendar_btns_one {
+  @apply bg-[#2F2A32] w-full   text-[#E1D4C4] font-medium duration-300 ease-in-out;
+  @screen laptop {
+    height: calc(4.4rem * var(--scale));
+    font-size: calc(1.8rem * var(--scale));
+    border-radius: calc(1rem * var(--scale));
+  }
+}
+.details_calendar_btns_two {
+  @apply bg-[#2F2A32] w-full   text-[#E1D4C4] font-medium duration-300 ease-in-out;
+  @screen laptop {
+    height: calc(4.2rem * var(--scale));
+    font-size: calc(1.8rem * var(--scale));
+    border-radius: calc(1rem * var(--scale));
+  }
+}
+
+.details_dalendar_box_ {
+  @apply w-full  flex flex-col ;
+  @screen laptop {
+    /* gap: calc(0rem * var(--scale)); */
+  }
+
+}
+
+
+
+@media only screen and (min-width: 1400px) and (max-width: 1600px) {
+  .fecha_calendar_react {
+    height: calc(51rem * var(--scale)) !important;
+  }
+}
+
+.fecha_calendar_react {
+  @screen laptop {
+    @apply font-inter;
+    width:100%;
+    height: calc(49.7rem * var(--scale));
+  }
+  .rdp-tbody .rdp-day:not(.rdp-day_selected) {
+    @apply text-[#6F6B6F] cursor-not-allowed;
+  }
+
+  .rdp {
+    --rdp-accent-color: #252127 !important;
+    --rdp-background-color: #4d3452 !important;
+    margin: 0em;
+  }
+  .rdp-table {
+    max-width: 100%;
+  }
+  .rdp-month {
+    @screen laptop {
+      @apply w-full  h-[100%]  bg-[#2F2A32] text-[#E1D4C4]
+    font-bold !important;
+      border-radius: 15px !important;
+      padding: calc(2.5rem * var(--scale)) !important;
+    }
+  }
+  .rdp-caption_label {
+    @screen laptop {
+      @apply font-bold p-0;
+      font-size: calc(2.4rem * var(--scale)) !important;
+      text-transform: capitalize;
+    }
+  }
+  .rdp-caption {
+    @screen laptop {
+      padding-bottom: calc(1rem * var(--scale)) !important;
+    }
+  }
+  .rdp-table {
+    @apply w-full;
+    margin: 0 auto !important;
+  }
+  .rdp-head {
+    font-size: 2.6rem;
+  }
+  .rdp-cell {
+    @screen laptop {
+      @apply font-medium font-inter;
+      font-size: calc(2.4rem * var(--scale));
+      padding-top: calc(0.5rem * var(--scale));
+      padding-bottom: calc(0.5rem * var(--scale));
+      margin: 0 auto;
+    }
+  }
+  .rdp-head_cell {
+    @screen laptop {
+      @apply font-medium font-inter;
+      margin: 0 auto;
+    }
+  }
+  .rdp-weeknumber,
+  .rdp-day {
+    margin: 0 auto !important;
+    @screen laptop {
+      width: calc(5.6rem * var(--scale)) !important;
+      height: calc(5.6rem * var(--scale)) !important;
+      @apply max-w-[5.6rem];
+    }
+  }
+}
+
+.details_btns {
+  @apply flex flex-col;
+  @screen laptop {
+    gap: calc(2rem * var(--scale));
+    /* padding-top: calc(6rem * var(--scale)); */
+  }
+}
+& h4 {
+  @apply font-lato font-extrabold text-[1.4rem];
+  @screen laptop {
+    @apply font-lato font-extrabold;
+    font-size: calc(1.6rem * var(--scale)) !important;
+  }
+}
+.details_btn_hora {
+  @apply flex flex-wrap  gap-[1.5rem];
+  @screen laptop {
+    gap: calc(0.5rem * var(--scale));
+  }
+}
+
+.hora_btn {
+  @apply bg-[#F89C53]  text-[#252127]
+     font-semibold font-lato;
+  @screen laptop {
+    width: calc(16rem * var(--scale));
+    height: calc(4.4rem * var(--scale));
+    border-radius: calc(1rem * var(--scale));
+    font-size: calc(2rem * var(--scale));
+  }
+}
+
+.hora_btn_two {
+  @apply bg-[#EAEAEA]  font-lato  duration-300 ease-in-out text-[#252127] font-bold;
+  @screen laptop {
+    width: calc(16rem * var(--scale));
+    height: calc(4.4rem * var(--scale));
+    border-radius: calc(1rem * var(--scale));
+    font-size: calc(2rem * var(--scale));
+  }
+}
+
+.details_btns p {
+  @apply text-[#E1D4C4] text-center m-auto  font-lato  font-normal;
+  @screen laptop {
+    font-size: calc(1.8rem * var(--scale));
+    margin-bottom: 5px;
+  }
+}
+
+.datails_footer {
+  @apply flex flex-col;
+  @screen laptop {
+    gap: calc(2.5rem * var(--scale));
+  }
+}
+
+.datails_footer button {
+  @apply bg-[#4D3452]   text-[#E1D4C4]
+    font-lato  font-bold;
+  @screen laptop {
+    /* width: calc(51.2rem * var(--scale)); */
+    border-radius: calc(5rem * var(--scale));
+    font-size: calc(2.2rem * var(--scale));
+    height: calc(5rem * var(--scale));
+  }
+}
+.datails_footer h3 {
+  @apply text-[#E1D4C4]  font-lato font-bold text-center;
+  @screen laptop {
+    font-size: calc(2.1rem * var(--scale));
+  }
+}
+
+.fecha_calendar__ {
+  @apply absolute top-0 bg-[#2F2A32] z-30 rounded-[1.5rem] top-[5rem];
+
+  @screen laptop {
+    top: calc(5rem * var(--scale));
+  }
+}

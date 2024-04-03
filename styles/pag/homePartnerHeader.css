@@ -1,0 +1,126 @@
+.partner-home-container-header{
+    gap: 2rem;
+    width: 100%;
+    z-index: 100;
+  
+  }
+  
+  
+  
+  .header-container-1{
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  
+    @screen laptop{
+      display:none;
+    }
+  }
+  
+  .header-container-2{
+    display: none;
+    gap: 4rem;
+  
+    @screen laptop{
+      display:inline;
+    }
+  }
+  
+  .image-logo {
+    width: 17.2rem;
+    height: 17.2rem;
+    top: 30.1rem;
+    left: 9.4rem;
+    margin-bottom: 2rem;
+  
+    @screen laptop {
+      display: none;
+    }
+  }
+  
+  .header-text {
+    width: 100%;
+    height: 5.8rem;
+    top: 49.4rem;
+    left: 3.9rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+  
+    @screen laptop {
+      display: none;
+    }
+  }
+  
+  .header-text-welcome {
+    font-size: 2.3rem;
+    line-height: 2.88rem;
+  }
+  
+  .header-text-seratta {
+    font-weight: 700;
+    font-size: 2.5rem;
+    width: 100%;
+  }
+  
+  .header-container {
+    /* @apply flex justify-between bg-white */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 20;
+    /* background-image: url(/public/partner_home/backgroundHeaderIa.png);
+    background-color: rgb(138, 89, 25);
+    background-size: cover;
+    background-position: center; */
+  }
+  
+  /* .container-general.Header-ctn,.Header.background-transparent{
+      display: none;
+  } */
+  
+  .header-left {
+    /* @apply flex-col bg-black  */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .header-left-1 {
+    width: 20rem;
+  }
+  
+  .header-right {
+    display: flex;
+  }
+  
+  .header-right-1 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .header-right-1-text-1 {
+    font-size: 1.5rem;
+  }
+  
+  .header-right-1-text-2 {
+    font-size: 1.5rem;
+    white-space: nowrap;
+  }
+  
+  .header-right-2 {
+    /* 
+      background-color: #252127; */
+    width: 13rem;
+    height: 13rem;
+    border-radius: 4%;
+    justify-content: center;
+    align-items: center;
+  }
+  

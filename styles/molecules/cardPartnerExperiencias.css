@@ -1,0 +1,75 @@
+.CardPartnerExperiencias{
+
+    @apply rounded-[1rem] bg-[url("/prueba5.jpg")] bg-cover bg-center h-[34.5rem] w-full font-lato flex flex-col justify-between items-center relative p-[2rem] ;
+
+
+    @screen laptop{
+
+       height: calc(40rem *var(--scale));
+
+    }
+
+    .card-partner-experiencias-images{
+
+        @apply flex justify-between w-full ;
+               
+        
+    }
+    
+    .card-partner-experiencias-image-1,.card-partner-experiencias-image-2{
+
+        @apply flex justify-center items-center w-[4.4rem] h-[4.4rem] bg-[#F89C53] rounded-[1rem];
+
+        
+
+        @screen laptop{
+
+            width: calc(4.4rem *var(--scale));
+            height: calc(4.4rem *var(--scale));
+
+
+        }
+    }
+    
+    .card-partner-experiencias-image-2{
+
+        @apply bg-white;
+
+    }
+
+    .card-partner-experiencias-image-2-image{
+
+        max-width: 50%;
+
+    }
+
+    .card-partner-experiencias-text{
+
+        @apply flex flex-col gap-[1.5rem] w-full  ;
+ 
+        & p{
+
+            @apply font-light;
+
+        }
+    }
+
+    .card-partner-experiencias-text-1{
+
+        @apply flex justify-between;
+
+    }
+
+    .card-partner-experiencias-text-2{
+
+        @apply text-[#F89C53] font-bold ;
+
+    }
+
+    .card-partner-experiencias-button{
+
+        @apply bg-[#E1D4C4] w-[100%] h-[5rem] text-[#4D3452] text-[1.6rem] font-bold rounded-[1rem]
+
+    }
+
+}

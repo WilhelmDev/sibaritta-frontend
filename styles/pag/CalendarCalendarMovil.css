@@ -1,0 +1,141 @@
+.PartnerCalendarMovil {
+  position: absolute;
+  z-index: 100;
+  padding: 1.5rem;
+  border-radius: 1rem;
+
+  background-color: #2f2a32;
+  width: auto !important;
+  height: auto !important;
+  margin-top: 57rem;
+
+  @screen tablet {
+    /* margin-top: 100vw; */
+    margin-top: 75.5rem;
+  }
+
+  .partner-calendar-movil-container {
+    /* width: 20rem!important; */
+  }
+
+  .rdp-months {
+    width: auto !important;
+    height: auto !important;
+  }
+  .experiencia-homeb-general-container.rdp-tbody{
+
+    width: 20rem!important;
+
+  }
+
+  .PartnerCalendarMovil.rdp-cell{
+
+    width: auto!important;
+
+  }
+
+ .experiencia-homeb-general-container .content-day_simpleb[aria-selected="true"] {
+
+  width: 4rem!important;
+
+ }
+
+
+
+    .rdp-head_cell{
+
+        display: none;
+
+    }
+
+  .rdp-caption {
+    width: auto !important;
+    height: auto !important;
+    margin-bottom: 1.5  rem;
+  }
+
+  .rdp-caption_label {
+    width: auto !important;
+    height: auto !important;
+    font-size: 2rem;
+  }
+
+  .rdp-nav_button {
+    width: auto !important;
+    height: auto !important;
+  }
+
+  /* .rdp-cell {
+    width: 2rem !important;
+  } */
+
+  .rdp-button_reset.rdp-button.rdp-day {
+    width: 4rem !important;
+    height: 4rem !important;
+    font-size: 1.6rem;
+
+    @screen tablet{
+
+      width: 7rem !important;
+    height: 7rem !important;
+
+    }
+
+  }
+
+  button.rdp-button_reset.rdp-button.rdp-day.rdp-day_selected{
+
+    background-color: #252127!important;
+    color: #E1D4C4!important;
+
+  }
+
+
+
+    .partner-calendar-movil-footer{
+
+        @apply flex flex-col gap-[1.5rem] border-t-2 border-[#393533] h-[13rem] justify-end ;
+
+    }
+
+    .partner-calendar-movil-footer-top{
+
+        @apply flex justify-center content-center gap-[1rem];
+
+    }
+
+    .footer-button{
+
+        @apply flex justify-center items-center gap-[1rem] w-[50%] bg-[#F89C53] rounded-[1rem] h-[4rem];
+
+        .text-3x{
+
+            @apply text-[1.5rem]  font-bold text-[#252127] ;
+
+        }
+
+        .image{
+
+            @apply w-[1rem] h-[1.5rem]   text-[#252127] ;
+
+
+        }
+
+        .text-36{
+
+            @apply w-[3rem] h-[3rem] text-[1.5rem]  font-bold mb-[-1px]  text-[#252127] bg-[white] rounded-[50%] flex justify-center items-center ;
+
+        }
+
+    }
+
+    .partner-calendar-movil-footer-bot{
+
+        @apply  flex justify-center items-center text-[1.5rem] font-bold text-[#252127] gap-[1rem] w-[100%] bg-[white] rounded-[1rem] h-[4rem];
+
+    }
+
+
+
+
+}

@@ -1,0 +1,145 @@
+.experiencia-homeb-container {
+  z-index: 10;
+  width: 200em;
+  height: 100%;
+
+  @apply flex flex-col justify-center items-center gap-[5rem];
+
+  @screen laptop {
+    @apply block;
+  }
+}
+.experiencia-homeb {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
+.image_title_datab-container {
+  @screen laptop {
+    gap: calc(3rem * var(--scale));
+  }
+}
+
+.content-image_bodyb {
+  @screen laptop {
+    gap: calc(3rem * var(--scale));
+  }
+}
+
+.content-calendar_bodyb {
+  @screen laptop {
+    /* margin-left: calc(-1.3rem * var(--scale));
+      margin-right: calc(1rem * var(--scale)); */
+    margin-right: calc(3rem * var(--scale));
+  }
+}
+
+/*-------componentcustomday--------*/
+
+.rdp-day {
+  width: calc(12.15rem * var(--scale)) !important;
+  height: calc(9.4rem * var(--scale)) !important;
+  max-width: calc(14.7rem * var(--scale)) !important;
+  max-height: calc(15rem * var(--scale)) !important;
+}
+
+/*-----------------------------------*/
+
+.calendar_events-textb {
+  @screen laptop {
+    width: 100%;
+    margin-top: calc(1.5rem * var(--scale));
+    margin-bottom: calc(3.5rem * var(--scale));
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+.events-text-titleb {
+  @screen laptop {
+    font-size: calc(2rem * var(--scale));
+    font-weight: 700;
+  }
+}
+.events-text-dateb {
+  @screen laptop {
+    display: flex;
+  }
+}
+.text-date_iconb {
+  @screen laptop {
+    color: #f89c53;
+    font-size: calc(4rem * var(--scale));
+    margin-right: 0.7rem;
+  }
+}
+.text-date_dateb {
+  @screen laptop {
+    font-size: calc(2.5rem * var(--scale));
+    font-weight: 700;
+  }
+}
+
+/*********************/
+
+.content-calendar-cenab-container {
+  @screen laptop {
+    display: flex;
+    flex-direction: column;
+    gap: calc(2rem * var(--scale));
+  }
+}
+.content-calendar-cenab {
+  @screen laptop {
+    width: calc(43.8rem * var(--scale));
+    height: calc(10.1rem * var(--scale));
+  }
+}
+.calendar-cena_textb {
+  @screen laptop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #373239;
+    border-radius: 1.5rem;
+    width: 100%;
+    height: 100%;
+    padding: calc(1rem * var(--scale));
+    /* background-color:#c1b7aa; */
+  }
+}
+
+.calendar_list-datab {
+  @screen laptop {
+    margin-bottom: calc(2rem * var(--scale));
+  }
+}
+
+.list-data_hourb {
+  @screen laptop {
+    font-size: 1.5rem;
+  }
+}
+
+.data_detail-btnb.addb {
+  @screen laptop {
+    width: calc(40.9rem * var(--scale));
+  }
+}
+
+.calendar_list-datab-container {
+  @screen laptop {
+    max-height: calc(38rem * var(--scale));
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 767px) {
+  .sugestion-cardsb-container-1 {
+    flex-direction: column;
+  }
+}

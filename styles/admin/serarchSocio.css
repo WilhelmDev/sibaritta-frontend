@@ -1,0 +1,59 @@
+.box_content_search_socio {
+  @apply flex items-center justify-center gap-[2rem] relative w-full  rounded-full 
+  z-[100];
+
+  @screen laptop {
+    @apply flex items-center gap-[2rem] relative w-auto  rounded-full z-50;
+  }
+}
+
+.box_content_name_socio {
+  @screen laptop {
+    @apply flex flex-col items-end;
+  }
+  span {
+    @apply font-lato font-bold text-[1.5rem];
+    @screen laptop {
+      @apply text-[3rem];
+    }
+  }
+}
+
+.box_content_image_socio {
+  @apply rounded-full overflow-hidden w-[10rem] h-[10rem];
+  @screen laptop {
+    @apply w-[12rem] h-[12rem] rounded-full overflow-hidden;
+  }
+}
+
+.box_content_search_triangulo {
+  @apply rotate-[90deg] cursor-pointer;
+  width: 0;
+  height: 0;
+  border-left: 10px solid #d8d8d8;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+
+.box_search_data {
+  @apply absolute w-full h-auto top-[8rem] flex flex-col gap-[1rem] bg-[#2F2A31] pb-[1.5rem];
+  & input {
+    @apply text-[1.8rem] px-[1rem]  py-[1.3rem] bg-[#2F2A31] text-[white];
+  }
+  @screen laptop {
+    @apply mt-[1rem] top-[12rem];
+  }
+}
+
+.data_search_box_admin_socio {
+  @apply flex flex-col gap-[1rem] overflow-auto h-auto items-end pr-[1rem];
+  & h3 {
+    @apply text-[#E1D4C4] duration-300 ease-in-out cursor-pointer  font-lato hover:bg-[#373239] w-full text-end pr-[1rem] font-semibold first-letter:uppercase p-[.5rem];
+    @screen laptop {
+      @apply !text-[2rem];
+    }
+    &:hover {
+      @apply text-[#F89C53];
+    }
+  }
+}

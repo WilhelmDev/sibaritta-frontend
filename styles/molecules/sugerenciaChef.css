@@ -1,0 +1,63 @@
+.chef_sugerencia {
+  .p-dialog-header {
+    @apply bg-[#252127];
+  }
+  .p-dialog-content {
+    @apply flex  flex-col !bg-[#252127] gap-[3rem];
+  }
+  .p-dialog-header-icons {
+    @apply text-[#F0EFEB];
+  }
+}
+
+.chef_sugerencia_ {
+  @apply w-full h-auto   rounded-[1.5rem];
+}
+.chef_sugerencia_ h2 {
+  @apply text-[#E1D4C4] text-[2.4rem] font-bold font-lato;
+}
+
+.cheft_cards {
+  @apply w-full h-auto  p-[2rem] flex flex-col gap-[2rem];
+}
+
+.cardsito {
+  @apply rounded-[1rem] w-full 
+     bg-cover bg-center flex justify-center items-center
+    p-[2rem] relative;
+  border-radius: 1rem;
+  background: linear-gradient(180deg, rgba(77, 52, 82, 0) 0%, #4d3452 72.13%);
+  border-radius: 0;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+}
+
+.cheft_card {
+  @apply w-full h-auto   flex flex-col gap-[1rem];
+  background-position: center;
+  background-size: cover;
+}
+
+.cardsito_info {
+  @apply w-full h-auto  flex flex-col gap-[1.5rem] z-10 justify-around;
+}
+
+.cardsito_info_one {
+  @apply w-full  flex items-center justify-between;
+}
+
+.cardsito_info_one h2 {
+  @apply text-[#E1D4C4] text-[2rem] font-lato font-extrabold;
+}
+
+.cardsito_info_one p {
+  @apply text-[#F89C53] font-lato text-[2rem] font-bold;
+}
+
+.cardsito_info_two textarea {
+  @apply text-[#E1D4C4]  bg-transparent rounded-[.5rem] p-[.5rem] w-full h-auto font-lato  font-normal;
+}
+
+.cardsito_info_tree button {
+  @apply w-full h-[5rem] bg-[#E1D4C4] rounded-[1rem] text-[#4D3452]
+    font-lato text-[1.6rem] font-bold;
+}

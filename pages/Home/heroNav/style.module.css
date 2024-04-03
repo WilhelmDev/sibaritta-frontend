@@ -1,0 +1,56 @@
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+  bottom: 5rem;
+  width: 100%;
+  gap:2rem;
+  heigth: 20rem;
+  justify-content: center;
+  padding: 2rem;
+  z-index: 1;
+  @screen laptop{
+    gap: calc(5rem * var(--scale));
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.button {
+  all: unset;
+  border: 1px solid var(--c-2);
+  border-radius: 0.5rem;
+  padding: 2rem 1.5rem;
+  color: var(--c-2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  text-align: center;
+  
+  @screen laptop{
+    padding-top: calc(3.9rem * var(--scale));
+    padding-bottom: calc(3.9rem * var(--scale));
+    padding-right: calc(3.5rem * var(--scale));
+    padding-left: calc(3.5rem * var(--scale));
+    font-size: calc(1.7rem * var(--scale));
+  }
+}
+
+
+
+.button:hover {
+  background: rgba(37, 33, 39, 0.65);
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.button__active {
+  background: rgba(37, 33, 39, 0.65);
+}
+
+@media (width < 1030px) {
+  .button {
+    padding: 1.5rem 1rem;
+  }
+}

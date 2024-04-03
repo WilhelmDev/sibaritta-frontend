@@ -1,0 +1,51 @@
+.description_section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+}
+
+.container {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 80%;
+  z-index: 0;
+  @screen laptop{
+    gap: calc(5rem * var(--scale));
+  }
+}
+
+.card {
+@apply grid place-items-center font-lato;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  background-color: rgba(37, 33, 39, 0.75);
+  max-width: 220px;
+  @screen laptop {
+    width: Calc(32rem * var(--scale));
+    height: Calc(21.2rem * var(--scale));
+    
+  }
+}
+
+.card h3 {
+  font-size: 2rem;
+  font-weight: bold;
+  @screen laptop {
+    font-size: calc(7rem * var(--scale));
+    line-height: calc(7rem * var(--scale));
+  }
+}
+.card p {
+  @apply font-lato text-center; 
+  font-size: 1.4rem;
+  @screen laptop {
+    font-size: Calc(2.5rem * var(--scale));  
+  }
+}
+
+

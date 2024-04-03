@@ -1,0 +1,54 @@
+.modal-cookis-socio{
+  
+    @apply !bg-[#2F2A32];
+    .p-dialog-header {
+        @apply bg-[#2F2A32];
+      }
+      .p-dialog-content {
+        @apply !bg-[#2F2A32] ;
+      }
+      .p-dialog-header-icons {
+        @apply text-[#E0D3C3] hidden;
+      }
+      
+    }
+
+
+    .logo-pagina{
+      @apply w-full h-[7rem] ;
+        @screen laptop{
+            @apply w-full h-[10rem]
+        }
+    }
+
+    .conten-box-cookis {
+        @apply w-full h-auto flex  flex-col gap-[7rem] font-lato  text-center text-[#E0D3C3] ;
+        & input {
+          @apply bg-[#4D3452] m-auto font-lato font-semibold text-[#E0D3C3] 
+          w-full px-[1rem] rounded-[.5rem] h-[3.8rem];
+         
+        }
+    }
+
+    .conten_box_btns-cookis{
+        @apply flex gap-[5rem] w-[70%] m-auto ;
+        & button {
+            @apply bg-[#4D3452] font-lato font-semibold text-[#E0D3C3] 
+            w-full rounded-[.5rem] h-[3rem] 
+            duration-300 ease-in-out hover:bg-[#6f4b77];
+           
+        }
+    }
+
+    .conten_box_btns-update-password{
+      @apply flex gap-[5rem] w-[70%] m-auto ;
+        & button {
+            @apply bg-[#4D3452] font-lato font-semibold text-[#E0D3C3] 
+            w-full m-auto rounded-[.5rem] h-[3rem] ;
+             @screen laptop{
+                width: calc(18rem * var(--scale));
+                height: calc(3.6rem * var(--scale));
+                gap: calc(5rem * var(--scale));
+             }
+        }
+    }

@@ -1,0 +1,166 @@
+.details_suggestion_ {
+  @apply w-full  hidden;
+  @screen laptop {
+    @apply flex  flex-col   border-[.3rem] border-[#4D3452]
+    rounded-[1.5rem];
+  }
+}
+
+.details-box {
+  @apply p-[2rem];
+  @screen laptop {
+    @apply flex  flex-col;
+    gap: calc(3rem * var(--scale));
+    padding: calc(2rem * var(--scale));
+  }
+}
+
+.suggestion_time {
+  @apply  items-center justify-between;
+}
+
+.suggestion_time p {
+  @apply text-[#E1D4C4] font-lato text-[1.5rem]  font-bold;
+
+}
+.suggestion_time h3 {
+  @apply text-[#E1D4C4]  font-lato font-bold;
+  @screen laptop {
+    font-size: calc(3rem * var(--scale));
+  }
+}
+
+.suggestion_title h2 {
+  @apply text-[#E1D4C4]  font-lato font-bold;
+  @screen laptop {
+    font-size: calc(var(--text-thirty) * var(--scale));
+  }
+}
+
+.suggestion_card {
+  @apply w-full h-auto grid grid-cols-2 place-items-center grid-rows-2   border-b border-[#2F2A32];
+  @screen laptop {
+    gap: calc(2rem * var(--scale));
+    padding-top: calc(2rem * var(--scale));
+    padding-bottom: calc(2rem * var(--scale));
+    width: 100%;
+  }
+}
+
+.card {
+  @apply relative bg-cover  flex justify-center items-center rounded-2xl;
+  @screen laptop {
+    height: calc(35.5rem * var(--scale));
+    width: calc(24rem * var(--scale));
+  }
+}
+
+.card_info {
+  @apply z-30 flex justify-center items-center;
+  @screen laptop {
+    width: 100%;
+    height: 100%;
+    gap: calc(1.5rem * var(--scale));
+  }
+}
+.card_box__ {
+  @screen laptop {
+    justify-content: flex-end;
+
+    @apply flex flex-col p-[2rem] ;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.card_info_precio {
+  @apply  justify-end items-center;
+  display: block;
+  text-align: center;
+}
+
+.card_info_precio h2 {
+  @apply text-[#E1D4C4]  font-lato font-extrabold;
+  @screen laptop {
+    font-size: calc(2rem * var(--scale));
+    line-height: normal;
+  }
+}
+.card_info_precio p {
+  @apply text-[#F89C53]  font-bold font-lato;
+  @screen laptop {
+    font-size: calc(2rem * var(--scale));
+  }
+}
+
+.card_info_description p {
+  @apply text-[#E1D4C4]  bg-transparent rounded-[.5rem] p-[.5rem] w-full h-auto font-lato  font-normal;
+  @screen laptop {
+    @apply text-center text-balance;
+    font-size: calc(1.6rem * var(--scale));
+    line-height: calc(2.4rem * var(--scale));
+  }
+}
+.card_info_btn {
+  @apply flex justify-center flex-col  items-center gap-[1rem];
+}
+.card_info_btn button {
+  @apply w-full bg-[#E1D4C4]   text-[#4D3452] font-lato font-bold;
+  @screen laptop {
+    font-size: calc(1.6rem * var(--scale));
+    height: calc(5rem * var(--scale));
+    border-radius: 1rem;
+  }
+}
+
+.card-count-box-- {
+  @apply bg-[#37323A] w-full rounded-[1rem] p-[1rem] items-center flex justify-between;
+}
+
+.box-counter-_min- {
+  @apply bg-[#F0EFEB] rounded-[1rem] cursor-pointer flex justify-center items-center;
+  @screen laptop {
+    width: calc(3.6rem * var(--scale));
+    height: calc(3.6rem * var(--scale));
+  }
+}
+
+.box-counter-_max- {
+  @apply bg-[#F89C53] rounded-[1rem] cursor-pointer p-[.5rem] flex justify-center items-center;
+  @screen laptop {
+    width: calc(3.6rem * var(--scale));
+    height: calc(3.6rem * var(--scale));
+  }
+}
+
+.suggention_next_btn {
+  @apply flex justify-between items-center;
+  @screen laptop {
+    gap: calc(var(--variante-h4) * var(--scale));
+  }
+}
+
+.suggention_previous {
+  @apply bg-[#4D3452] w-full  text-[#E1D4C4] font-lato font-bold;
+  @screen laptop {
+    height: calc(5rem * var(--scale));
+    font-size: calc(2rem * var(--scale));
+    border-radius: calc(1rem * var(--scale));
+  }
+}
+
+.suggention_next {
+  @apply bg-[#4D3452] w-full  text-[#E1D4C4] font-lato font-bold;
+  @screen laptop {
+    height: calc(5rem * var(--scale));
+    font-size: calc(2rem * var(--scale));
+    border-radius: calc(1rem * var(--scale));
+  }
+}
+
+.suggestion_nota {
+  @apply w-full text-[#E1D4C4] font-lato text-center  font-bold;
+  @screen laptop {
+    font-size: calc(2.2rem * var(--scale));
+  }
+}

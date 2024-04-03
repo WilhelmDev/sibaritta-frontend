@@ -1,0 +1,62 @@
+.p-sidebar-header {
+  @apply absolute w-[4.4rem] h-[4.4rem] bg-[#FFF]  z-[2] rounded-md top-[2rem] right-[7rem];
+}
+
+.p-sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.p-sidebar-content {
+  @apply flex justify-center items-center pb-[0] bg-[#f2eeeb];
+}
+.p-sidebar {
+  @apply overflow-hidden relative;
+  border-radius: 1rem 0rem 0rem 1rem;
+  @apply !w-[40rem];
+}
+.side-color {
+  @apply w-[9.3rem] bg-[#e1d4c4] h-full absolute right-0;
+}
+
+.side-container-items {
+  @apply flex flex-col gap-[1.5rem];
+}
+.side-container {
+  @apply relative z-[2];
+  padding-left: 1.7rem;
+  padding-right: 0.7rem;
+}
+.side-items {
+  @apply py-[2rem]  pr-[4.5rem] pl-[11rem] flex gap-[2.5rem] items-center justify-end cursor-pointer text-[1.6rem];
+  @screen laptop {
+    padding-left: calc(7rem * var(--scale));
+    padding-right: calc(1.8rem * var(--scale));
+  }
+  span {
+    @apply text-[#252127] font-lato font-semibold;
+    @screen laptop {
+      @apply text-[1.8rem];
+    }
+  }
+  transition: all 0.4s ease-in-out;
+
+  &:hover {
+    @apply bg-[#E1D4C4] rounded-2xl;
+  }
+}
+.side-image {
+  @apply flex justify-end items-center gap-[2rem] pb-[6rem] pr-[2.5rem];
+  span {
+    @apply font-extrabold;
+  }
+  @screen laptop {
+    @apply pr-[.5rem];
+  }
+}
+.side-h1 {
+  @apply text-[#252127] text-[2.4rem] font-lato font-normal text-right;
+  h3 {
+    @apply text-[#252127] font-semibold font-lato;
+  }
+}

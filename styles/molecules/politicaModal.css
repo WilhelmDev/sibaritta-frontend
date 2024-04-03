@@ -1,0 +1,40 @@
+.politica-modal{
+    @apply bg-[#2F2A32] !w-[90%] !p-[3rem];
+    @screen tablet{
+        @apply !w-[80%] ;
+    }
+    @screen laptop{
+       @apply !w-[30%] ;
+    }
+    .p-dialog-header {
+        @apply  bg-[#2F2A32]
+    }
+    .p-dialog-content {
+      @apply grid place-items-center !bg-[#2F2A32] gap-[3rem];
+    }
+    .p-dialog-header-icons {
+        @apply  text-[#F0EFEB] ;
+      }
+  }
+
+ .conten-politica{
+    @apply flex  flex-col  gap-[1rem];
+    @screen laptop{
+    @apply w-[90%];
+        gap: calc(1.5rem * var(--scale));
+    }
+    & h2{
+        @apply text-[2rem] text-white;
+        @screen laptop{
+            @apply font-lato font-bold text-white;
+            font-size: calc(2rem * var(--scale));
+        }
+    }
+    & p{
+        @apply text-[1.1rem] text-white;
+        @screen laptop{
+            @apply font-lato  text-white;
+        font-size: calc(1.4rem * var(--scale)); 
+        }
+    }
+ }

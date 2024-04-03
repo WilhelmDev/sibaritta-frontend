@@ -1,0 +1,256 @@
+.profiles-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profiles {
+  @apply bg-[#252127] ;
+  @screen laptop {
+    @apply flex;
+    margin-top: calc(-18rem * var(--scale));
+    width: 200em;
+  }
+}
+.profile-image {
+  @apply h-[36rem];
+  @screen laptop {
+    @apply hidden;
+  }
+}
+
+.profile-destok {
+  @apply hidden;
+  @screen laptop {
+    @apply block  w-[45.4rem];
+    position: relative;
+    width: calc(45.4rem * var(--scale));
+  }
+}
+
+.profile-form {
+  @apply bg-[#252127]  flex flex-col gap-[2.5rem] pt-[3.5rem] pb-[4rem]  px-[2rem] mt-[-12rem];
+  @screen laptop {
+    @apply flex flex-row items-center mt-0 p-0;
+    margin-left: calc(-13rem * var(--scale));
+    gap: calc(3rem * var(--scale));
+    padding-top: calc(10rem * var(--scale));
+  }
+}
+
+.profile-input {
+  @apply bg-[#2F2A32] p-[1.5rem] text-[#A59484] text-[1.4rem];
+  border-radius: 1rem;
+  @screen laptop {
+    padding: calc(1.5rem * var(--scale));
+    font-size: calc(1.4rem * var(--scale));
+  }
+  &::placeholder{
+    color: #A59484;
+  }
+}
+
+.profile-h2 {
+  @apply text-[#E1D4C4] font-lato font-bold py-[4rem];
+  padding-top: calc(4rem * var(--scale));
+  padding-bottom: calc(4rem * var(--scale));
+}
+
+.profile-label {
+  @apply font-lato text-[1.4rem] text-[#E1D4C4] font-normal;
+  @screen laptop {
+    width: calc(22rem * var(--scale));
+    font-size: calc(1.6rem * var(--scale));
+  }
+}
+.profile-pago{
+
+  @screen laptop {
+    width: calc(65rem * var(--scale));
+    font-size: calc(1.6rem * var(--scale));
+  }
+}
+.profile-text {
+  @apply font-lato text-[1.6rem] text-[#E1D4C4] font-bold pt-[3.5rem];
+}
+.profile-image2 {
+  @apply  w-[17.2rem] h-[17.2rem] rounded-full mx-auto bg-[#252127] p-[2rem];
+  @screen laptop {
+    width: calc(25.6rem * var(--scale));
+    height: calc(25.6rem * var(--scale));
+    position: relative;
+    margin-bottom: calc(18rem * var(--scale));
+  }
+}
+
+.profile-inputs {
+  @apply flex flex-col gap-[1.5rem];
+  @screen laptop {
+    @apply flex-row items-center;
+  }
+}
+.title-card {
+  @apply font-lato     font-bold text-[#4D3452];
+}
+.text-card {
+  @apply font-lato  font-bold text-[#575757] leading-[2.4rem] py-[3.5rem];
+
+  @screen laptop {
+    padding-bottom: calc(3.5rem * var(--scale));
+    padding-top: calc(3.5rem * var(--scale));
+  }
+}
+
+.xd{
+  @screen laptop{
+    width: calc(42rem * var(--scale));
+  }
+}
+
+.container-card {
+  @apply bg-[#FFF]  pt-[3.5rem] pb-[3rem] px-[3rem];
+
+  @screen laptop {
+    padding-bottom: calc(3rem * var(--scale));
+    padding-left: calc(3rem * var(--scale));
+    padding-right: calc(3rem * var(--scale));
+    padding-top: calc(3.5rem * var(--scale));
+  }
+}
+.profile-button {
+  @apply bg-[#4D3452] p-[2rem] w-full text-center text-[#E1D4C4] font-lato text-[1.6rem];
+  border-radius: 5rem;
+  @screen laptop {
+    padding: calc(2rem * var(--scale));
+  }
+}
+
+.profile-card {
+  border-radius: 1rem;
+  border: 1px solid #4d3452;
+  @screen laptop {
+    width: calc(44.3rem * var(--scale));
+    margin-bottom: calc(10rem * var(--scale));
+  }
+}
+
+.profile-buttons {
+  border-radius: 1rem;
+  @apply !bg-[#4D3452] text-[#E1D4C4] font-lato font-bold text-[1.4rem]
+  p-[1.5rem] duration-300 ease-in-out hover:!bg-[#F89C53] hover:!text-[#4D3452];
+  @screen laptop {
+    padding: calc(1.5rem * var(--scale));
+  }
+}
+
+.survey-One {
+  border: 1px solid #4d3452;
+  @apply w-full h-auto;
+  @screen laptop {
+    width: calc(45.3rem * var(--scale));
+    margin-bottom: calc(12rem * var(--scale));
+  }
+}
+
+.survey_options {
+  @apply w-full  flex flex-col gap-[2rem] p-[3rem] bg-[#FFFFFF] rounded-b-[1rem];
+  @screen laptop {
+    @apply p-[3rem];
+  }
+}
+.survey_options p {
+  @apply text-[#4D3452] text-[1.8rem] font-mono  font-bold;
+}
+
+.option-survey {
+  @apply grid grid-cols-2 grid-rows-2 gap-[1rem];
+}
+
+.survey_btns {
+  @apply w-full h-auto  flex gap-[1rem] items-center;
+}
+
+.option_card {
+  @apply flex flex-col items-center gap-[1rem];
+}
+.option_card p {
+  @apply text-[#575757] text-[1.2rem] text-center font-normal leading-[2.4rem];
+  @screen laptop {
+    font-size: calc(1.6rem * var(--scale));
+  }
+}
+
+.servery_btn_one {
+  @apply w-full h-[4.4rem] bg-[#F0EFEB] text-[#A59484] text-[1.6rem] font-lato font-bold  rounded-[1rem];
+}
+
+.survey_btns div {
+  @apply text-[#A59484] font-lato text-[1.6rem] font-bold leading-[2.4rem];
+}
+
+.servery_btn_two {
+  @apply bg-[#4D3452] w-full h-[4.4rem] text-[1.6rem] font-bold font-lato text-[#F0EFEB] rounded-[1rem];
+}
+
+.survey-finis {
+  @apply bg-[white] w-full h-[62rem] flex flex-col  p-[5rem];
+  @screen laptop {
+    width: calc(44.2rem * var(--scale));
+    padding: calc(5rem * var(--scale));
+    height: calc(66rem + var(--scale));
+    margin-bottom: calc(5rem * var(--scale));
+  }
+}
+
+.survey_box_info {
+  @apply w-full h-[62rem] flex flex-col justify-center items-center gap-[2.9rem];
+  @screen laptop {
+    @apply flex flex-col items-center justify-center;
+  }
+}
+
+.survey_box_info h2 {
+  @apply text-[#4D3452] text-[4rem] font-lato font-bold leading-normal text-center;
+}
+
+.survey_box_info button {
+  @apply bg-[#4D3452] w-full rounded-[1rem] text-[#F0EFEB] font-lato text-[1.6rem]
+  font-bold h-[5.8rem];
+}
+
+.imageDrop {
+  @apply rounded-full bg-[#4D3452] top-[70px] right-[-5px]
+  absolute cursor-pointer w-[3rem] h-[3rem];
+
+  @screen laptop {
+
+    width: calc(4rem * var(--scale));
+    height: calc(4rem * var(--scale));
+    right: calc(0rem * var(--scale));
+    bottom: calc(1rem * var(--scale));
+  }
+}
+
+.card-empty {
+  @screen laptop {
+    height: calc(35rem * var(--scale)) !important;
+  }
+}
+
+/* .container-par {
+  @screen laptop {
+    height: calc(50rem * var(--scale)) !important;
+  }
+}*/
+
+.card-par {
+  @screen laptop {
+    height: 100% !important;
+  }
+}
+
+.card-pars {
+  @screen laptop {
+    height: calc(9.4rem * var(--scale)) !important;
+  }
+}

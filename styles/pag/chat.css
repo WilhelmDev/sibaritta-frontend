@@ -1,0 +1,197 @@
+.chat-box_{
+    @apply  w-full h-auto grid place-items-center p-[1rem] mt-[5rem];
+    @screen tablet{
+        @apply h-screen
+    }
+   @screen laptop{
+    @apply pb-[5rem];
+    margin-top: 0rem ;
+   }
+}
+
+
+.chat-response{
+    @apply w-full h-[80%]  bg-[#2F2A32] flex flex-col ;
+    @screen tablet{
+        @apply flex-row-reverse  h-[50%];
+    }
+    @screen laptop{
+        width: calc(153.6rem * var(--scale));
+        height: calc(87.9rem * var(--scale));
+    }
+}
+
+.message-chat-response{
+    @apply   w-full min-h-[21rem]    p-[1rem] flex flex-col gap-[1.5rem];
+    @screen tablet{
+        @apply justify-around;
+    }
+    @screen laptop{
+        width: calc(115.7rem * var(--scale));
+        height: calc(87.9rem * var(--scale));
+        gap: calc(8rem * var(--scale));
+        padding: calc(2rem * var(--scale));
+    }
+    & h2 {
+        @apply text-[#E1D4C4] font-lato text-[1.5rem] font-bold;
+        @screen laptop {
+            font-size: calc(2.5rem * var(--scale)); 
+        }
+    }
+    & h4 {
+        @apply text-[#F89C53] font-lato font-bold leading-[1.8rem] text-[1.5rem] ;
+        @screen laptop {
+            font-size: calc(2rem * var(--scale));
+            line-height: calc(1.8rem * var(--scale));
+        }
+    }
+}
+
+.user-message-{
+    @apply flex flex-col gap-[1rem] font-lato;
+    @screen laptop{
+        gap: calc(3rem * var(--scale));
+        padding-top: calc(2rem * var(--scale));
+        padding-bottom: calc(2rem * var(--scale));
+    }
+}
+
+.user-message-date{
+    @apply flex justify-between ;
+    & h3{
+        @apply text-[#E1D4C4]  font-lato text-[1.1rem] font-bold leading-[1.8rem];
+        @screen laptop{
+            font-size: calc(1.8rem *var(--scale));
+            line-height: calc(1.8rem * var(--scale));
+        }
+    }
+    & p {
+        @apply  text-[#E1D4C4]  font-lato text-[1.1rem] font-bold leading-[1.8rem] ;
+        @screen laptop{
+            font-size: calc(1.8rem * var(--scale));
+            line-height: calc(1.8rem * var(--scale));
+        }
+    }
+}
+.message-user-__-{
+    @apply  text-[#E1D4C4]  font-lato text-[1.1rem] font-normal leading-[1.8rem] ;
+    @screen laptop{
+        font-size: calc(1.8rem * var(--scale));
+        line-height: calc(1.8rem * var(--scale));
+    }
+}
+
+.perfil-chat-user{
+    @apply  w-full h-auto flex flex-col gap-[1.5rem] p-[1rem]  ;
+    @screen tablet{
+        @apply w-[50%] items-end;
+    }
+    @screen laptop{
+        @apply items-end  ;
+        width: calc(37.9rem * var(--scale));
+        height: calc(87.9rem * var(--scale));
+        padding: calc(2rem * var(--scale));
+        gap: calc(1.8rem * var(--scale));
+    }
+    & p{
+        @apply text-[#F89C53] font-lato
+        font-bold leading-[1.8rem] text-[1.5rem] cursor-pointer; 
+        @screen laptop {
+            font-size: calc(2rem * var(--scale));
+            line-height: calc(1.8rem * var(--scale));
+        }
+    }
+  
+}
+
+.pathners-message-{
+    @apply flex flex-col gap-[1rem] ; 
+    @screen laptop{
+        gap: calc(3rem * var(--scale));
+        padding-top: calc(2rem * var(--scale));
+        padding-bottom: calc(2rem * var(--scale));
+    }
+}
+
+.pathnersr-message-date{
+    @apply flex justify-between ;
+    & h3{
+        @apply text-[#E1D4C4]  font-lato text-[1.1rem] font-bold leading-[1.8rem];
+        @screen laptop{
+            font-size: calc(1.8rem *var(--scale));
+            line-height: calc(1.8rem * var(--scale));
+        }
+    }
+    & p {
+        @apply  text-[#E1D4C4]  font-lato text-[1.1rem] font-bold leading-[1.8rem] ;
+        @screen laptop{
+            font-size: calc(1.8rem * var(--scale));
+            line-height: calc(1.8rem * var(--scale));
+        }
+    }
+}
+
+.message-pathners-__-{
+    @apply  text-[#E1D4C4]  font-lato text-[1.1rem] font-normal leading-[1.3rem] ;
+    @screen laptop{
+        font-size: calc(2rem * var(--scale));
+        line-height: calc(1.8rem * var(--scale));
+    }
+}
+
+.perfil-info-user-chat{
+    @apply text-[#E1D4C4] flex flex-col  gap-[1rem] ;
+    @screen laptop {
+        @apply items-end ;
+        gap: calc(2rem * var(--scale));
+    }
+    & h2 {
+        @apply text-[#E1D4C4] font-lato font-bold text-[1.5rem];
+        @screen laptop{
+            font-size: calc(2.5rem * var(--scale));
+        }
+    }
+    & p {
+        @apply text-[#E1D4C4]  font-normal text-[1.1rem]  font-lato underline;
+        @screen laptop{
+            font-size: calc(1.6rem * var(--scale));
+        }
+    }
+    & h4 {
+        @apply text-[#E1D4C4]   font-normal text-[1.1rem]  font-lato ;
+        @screen laptop{
+            font-size: calc(1.6rem * var(--scale));
+        }
+    }
+    & h3 {
+        @apply text-[#F89C53]  text-[1.5rem] font-lato font-bold;
+        @screen laptop{
+            font-size: calc(2.5rem * var(--scale));
+        }
+    }
+}
+
+
+.chat-send-btns{
+    @apply flex justify-between gap-[3rem] items-center py-[1rem] p-[.5rem] border-t border-b border-[#736E68] ;
+    @screen laptop{
+        padding-top: calc(5rem * var(--scale));
+        padding-bottom: calc(5rem * var(--scale)) ;
+    }
+    & textarea{
+        @apply text-[#E1D4C4] bg-[#262127] w-[50%] h-[5rem] text-[1.2rem] p-[1rem];
+        @screen laptop{
+            font-size: calc(2rem * var(--scale));
+            height: calc(10rem * var(--scale));
+        }
+    }
+    & button{
+        @apply h-[3rem] w-[8rem] text-[#262127] font-lato font-bold text-[1.15rem] 
+        bg-[#F89C53] rounded-[1rem];
+        @screen laptop {
+            height: calc(5rem * var(--scale));
+            width: calc(15rem * var(--scale)) ;
+            ont-size: calc(2rem * var(--scale));
+        }
+    }
+}
