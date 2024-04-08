@@ -108,9 +108,7 @@ function DetailsInfo({ data }: IDetailsInfo) {
 
   const dispatch = useDispatch();
   const reserva = useSelector((state: any) => state.reservation);
-
-
-
+  
   const datePart = reserva.horario;
   const part = datePart?.split(":");
 
@@ -379,11 +377,8 @@ function DetailsInfo({ data }: IDetailsInfo) {
     localStorage.setItem("name_partner", data?.partner?.full_name);
   }, []);
 
-
-
-
   return (
-    <div className=" main-page container-general internaExperiencia"> 
+    <div className=" main-page container-general internaExperiencia">
       <section
         className=" main-page internaExperiencia__card  grid-rows-4 grid-flow-col gap-6 flex "
         ref={initReservation}
@@ -633,7 +628,7 @@ function DetailsInfo({ data }: IDetailsInfo) {
           />
         </div>
         {suggestion === 0 && (
-          <div> 
+          <>
             <article className="details_calendar    flex-2 w-2/6">
               <div className="details_dalendar_box_">
                 <h2 ref={initiDaate}>Inicia tu reservación</h2>
@@ -941,7 +936,7 @@ function DetailsInfo({ data }: IDetailsInfo) {
                 </article>
               </div>
             </article>
-          </div>
+          </>
         )}
 
         {suggestion === 1 && (
@@ -963,10 +958,14 @@ function DetailsInfo({ data }: IDetailsInfo) {
           trigger={trigger}
         />
 
-      <div
-        className="w-200 pt-[1rem] Navbar-ul-contact false  false  iniciarReserva"
-      >
-        
+        <div
+          className="w-200 pt-[1rem] Navbar-ul-contact false  false "
+          style={{
+            position: "fixed",
+            bottom: "14px",
+            left: "16px",
+          }}
+        >
           <button
             className="modalSession-buttons  animate-btn_scale_animation w-full"
             onClick={openModal}

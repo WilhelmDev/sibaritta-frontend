@@ -22,34 +22,18 @@
 
 
 .homeBanner-video-mobil-{
-  @apply   w-full  bg-[url("/home/CalidadCafe2.jpg")]  bg-cover bg-center bg-no-repeat grid place-items-center relative;
-  video{
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-  }
-  height:95vh;
+  @apply   w-full h-screen bg-[url("/partner_home/mobil_home/home-mobil.webp")] mt-[2rem] bg-cover bg-center bg-no-repeat grid place-items-center relative;
+
   @screen tablet{
     @apply hidden ;
   }
 }
 
 .link-comofunciona-home-baner{
-  @apply text-[white]  absolute bottom-[15rem] bg-[#4D3452] rounded-[1rem]
-  w-[70%] h-[6rem] flex items-center justify-center gap-[3rem];
+  @apply text-[white]  absolute bottom-[20rem] bg-[#4D3452] rounded-[1rem] 
+  w-[90%] h-[7rem] flex items-center justify-center gap-[3rem];
   & span{
-    display: flex;
-    @apply font-lato;
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 17px;
-    color: #E1D4C4;
-    letter-spacing: 0em;
-    text-align: left;
-    svg{
-      margin: -2px 0 0 8px;
-    }
+    @apply font-lato font-extrabold text-[1.8rem] text-[#E1D4C4];
   }
 }
 
@@ -64,8 +48,7 @@
 .homeBanner {
   @apply  w-full  mt-[0rem];
   height: 100vh;
-  position: relative;
-  
+
 
   @screen laptop {
     @apply flex-row-reverse;

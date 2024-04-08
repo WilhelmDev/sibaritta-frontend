@@ -39,14 +39,11 @@
 }
 
 .profile-input {
-  @apply bg-[#2F2A32] p-[1.5rem] text-[#A59484] text-[1.4rem];
+  @apply bg-[#2F2A32] p-[1.5rem] text-[#F0EFEB] text-[1.4rem];
   border-radius: 1rem;
   @screen laptop {
     padding: calc(1.5rem * var(--scale));
     font-size: calc(1.4rem * var(--scale));
-  }
-  &::placeholder{
-    color: #A59484;
   }
 }
 
@@ -64,7 +61,7 @@
   }
 }
 .profile-pago{
-
+  
   @screen laptop {
     width: calc(65rem * var(--scale));
     font-size: calc(1.6rem * var(--scale));
@@ -136,7 +133,7 @@
 
 .profile-buttons {
   border-radius: 1rem;
-  @apply !bg-[#4D3452] text-[#E1D4C4] font-lato font-bold text-[1.4rem]
+  @apply !bg-[#4D3452] text-[#E1D4C4] font-lato font-bold text-[1.4rem] 
   p-[1.5rem] duration-300 ease-in-out hover:!bg-[#F89C53] hover:!text-[#4D3452];
   @screen laptop {
     padding: calc(1.5rem * var(--scale));
@@ -219,7 +216,7 @@
 }
 
 .imageDrop {
-  @apply rounded-full bg-[#4D3452] top-[70px] right-[-5px]
+  @apply rounded-full bg-[#4D3452] top-[70px] right-[-5px]   
   absolute cursor-pointer w-[3rem] h-[3rem];
 
   @screen laptop {

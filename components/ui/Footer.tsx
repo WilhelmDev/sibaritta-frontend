@@ -69,10 +69,10 @@ const Footer = () => {
     <div className="w-full ">
       <footer className="homeFooter">
       <section className="homeFooter_info">
-        <div className=" homeFooter_info__logo flex flex-col items-center  gap-[1.5rem]">
+        <div className="  flex flex-col items-center  gap-[1.5rem]">
           <div className="logosibarita-foter-logo  ">
             <Image
-              src="/home/LogoSibaritta.svg"
+              src="/home/social/logo.svg"
               alt="logo"
               className="w-full h-full"
               width={1000}
@@ -103,7 +103,13 @@ const Footer = () => {
             >
               <Tiktok />
             </Link>
-
+            <Link
+              href={"https://www.youtube.com/@Sibaritta-Experiencias"}
+              target="_blank"
+              className="homeSocial_info_icon-two"
+            >
+              <Youtube />
+            </Link>
           </div>
         </div>
 
@@ -159,7 +165,7 @@ const Footer = () => {
 
       </section>
       <section className="home_footer_copy">
-        <h5 className="home_footer_copy_p">©2024 Sibaritta</h5>
+        <h5 className="home_footer_copy_p">©2024 Sibarita.</h5>
         {/* <div className="home_footer_copy_terminos">
       <p className="home_footer_copy_p">Privacidad</p>
       <p className="home_footer_copy_p">Términos</p>

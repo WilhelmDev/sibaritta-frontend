@@ -66,7 +66,7 @@ const ModalSession = ({
   };
   const { push } = useRouter();
 
-
+  
 
   const appIDFacebook = process.env.NEXT_PUBLIC_APP_ID_FACEBOOK || "";
 
@@ -193,12 +193,12 @@ const ModalSession = ({
             toast: 'bg-[#252127]  w-full  h-[5rem] rounded-[1rem] flex items-center justify-center text-[#F89C53] shadow-[1px_1px_1px_#E1D4C4] font-lato',
             title: ' text-[2rem]  ',
           },
-           position :"top-center"
+           position :"top-center" 
         });
         localStorage.removeItem("modal_validate");
       }
       const { token, userid, fk_typeuser , fk_partner_id } = result.data;
-
+      
       localStorage.setItem("token", token);
       localStorage.setItem("userid", userid.toString());
       localStorage.setItem("fk_typeuser", fk_typeuser);
@@ -211,7 +211,7 @@ const ModalSession = ({
         push("/admin/admin_home");
       }
 
-
+     
       closeModalLogin();
       setautenti();
     } catch (error) {
@@ -234,7 +234,7 @@ const ModalSession = ({
         <div className="!bg-[#F0EFEB] " >
           <h2 className="ModalSession-title">¡Bienvenido Sibaritta!</h2>
           <p className="ModalSession-text">
-            Inicia sesión o registrate
+            Inicia sesión para completar la reserva
           </p>
           <div className="ModalSession-container">
             <div className="container-socials">
