@@ -239,9 +239,6 @@ const ModalRegister = ({
                     )}
                   </div>
                 </div>
-                <div className="w-full pt-[1rem]">
-                  <Drowpdon />
-                </div>
                 <div className="flex  pt-[1rem]">
                   <label
                     htmlFor="checkBox"

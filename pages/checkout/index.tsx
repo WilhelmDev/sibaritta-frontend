@@ -24,6 +24,7 @@ import moment from "moment";
 import ModalPoliticasCancelacion from "@/components/molecules/partner/ModalPoliticasCancelacion";
 import ModalAcuerdo from "@/components/molecules/reservationExitosa/ModalAcuerdo";
 import SecurityPrivileges from "@/security/SecurityPrivileges";
+import Drowpdon from "@/components/atoms/Drowpdon";
 
 function Index() {
   const [cancelationPoliti, setcancelationPoliti] = useState<boolean>(false);
@@ -51,6 +52,8 @@ function Index() {
   const [address, setAddress] = useState<string>("");
   const [addressError, setAddressError] = useState<string>("");
   const [email, setemail] = useState<string>("");
+  const [phoneNumber, setPhoneNumber] = useState<string>("");
+  const [phoneNumberError, setPhoneNumberError] = useState<string>("");
   const [emailError, setEmailError] = useState<string>("");
   const [acuerdoModal, setacuerdoModal] = useState<boolean>(false);
   const keyStripe =
@@ -231,6 +234,12 @@ function Index() {
       setEmailError("Este campo es obligatorio");
       setTimeout(() => {
         setEmailError("");
+      }, 2500);
+    }
+    if (phoneNumber === "") {
+      setPhoneNumberError("Este campo es obligatorio");
+      setTimeout(() => {
+        setPhoneNumberError("");
       }, 2500);
     }
     if (
@@ -439,6 +448,28 @@ function Index() {
                     onClick={() => toggleEditing("direccion")}
                     className="cursor-pointer icon-edit text-[#E1D4C4] text-[1.4rem] absolute top-[1.8rem] right-[1.5rem]"
                   ></i> */}
+                </div>
+              </div>
+              <div className="checkout_datils_email">
+                <h5>Telefono</h5>
+                <div className="flex flex-col gap-[.2rem] relative">
+                  <Drowpdon reference={setPhoneNumber}/>
+                  {phoneNumberError && (
+                    <p className="Login-error main-page !text-red-600 !text-[1.2rem] font-lato">
+                      {String([phoneNumberError])}
+                    </p>
+                  )}
+                  {/* <input
+                    value={phoneNumber}
+                    onChange={handleNumberPhone}
+                    type="text"
+                    placeholder="(201) 555-0123"
+                  />
+                  {addressError && (
+                    <p className="Login-error main-page !text-red-600 !text-[1.2rem] font-lato">
+                      {String(addressError)}
+                    </p>
+                  )} */}
                 </div>
               </div>
             </div>
