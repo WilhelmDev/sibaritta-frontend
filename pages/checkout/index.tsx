@@ -275,6 +275,7 @@ function Index() {
           order_hour_event: horas,
           order_minute_event: minutos,
           cardnumber: idNumberCard,
+          numberPhone: phoneNumber,
           user_address: address,
           order_details: datos?.sugerencias!.map((e: any) => {
             let data = {
@@ -286,6 +287,7 @@ function Index() {
             return data;
           }),
         };
+
 
         const data = await createReservationsConfirm(datacheckout);
 
