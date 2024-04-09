@@ -60,7 +60,7 @@
     @apply font-normal flex flex-col;
 
     li {
-
+      
       padding: 0.4rem 0;
       transition: color 0.5s ease;
       @apply px-12 py-4 relative cursor-pointer font-[300] font-lato capitalize text-center !text-[#E1D4C4];
@@ -119,9 +119,9 @@
 
   @screen laptop {
     @apply static inset-auto rounded-xl p-0 mx-auto flex items-center justify-between transform-none bg-transparent;
-    height: auto;
-    padding-top: 0px;
-    padding-bottom: 0px;
+    height: calc(17.4rem * var(--scale));
+    padding-top: calc(6.7rem * var(--scale));
+    padding-bottom: calc(6.7rem * var(--scale));
     /* width: calc(150rem * var(--scale)); */
     transition: all 0.3s ease-in-out;
     width: 100%;
@@ -226,7 +226,7 @@
     display: none;
   }
 }
-/*
+/* 
 .isActivess {
    @apply bg-black;
 } */

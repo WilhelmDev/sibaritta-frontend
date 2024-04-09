@@ -94,7 +94,7 @@ const HeaderPartner = () => {
                 <Image
                   width={2000}
                   height={2000}
-                  src={"/home/LogoSibaritta.svg"}
+                  src={"/home/social/logo.svg"}
                   alt="Logo de la marca"
                 />
               </Link>

@@ -66,7 +66,7 @@ function Index() {
           {invalidad === true && <h2>Validacion incorrecta</h2>}
 
           <div className='box-content-register-message '>
-          <Image src={"/home/LogoSibaritta.svg"} width={1000} height={1000} alt='logo'/>
+          <Image src={"/home/social/logo.svg"} width={1000} height={1000} alt='logo'/>
         </div>
 
         <div className='box_animacion-content'>

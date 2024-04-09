@@ -100,7 +100,7 @@ export const Navbar: FC<NavbarProps> = ({ isMenuOpen, closeMenu }) => {
     menu: [
       {
         id: 1,
-        label: "Quiénes Somos",
+        label: "¿Cómo funciona Sibaritta?",
         url: "/sibaritta",
       },
       {

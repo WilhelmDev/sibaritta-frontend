@@ -6,51 +6,15 @@
   }
 }
 
-.Home_main__sb_YB{
-  overflow-x: hidden;
-}
-.p-dialog-mask{
-  background: #000;
-}
+
+
 .homeBusiness_carrusel_card_conten img {
   @apply w-auto h-auto;
   /* @screen laptop{
     width: calc(20rem * var(--scale));
   } */
 }
-.box_bussines-title-description{
-  justify-content: center;
-  h2{
-    line-height: normal;
-  }
-}
-.box-texto-agenda-sibaritta-business{
-    margin-bottom: 45px;
-}
 
-.change{
-  .openMenu{
-   opacity: 0;
-  }
-  .closeMenu{
-    opacity: 1!important;
-  }
-}
-.box-mainsibaritta_business{
-  width: 80%;
-  margin: auto;
-}
-.d-none{
-  opacity: 0;
-}
-.openMenu{
-  transition: all .5s;
-}
-.closeMenu{
-  position: relative;
-  left: -12px;
-  transition: all .5s;
-}
 .contenedorExperiencia{
   padding-top: 100px;
 }
@@ -59,7 +23,7 @@
 }
 .icon-scroll{
   margin: auto;
-  bottom: -36%;
+  bottom: -20%;
   left: 0;
   right: 0;
 }
@@ -115,20 +79,6 @@ h3{
 .pt-1{
   padding-top: 10px;
 }
-.bold-400{
-      font-weight: 400!important;
-}
-.socio-register-message-box{
-  svg{
-    font-size: 25px;
-    width: 80px;
-    height: 80px;
-    margin-bottom: 25px;
-  }
-  path{
-    fill:#f89c53;
-  }
-}
 .p-dialog-header{
   position: relative;
   .p-dialog-header-icon{
@@ -143,18 +93,6 @@ h3{
 
     }
   }
-}
-.container-socials{
-  button{
-    line-height: normal;
-    color: #252127;
-  }
-  img{
-    margin-bottom: 10px;
-  }
-}
-.modalsession {
-  padding-top: 60px!important;
 }
 .add_user_increment_less_{
   background: var(--crema)!important;
@@ -221,43 +159,15 @@ body{
 
   }
 }
-.logosibarita-foter-logo  {
-  img{
-    width: 250px;
-  }
-}
-.homeFooter_info{
-  padding-top: 70px;
-  padding-bottom: 50px;
-}
-.homeSocial_info-icons {
-  svg{
-    width: 25px;
-  }
-}
-.homeBanner{
-  position: relative;
-  &::before{
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    height: 100%;
-    width: 100%;
-    content: "";
-    background: linear-gradient(0deg, #252127 0%, rgba(37, 33, 39, 0) 30%);
-
-  }
-}
 .graciasGeneral{
   &__card{
-      padding-top: 150px;
-      padding-bottom: 200px;
+      padding-top: 80px;
+      padding-bottom: 80px;
       .box-content-register-message {
         margin-bottom: 60px;
       }
       p{
-        font-size: 24px;
-        line-height: normal;
+        font-size: 30px;
       }
   }
 }
@@ -282,22 +192,6 @@ body{
   }
   h6{
     line-height: normal;
-  }
-}
-
-.iniciarReserva{
-  position: fixed;
-  width: 90%;
-  left: 0;
-  bottom: 0;
-  margin: auto;
-  right: 0;
-  .modalSession-buttons{
-    border-radius: 10px 10px 0px 0px;
-    width: 100%;
-    .detail_pick_one{
-      justify-content: center;
-    }
   }
 }
 @media (max-width: 575.98px) {
@@ -564,20 +458,7 @@ body{
     top: 0;
   }
 }
-.modalsession{
-  p{
-    .span{
-      font-size: 15px;
-      font-weight: 700;
-      line-height: 21px;
-      letter-spacing: 0em;
-      text-align: center;
-      color: #252127;
-      display: block;
-      margin-top: 11px;
-    }
-  }
-}
+
 @media (min-width: 576px) and (max-width: 767.98px) {
   h2{
     text-align: center;

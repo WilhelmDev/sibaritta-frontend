@@ -37,8 +37,8 @@
     right: 0;
 
     &.isActive {
-      top: 1.3rem;
-      right: 0rem;
+      top: 1.8rem;
+      right: 0.5rem;
     }
 
     @screen laptop {
@@ -87,13 +87,7 @@
       }
     }
   }
-  &.background-negro{
-    background: #252127;
-    box-shadow: -1px 10px 17px -7px rgba(0,0,0,0.75);
-    -webkit-box-shadow: -1px 10px 17px -7px rgba(0,0,0,0.75);
-    -moz-box-shadow: -1px 10px 17px -7px rgba(0,0,0,0.75);
 
-  }
   &-overlay {
     opacity: 0;
     transition: opacity 0.3s ease;
@@ -114,16 +108,12 @@
   @screen laptop {
     @apply bg-transparent flex items-center !sticky rounded-none;
     transition: background-color 0.25s ease;
+    height: calc(17.4rem * var(--scale));
     left: 0;
-    padding:50px 0;
     transform: translateX(0);
     top: 0;
+    padding: 0;
     width: 100%;
-    .logoCont {
-      img{
-        width: 250px!important;
-      }
-    }
     &-ctn {
       height: auto;
     }

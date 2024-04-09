@@ -3,21 +3,10 @@
 }
 
 .ModalSession-title {
-  @apply  text-center text-[#4D3452] font-bold font-lato;
-  font-size: 40px;
-  font-weight: 700;
-  line-height: 48px;
-  letter-spacing: 0em;
-  text-align: center;
+  @apply text-[2.5rem] text-center text-[#4D3452] font-bold font-lato;
 }
 .ModalSession-text {
-  @apply  text-center text-[#A59484] font-bold font-lato;
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 24px;
-  letter-spacing: 0em;
-  text-align: center;
-
+  @apply text-[1.8rem] text-center text-[#4D3452] font-bold font-lato;
 }
 .modalSession-span {
   color: #4d3452;

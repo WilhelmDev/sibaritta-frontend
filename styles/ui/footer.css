@@ -9,7 +9,13 @@ align-items: center;
 
   }
 }
-
+.logosibarita-foter-logo{
+@apply w-[18rem] h-[10rem];
+@screen laptop{
+  width: calc(30rem * var(--scale));
+  height: calc(15rem * var(--scale));
+}
+}
 .homeFooter{
 @apply w-[99%] m-auto;
 
@@ -62,7 +68,7 @@ align-items: center;
   @apply  w-full h-auto flex
   gap-[2rem]  py-[2rem] px-[2rem];
   @screen tabletlg {
-    @apply  flex-row justify-center;
+    @apply  flex-row justify-start  w-[60%];
   }
 
 

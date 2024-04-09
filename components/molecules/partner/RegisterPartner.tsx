@@ -49,7 +49,7 @@ function RegisterPartner({ visible1, setVisible1 }: ModalRegisterPartnerProps) {
             toast: 'bg-[#252127]  w-full  h-[5rem] rounded-[1rem] flex items-center justify-center text-[#F89C53] shadow-[1px_1px_1px_#E1D4C4] font-lato',
             title: ' text-[2rem]  ',
           },
-           position :"top-center"
+           position :"top-center" 
         });
       }else{
         toast("algo fallo registro intentar nueva mente",{
@@ -58,7 +58,7 @@ function RegisterPartner({ visible1, setVisible1 }: ModalRegisterPartnerProps) {
             toast: 'bg-[#252127]  w-full  h-[5rem] rounded-[1rem] flex items-center justify-center text-[#F89C53] shadow-[1px_1px_1px_#E1D4C4] font-lato',
             title: ' text-[2rem]  ',
           },
-           position :"top-center"
+           position :"top-center" 
         });
       }
     } catch (error) {
@@ -81,10 +81,11 @@ function RegisterPartner({ visible1, setVisible1 }: ModalRegisterPartnerProps) {
               ¡Si tienes experiencias auténticas de alta calidad y quieres
               darlas a conocer en la única plataforma de experiencias de alto
               nivel de México, este es el lugar correcto!.
-
+              <span>
+                Regístrate y recibirás una llamada personalizada para evaluar tu
+                establecimiento como Partner de Sibaritta.
+              </span>
             </p>
-            <p className="bold-400">Regístrate y recibirás una llamada personalizada para evaluar tu
-            establecimiento como Partner de Sibaritta.</p>
           </div>
 
           <form

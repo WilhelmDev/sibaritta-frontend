@@ -34,7 +34,7 @@ const Header = () => {
     <header
       className={`Header ${
         isTopZero
-          ? "background-negro"
+          ? "background-white"
           : asPath === "/"
           ? "background-transparent"
           : "background-transparent"

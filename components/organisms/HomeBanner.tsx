@@ -47,31 +47,37 @@ const HomeBanner = ({
         }}
       ></div>
       <div className="homeBanner-video-mobil- ">
-        <video
-          src={"/home/Sibaritta-Video-Home-Mobile.mp4"}
-          autoPlay
-          muted
-          loop
-          playsInline
-        ></video>
+        <div
+          onClick={() => setmodalVideo(true)}
+          className="icon-home-baner-video-mobil"
+        >
+          <Image
+            src={"/partner_home/mobil_home/play_icon.svg"}
+            width={1000}
+            height={1000}
+            alt="logo"
+            className="w-full  h-full"
+          />
+        </div>
 
         <Link href={"/sibaritta"} className="link-comofunciona-home-baner">
-          <span>
-
-            Quienes Somos
-            <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M14.5 5L21.5 12M21.5 12L14.5 19M21.5 12L3.5 12" stroke="#E1D4C4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-
-          </span>
-
+          <span>¿Cómo funciona Sibaritta</span>
+          <div className="w-[3rem] h-[3rem] font-extrabold">
+            <Image
+              src={"/partner_home/mobil_home/derecha2.svg"}
+              width={1000}
+              height={1000}
+              alt="logo"
+              className="w-full  h-full"
+            />
+          </div>
         </Link>
       </div>
 
       <div className=" homeBanner-video">
         {/* <Image src={"/home/fondoNuevo.jpg"} className="w-full h-full object-cover " width={1000} height={1000} alt="xd"/> */}
         <video
-          src={"/home/Sibaritta-Video-Home-Desktop.mp4"}
+          src={"/home/sibaritta-video-home.mp4"}
           autoPlay
           muted
           loop

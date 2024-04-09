@@ -19,14 +19,9 @@ export const MenuIcon: FC<MenuIconProps> = ({
       onClick={setIsActive}
       className={`menu-icon ${className} ${type} ${isActive ? "change" : null}`}
     >
-
-      <svg className="openMenu" width="21" height="15" viewBox="0 0 21 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M9.20898 13.9596H19.5423M1.45898 7.5013H19.5423M9.20898 1.04297H19.5423" stroke="#E1D4C4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      <svg className="closeMenu d-none" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M8.99998 8.99998L5.00001 5.00001M5.00001 5.00001L1 1M5.00001 5.00001L9.00002 1M5.00001 5.00001L1 9.00002" stroke="#F89C53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-
+      <span className="span  "></span>
+      <span className="span "></span>
+      <span className="span  "></span>
     </div>
   );
 };

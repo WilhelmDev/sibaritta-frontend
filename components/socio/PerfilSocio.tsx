@@ -42,7 +42,7 @@ function PerfilSocio() {
 
    const router = useRouter()
 
-
+ 
   //DMIN
   const [infoDataClient, setinfoDataClient] = useState<any>();
   const [clientId, setClienId] = useState(0);
@@ -162,7 +162,7 @@ function PerfilSocio() {
     localStorage.removeItem("_grecaptcha");
     localStorage.removeItem("reservation");
     closeModal();
-
+    
   }
 
   const updateUsers: SubmitHandler<FieldValues> = async (data: FieldValues) => {
@@ -208,11 +208,11 @@ function PerfilSocio() {
           }, 200);
         }
       }
-
-
+      
+      
       resetEditingState();
       getUserByIds();
-
+      
     } catch (error) {
       console.log(error);
     }
@@ -229,7 +229,7 @@ function PerfilSocio() {
   const allClien = async () => {
     try {
       const { data } = await getClient();
-
+      
 
       setinfoDataClient(
         data.map((pa: any) => {
@@ -254,7 +254,7 @@ function PerfilSocio() {
 
   const handleSubmitForm = async (e: any) => {
     e.preventDefault(); // Prevenir el comportamiento de envío de formulario predeterminado
-
+  
     if (is_social === "true") {
       try {
         // Si es un inicio de sesión social, ejecutar directamente el envío del formulario
@@ -267,12 +267,12 @@ function PerfilSocio() {
       openModalUpdate();
     }
   };
+  
+  
+  
 
-
-
-
-
-
+ 
+  
   return (
     <>
       <div className="profiles-container">
@@ -287,7 +287,7 @@ function PerfilSocio() {
             <>
               <div className="profile-image">
                 <Image
-                  src={"/profile/perfil-mobile.jpg"}
+                  src={"/img/profile.png"}
                   width={500}
                   height={500}
                   alt=""
@@ -298,7 +298,7 @@ function PerfilSocio() {
               <div className="profile-destok  ">
                 <Image
                   alt=""
-                  src={"/profile/perfil-desktop.jpg"}
+                  src={"/img/destok.png"}
                   width={1000}
                   height={1000}
                   className=" w-full h-full  object-cover  "
@@ -361,7 +361,7 @@ function PerfilSocio() {
 
             <div >
               <form
-
+              
               onSubmit={handleSubmitForm}
                 // className='flex flex-col gap-[1.5rem] laptop:grid laptop:grid-cols-2'
               >
@@ -474,7 +474,7 @@ function PerfilSocio() {
                     <input
                       type={`${password ? "text": "password"}`}
                       className={`profile-input ${
-                        password
+                        password 
                           ? "bg-[#4D3452] duration-300 ease-in-out"
                           : ""
                       }`}
@@ -483,12 +483,12 @@ function PerfilSocio() {
                       // readOnly={!isEditing["password"]}
                     />
                      <i
-                      onClick={() => {setpassword(!password)
+                      onClick={() => {setpassword(!password)                      
                     }}
                       className="icon-edit cursor-pointer  text-[#E1D4C4] text-[1.4rem] absolute top-[1.8rem] right-[1.5rem]"
                     ></i>
-
-
+                  
+                    
                   </div>
                 </div>
                 <div className="w-full h-[.2rem] bg-[#2F2A32] mt-[4rem]"></div>
@@ -577,7 +577,7 @@ function PerfilSocio() {
                       />
                     </div>
                   </div>
-
+                  
                   {/* <div className="profile-inputs">
                     <span className="profile-label"> Metodo Pago</span>
                     <div className="xd relative ">
@@ -585,22 +585,22 @@ function PerfilSocio() {
                         type="text"
                         className="profile-input "
                         placeholder="42424242424242424242"
-
-
+                        
+                        
                         onInput={(e) => {
                           onInputNumberOnly1(setValue, "anniversary_month", e);
                         }}
                       />
                     </div>
-
+                    
                   </div> */}
-
+                  
                 </div>
-
+                
 
 
                 <div className="w-full justify-end flex pt-[2rem]">
-                  <button
+                  <button  
                   type="submit"
                   className="profile-buttons">Actualizar</button>
                 </div>
