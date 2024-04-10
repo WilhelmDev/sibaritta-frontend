@@ -41,6 +41,8 @@ const ModalRegister = ({
   const captchaKey = process.env.NEXT_PUBLIC_RECAPTCHA as string;
   const [messageErroCaptcha, setMessageCaptcha] = useState("");
   const [emailExit, setMessageEmailExit] = useState("");
+  const [checkBox, setcheckBox] = useState(false);
+  const [messageErrorCheck, setMessageErrorCheck] = useState("");
 
   const {
     handleSubmit,
@@ -115,6 +117,12 @@ const ModalRegister = ({
   //registro
   const onSubmit = async (data: any) => {
     try {
+
+      if (!checkBox) {
+        setMessageErrorCheck("Debes tener más de 18 años para registrarte");
+        return;
+      }
+
       if (!captchaResponse) {
         setShowCaptchaError(true);
         return;
@@ -239,18 +247,15 @@ const ModalRegister = ({
                     )}
                   </div>
                 </div>
-                <div className="w-full pt-[1rem]">
-                  <Drowpdon />
-                </div>
                 <div className="flex  pt-[1rem]">
                   <label
                     htmlFor="checkBox"
                     className="cursor-pointer flex gap-[.5rem]"
                   >
                     <input
-                      // checked={checkBox}
+                      checked={checkBox}
                       id="checkBox"
-                      // onChange={(e) => setcheckBox(e.target.checked)}
+                      onChange={(e) => setcheckBox(e.target.checked)}
                       type="checkbox"
                       className="w-[1.7rem]"
                     />
@@ -259,6 +264,11 @@ const ModalRegister = ({
                     </p>
                   </label>
                 </div>
+                {messageErrorCheck && (
+                  <p className="Form-error text-red-500 text-[1.3rem]">
+                    {messageErrorCheck}
+                  </p>
+                )}
               </div>
               <div className="flex flex-col justify-center items-center py-[1rem]">
                 <ReCAPTCHA

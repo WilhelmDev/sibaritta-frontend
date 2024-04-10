@@ -2,7 +2,11 @@ import axios from "axios";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
-const Dropdown = () => {
+interface IFormValue {
+  reference: any;
+}
+
+const Dropdown = ({ reference }: IFormValue) => {
   const [countries, setCountries] = useState<any[]>([]);
   const [selectedCountry, setSelectedCountry] = useState<string | null>(
     "Mexico "
@@ -48,6 +52,7 @@ const Dropdown = () => {
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSelectedCountryCode(e.target.value);
+    reference(e.target.value);
   };
 
   return (
