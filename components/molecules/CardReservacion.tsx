@@ -184,7 +184,7 @@ function CardReservacion({ card, first, reservas, index }: any) {
             </div>
             <div className="flex justify-end w-full gap-[1rem] items-center">
               <p>Codigo reservacion :</p>
-              <p>{card.order_code.substring(0, 10)}</p>
+              <p>{card.order_code}</p>
             </div>
           </article>
         </section>

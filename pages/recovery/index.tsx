@@ -58,7 +58,7 @@ function Recovery() {
       <article className="recovery_box ">
         <div className="bxo-image ">
           <Image
-            src={"/home/LogoSibaritta.svg"}
+            src={"/home/social/logo.svg"}
             className="w-full h-full"
             width={1000}
             height={1000}

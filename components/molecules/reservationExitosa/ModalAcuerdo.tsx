@@ -19,13 +19,13 @@ function ModalAcuerdo({ visible, setVisible }: ModalSessionProps) {
           La plataforma digital y/o aplicación nativa para dispositivos móviles, computadores y tablet denominada SIBARITTA, marca de la empresa MEAL MATES, S. DE R.L. DE C.V. con Registro Federal de Contribuyentes RFC MMA230405V58 MMA230405V58, debidamente constituida bajo la legislación de los Estados Unidos Mexicanos, con domicilio fiscal en Torre Vórtice, Frida Kahlo 195, Col Valle Oriente, 66269, San Pedro Garza García, Nuevo León, México y que para efectos de los siguientes Términos y Condiciones (en adelante “Términos y Condiciones”) se denominará SIBARITTA
 
           El Partner (en adelante “Partner ”), son los restaurantes, establecimientos de comercio, bares centros de entretenimiento y demás personas físicas y/o morales que pueden celebrar contratos, Términos, colaboraciones, vínculos, B2B (business to business), B2C (business to consumer) o cualquier otra forma de unión que genere derechos y obligaciones con SIBARITTA, para vender, consolidar, crear, ofrecer, disponer, mostrar y/o cualquier otro relacionado con el ofrecimiento y/o venta de experiencias, productos y/o servicios a los usuarios y/o socios.
-
+          
           El usuario (en adelante “Usuario”) tendrá a su disposición una plataforma virtual (en adelante “Servicio”) que le permitirá acceder a diferentes experiencias, productos y/o servicios ofrecidos por el Partner.
-
-          El comprador (en adelante “Socio”) tendrá a su disposición una plataforma virtual (en adelante “Servicio”) que le permitirá acceder, adquirir, comprar y/o reservaciónr diferentes productos y/o servicios ofrecidos por los Partner.
-
-          Los siguientes Términos y Condiciones son aceptados por el usuario y/o Socio en el momento de inscribir sus datos en la plataforma digital y/o aplicación nativa SIBARITTA y al realizar una reservación a través de SIBARITTA, acogiéndose a las disposiciones legales vigentes.
-
+          
+          El comprador (en adelante “Socio”) tendrá a su disposición una plataforma virtual (en adelante “Servicio”) que le permitirá acceder, adquirir, comprar y/o reservaciónr diferentes productos y/o servicios ofrecidos por los Partner. 
+          
+          Los siguientes Términos y Condiciones son aceptados por el usuario y/o Socio en el momento de inscribir sus datos en la plataforma digital y/o aplicación nativa SIBARITTA y al realizar una reservación a través de SIBARITTA, acogiéndose a las disposiciones legales vigentes. 
+          
           El usuario y/o Socio acepta que ha leído, entendido y aceptado los Términos y Condiciones, Aviso de Privacidad y Tratamiento de Datos Personales y Aviso de Propiedad Intelectual y demás anexos de la plataforma digital y/o aplicación nativa SIBARITTA.
           `,
       },
@@ -53,11 +53,11 @@ function ModalAcuerdo({ visible, setVisible }: ModalSessionProps) {
         * DESAFORTUNADA (NO ESTUVO A LA ALTURA DE LAS EXPECTATIVAS, SERVICIO Y CALIDAD MUY POR DEBAJO DE LO ESPERADO)
         ** REGULAR (DEFICIENCIAS EN EL SERVICIO Y LA CALIDAD)
         *** ACEPTABLE (UNA EXPERIENCIA ACEPTABLE, AÚN QUEDA ESPACIO PARA ELEVARLA A UN NIVEL SUPERIOR)
-
+        
         **** DESTACADA (REFLEJA UN SERVICIO DE CALIDAD Y DE ALTO NIVEL, PEQUEÑAS MEJORAS PODRÍAN PERFECCIONARLA, PERO EN GENERAL, SOBRESALIENTE)
         ***** ÉPICA (SUPERÓ TODAS LAS EXPECTATIVAS, UN STANDART EXCEPCIONAL)
 
-        Servicio: La prestación que ofrece SIBARITTA, en la que muestra la experiencia, productos y/o servicios exhibidos, ofrecidos y comercializados por los Partner para que el Socio pueda acceder a ellos.
+        Servicio: La prestación que ofrece SIBARITTA, en la que muestra la experiencia, productos y/o servicios exhibidos, ofrecidos y comercializados por los Partner para que el Socio pueda acceder a ellos. 
 
         Partner: Persona física y/o moral que exhibe, ofrece y comercializa la experiencia, productos y/o servicios en SIBARITTA, para el usuario y/o socio pueda acceder a ellos.
 
@@ -69,9 +69,9 @@ function ModalAcuerdo({ visible, setVisible }: ModalSessionProps) {
 
         Créditos: Es la representación de dinero en la Wallet con la que el usuario y/o Socio cuenta en la plataforma digital y/o aplicación nativa SIBARITTA, con los que podrá adquirir la experiencia, productos y/o servicios ofrecidos por los Partner.
 
-        Administrador de Reservación: Persona natural que realiza una reservación inicial personal y/o para grupo de personas y es quien tiene la facultad de administrar, modificar o cancelar la reservación.
+        Administrador de Reservación: Persona natural que realiza una reservación inicial personal y/o para grupo de personas y es quien tiene la facultad de administrar, modificar o cancelar la reservación. 
 
-        Integrantes de Grupo: Persona natural que hace parte de un grupo de personas que tienen una reservación asignada un Administrador de Reservación.
+        Integrantes de Grupo: Persona natural que hace parte de un grupo de personas que tienen una reservación asignada un Administrador de Reservación. 
 
         Confirmación de Reservación: Cuando todos los Integrantes de Grupo realizan el pago que corresponde a cada uno.
 
@@ -93,7 +93,7 @@ function ModalAcuerdo({ visible, setVisible }: ModalSessionProps) {
         title: "4.	PLATAFORMA DIGITAL Y/O APLICACIÓN NATIVA SIBARITTA",
         content:
         `
-        La plataforma digital y/o aplicación nativa SIBARITTA, es una aplicación por medio de la cual los Partner y el Socio, se conectan para, de una parte, ofrecer y comercializar productos y/o servicios y por la otra, acceder y adquirir productos y/o servicios exhibidos.
+        La plataforma digital y/o aplicación nativa SIBARITTA, es una aplicación por medio de la cual los Partner y el Socio, se conectan para, de una parte, ofrecer y comercializar productos y/o servicios y por la otra, acceder y adquirir productos y/o servicios exhibidos. 
 
         La plataforma digital y/o aplicación nativa SIBARITTA es un medio de comunicación y/o portal de contacto entre los Partner y el Socio y, en ningún caso, se puede considerar que la plataforma digital y/o aplicación nativa SIBARITTA comercializa productos y/o servicios propios. Las características, disponibilidad de la experiencia, detalles de productos y/o servicios son establecidos directamente por los Partner y no por plataforma digital y/o aplicación nativa SIBARITTA.
 
@@ -117,7 +117,7 @@ function ModalAcuerdo({ visible, setVisible }: ModalSessionProps) {
 
         1.4	A revisar la información de registro del Partner y los documentos que se requieran para seleccionar y crear el perfil de empresa.
 
-        1.5	A mostrar a los usuarios y/o socios, los productos y/o servicios exhibidos, ofrecidos y comercializados por el Partner, previa autorización.
+        1.5	A mostrar a los usuarios y/o socios, los productos y/o servicios exhibidos, ofrecidos y comercializados por el Partner, previa autorización. 
 
         1.6	A tener información actualizada sobre la experiencia, productos y/o servicios exhibidos, ofrecidos y comercializados por el Partner, de acuerdo con la información que suministren a SIBARITTA.
 
@@ -143,7 +143,7 @@ function ModalAcuerdo({ visible, setVisible }: ModalSessionProps) {
         1.16	A cumplir con el periodo de pago correspondiente para el Partner, que se realizará a los quince (15) días del mes siguiente del período de facturación de los servicios y/o productos ofrecidos y vendidos a través de la plataforma SIBARITTA
 
 
-        PARAGRAFO: En el evento en que la fecha de pago se presente en una fecha festiva y/o no hábil laboral, el pago se efectuará el día siguiente hábil.
+        PARAGRAFO: En el evento en que la fecha de pago se presente en una fecha festiva y/o no hábil laboral, el pago se efectuará el día siguiente hábil. 
 
         5.2 Del usuario y/o Socio.
 
@@ -152,11 +152,11 @@ function ModalAcuerdo({ visible, setVisible }: ModalSessionProps) {
 
         5.23 A registrar su método de pago ya sea tarjeta de crédito/débito, Stripe o recarga de créditos para la Wallet, en el momento de adquirir la experiencia, servicio y/o producto de su elección que son exhibidos, ofrecidos y comercializados por los Partner.
 
-        5.24 Acepta permitir que, al momento de la reservación y/o compra, la plataforma digital y/o aplicación nativa SIBARITTA acceda a su ubicación geográfica para establecer los Partner más cercanos.
+        5.24 Acepta permitir que, al momento de la reservación y/o compra, la plataforma digital y/o aplicación nativa SIBARITTA acceda a su ubicación geográfica para establecer los Partner más cercanos. 
 
         5.25 A recibir la experiencia, servicio y/o producto, de forma presencial en el establecimiento o remoto, en horario aproximado y características presentadas en la plataforma digital y/o aplicación nativa SIBARITTA y adquiridas al momento de la compra.
 
-        5.26 A presentarse en el establecimiento del Partner, en el lugar y la hora elegidas.
+        5.26 A presentarse en el establecimiento del Partner, en el lugar y la hora elegidas. 
 
         5.27 A solicitar información a la plataforma y/o aplicación nativa SIBARITTA sobre cualquier inquietud que tenga sobre la experiencia, servicio y/o producto, su preparación, ingredientes, manipulación y cualquier otro que se refiera a la experiencia, servicio y/o producto, ya sea previo a la orden, durante su elaboración o una vez lo reciba.
 
@@ -223,17 +223,17 @@ function ModalAcuerdo({ visible, setVisible }: ModalSessionProps) {
 
         7.1	Los presentes Términos y condiciones del uso de la plataforma digital y/o aplicación nativa SIBARITTA
 
-        7.2	Tiene la mayoría de edad cumplida
+        7.2	Tiene la mayoría de edad cumplida 
 
         7.3	Cuenta con capacidad legal para adquirir derechos y obligaciones en la relación que surja de la compra de productos y/o servicios ofrecidos por los Partner
 
-        7.4	Tiene capacidad de pago y puede efectuar transacciones por medio de tarjeta de crédito/débito, Stripe o créditos recargados en la Wallet.
+        7.4	Tiene capacidad de pago y puede efectuar transacciones por medio de tarjeta de crédito/débito, Stripe o créditos recargados en la Wallet. 
 
         7.5	Posee teléfono celular con acceso a datos móviles, computador, e-mail, teléfono fijo o tiene acceso a cualquier otro medio de comunicación donde pueda ser informado sobre el registro en la plataforma digital y/o aplicación nativa SIBARITTA, el estado de las ordenes de productos y/o servicios y cualquier otra información relacionada con plataforma digital y/o aplicación nativa SIBARITTA.
 
         7.6  Tiene una cuenta con Facebook, Gmail y/o Apple y/o correo electrónico para el registro del usuario para inicio de sesión.
 
-        7.7	Tendrá una única cuenta registrada, personal e individual.
+        7.7	Tendrá una única cuenta registrada, personal e individual. 
 
         7.8  Cada usuario con cuenta registrada en la plataforma digital y/o aplicación nativa SIBARITTA, está autorizado para tener una sola cuenta individual, registrada con Facebook, Gmail y/o Apple y/o correo electrónico.
 
@@ -245,9 +245,9 @@ function ModalAcuerdo({ visible, setVisible }: ModalSessionProps) {
 
         7.12	Conoce y acepta la cláusula 5 “de los Términos y condiciones” denominado “Compromisos y Obligaciones”, del “Usuario y/o Socio”
 
-        7.13	La plataforma digital y/o aplicación nativa SIBARITTA accederá a su ubicación geográfica para reconocer los Partner más cercanos, previa autorización.
+        7.13	La plataforma digital y/o aplicación nativa SIBARITTA accederá a su ubicación geográfica para reconocer los Partner más cercanos, previa autorización. 
 
-        7.14	La plataforma digital y/o aplicación nativa SIBARITTA, podrá realizar actualizaciones sin previo aviso y que el usuario y/o Socio deberá aceptar la actualización para poder realizar reservaciones y/o compras en la misma.
+        7.14	La plataforma digital y/o aplicación nativa SIBARITTA, podrá realizar actualizaciones sin previo aviso y que el usuario y/o Socio deberá aceptar la actualización para poder realizar reservaciones y/o compras en la misma. 
 
         7.15	La plataforma digital y/o aplicación nativa SIBARITTA se reservación el derecho a revisar, modificar y/o cambiar los Términos y condiciones en el momento en que lo considere necesario y sin previa autorización de los usuarios y/o Socios y Partner.
         `,
@@ -281,7 +281,7 @@ function ModalAcuerdo({ visible, setVisible }: ModalSessionProps) {
 
         La plataforma digital y/o aplicación nativa SIBARITTA podría estar en constante actualización y, por lo tanto, se informaría a los usuarios y/o socios sobre la imposibilidad de pago u otros que no permitieran transacciones en la plataforma digital y/o aplicación nativa SIBARITTA
 
-        En caso de ser una actualización de los servidores de pago, bloqueos de tarjetas, cupo disponible u otra que sean directamente responsabilidad del usuario y/o de la entidad bancaria, la plataforma digital y/o aplicación nativa SIBARITTA no será responsable.
+        En caso de ser una actualización de los servidores de pago, bloqueos de tarjetas, cupo disponible u otra que sean directamente responsabilidad del usuario y/o de la entidad bancaria, la plataforma digital y/o aplicación nativa SIBARITTA no será responsable. 
 
         El usuario y/o Socio entiende y acepta que, cualquier cobro adicional efectuado por la entidad bancaria por el uso propio de sus productos y/o servicios, es ajena a la plataforma digital y/o aplicación nativa SIBARITTA y la exonera de responsabilidad.
         `,
@@ -293,7 +293,7 @@ function ModalAcuerdo({ visible, setVisible }: ModalSessionProps) {
         `
         La plataforma digital y/o aplicación nativa SIBARITTA es de uso personal e intransferible, por lo tanto, cada usuario y/o Socio deberá tener una cuenta registrada y activa para poder realizar reservaciones y/o compras de los diferentes productos y/o servicios ofrecidos por los Partner.
 
-        El usuario y/o Socio entiende y acepta que la aplicación funcionará en un (1) solo dispositivo a la vez y la cuenta no podrá ser compartida, transferida, cedida o cualquier otra forma que se considere duplicidad de la plataforma digital y/o aplicación nativa SIBARITTA en diferentes dispositivos con una única cuenta.
+        El usuario y/o Socio entiende y acepta que la aplicación funcionará en un (1) solo dispositivo a la vez y la cuenta no podrá ser compartida, transferida, cedida o cualquier otra forma que se considere duplicidad de la plataforma digital y/o aplicación nativa SIBARITTA en diferentes dispositivos con una única cuenta. 
 
         El usuario y/o Socio entiende y acepta que podrá hacer reservaciones personales y/o para grupos de personas dependiendo de la disponibilidad de experiencia, servicio y/o producto de cada Partner, teniendo previo conocimiento que cada integrante de la reservación debe contar con una cuenta registrada y activa para poder realizar el pago que le corresponda.
 
@@ -301,21 +301,21 @@ function ModalAcuerdo({ visible, setVisible }: ModalSessionProps) {
 
         El usuario y/o Socio, en calidad de Administrador de Reservación o Integrante de Grupo, entiende y acepta que es su responsabilidad personal, tener la aplicación actualizada, acceder a permisos de ubicación activo, tener tarjeta de crédito/débito, Stripe y/o créditos en la Wallet para realizar el pago de la reservación.
 
-        Cada usuario y/o Socio entiende y acepta que el Administrador de Reservación y los Integrantes de Grupo, deben aceptar la invitación  y realizar el pago de manera individual por cada integrante,  por parte de otro integrante o total por parte del Administrador de Reservación, para que el Partner reciba y confirme la reservación, cada integrante del grupo tienen trinta (30) minutos para realizar el pago, a partir del inicio de solicitud de reservación, de no hacerlo se libera la reservación y se cancela de forma automática para esa persona o grupo de personas, según el caso.
+        Cada usuario y/o Socio entiende y acepta que el Administrador de Reservación y los Integrantes de Grupo, deben aceptar la invitación  y realizar el pago de manera individual por cada integrante,  por parte de otro integrante o total por parte del Administrador de Reservación, para que el Partner reciba y confirme la reservación, cada integrante del grupo tienen trinta (30) minutos para realizar el pago, a partir del inicio de solicitud de reservación, de no hacerlo se libera la reservación y se cancela de forma automática para esa persona o grupo de personas, según el caso. 
 
-        El Administrador de Reservación o cualquier otro integrante del grupo, tendrá la posibilidad de pagar por la reservación de otro integrante de grupo o de sugerir un integrante nuevo, quien deberá tener cuenta registrada y activa.
+        El Administrador de Reservación o cualquier otro integrante del grupo, tendrá la posibilidad de pagar por la reservación de otro integrante de grupo o de sugerir un integrante nuevo, quien deberá tener cuenta registrada y activa. 
 
         El usuario y/o Socio, en calidad de Administrador de Reservación o Integrante de Grupo entiende y acepta que el cobro total de la reservación se hará desde la tarjeta de crédito/débito, Stripe o los créditos contenidos en la Wallet, a cada uno de integrantes que se encuentren en el grupo que hubieran aceptado la invitación a la reservación, cuando todos los integrantes del grupo hayan realizado el pago por cada reservación o el Administrador de Reservación, haya realizado el pago por la totalidad del grupo.
 
         En el evento en que uno o varios usuarios hayan aceptado la invitación al grupo y tengan o no tarjeta de crédito/débito, Stripe registrado o créditos en la wallet, y que se encuentren en espera de pago de reservación, pero no lo realicen, no se les cobrará ningún cargo, pero su reservación será cancelada inmediatamente y deberá iniciar una reservación de manera individual y/o unirse a otro grupo, según disponibilidad de los Partner.
 
-        El usuario y/o Socio, en calidad de Administrador de Reservación o Integrante de Grupo, acepta recibir notificaciones sobre la reservación, el listado de reservación, pedidos activos y cuando la reservación se haya completado por todos los miembros del grupo.
+        El usuario y/o Socio, en calidad de Administrador de Reservación o Integrante de Grupo, acepta recibir notificaciones sobre la reservación, el listado de reservación, pedidos activos y cuando la reservación se haya completado por todos los miembros del grupo. 
 
-        El usuario y/o Socio, en calidad de Administrador de Reservación o Integrante de Grupo, recibirá notificaciones como “reservaciones activas” o “invitaciones recibidas”, dependiendo de la calidad en que se encuentre.
+        El usuario y/o Socio, en calidad de Administrador de Reservación o Integrante de Grupo, recibirá notificaciones como “reservaciones activas” o “invitaciones recibidas”, dependiendo de la calidad en que se encuentre. 
 
         El usuario y/o Socio, en calidad de Administrador de Reservación podrá realizar el pago personal de su reservación o el pago parcial o total de la reservación incluyendo a los demás Integrante de Grupo, si así lo eligiera.
 
-        El usuario y/o Socio, en calidad de Integrante de Grupo, solo podrá aportar el pago personal de su reservación que ha sido iniciado por el Administrador de Reservación. El integrante de grupo solo podrá modificar o cancelar su propia reservación, acogiéndose a lo establecido en la cláusula 16 de los presentes Términos y Condiciones.
+        El usuario y/o Socio, en calidad de Integrante de Grupo, solo podrá aportar el pago personal de su reservación que ha sido iniciado por el Administrador de Reservación. El integrante de grupo solo podrá modificar o cancelar su propia reservación, acogiéndose a lo establecido en la cláusula 16 de los presentes Términos y Condiciones. 
 
         Al realizar la reservación, el usuario y/o Socio en calidad de Administrador de Reservación o Integrante de Grupo, recibirán un mensaje emergente en la plataforma digital y/o aplicación nativa SIBARITTA con las políticas de cancelación y reembolso, además de un enlace para revisarlas en detalle.
 
@@ -325,7 +325,7 @@ function ModalAcuerdo({ visible, setVisible }: ModalSessionProps) {
 
         El usuario y/o Socio, en calidad de Administrador de Reservación o Integrante de Grupo, acepta y entiende que cualquier experiencia, servicio y/o producto que solicite a un Partner, que no se encuentre en la reservación, será asumido por completo bajo su responsabilidad, y no tendrá derecho a reclamación, devolución y/o reembolso alguno ante la plataforma digital y/o aplicación nativa SIBARITTA.
 
-        La plataforma digital y/o aplicación nativa SIBARITTA, no tendrá responsabilidad alguna sobre la experiencia, productos y/o servicios que no se encuentre especificado en la reservación, los Partner en este caso serán autónomos con la experiencia, productos y/o servicios que ofrezcan y/o comercialicen por fuera de lo ofrecido en la reservación inicial y serán responsables en lo que corresponda.
+        La plataforma digital y/o aplicación nativa SIBARITTA, no tendrá responsabilidad alguna sobre la experiencia, productos y/o servicios que no se encuentre especificado en la reservación, los Partner en este caso serán autónomos con la experiencia, productos y/o servicios que ofrezcan y/o comercialicen por fuera de lo ofrecido en la reservación inicial y serán responsables en lo que corresponda. 
 
         El usuario y/o Socio, en calidad de Administrador de Reservación o Integrante de Grupo y los Partner no tendrán que asumir ningún pago y/o comisión a la plataforma digital y/o aplicación nativa SIBARITTA, cuando se dispongan productos y/o servicios por fuera de la reservación.
         `,
@@ -367,7 +367,7 @@ function ModalAcuerdo({ visible, setVisible }: ModalSessionProps) {
         title: "14	COLABORACIONES",
         content:
         `
-        El usuario y/o Socio entiende y acepta que pueden surgir colaboraciones entre los diferentes Partner por medio de la plataforma digital y/o aplicación nativa SIBARITTA, para ofrecer sus productos en compañía. A través de la plataforma digital y/o aplicación nativa SIBARITTA se informará sobre la colaboración, así como de los productos y/o servicios, los horarios y condiciones.
+        El usuario y/o Socio entiende y acepta que pueden surgir colaboraciones entre los diferentes Partner por medio de la plataforma digital y/o aplicación nativa SIBARITTA, para ofrecer sus productos en compañía. A través de la plataforma digital y/o aplicación nativa SIBARITTA se informará sobre la colaboración, así como de los productos y/o servicios, los horarios y condiciones. 
 
         El usuario y/o Socio entiende y acepta que las colaboraciones son realizadas por los Partner y que no comprometen a la plataforma digital y/o aplicación nativa SIBARITTA; no obstante, disponen de los mecanismos de reclamación contenidos en la cláusula 18 de los presentes Términos y Condiciones.
         `,
@@ -379,7 +379,7 @@ function ModalAcuerdo({ visible, setVisible }: ModalSessionProps) {
         `
         El usuario y/o Socio entiende y acepta que la plataforma digital y/o aplicación nativa SIBARITTA, en colaboración con los Partner o, colaboración entre los Partner, pueden publicitar promociones en la plataforma digital y/o aplicación nativa SIBARITTA, las cuales serán anunciadas a los usuarios y/o Socios, con las condiciones y requisitos para adquirirlos.
 
-        Las promociones están sujetas a cambios sin previo aviso por parte de la plataforma digital y/o aplicación nativa SIBARITTA y no obligan a la plataforma digital y/o aplicación nativa SIBARITTA ni a los Partner a publicitarlas de forma recurrente o permanente.
+        Las promociones están sujetas a cambios sin previo aviso por parte de la plataforma digital y/o aplicación nativa SIBARITTA y no obligan a la plataforma digital y/o aplicación nativa SIBARITTA ni a los Partner a publicitarlas de forma recurrente o permanente. 
 
         Cada promoción tendrá condiciones y requisitos específicos, y son facultad exclusiva de la plataforma digital y/o aplicación nativa SIBARITTA y/o de los Partner.
         `,
@@ -404,23 +404,23 @@ function ModalAcuerdo({ visible, setVisible }: ModalSessionProps) {
         En el evento en que la cancelación sea para grupos de personas, el Administrador de Reservación tendrá la facultad de decidir si la cancelación aplica él mismo, para todo el grupo o para un número determinado de personas. Para que la cancelación sea efectiva, deberá confirmar el código de seguridad de la plataforma digital y/o aplicación nativa SIBARITTA, para que se pueda realizar el reembolso correspondiente, si aplica, según los términos de cancelación y porcentaje de reembolso contenidos en la presente cláusula.
 
 
-        En el caso en el que Administrador de Reservación quiera realizar la cancelación para sí mismo, tendrá la posibilidad de designar a un integrante del grupo como Administrador de Reservación; en el evento en que no lo designara, la plataforma digital y/o aplicación nativa SIBARITTA, elegirá a la siguiente persona que integra el grupo y así sucesivamente.
+        En el caso en el que Administrador de Reservación quiera realizar la cancelación para sí mismo, tendrá la posibilidad de designar a un integrante del grupo como Administrador de Reservación; en el evento en que no lo designara, la plataforma digital y/o aplicación nativa SIBARITTA, elegirá a la siguiente persona que integra el grupo y así sucesivamente. 
 
         En el evento en que la cancelación, sea de forma individual por cada integrante de grupo o individual y/o grupal por parte del Administrador de Reservación, todos los integrantes del grupo recibirán una notificación de cancelación de reservación a través de un pop up con el enunciado “tu reservación y/o servicio ha sido cancelado por Administrador de Reservación”. El enunciado Pop Up estará sujeto a cambios sin previo aviso.
 
         Si la experiencia, servicio y/o producto para el grupo es para Pick Up, aplica el mismo plazo de cancelación y porcentaje de reembolso contenidos en la presente cláusula.
 
-        El usuario y/o Socio, de forma individual o en calidad Administrador de Reservación o Integrante de Grupo, entiende y acepta que podrá modificar su propia reservación o la reservación del grupo, según el caso, para adicionar y/o retirar usuario y/ Socio, cambiar de hora, fecha y lugar de reservación, previa verificación de disponibilidad por parte de los Partner. En algunos eventos es posible que se deba realizar una nueva reservación.
+        El usuario y/o Socio, de forma individual o en calidad Administrador de Reservación o Integrante de Grupo, entiende y acepta que podrá modificar su propia reservación o la reservación del grupo, según el caso, para adicionar y/o retirar usuario y/ Socio, cambiar de hora, fecha y lugar de reservación, previa verificación de disponibilidad por parte de los Partner. En algunos eventos es posible que se deba realizar una nueva reservación. 
 
-        El Socio entiende y acepta que, podrá disponer de los derechos de reclamación cuando así lo considere necesario, conociendo que es un procedimiento posterior a la conciliación.
+        El Socio entiende y acepta que, podrá disponer de los derechos de reclamación cuando así lo considere necesario, conociendo que es un procedimiento posterior a la conciliación. 
 
         La plataforma digital y/o aplicación nativa SIBARITTA no será responsable por situaciones de fuerza mayor o caso fortuito no atribuible a la plataforma digital y/o aplicación nativa SIBARITTA, entre las cuales se encuentran situaciones de orden público, terremotos, inundaciones, disturbios, guerras, huelgas, bloqueos, fallas en el servicio de energía e internet, desastres naturales entre otros; para estos eventos, se dispondrá de cambio de día de la de la reservación, previa verificación de disponibilidad de los Partner.
 
-        No serán considerados casos de fuerza mayor la enfermedad, dolores, lesiones inesperadas, asuntos personales y/o familiares, como tampoco condiciones climatológicas normales de la zona, retrasos, averías y/o bloqueos en el transporte aéreo, terrestre, marítimo o cualquier otro utilizado para desplazamiento; para estos eventos, la reservación se dará por perdida y no habrá cambio de día ni reembolso.
+        No serán considerados casos de fuerza mayor la enfermedad, dolores, lesiones inesperadas, asuntos personales y/o familiares, como tampoco condiciones climatológicas normales de la zona, retrasos, averías y/o bloqueos en el transporte aéreo, terrestre, marítimo o cualquier otro utilizado para desplazamiento; para estos eventos, la reservación se dará por perdida y no habrá cambio de día ni reembolso. 
 
-        En el evento en que la cancelación se realice por parte de los Partner, por situaciones atribuibles su responsabilidad, se realizará un reembolso completo al Socio, ya sea en calidad de Administrador de Reservación o integrante de grupo de personas, en un plazo máximo diez (10) días hábiles, contados a partir del día siguiente hábil de la compra y/o reservación. Si la cancelación de la experiencia, productos y/o servicios es para Pick Up, aplica el mismo plazo.
+        En el evento en que la cancelación se realice por parte de los Partner, por situaciones atribuibles su responsabilidad, se realizará un reembolso completo al Socio, ya sea en calidad de Administrador de Reservación o integrante de grupo de personas, en un plazo máximo diez (10) días hábiles, contados a partir del día siguiente hábil de la compra y/o reservación. Si la cancelación de la experiencia, productos y/o servicios es para Pick Up, aplica el mismo plazo. 
 
-        El usuario y/o Socio entiende y acepta que, al momento de una reclamación por devolución de dinero, de ser aprobada, será reintegrado directamente a la entidad bancaria y/o a la Wallet de la plataforma digital y/o aplicación nativa SIBARITTA, según su decisión. En caso de decidir recibir la devolución de dinero en la Wallet, podrá disponer del valor de dinero en créditos para adquirir productos y/o servicios ofrecidos por los Partner.
+        El usuario y/o Socio entiende y acepta que, al momento de una reclamación por devolución de dinero, de ser aprobada, será reintegrado directamente a la entidad bancaria y/o a la Wallet de la plataforma digital y/o aplicación nativa SIBARITTA, según su decisión. En caso de decidir recibir la devolución de dinero en la Wallet, podrá disponer del valor de dinero en créditos para adquirir productos y/o servicios ofrecidos por los Partner. 
 
         Los reembolsos se deberán solicitar a través del Centro de Atención a Socios de la plataforma digital y/o aplicación nativa SIBARITTA, a través de Whatsapp y/o correo electrónico. Para que un reembolso sea abonado en la Wallet, se debe realizar el proceso de confirmación con código de seguridad solicitado por la plataforma digital y/o aplicación nativa SIBARITTA.
 
@@ -434,7 +434,7 @@ function ModalAcuerdo({ visible, setVisible }: ModalSessionProps) {
         `
         Cualquier modificación a la reservación, será notificada en la plataforma digital y/o aplicación nativa SIBARITTA al Socio de forma personal o en calidad de Administrador de Reservación y a cada uno de los integrantes del grupo, en donde se verá reflejado el valor de la reservación, según el caso.
 
-
+        
         En el evento en que el Socio de forma personal o en calidad de Administrador de Reservación, cuando se trate de grupos, o cualquier integrante del grupo no se presente al establecimiento del Partner, en la fecha y hora de la compra y/o reservación, sin haber cancelado en las condiciones establecidas en la cláusula 16 de los presentes Términos y Condiciones o por eventos de fuerza mayor o caso fortuito, no tendrá derecho a reembolso alguno y se retendrá el cien por ciento (100 %) del total de la reservación personal o de grupo, según el caso.
         `,
       },
@@ -509,9 +509,9 @@ function ModalAcuerdo({ visible, setVisible }: ModalSessionProps) {
         -	Dirección física RICARDO MARGAIN 440, COL VALLE DEL CAMPESTRE en la ciudad de SAN PEDRO GARZA GARCÍA, NL
 
         -	Correo electrónico para información general socios@sibaritta.com
-        -	Correo electrónico para solicitudes de Partner  partners@sibaritta.com
+        -	Correo electrónico para solicitudes de Partner  partners@sibaritta.com 
 
-        -	País MEXICO
+        -	País MEXICO 
 
         `,
       },
@@ -534,7 +534,7 @@ function ModalAcuerdo({ visible, setVisible }: ModalSessionProps) {
       >
 
 <div className="conten-restricciones">
-          <h2>Términos y condiciones</h2>
+          <h2>Acuerdos y Condiciones</h2>
           {data.map((dat) => (
             <div key={dat.id}>
               <p>{dat.title}</p>

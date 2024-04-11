@@ -15,11 +15,11 @@ function Index() {
     setregisterPartner(true);
   };
 
-
+  
 const router = useRouter();
 
 
-
+  
 
   return (
       <SecurityPrivileges>
@@ -111,7 +111,7 @@ const router = useRouter();
             </div>
           </div>
           <div className="box-texto-agenda-sibaritta-business ">
-            <h3 className=" text-center ">
+            <h3 className="w-[70%] tablet:w-[70%] laptop:w-[53%] text-center">
               Agenda una llamada personalizada e inicia tu proceso de
               selección...
             </h3>

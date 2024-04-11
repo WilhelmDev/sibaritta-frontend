@@ -41,6 +41,8 @@ const ModalRegister = ({
   const captchaKey = process.env.NEXT_PUBLIC_RECAPTCHA as string;
   const [messageErroCaptcha, setMessageCaptcha] = useState("");
   const [emailExit, setMessageEmailExit] = useState("");
+  const [checkBox, setcheckBox] = useState(false);
+  const [messageErrorCheck, setMessageErrorCheck] = useState("");
 
   const {
     handleSubmit,
@@ -115,6 +117,12 @@ const ModalRegister = ({
   //registro
   const onSubmit = async (data: any) => {
     try {
+
+      if (!checkBox) {
+        setMessageErrorCheck("Debes tener más de 18 años para registrarte");
+        return;
+      }
+
       if (!captchaResponse) {
         setShowCaptchaError(true);
         return;
@@ -163,11 +171,9 @@ const ModalRegister = ({
         className="modalsession"
       >
         <div className="!bg-[#F0EFEB]">
-        <h2 className="ModalSession-title">¡Bienvenido Sibaritta!</h2>
-        <p className="ModalSession-text">
-          Inicia sesión o registrate
-        </p>
-        <p> <span className="span">Regístrate con tu correo electrónico para recibir notificaciones y alertas de nuevas experiencias  disponibles en Sibaritta.</span> </p>
+          <h2 className="ModalSession-title w-[30rem]  mx-auto ">
+            Registrate para completar la reserva
+          </h2>
           <div className="container-socials">
             <button
               className="google-buttom  p-[.5rem] laptop:p-[2rem]"
@@ -180,15 +186,8 @@ const ModalRegister = ({
                 width={100}
                 className="w-[3rem] h-[3rem] laptop:w-[4.5493rem] laptop:h-[4.5493rem]"
               />
-              Regístrate con Google
+              Iniciar sesión con Google
             </button>
-          </div>
-          <div className="flex items-center justify-center gap-[1rem]">
-            <div className="w-[12rem] bg-[#585858] h-[.1rem]"></div>
-            <span className="text-[#000] font-lato text-[1.8rem] font-medium">
-              o
-            </span>
-            <div className="w-[12rem] bg-[#585858] h-[.1rem]"></div>
           </div>
           <div className="ModalSession-container">
             <form onSubmit={handleSubmit(onSubmit)} className="pt-[1rem]">
@@ -206,26 +205,6 @@ const ModalRegister = ({
                     {String(errors.full_name.message)}
                   </p>
                 )}
-                <div className="flex gap-[1.5rem] pt-[1rem]">
-                  <div className="w-full">
-                    <input
-                      type="text"
-                      className="profile-input h-[4rem] bg-[#FFF] text-[#A59484]"
-                      placeholder="Edad"
-
-                    />
-
-                  </div>
-                  <div className="w-full ">
-                    <input
-                      type="text"
-                      className="profile-input h-[4rem] bg-[#FFF] text-[#A59484]  "
-                      placeholder="Teléfono"
-
-                    />
-
-                  </div>
-                </div>
                 <div className="flex gap-[1.5rem] pt-[1rem]">
                   <div className="w-full">
                     <input
@@ -268,6 +247,28 @@ const ModalRegister = ({
                     )}
                   </div>
                 </div>
+                <div className="flex  pt-[1rem]">
+                  <label
+                    htmlFor="checkBox"
+                    className="cursor-pointer flex gap-[.5rem]"
+                  >
+                    <input
+                      checked={checkBox}
+                      id="checkBox"
+                      onChange={(e) => setcheckBox(e.target.checked)}
+                      type="checkbox"
+                      className="w-[1.7rem]"
+                    />
+                    <p className="text-[1rem] text-black">
+                      Confirmo que tengo más de 18 años
+                    </p>
+                  </label>
+                </div>
+                {messageErrorCheck && (
+                  <p className="Form-error text-red-500 text-[1.3rem]">
+                    {messageErrorCheck}
+                  </p>
+                )}
               </div>
               <div className="flex flex-col justify-center items-center py-[1rem]">
                 <ReCAPTCHA

@@ -8,7 +8,7 @@
   justify-content: center;
 }
 .p-sidebar-content {
-  @apply flex justify-center items-center pb-[0] bg-[#f2eeeb];
+  @apply flex justify-center items-center pb-[0] bg-[#F0EFEB];
 }
 .p-sidebar {
   @apply overflow-hidden relative;
@@ -16,7 +16,7 @@
   @apply !w-[40rem];
 }
 .side-color {
-  @apply w-[9.3rem] bg-[#e1d4c4] h-full absolute right-0;
+  @apply w-[9.3rem] bg-[#E1D4C4] h-full absolute right-0;
 }
 
 .side-container-items {

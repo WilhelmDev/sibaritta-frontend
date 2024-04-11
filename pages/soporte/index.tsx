@@ -23,8 +23,8 @@ const Index = () => {
 
   const item = [
     { id: 1, items: "Contáctanos" },
-    { id: 2, items: "FAQs" },
-    { id: 3, items: "Términos y condiciones" },
+    { id: 2, items: "FAQ's" },
+    { id: 3, items: "Acuerdos y condiciones" },
     { id: 4, items: "Aviso de privacidad" },
   ];
 
@@ -32,9 +32,9 @@ const Index = () => {
     switch (selectedOption) {
       case "Contáctanos":
         return <Medium />;
-      case "FAQs":
+      case "FAQ's":
         return <Questions handleOptionClick={handleOptionClick} />;
-      case "Términos y condiciones":
+      case "Acuerdos y condiciones":
         return <Conditions />;
       case "Aviso de privacidad":
         return <Legal />;

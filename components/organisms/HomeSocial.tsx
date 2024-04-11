@@ -19,7 +19,7 @@ const HomeSocial = () => {
         <div className="homeSocial_info-icons">
           <Link
             href={
-              "https://www.instagram.com/sibaritta_/"
+              "https://www.instagram.com/sibaritta_mx?igsh=MTB2eXl4ZTM0NnZmYg%3D%3D"
             }
             target="_blank"
             className="homeSocial_info_icon"
@@ -27,20 +27,26 @@ const HomeSocial = () => {
             <Instagram />
           </Link>
           <Link
-            href={"https://www.facebook.com/Sibarittafb/"}
+            href={"https://www.facebook.com/SibarittaMx?mibextid=ZbWKwL"}
             target="_blank"
             className="homeSocial_info_icon"
           >
             <Twiter />
           </Link>
           <Link
-            href={"https://www.tiktok.com/@sibaritta_?_t=8kQxopIUpMM&_r=1"}
+            href={"https://www.tiktok.com/@sibaritta_mx?_t=8jifkXuaDMz&_r=1"}
             target="_blank"
             className="homeSocial_info_icon"
           >
             <Tiktok />
           </Link>
-        
+          <Link
+            href={"https://www.youtube.com/@Sibaritta-Experiencias"}
+            target="_blank"
+            className="homeSocial_info_icon"
+          >
+            <Youtube />
+          </Link>
         </div>
       </article>
     </section>

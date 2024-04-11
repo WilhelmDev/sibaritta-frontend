@@ -10,7 +10,7 @@
   }
 
   &-icons {
-    @apply flex gap-[3rem];
+    @apply flex gap-[2rem];
 
     @screen laptop {
       gap: calc(2rem * var(--scale));
@@ -19,12 +19,7 @@
 }
 
 .homeSocial_info_h3 {
-  @apply !text-[#E1D4C4]  font-lato;
-  font-size: 25px;
-  font-weight: 700;
-  line-height: 30px;
-  letter-spacing: 0em;
-  text-align: center;
+  @apply !text-[#E1D4C4] font-bold  leading-normal w-[17.3rem] text-center font-lato;
   @screen laptop {
     @apply flex  w-full;
     white-space: nowrap;
@@ -33,10 +28,7 @@
 
 .homeSocial_info_icon {
   @apply w-[5.1rem] h-[5.1rem] grid place-items-center;
-  svg{
-    font-size: 20px;
-    width: 25px;
-  }
+
   @screen laptop {
     width: calc(7rem * var(--scale));
     height: calc(7rem * var(--scale));

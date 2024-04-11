@@ -4,17 +4,17 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: registry.gitlab.com/mensorestudio01/sibaritta-web
+    image: registry.gitlab.com/sibaritta/sibaritta-frontend
     env_file:
       - .env
     networks:
       - proxy
     ports:
-      - 3000:3000
+      - 3005:3000
     environment:
       VIRTUAL_HOST: ${DOMAIN}
       LETSENCRYPT_HOST: ${DOMAIN}
-      LETSENCRYPT_EMAIL: wiljoseflores@gmail.com
+      LETSENCRYPT_EMAIL: arianvaldivieso@gmail.com
 
 networks:
   proxy:

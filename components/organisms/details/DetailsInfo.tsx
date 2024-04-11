@@ -43,6 +43,7 @@ import { Twiter } from "@/components/ui/icons/Twiter";
 import { Instagram } from "@/components/ui/icons/Instagram";
 import { PresencialNaran } from "@/components/ui/icons/PresencialNaran";
 import { PickupNaran } from "@/components/ui/icons/PickupNaran";
+import 'moment/locale/es';
 import { classNames } from "primereact/utils";
 
 interface IDetailsInfo {
@@ -108,9 +109,7 @@ function DetailsInfo({ data }: IDetailsInfo) {
 
   const dispatch = useDispatch();
   const reserva = useSelector((state: any) => state.reservation);
-
-
-
+  
   const datePart = reserva.horario;
   const part = datePart?.split(":");
 
@@ -118,8 +117,8 @@ function DetailsInfo({ data }: IDetailsInfo) {
   const minutos = parseInt(part[1]?.split(" ")[0], 10);
 
   const handleDayClick = (e: Date, data: any[], type: string) => {
-    const presencial = data.filter((modi) => modi.type === "presencial");
-    const pick = data.filter((modi) => modi.type === "pickup");
+    const open_group = data
+    const closed_group = data.filter((modi) => modi.seats === modi.total_seats);
 
     setver(true);
     scrollFunctionFecha();
@@ -135,11 +134,11 @@ function DetailsInfo({ data }: IDetailsInfo) {
     setalertCountUser(false);
     setlackFecha(false);
 
-    if (type === "presencial") {
+    if (type === "open-group") {
       // let elSlice = e.toString();
       const fecha1 = moment(e).format("YYYY-MM-DD HH:mm:ss");
       const elSlice = moment(fecha1).format("YYYY-MM-DD");
-      presencial.forEach((element: any) => {
+      open_group.forEach((element: any) => {
         let elementSlice1 = moment(element.date).format("YYYY-MM-DD HH:mm:ss");
         let elementSlice = moment(elementSlice1).format("YYYY-MM-DD");
         if (elementSlice === elSlice) {
@@ -147,10 +146,10 @@ function DetailsInfo({ data }: IDetailsInfo) {
           dispatch(setHorario(""));
         }
       });
-    } else if (type === "pickup") {
+    } else if (type === "closed-group") {
       const fecha1 = moment(e).format("YYYY-MM-DD HH:mm:ss");
       const elSlice = moment(fecha1).format("YYYY-MM-DD");
-      pick.forEach((element: any) => {
+      closed_group.forEach((element: any) => {
         let elementSlice1 = moment(element.date).format("YYYY-MM-DD HH:mm:ss");
         let elementSlice = moment(elementSlice1).format("YYYY-MM-DD");
         if (elementSlice === elSlice) {
@@ -158,13 +157,31 @@ function DetailsInfo({ data }: IDetailsInfo) {
           dispatch(setHorario(""));
         }
       });
-      setSelectedEvent("");
       dispatch(setHorario(""));
     } else {
       setreservaTru(true);
       goReservation();
     }
+    setPerson(() => {
+      const newPerson = 0;
+      dispatch(setPersonas(newPerson));
+      return newPerson;
+    });
+    setSelectedEvent("");
   };
+
+  const formatDate = (date: Date) => {
+    const locale = moment.locale();
+    moment.locale("es")
+    const day = moment(date).date();
+    const stringMonth = moment(date).format("MMM").replace('.','').toUpperCase();
+    let weekDay = moment(date).format("dddd");
+    weekDay = weekDay.charAt(0).toUpperCase() + weekDay.slice(1);
+    console.log('day', day)
+    console.log('stringMonth', stringMonth)
+    console.log('weekDay', weekDay)
+    moment.locale(locale);
+  }
 
   const bookedStyle = { color: "white", cursor: "pointer" };
 
@@ -177,8 +194,8 @@ function DetailsInfo({ data }: IDetailsInfo) {
   const addUser = () => {
 
     if (
-      reserva.tipoReserva === "pickup" ||
-      reserva.tipoReserva === "presencial"
+      reserva.tipoReserva === "open-group" ||
+      reserva.tipoReserva === "closed-group"
     ) {
       if (reserva.fecha === "") {
         setlackFecha(true);
@@ -208,8 +225,8 @@ function DetailsInfo({ data }: IDetailsInfo) {
 
   const addMinusUser = () => {
     if (
-      reserva.tipoReserva === "pickup" ||
-      reserva.tipoReserva === "presencial"
+      reserva.tipoReserva === "open-group" ||
+      reserva.tipoReserva === "closed-group"
     ) {
       // setalert(true);
 
@@ -245,13 +262,18 @@ function DetailsInfo({ data }: IDetailsInfo) {
     setfechaTru(false);
     setalertCountUser(false);
   };
-  useEffect(() => {}, [reserva.type, reserva.personas, person]);
+  useEffect(() => {
+    dispatch(setTipoReserva('open-group'));
+    dispatch(setHorario(""));
+    dispatch(setFecha(""));
+  }, []);
 
-  const handleHoraClick = (hora: any, el: any) => {
+
+  const handleHoraClick = (hora: any, el: any, type: "open-group" | "closed-group") => {
     setalerts(false);
     setfechaTru(true);
     dispatch(setEventId(el.id));
-    dispatch(setTipoReserva(el.type));
+    dispatch(setTipoReserva(type));
     dispatch(setHorario(hora));
 
     const event = events.find(
@@ -260,7 +282,22 @@ function DetailsInfo({ data }: IDetailsInfo) {
 
     if (event) {
       setSelectedEvent(event); // Actualizar el estado con el evento seleccionado
-      setRemainingSeats(event.seats - person);
+      if(type === "open-group"){
+        setPerson(() => {
+          const newPerson = 0;
+          dispatch(setPersonas(newPerson));
+          return newPerson;
+        });
+        setRemainingSeats(event.seats - person);
+      }
+      else if(type === "closed-group"){
+        setPerson(() => {
+          const newPerson = event.seats;
+          dispatch(setPersonas(newPerson));
+          return newPerson;
+        });
+        setRemainingSeats(0);
+      }
     }
   };
 
@@ -306,31 +343,41 @@ function DetailsInfo({ data }: IDetailsInfo) {
   
   const filterEvents = (tipoReserva: any): any => {
     const filteredEvents = events?.filter((event) => {
-      const eves = event.type === tipoReserva ;
-      return eves ;
+      if (tipoReserva === "open-group") {
+        let eventTime = new Date(event.date);
+        eventTime.setHours(event.hour);
+        eventTime.setMinutes(event.minute);
+        eventTime.setSeconds(0);
+        
+        return eventTime >= new Date();
+      }
+      else if (tipoReserva === "closed-group") {
+        return event.seats === event.total_seats
+      }
     });
     return filteredEvents?.map((el: any) => new Date(el.date));
   };
 
   const createReservation = async () => {
+    const price = data.regular_price;
     try {
       const dates = new Date();
       const hours = moment(dates).format("HH:mm:ss");
       const data = {
-        order_comments_checkout: "comentario de la reserva",
-        order_check_terms_checkout: true,
-        order_check_get_more_info_checkout: true,
-        order_id_stripe_checkout: 12345678,
-        order_id_stripe_amount: 12345678,
+        //order_comments_checkout: "comentario de la reserva",
+        //order_check_terms_checkout: true,
+        //order_check_get_more_info_checkout: true,
+        //order_id_stripe_checkout: 12345678,
+        //order_id_stripe_amount: 12345678,
         order_fk_experience_id: reserva.fk_experience_id,
         order_fk_event_id: reserva.order_fk_event_id,
         order_seats_experience: reserva.personas,
-        order_price_experience: 300,
-        order_total_experience: 500,
-        order_type_event: reserva.tipoReserva,
-        order_date_event: "24/01/2024",
-        order_hour_event: horas,
-        order_minute_event: minutos,
+        //order_price_experience: price,
+        order_total_experience: person * Number(price),
+        order_type_event: "presencial",
+        //order_date_event: "24/01/2024",
+        //order_hour_event: horas,
+        //order_minute_event: minutos,
         order_details: [
           {
             fk_suggestion_id: 1,
@@ -379,11 +426,8 @@ function DetailsInfo({ data }: IDetailsInfo) {
     localStorage.setItem("name_partner", data?.partner?.full_name);
   }, []);
 
-
-
-
   return (
-    <div className=" main-page container-general internaExperiencia"> 
+    <div className=" main-page container-general internaExperiencia">
       <section
         className=" main-page internaExperiencia__card  grid-rows-4 grid-flow-col gap-6 flex "
         ref={initReservation}
@@ -432,7 +476,7 @@ function DetailsInfo({ data }: IDetailsInfo) {
                   </div>
                   <div className="option flex flex-col">
                     <span>Opción</span>
-                    <h4>Presencial</h4>
+                    <h4>Grupo Abierto</h4>
                   </div>
                 </div>
 
@@ -444,7 +488,7 @@ function DetailsInfo({ data }: IDetailsInfo) {
                   </div>
                   <div className="optionTwo flex flex-col">
                     <span>Opción</span>
-                    <h4>Pick up</h4>
+                    <h4>Grupo Cerrado</h4>
                   </div>
                 </div>
               </article>
@@ -632,12 +676,13 @@ function DetailsInfo({ data }: IDetailsInfo) {
             setVisible={setmodalPolitica}
           />
         </div>
+
         {suggestion === 0 && (
           <div> 
-            <article className="details_calendar    flex-2 w-2/6">
+            <article className="details_calendar flex-2">
               <div className="details_dalendar_box_">
                 <h2 ref={initiDaate}>Inicia tu reservación</h2>
-                <div className="details_calendar_options main-page">
+                {/*<div className="details_calendar_options main-page">
                   <article className={`details_calendar_btns `}>
                     <div className="title-modalidate  " ref={initiCalendario}>
                       <h4>Selecciona modalidad</h4>
@@ -649,26 +694,26 @@ function DetailsInfo({ data }: IDetailsInfo) {
                     </div>
                     <div className="bonesReservar">
                       <button
-                        onClick={() => handleTipoReserva("presencial")}
+                        onClick={() => handleTipoReserva("open-group")}
                         className={`details_calendar_btns_one ${
-                          reserva.tipoReserva === "presencial" &&
+                          reserva.tipoReserva === "open-group" &&
                           "bg-[#F89C53] text-[#4D3452]  "
                         }`}
                       >
-                        Presencial
+                        Grupo abierto
                       </button>
                       <button
-                        onClick={() => handleTipoReserva("pickup")}
+                        onClick={() => handleTipoReserva("closed-group")}
                         className={`details_calendar_btns_two ${
-                          reserva.tipoReserva === "pickup" &&
+                          reserva.tipoReserva === "closed-group" &&
                           "bg-[#F89C53] text-[#4D3452]"
                         }`}
                       >
-                        Pick up
+                        Grupo cerrado
                       </button>
                     </div>
                   </article>
-                </div>
+                      </div>*/}
                 <div className="title-modalidate">
                   <h4>Seleciona una fecha y hora</h4>
                   {lackFecha && (
@@ -737,7 +782,8 @@ function DetailsInfo({ data }: IDetailsInfo) {
                             onClick={() =>
                               handleHoraClick(
                                 `${el.hour}:${el.minute}${auxTime}`,
-                                el
+                                el,
+                                reserva.tipoReserva
                               )
                             }
                             className={`hora_btn_two ${
@@ -758,14 +804,15 @@ function DetailsInfo({ data }: IDetailsInfo) {
                         elementSlice === elSlice &&
                         el.seats >= person
                       ) {
-                        if (el.type === reserva.tipoReserva)
+                        if ((reserva.tipoReserva === "open-group") || (reserva.tipoReserva === "closed-group" && el.seats === el.total_seats))
                           return (
                             <button
                               key={el.id}
                               onClick={() =>
                                 handleHoraClick(
                                   `${el.hour}:${el.minute}${auxTime}`,
-                                  el
+                                  el,
+                                  reserva.tipoReserva
                                 )
                               }
                               className={`hora_btn_two ${
@@ -821,10 +868,10 @@ function DetailsInfo({ data }: IDetailsInfo) {
                       </h4>
                       <div className="add_user_increment- ">
                         <div
-                          onClick={addMinusUser}
-                          className={`add_user_increment_less_ cursor-pointer ${
-                            reserva.personas === 1 &&
-                            "cursor-none opacity-[0.3]"
+                          onClick={person > 1 || reserva.tipoReserva === "closed-group" ? addMinusUser : undefined}
+                          className={`add_user_increment_less_ ${
+                            (person <= 1 || reserva.tipoReserva === "closed-group") ?
+                            "cursor-default opacity-[0.3]" : "cursor-pointer"
                           }`}
                         >
                           <Image
@@ -838,8 +885,9 @@ function DetailsInfo({ data }: IDetailsInfo) {
                           {person}
                         </div>
                         <button
+                          disabled = {person === selectedEvent?.seats || reserva.tipoReserva === "closed-group"}
                           onClick={addUser}
-                          className={`add_user_increment_further cursor-pointer  `}
+                          className={`add_user_increment_further ${person === selectedEvent?.seats || reserva.tipoReserva === "closed-group" ? 'opacity-50 cursor-default' : ''}`}
                         >
                           <Image
                             src={"/plus.png"}
@@ -963,10 +1011,14 @@ function DetailsInfo({ data }: IDetailsInfo) {
           trigger={trigger}
         />
 
-      <div
-        className="w-200 pt-[1rem] Navbar-ul-contact false  false  iniciarReserva"
-      >
-        
+        <div
+          className="w-200 pt-[1rem] Navbar-ul-contact false  false "
+          style={{
+            position: "fixed",
+            bottom: "14px",
+            left: "16px",
+          }}
+        >
           <button
             className="modalSession-buttons  animate-btn_scale_animation w-full"
             onClick={openModal}

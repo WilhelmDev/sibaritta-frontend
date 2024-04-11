@@ -6,17 +6,14 @@
   }
 }
 .partnet_modal_create {
-  @apply fixed  right-10 bg-[#E1D4C4] rounded-full flex items-center
-    justify-evenly  cursor-pointer  duration-300 ease-in-out  hover:bg-[#f7f2ee];
+  @apply fixed bottom-32 right-10 bg-[#E1D4C4] rounded-full flex items-center
+    justify-evenly w-[20rem] h-[4rem] cursor-pointer  duration-300 ease-in-out  hover:bg-[#f7f2ee];
   @screen laptop {
     width: calc(28rem * var(--scale));
     height: calc(8rem * var(--scale));
   }
-  padding:10px 15px;
-  bottom: 15px;
   & h3 {
-    font-size:16px!important;
-    @apply text-[#4D3452];
+    @apply text-[#4D3452] text-[1.2rem];
     @screen tablet {
       @apply text-[1.6rem];
     }
@@ -28,10 +25,7 @@
 }
 
 .logo_modal_partner {
-  @apply w-[2.5rem] h-[2.5rem];
-  position: relative;
-  top: 1px;
-  right: -4px;
+  @apply w-[3rem] h-[3rem];
   @screen laptop {
     width: calc(3.5rem * var(--scale));
     height: calc(3.5rem * var(--scale));
@@ -58,21 +52,34 @@
 }
 
 .box_bussines-title-description {
-  @apply flex flex-col  items-center;
+  @apply flex flex-col gap-[2rem] items-center;
   @screen tablet {
-    @apply w-[50%] ;
+    @apply w-[50%] justify-around;
   }
-
+  @screen laptop {
+    @apply justify-around items-start;
+    gap: calc(2rem * var(--scale));
+  }
 
   & h2 {
-    @apply text-[#E1D4C4]  font-lato font-bold;
-    margin-bottom: 15px;
+    @apply text-[#E1D4C4] text-[2.3rem] font-lato font-bold text-center;
+    @screen tablet {
+      @apply text-start text-[2.5rem];
+    }
+    @screen laptop {
+      @apply w-[78%];
+      font-size: calc(5rem * var(--scale));
+    }
   }
   & p {
-    font-size: 18px;
-    @apply text-[#E1D4C4] font-lato font-normal;
-
-
+    @apply text-[#E1D4C4] text-[1.3rem] font-lato font-normal;
+    @screen tablet {
+      @apply text-start text-[1.5rem];
+    }
+    @screen laptop {
+      @apply text-start font-normal;
+      font-size: calc(3rem * var(--scale));
+    }
   }
 }
 
@@ -95,8 +102,11 @@
   }
 
   & h2 {
-    @apply text-[#E1D4C4]  font-lato font-bold;
-
+    @apply text-[#E1D4C4] text-[2.2rem] font-lato font-bold;
+    @screen laptop {
+      @apply text-start;
+      font-size: calc(5rem * var(--scale));
+    }
   }
 }
 
@@ -112,19 +122,24 @@
   & span {
     @apply w-[.5rem] h-[.5rem] mt-[.5rem] bg-[#e6e5e5] rounded-full;
     @screen laptop {
-      width: calc(0.5rem * var(--scale));
-      height: calc(0.5rem * var(--scale));
+      width: calc(1rem * var(--scale));
+      height: calc(1rem * var(--scale));
       margin-top: calc(1rem * var(--scale));
     }
   }
   & p {
-    @apply w-[100%]   font-lato font-normal;
-    font-size: 18px;
+    @apply w-[100%] text-[1.2rem]  font-lato font-normal;
+    @screen tablet {
+      @apply text-[1.6rem];
+    }
+    @screen laptop {
+      font-size: calc(3rem * var(--scale));
+    }
   }
 }
 
 .business-sibaritta_imagen {
-  @apply w-full h-[25rem] rounded-[1.5rem] bg-[url("/home/professional-cheese-sommelier-food-shop-handsome-bearded-worker-cheese-store-weared-apron-background-shelves-with-cheese.jpg")] bg-cover bg-center;
+  @apply w-full h-[25rem] rounded-[1.5rem] bg-[url("/business/imagen-one.jpg")] bg-cover bg-center;
   @screen tablet {
     @apply w-[50%];
   }
@@ -134,7 +149,7 @@
 }
 
 .business-sibaritta_imagen-two {
-  @apply w-full h-[20rem] rounded-[1.5rem] bg-[url("/home/bartender-interacting-with-customers.jpg")] bg-cover bg-center;
+  @apply w-full h-[20rem] rounded-[1.5rem] bg-[url("/business/imagen-two.jpg")] bg-cover bg-center;
   @screen tablet {
     @apply w-[50%]  h-auto;
   }
@@ -144,7 +159,7 @@
 }
 
 .box-texto-agenda-sibaritta-business {
-  @apply w-full h-auto grid place-items-center text-[#E1D4C4]
+  @apply w-full h-auto grid place-items-center text-[#E1D4C4] 
   text-[2.5rem] font-lato font-extrabold;
   @screen laptop {
     font-size: calc(5rem * var(--scale));
