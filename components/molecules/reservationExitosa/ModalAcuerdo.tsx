@@ -534,7 +534,7 @@ function ModalAcuerdo({ visible, setVisible }: ModalSessionProps) {
       >
 
 <div className="conten-restricciones">
-          <h2>Acuerdos y Condiciones</h2>
+          <h2>Términos y Condiciones</h2>
           {data.map((dat) => (
             <div key={dat.id}>
               <p>{dat.title}</p>
