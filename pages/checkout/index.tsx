@@ -388,7 +388,7 @@ function Index() {
                 onClick={openAcuerdoModal}
                 className="underline cursor-pointer !text-[#E1D4C4]"
               >
-                Ver acuerdos y condiciones
+                Ver términos y condiciones
               </p>
             </div>
             <h3 className="mt-6 pt-5">Detalles del pago</h3>
@@ -714,7 +714,7 @@ function Index() {
                         <p className="">
                           Acepto{" "}
                           <a onClick={openAcuerdoModal} className="checkout-p">
-                            acuerdos y condiciones
+                            términos y condiciones
                           </a>
                         </p>
                       </label>
@@ -722,31 +722,6 @@ function Index() {
                     {checkBoxError && (
                       <p className="Login-error main-page !text-red-600 !text-[1.2rem]  font-lato">
                         {String(checkBoxError)}
-                      </p>
-                    )}
-                  </div>
-                  <div className="flex flex-col gap-[1rem]">
-                    <div className="flex">
-                      <label
-                        htmlFor="checkBoxTwo"
-                        className="cursor-pointer flex gap-[.5rem]"
-                      >
-                        <input
-                          id="checkBoxTwo"
-                          checked={checkBoxTwo}
-                          onChange={(e) => setcheckBoxTwo(e.target.checked)}
-                          type="checkbox"
-                          className="w-[1.7rem]"
-                        />
-                        <p className="restaured-inputs-_ ">
-                          Me gustaría recibir información de este restaurante
-                        </p>
-                      </label>
-                    </div>
-
-                    {checkBoxTwoError && (
-                      <p className="Login-error main-page !text-red-600 !text-[1.2rem]  font-lato">
-                        {String(checkBoxTwoError)}
                       </p>
                     )}
                   </div>
@@ -772,6 +747,31 @@ function Index() {
                     {checkBoxTreeError && (
                       <p className="Login-error main-page !text-red-600 !text-[1.2rem]  font-lato">
                         {String(checkBoxTreeError)}
+                      </p>
+                    )}
+                  </div>
+                  <div className="flex flex-col gap-[1rem]">
+                    <div className="flex">
+                      <label
+                        htmlFor="checkBoxTwo"
+                        className="cursor-pointer flex gap-[.5rem]"
+                      >
+                        <input
+                          id="checkBoxTwo"
+                          checked={checkBoxTwo}
+                          onChange={(e) => setcheckBoxTwo(e.target.checked)}
+                          type="checkbox"
+                          className="w-[1.7rem]"
+                        />
+                        <p className="restaured-inputs-_ ">
+                          Me gustaría recibir información de este restaurante
+                        </p>
+                      </label>
+                    </div>
+
+                    {checkBoxTwoError && (
+                      <p className="Login-error main-page !text-red-600 !text-[1.2rem]  font-lato">
+                        {String(checkBoxTwoError)}
                       </p>
                     )}
                   </div>

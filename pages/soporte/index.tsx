@@ -24,7 +24,7 @@ const Index = () => {
   const item = [
     { id: 1, items: "Contáctanos" },
     { id: 2, items: "FAQ's" },
-    { id: 3, items: "Acuerdos y condiciones" },
+    { id: 3, items: "Términos y condiciones" },
     { id: 4, items: "Aviso de privacidad" },
   ];
 
@@ -34,7 +34,7 @@ const Index = () => {
         return <Medium />;
       case "FAQ's":
         return <Questions handleOptionClick={handleOptionClick} />;
-      case "Acuerdos y condiciones":
+      case "Términos y condiciones":
         return <Conditions />;
       case "Aviso de privacidad":
         return <Legal />;
