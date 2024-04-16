@@ -452,7 +452,7 @@ function Index() {
                   ></i> */}
                 </div>
               </div>
-              <div className="checkout_datils_email">
+              <div className="checkout_datils_email mt-5">
                 <h5>Telefono</h5>
                 <div className="flex flex-col gap-[.2rem] relative">
                   <Drowpdon reference={setPhoneNumber}/>
@@ -728,11 +728,11 @@ function Index() {
                   <div className="flex flex-col gap-[1rem]">
                     <div className="flex">
                       <label
-                        htmlFor="checkBoxTwo"
+                        htmlFor="checkBoxTree"
                         className="cursor-pointer flex gap-[.5rem]"
                       >
                         <input
-                          id="checkBoxTwo"
+                          id="checkBoxTree"
                           checked={checkBoxTree}
                           onChange={(e) => setcheckBoxTree(e.target.checked)}
                           type="checkbox"

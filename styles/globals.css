@@ -212,6 +212,11 @@ body {
 .car-payment {
   @apply p-[1rem] py-[1.5rem] bg-[#37323A] rounded-[1rem];
 }
+
+.phone-number {
+  @apply bg-[#37323A] rounded-[1rem] w-full;
+}
+
 .CardField {
   @apply h-[10rem];
 }
