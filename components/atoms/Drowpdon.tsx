@@ -58,10 +58,10 @@ const Dropdown = ({ reference }: IFormValue) => {
   return (
     <div className="relative flex w-full h-full">
       <div
-        className="bg-white border flex items-center gap-[.5rem]   py-2 px-4 rounded cursor-pointer w-[20rem] h-[3.5rem]"
+        className="phone-number flex items-center gap-[.5rem] cursor-pointer"
         onClick={toggleDropdown}
       >
-        <div className=" ">
+        <div className="ml-4 ">
           <Image
             src={selectedImage!}
             width={20}
@@ -70,10 +70,17 @@ const Dropdown = ({ reference }: IFormValue) => {
             className=" "
           />
         </div>
-        {selectedCountry ? selectedCountry : "Select a country"}
+        <div style={{ cursor: 'pointer' }}>▼</div>
+        <input
+          type="text"
+          value={selectedCountryCode || ""}
+          onChange={handleInputChange}
+          className="px-4 py-2 border border-gray-300 rounded"
+          placeholder="Enter country code"
+        />
       </div>
       {isOpen && (
-        <div className="absolute bg-white border  rounded    max-h-60 overflow-y-auto z-10  w-[20rem] mt-[2.7rem]">
+        <div className="absolute border rounded max-h-60 overflow-y-auto z-10  w-[20rem] mt-[2.7rem]">
           {countries.map((country) => (
             <div
               key={country.name.common}
@@ -99,15 +106,8 @@ const Dropdown = ({ reference }: IFormValue) => {
           ))}
         </div>
       )}
-      <input
-        type="text"
-        value={selectedCountryCode || ""}
-        onChange={handleInputChange}
-        className="  px-4 py-2 border border-gray-300 rounded"
-        placeholder="Enter country code"
-      />
     </div>
   );
-};
+}
 
 export default Dropdown;
