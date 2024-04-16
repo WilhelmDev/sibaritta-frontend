@@ -270,7 +270,7 @@ function Index() {
           order_seats_experience: datos?.personas,
           order_price_experience: parseInt(datos?.priceExperience ?? "0", 10),
           order_total_experience: calcularTotal(),
-          order_type_event: datos?.tipoReserva,
+          order_type_event: 'presencial',
           order_date_event: datos?.fecha,
           order_hour_event: horas,
           order_minute_event: minutos,

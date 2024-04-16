@@ -317,7 +317,7 @@ function InitReservationModal({
         order_seats_experience: reserva.personas,
         order_price_experience: 300,
         order_total_experience: 500,
-        order_type_event: reserva.tipoReserva,
+        order_type_event: 'presencial',
         order_date_event: "24/01/2024",
         order_hour_event: horas,
         order_minute_event: minutos,
