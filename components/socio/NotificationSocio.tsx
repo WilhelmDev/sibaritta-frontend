@@ -298,11 +298,10 @@ function NotificationSocio({ notifiProps, nofityPropsPartner }: any) {
                                     if(consul?.type === "consulta"){
                                       localStorage.setItem('notifyId',`${consul?.item_id}`);
                                         router.push('/partner_chat');
-                                        
-                                    };
-                                    
-                                    if( consul?.type === "calif_socio"){
+                                    }else if(consul?.type === "calif_socio"){
                                      opeModals()
+                                    }else if(consul?.type === "cargar_factura"){
+                                      router.push('/ventas_sibaritta')
                                     }
                                   }}
                                   className='btn--notify-unread'
@@ -355,11 +354,10 @@ function NotificationSocio({ notifiProps, nofityPropsPartner }: any) {
                                     if(consul?.type === "consulta"){
                                       localStorage.setItem('notifyId',`${consul?.item_id}`);
                                         router.push('/partner_chat');
-                                        
-                                    };
-                                    
-                                    if( consul?.type === "calif_socio"){
+                                    }else if(consul?.type === "calif_socio"){
                                      opeModals()
+                                    }else if(consul?.type === "cargar_factura"){
+                                      router.push('/ventas_sibaritta')
                                     }
                                   }}
                                   className='btn--notify-unread'
