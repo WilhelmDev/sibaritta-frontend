@@ -79,7 +79,7 @@ const CardVentasSibaritta = ({ DataSibaritta }: CardVentasSibaritta) => {
         </div>
         <div className="sale-especific-3-right">
           <p className="text-left-right">Devoluciones: </p>
-          <p className="text-right-right">NO</p>
+          <p className="text-right-right">{DataSibaritta?.hours_cancelation !== null ? 'NO' : 'SÍ'}</p>
         </div>
       </div>
       <div className="sale-especific-4-general">
