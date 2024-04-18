@@ -20,6 +20,8 @@ import SelectionDateVentas from "./SelectionDateVentas";
 import SalesInformation from "./SalesInformation";
 import ElectionDatePay from "./ElectionDatePay";
 import PaymentsInformation from "./PaymentsInformation";
+import { getAllPartnerPayments, Payment } from "@/services/payment.service";
+import { getPartnerByUserId } from "@/services/partnerPerfil.service";
 
 moment().tz("America/Mexico_City");
 
@@ -45,6 +47,7 @@ function Index() {
   const [mes, setmes] = useState(false);
   const [año, setaño] = useState(false);
   const [refounded, setRefounded] = useState(0)
+  const [dataPayments, setdataPayments] = useState<Payment[]>([]);
 
   function changeSale() {
     setsaleOrPay(true);
@@ -208,6 +211,18 @@ function Index() {
     }
   };
 
+  const getPartnerPayments = async () => {
+    try {
+      const user_id = localStorage.getItem("userid");
+      const partner = await getPartnerByUserId(Number(user_id));
+      const partner_id = partner.id;
+      const payments = await getAllPartnerPayments(partner_id);
+      setdataPayments(payments)
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   const footer = (
     <button
       onClick={() => {
@@ -231,6 +246,7 @@ function Index() {
   useEffect(() => {
     calculateComparador(numberComparate);
     SecurityPrivileges();
+    getPartnerPayments();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   useEffect(() => {
