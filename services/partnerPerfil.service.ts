@@ -3,7 +3,7 @@ import getConfig from "@/utils/getConfig";
 
 const urlPut = "v1/partner/";
 
-interface Partner {
+export interface Partner {
   id: number;
   full_name: string;
   comercial_name: string;
