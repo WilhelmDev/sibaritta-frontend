@@ -26,21 +26,27 @@ const ElectionDatePay = ( {electionData}:any ) => {
             electionData?.visibleMenu ? "active" : ""
           }`}
         >
-          <Link href="#" className="menu-date">
+          <button className="menu-date">
             Fecha personalizada
-          </Link>
-          <Link href="#" className="menu-date">
-            Hoy
-          </Link>
-          <Link href="#" className="menu-date">
+          </button>
+          <button onClick={() => {
+            electionData?.calculateComparador(2);
+            changeVisibility();
+          }} className="menu-date">
             Total semana
-          </Link>
-          <Link href="#" className="menu-date">
+          </button>
+          <button onClick={() => {
+            electionData?.calculateComparador(3);
+            changeVisibility();
+          }} className="menu-date">
             Total mes
-          </Link>
-          <Link href="#" className="menu-date">
+          </button>
+          <button onClick={() => {
+            electionData?.calculateComparador(4);
+            changeVisibility();
+          }} className="menu-date">
             Total año
-          </Link>
+          </button>
         </div>
       </div>
       <button className="date-sale-total-sale">
@@ -61,7 +67,6 @@ const ElectionDatePay = ( {electionData}:any ) => {
         <button className="dates-tipes-2 dates-tipes-child-pay">
           Fecha personalizada
         </button>
-        <button onClick={() => electionData?.calculateComparador(1)} className="dates-tipes-3 dates-tipes-child-pay">Hoy</button>
         <button onClick={() => electionData?.calculateComparador(2)} className="dates-tipes-4 dates-tipes-child-pay">
           Total semana
         </button>
