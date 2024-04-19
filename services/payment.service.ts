@@ -3,8 +3,8 @@ import getConfig from "@/utils/getConfig";
 
 export interface Payment {
   id: number;
-  payment_date: Date | null;
-  invoicing_date: Date | null;
+  payment_date: string | null;
+  invoicing_date: string | null;
   amount: number;
   commission: number;
   fk_partner_id: number;
@@ -12,10 +12,10 @@ export interface Payment {
   payment_method: string | null;
   invoice_file_path: string | null;
   receipt_file_path: string | null;
-  payment_period_start_date: Date;
-  payment_period_end_date: Date;
-  createdAt: Date;
-  updatedAt: Date;
+  payment_period_start_date: string;
+  payment_period_end_date: string;
+  createdAt: string;
+  updatedAt: string;
 }
 
 export const getAllPartnerPayments = async (
