@@ -12,7 +12,7 @@ const PaymentsInformation = ({dateComparator, payments}:PaymentsInformation) => 
     <div className="sale-total-container">
         <div className="sale-total-head-general">
           <p className="sale-total-head-1">Tus Pagos Totales han Sido de</p>
-          <p className="sale-total-head-2">1 - 31 Diciembre - 2023</p>
+          <p className="sale-total-head-2">{`${dateComparator}`}</p>
         </div>
         <p className="sale-total-mid">${payments.reduce((total, payment) => total + Number(payment.amount), 0)} mxn</p>
         <p className="sale-total-bottom">Después de Comisiones</p>
@@ -26,7 +26,7 @@ const PaymentsInformation = ({dateComparator, payments}:PaymentsInformation) => 
           <p className="sale-total-tablet-2-2-pay">Después de Comisiones</p>
         </div>
 
-        <p className="sale-total-tablet-3-pay">{`${dateComparator}`} </p>
+        <p className="sale-total-tablet-3-pay">{`${dateComparator}`}</p>
 
       </div>
     </>
