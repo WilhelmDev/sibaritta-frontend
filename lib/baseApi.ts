@@ -8,3 +8,6 @@ export const baseApi = axios.create({
     "Content-Type": "application/json;charset=UTF-8",
   },
 });
+export const generalBaseApi = axios.create({
+  baseURL,
+})
