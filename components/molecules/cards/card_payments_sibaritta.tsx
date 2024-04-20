@@ -1,21 +1,47 @@
-import { Payment } from "@/services/payment.service";
+import { createPaymentWithInvoice, Payment } from "@/services/payment.service";
 import moment from "moment";
-import { Dispatch, SetStateAction } from "react";
+import { ChangeEvent, Dispatch, SetStateAction, useState } from "react";
+
 
 const CardPaymentsSibaritta = ({ payment, index, typeUser, setPaymentsToShow, setDataPayments }: { payment: Payment, index: number, typeUser: number, setPaymentsToShow: Dispatch<SetStateAction<Payment[]>>, setDataPayments: Dispatch<SetStateAction<Payment[]>> }) => {
-  function capitalize(string: string) {
+  const [isUploading, setIsUploading] = useState(false);
+
+  const capitalize = (string: string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
-  function capitalizeMonth(dateString: string) {
+  const capitalizeMonth = (dateString: string) => {
     let words = dateString.split(' ');
     words[1] = words[1].charAt(0).toUpperCase() + words[1].slice(1);
     return words.join(' ');
   }
-  function downloadFile(file: Blob, fileName: string) {
+  const downloadFile = (file: Blob, fileName: string) => {
     const a = document.createElement('a')
     a.href = URL.createObjectURL(file)
     a.download = `${fileName}`
     a.click()
+  }
+  const handleFileUpload = async (e: ChangeEvent<HTMLInputElement>) => {
+    if (!e.target.files || e.target.files.length === 0) return;
+    const file = e.target.files[0];
+    const maxMb = process.env.MAX_SIZE_FILES_UPLOAD ? parseFloat(process.env.MAX_SIZE_FILES_UPLOAD) : 1;
+    const maxSize = maxMb * 1024 * 1024;
+    if (file.size > maxSize) {
+      alert(`El archivo es muy pesado para subirlo, el tamaño máximo es de ${maxMb}MB.`);
+      return;
+    }
+
+    setIsUploading(true)
+    try {
+      const createdPayment = await createPaymentWithInvoice(payment, e.target.files[0]);
+      if(createdPayment) {
+        setPaymentsToShow(prevPayments => prevPayments.map((item, idx) => idx === index ? createdPayment : item));
+        setDataPayments(prevPayments => prevPayments.map((item, idx) => idx === index ? createdPayment : item));
+      }
+    } catch (error) {
+      console.log(error)
+    } finally {
+      setIsUploading(false)
+    }
   }
 
   return (
@@ -49,9 +75,14 @@ const CardPaymentsSibaritta = ({ payment, index, typeUser, setPaymentsToShow, se
               }}>Descargar</button>
               :
               typeUser === 2 ?
-              <button className="text-right-bill">Adjuntar</button>
+              <div className="text-right-bill">
+                <input type="file" id="fileUpload" accept="application/pdf,image/jpeg,image/jpg,image/png" onChange={handleFileUpload} style={{display: 'none'}} disabled={isUploading} />
+                <label htmlFor="fileUpload" className={`${isUploading ? "cursor-default" : "cursor-pointer"}`}>
+                  Adjuntar
+                </label>
+              </div>
               :
-              <p className="text-right-bill">No disponible</p>
+              <p className="text-right-bill">Pendiente</p>
             }
           </div>
           <div className="sale-especific-2-voucher sale-especific-2">
@@ -67,10 +98,8 @@ const CardPaymentsSibaritta = ({ payment, index, typeUser, setPaymentsToShow, se
                     const data = await response.blob();
                     downloadFile(data, `comprobante_pago_${moment(payment.payment_date).utc().format("DD_MM_YYYY")}`);
                   }}>Descargar</button>
-                  : typeUser === 2 ?
+                  : 
                   <button className="text-right-voucher">Pendiente</button>
-                  :
-                  <p className="text-right-voucher">No disponible</p>
                 }
               </>
               }
