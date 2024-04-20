@@ -1,4 +1,4 @@
-import { baseApi } from "@/lib/baseApi";
+import { baseApi, generalBaseApi } from "@/lib/baseApi";
 import getConfig from "@/utils/getConfig";
 
 export interface Payment {
@@ -26,7 +26,33 @@ export const getAllPartnerPayments = async (
       `/v1/payment/partner/${partner_id}`,
       getConfig()
     );
+    if(!payments.data.success)
+      throw new Error(payments.data.message);
     return payments.data.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const createPaymentWithInvoice = async (
+  payment: Payment,
+  file: File
+): Promise<Payment> => {
+  try {
+    const formData = new FormData();
+    (Object.keys(payment) as (keyof Payment)[]).forEach((key: keyof Payment) => {
+      formData.append(key, String(payment[key]));
+    });
+    formData.append("file", file);
+
+    const response = await generalBaseApi.post(
+      "/v1/payment/create/upload_invoice",
+      formData,
+      getConfig()
+    );
+    if(!response.data.success)
+      throw new Error(response.data.message);
+    return response.data.data;
   } catch (error) {
     throw error;
   }
