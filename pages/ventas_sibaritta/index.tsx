@@ -49,11 +49,13 @@ function Index() {
   const [refounded, setRefounded] = useState(0)
   const [dataPayments, setdataPayments] = useState<Payment[]>([]);
   const [paymentsToShow, setPaymentsToShow] = useState<Payment[]>([]);
+  const [fk_typeuser, setFk_typeuser] = useState<number>(1);
 
   function changeSale() {
     setsaleOrPay(true);
   }
   const changePay = () => {
+    if(numberComparate === 1) electionData.calculateComparador(2);
     setsaleOrPay(false);
   };
   const conparadorState = () => {
@@ -246,7 +248,6 @@ function Index() {
       const payments = await getAllPartnerPayments(partner_id);
       console.log(payments)
       setDataPayments(payments)
-      setPaymentsToShow(payments)
     } catch (error) {
       console.log(error);
     }
@@ -276,6 +277,7 @@ function Index() {
     calculateComparador(numberComparate);
     SecurityPrivileges();
     getPartnerPayments();
+    setFk_typeuser(Number(localStorage.getItem("fk_typeuser")));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   useEffect(() => {
@@ -389,7 +391,7 @@ function Index() {
                 <p className="pay-sale-container-right-right-1">
                   Total a Pagar
                 </p>
-                <p className="pay-sale-container-right-right-2">${dataPayments[0].amount} mxn</p>
+                <p className="pay-sale-container-right-right-2">${dataPayments[0]?.amount} mxn</p>
                 <p className="pay-sale-container-right-right-3">
                   Después de comisiones
                 </p>
@@ -428,7 +430,7 @@ function Index() {
               {paymentsToShow.map((payment: Payment, index) => {
                 if(index !== 0)
                 return <div key={payment.id} className="sale-especific-container-pay">
-                  <CardPaymentsSibaritta payment={payment} index={index} typeUser={2} setDataPayments={setDataPayments} setPaymentsToShow={setPaymentsToShow} />
+                  <CardPaymentsSibaritta payment={payment} index={index} typeUser={fk_typeuser ?? 1} setDataPayments={setDataPayments} setPaymentsToShow={setPaymentsToShow} />
                 </div>
               })}
             </div>
