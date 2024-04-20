@@ -2,9 +2,10 @@ import React from 'react'
 import Link from "next/link";
 import Image from "next/image";
 import CalendarIcon from "@/public/ventas_sibarita/calendarIcon.png";
+import { Payment } from '@/services/payment.service';
 
 
-const ElectionDatePay = ( {electionData}:any ) => {
+const ElectionDatePay = ( {electionData, payments}: {electionData: any, payments: Payment[]} ) => {
 
   const changeVisibility = () => {
     electionData?.setvisibleMenu(!electionData?.visibleMenu);
@@ -51,7 +52,7 @@ const ElectionDatePay = ( {electionData}:any ) => {
       </div>
       <button className="date-sale-total-sale">
         <p className="date-sale-total-sale-left">Total Pagos</p>
-        <div className="date-sale-total-sale-right">5.000</div>
+        <div className="date-sale-total-sale-right">{payments.reduce((total, payment) => total + Number(payment.amount), 0)}</div>
       </button>
     </div> 
     <div className="dates-tipes-pay laptop">

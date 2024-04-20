@@ -245,7 +245,7 @@ function Index() {
       const partner_id = partner.id;
       const payments = await getAllPartnerPayments(partner_id);
       console.log(payments)
-      setdataPayments(payments)
+      setDataPayments(payments)
       setPaymentsToShow(payments)
     } catch (error) {
       console.log(error);
@@ -382,14 +382,14 @@ function Index() {
                   Período actual
                 </p>
                 <p className="pay-sale-container-right-left-2">
-                  {`${dateComparator}`}
+                  {`${moment(dateWeekBefore[1]).utc().format("DD MMMM YYYY").replace(/\b\w/g, l => l.toUpperCase())} - ${moment(dateActual[1]).utc().format("DD MMMM YYYY").replace(/\b\w/g, l => l.toUpperCase())}`}
                 </p>
               </div>
               <div className="pay-sale-container-right-right">
                 <p className="pay-sale-container-right-right-1">
                   Total a Pagar
                 </p>
-                <p className="pay-sale-container-right-right-2">{}</p>
+                <p className="pay-sale-container-right-right-2">${dataPayments[0].amount} mxn</p>
                 <p className="pay-sale-container-right-right-3">
                   Después de comisiones
                 </p>
@@ -422,13 +422,13 @@ function Index() {
               saleOrPay ? "" : "active"
             }`}
           >
-            <ElectionDatePay electionData={electionData} />
-            <PaymentsInformation dateComparator={dateComparator} />
+            <ElectionDatePay electionData={electionData} payments={paymentsToShow} />
+            <PaymentsInformation dateComparator={dateComparator} payments={paymentsToShow} />
             <div className="sale-especific-container-general-pay">
               {paymentsToShow.map((payment: Payment, index) => {
                 if(index !== 0)
                 return <div key={payment.id} className="sale-especific-container-pay">
-                  <CardPaymentsSibaritta payment={payment} index={index} typeUser={2} />
+                  <CardPaymentsSibaritta payment={payment} index={index} typeUser={2} setDataPayments={setDataPayments} setPaymentsToShow={setPaymentsToShow} />
                 </div>
               })}
             </div>
