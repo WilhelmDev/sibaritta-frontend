@@ -6,7 +6,7 @@ import React from 'react'
 //     currency?:any
 //   }
 
-const SalesInformation = ({salesData}:any) => {
+const SalesInformation = ({salesData, status}:any) => {
   return (
     <>
     <div className="sale-total-container movile">
@@ -31,8 +31,21 @@ const SalesInformation = ({salesData}:any) => {
         <p className="sale-total-tablet-3-2">{(salesData?.dataImportGeneral?.quantity?salesData?.dataImportGeneral?.quantity:0)}</p>
       </div>
       <div className="sale-total-tablet-4">
-        <p className="sale-total-tablet-4-1">Nuevos Clientes</p>
-        <p className="sale-total-tablet-4-2">{salesData?.dataImportGeneral?.news || 0}</p>
+        {
+          status === 'cancelled'
+          ? (
+            <>
+              <p className="sale-total-tablet-4-1">Reembolsado</p>
+              <p className="sale-total-tablet-4-2">{salesData.refounded}</p>
+            </>
+          )
+          : (
+            <>
+              <p className="sale-total-tablet-4-1">Nuevos Clientes</p>
+              <p className="sale-total-tablet-4-2">{salesData?.dataImportGeneral?.news || 0}</p>
+            </>
+          )
+        }
       </div>
     </div>
     </>
