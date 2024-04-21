@@ -44,6 +44,7 @@ function Index() {
   const [semana, setsemana] = useState(false);
   const [mes, setmes] = useState(false);
   const [año, setaño] = useState(false);
+  const [refounded, setRefounded] = useState(0)
 
   function changeSale() {
     setsaleOrPay(true);
@@ -199,6 +200,8 @@ function Index() {
         completed_cancelled_all
       );
       setdataImportData(data.data);
+      const refoundedEl = data.data.reduce((acc:number, el:any) => el.devoluciones && acc + 1, 0)
+      setRefounded(refoundedEl)
       setdataImportGeneral(data);
     } catch (error) {
       console.log(error);
@@ -259,6 +262,7 @@ function Index() {
     dataImportGeneral: dataImportGeneral,
     dateComparator: dateComparator,
     currency: currency,
+    refounded
   };
 
   const electionData = {
@@ -353,17 +357,16 @@ function Index() {
             }`}
           >
             <SelectionDateVentas selectionData={selectionData} />
-            <SalesInformation salesData={salesData} />
+            <SalesInformation salesData={salesData} status={canceledOrCompleted} />
             <div className="sale-especific-container-general">
               {[...renderCards]
-                ?.reverse()
                 ?.map((object: any, index: number) => {
                   return (
                     <div
                       key={index}
                       className={`sale-especific-container activate`}
                     >
-                      <CardVentasSibaritta DataSibaritta={object} />
+                      <CardVentasSibaritta DataSibaritta={object} isAdmin={false}/>
                     </div>
                   );
                 })}

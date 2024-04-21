@@ -53,6 +53,8 @@ function Index() {
   const [clientId, setClienId] = useState(0);
   const [viewSelectorPartner, setviewSelectorPartner] = useState<boolean>(true);
   const [infoData, setinfoData] = useState<IUser>();
+  const [countCancelled, setCountCancelled] = useState(0)
+  const [countRefounded, setCountRefounded] = useState(0)
 
   const router = useRouter();
 
@@ -210,6 +212,10 @@ function Index() {
         completed_cancelled_all
       );
       setdataImportData(data.data);
+      const cancelled = data.data.reduce((acc:number, el:any) => (el.status === 'cancelled') ? acc + 1 : acc, 0)
+      const refoundedEl = data.data.reduce((acc:number, el:any) => (el.devoluciones) ? acc + 1 : acc, 0)
+      setCountRefounded(refoundedEl)
+      setCountCancelled(cancelled)
       setdataImportGeneral(data);
     } catch (error) {
       console.log(error);
@@ -286,6 +292,8 @@ function Index() {
     dataImportGeneral: dataImportGeneral,
     dateComparator: dateComparator,
     currency: currency,
+    countCancelled,
+    refounded: countRefounded
   };
 
   return (
@@ -435,17 +443,16 @@ function Index() {
             }`}
           >
             <SelectionDateVentas selectionData={selectionData} />
-            <AdminSalesInformation adminSalesData={adminSalesData} />
+            <AdminSalesInformation adminSalesData={adminSalesData} status={canceledOrCompleted} />
             <div className="sale-especific-container-general">
               {[...renderCards]
-                ?.reverse()
                 ?.map((object: any, index: number) => {
                   return (
                     <div
                       key={index}
                       className={`sale-especific-container activate`}
                     >
-                      <CardVentasSibaritta DataSibaritta={object} />
+                      <CardVentasSibaritta DataSibaritta={object} isAdmin={true} />
                     </div>
                   );
                 })}
