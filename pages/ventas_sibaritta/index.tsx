@@ -125,7 +125,6 @@ function Index() {
           const endDate = payment.payment_period_end_date.slice(0, 10);
           return startDate >= dateWeekBefore[1] && endDate <= dateActual[1]
         }));
-        console.log(paymentsToShow)
 
         break;
       case 3:
