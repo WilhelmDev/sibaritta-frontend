@@ -245,7 +245,6 @@ function Index() {
       const partner = await getPartnerByUserId(Number(user_id));
       const partner_id = partner.id;
       const payments = await getAllPartnerPayments(partner_id);
-      console.log(payments)
       setDataPayments(payments)
     } catch (error) {
       console.log(error);
