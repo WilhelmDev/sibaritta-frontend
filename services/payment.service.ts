@@ -18,6 +18,17 @@ export interface Payment {
   updatedAt: string;
 }
 
+export const getAllPayments = async (): Promise<Payment[]> => {
+  try {
+    const payments = await baseApi.get("/v1/payment", getConfig());
+    if(!payments.data.success)
+      throw new Error(payments.data.message);
+    return payments.data.data;
+  } catch (error) {
+    throw error;
+  }
+}
+
 export const getAllPartnerPayments = async (
   partner_id: number
 ): Promise<Payment[]> => {
@@ -57,3 +68,24 @@ export const createPaymentWithInvoice = async (
     throw error;
   }
 };
+
+export const uploadReceipt = async (
+  payment_id: number,
+  file: File
+): Promise<Payment> => {
+  try {
+    const formData = new FormData();
+    formData.append("file", file);
+
+    const response = await generalBaseApi.post(
+      `/v1/payment/${payment_id}/upload_receipt`,
+      formData,
+      getConfig()
+    );
+    if(!response.data.success)
+      throw new Error(response.data.message);
+    return response.data.data;
+  } catch (error) {
+    throw error;
+  }
+}
