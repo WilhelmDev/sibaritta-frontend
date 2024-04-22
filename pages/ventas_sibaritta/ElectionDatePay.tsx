@@ -52,7 +52,7 @@ const ElectionDatePay = ( {electionData, payments}: {electionData: any, payments
       </div>
       <button className="date-sale-total-sale">
         <p className="date-sale-total-sale-left">Total Pagos</p>
-        <div className="date-sale-total-sale-right">{payments.reduce((total, payment) => total + Number(payment.amount), 0)}</div>
+        <div className="date-sale-total-sale-right">{payments?.reduce((total, payment) => total + Number(payment.amount), 0)}</div>
       </button>
     </div> 
     <div className="dates-tipes-pay laptop">

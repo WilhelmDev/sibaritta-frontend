@@ -18,8 +18,8 @@ import { useRouter } from "next/router";
 import useCurrency from "@/hook/partner/useCurrency";
 import SelectionDateVentas from "./SelectionDateVentas";
 import SalesInformation from "./SalesInformation";
-import ElectionDatePay from "./ElectionDatePay";
-import PaymentsInformation from "./PaymentsInformation";
+import ElectionDatePay from "@/pages/ventas_sibaritta/ElectionDatePay";
+import PaymentsInformation from "@/pages/ventas_sibaritta/PaymentsInformation";
 import { getAllPartnerPayments, Payment } from "@/services/payment.service";
 import { getPartnerByUserId } from "@/services/partnerPerfil.service";
 

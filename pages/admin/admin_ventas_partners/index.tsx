@@ -22,10 +22,10 @@ import { IUser } from "@/interface/user.interface";
 import { getUserById } from "@/services/login.services";
 import useCurrency from "@/hook/partner/useCurrency";
 import SelectionDateVentas from "@/pages/ventas_sibaritta/SelectionDateVentas";
-import AdminSalesInformation from "./AdminSalesInformation";
+import AdminSalesInformation from "@/pages/admin/admin_ventas_partners/AdminSalesInformation";
 import ElectionDatePay from "@/pages/ventas_sibaritta/ElectionDatePay";
 import PaymentsInformation from "@/pages/ventas_sibaritta/PaymentsInformation";
-import { getAllPartnerPayments, getAllPayments, Payment } from "@/services/payment.service";
+import { getAllPartnerPayments, Payment } from "@/services/payment.service";
 
 moment().tz("America/Mexico_City");
 

@@ -1,6 +1,6 @@
 import { Payment, uploadReceipt } from "@/services/payment.service";
 import moment from "moment";
-import React, { ChangeEvent, Dispatch, FormEvent, SetStateAction, useState } from "react";
+import React, { Dispatch, FormEvent, SetStateAction, useState } from "react";
 
 function PaymentModal({
   setPaymentModal,
@@ -69,15 +69,15 @@ function PaymentModal({
       <div className="flex items-center justify-center min-h-screen">
         <div className="flex flex-col items-center justify-between p-4 align-bottom bg-white rounded-lg h-[400px] w-[400px] text-black text-2xl">
           <p>Está a punto de confirmar el pago</p>
-          <h2>{payment.amount}MXN</h2>
+          <h2>{payment?.amount}MXN</h2>
           <h3>{`${capitalizeMonth(
-            moment(payment.payment_period_start_date)
+            moment(payment?.payment_period_start_date)
               .utc()
               .format("DD MMMM YYYY")
           )} 
             - 
             ${capitalizeMonth(
-              moment(payment.payment_period_end_date)
+              moment(payment?.payment_period_end_date)
                 .utc()
                 .format("DD MMMM YYYY")
             )}`}</h3>

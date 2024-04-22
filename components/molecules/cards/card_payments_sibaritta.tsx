@@ -1,7 +1,7 @@
 import { createPaymentWithInvoice, Payment } from "@/services/payment.service";
 import moment from "moment";
 import { ChangeEvent, Dispatch, SetStateAction, useState } from "react";
-import PaymentModal from "../../../pages/admin/admin_ventas_partners/PaymentModal"
+import PaymentModal from "@/pages/admin/admin_ventas_partners/PaymentModal";
 
 
 const CardPaymentsSibaritta = ({ payment, index, typeUser, setPaymentsToShow, setDataPayments }: { payment: Payment, index: number, typeUser: number, setPaymentsToShow: Dispatch<SetStateAction<Payment[]>>, setDataPayments: Dispatch<SetStateAction<Payment[]>> }) => {
