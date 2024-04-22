@@ -2,9 +2,10 @@ import React from 'react'
 import Link from "next/link";
 import Image from "next/image";
 import CalendarIcon from "@/public/ventas_sibarita/calendarIcon.png";
+import { Payment } from '@/services/payment.service';
 
 
-const ElectionDatePay = ( {electionData}:any ) => {
+const ElectionDatePay = ( {electionData, payments}: {electionData: any, payments: Payment[]} ) => {
 
   const changeVisibility = () => {
     electionData?.setvisibleMenu(!electionData?.visibleMenu);
@@ -26,26 +27,32 @@ const ElectionDatePay = ( {electionData}:any ) => {
             electionData?.visibleMenu ? "active" : ""
           }`}
         >
-          <Link href="#" className="menu-date">
+          <button className="menu-date">
             Fecha personalizada
-          </Link>
-          <Link href="#" className="menu-date">
-            Hoy
-          </Link>
-          <Link href="#" className="menu-date">
+          </button>
+          <button onClick={() => {
+            electionData?.calculateComparador(2);
+            changeVisibility();
+          }} className="menu-date">
             Total semana
-          </Link>
-          <Link href="#" className="menu-date">
+          </button>
+          <button onClick={() => {
+            electionData?.calculateComparador(3);
+            changeVisibility();
+          }} className="menu-date">
             Total mes
-          </Link>
-          <Link href="#" className="menu-date">
+          </button>
+          <button onClick={() => {
+            electionData?.calculateComparador(4);
+            changeVisibility();
+          }} className="menu-date">
             Total año
-          </Link>
+          </button>
         </div>
       </div>
       <button className="date-sale-total-sale">
         <p className="date-sale-total-sale-left">Total Pagos</p>
-        <div className="date-sale-total-sale-right">5.000</div>
+        <div className="date-sale-total-sale-right">{payments?.reduce((total, payment) => total + Number(payment.amount), 0)}</div>
       </button>
     </div> 
     <div className="dates-tipes-pay laptop">
@@ -61,7 +68,6 @@ const ElectionDatePay = ( {electionData}:any ) => {
         <button className="dates-tipes-2 dates-tipes-child-pay">
           Fecha personalizada
         </button>
-        <button onClick={() => electionData?.calculateComparador(1)} className="dates-tipes-3 dates-tipes-child-pay">Hoy</button>
         <button onClick={() => electionData?.calculateComparador(2)} className="dates-tipes-4 dates-tipes-child-pay">
           Total semana
         </button>

@@ -18,8 +18,10 @@ import { useRouter } from "next/router";
 import useCurrency from "@/hook/partner/useCurrency";
 import SelectionDateVentas from "./SelectionDateVentas";
 import SalesInformation from "./SalesInformation";
-import ElectionDatePay from "./ElectionDatePay";
-import PaymentsInformation from "./PaymentsInformation";
+import ElectionDatePay from "@/pages/ventas_sibaritta/ElectionDatePay";
+import PaymentsInformation from "@/pages/ventas_sibaritta/PaymentsInformation";
+import { getAllPartnerPayments, Payment } from "@/services/payment.service";
+import { getPartnerByUserId } from "@/services/partnerPerfil.service";
 
 moment().tz("America/Mexico_City");
 
@@ -45,11 +47,15 @@ function Index() {
   const [mes, setmes] = useState(false);
   const [año, setaño] = useState(false);
   const [refounded, setRefounded] = useState(0)
+  const [dataPayments, setDataPayments] = useState<Payment[]>([]);
+  const [paymentsToShow, setPaymentsToShow] = useState<Payment[]>([]);
+  const [fk_typeuser, setFk_typeuser] = useState<number>(1);
 
   function changeSale() {
     setsaleOrPay(true);
   }
   const changePay = () => {
+    if(numberComparate === 1) electionData.calculateComparador(2);
     setsaleOrPay(false);
   };
   const conparadorState = () => {
@@ -97,7 +103,7 @@ function Index() {
         conparadorState();
 
         setrenderCards(dataImportData);
-
+        
         setnumberComparate(1);
 
         setdateInitial(dateActual[1]);
@@ -114,6 +120,12 @@ function Index() {
         setdateInitial(dateWeekBefore[1]);
         setdateFinal(dateActual[1]);
 
+        setPaymentsToShow(dataPayments.filter((payment) => {
+          const startDate = payment.payment_period_start_date.slice(0, 10);
+          const endDate = payment.payment_period_end_date.slice(0, 10);
+          return startDate >= dateWeekBefore[1] && endDate <= dateActual[1]
+        }));
+
         break;
       case 3:
         comparadorDataMes();
@@ -125,6 +137,12 @@ function Index() {
         setdateInitial(dateMonthBefore[1]);
         setdateFinal(dateActual[1]);
 
+        setPaymentsToShow(dataPayments.filter((payment) => {
+          const startDate = payment.payment_period_start_date.slice(0, 10);
+          const endDate = payment.payment_period_end_date.slice(0, 10);
+          return startDate >= dateMonthBefore[1] && endDate <= dateActual[1]
+        }))
+
         break;
       case 4:
         comparadorDataAño();
@@ -135,6 +153,13 @@ function Index() {
 
         setdateInitial(dateYearBefore[1]);
         setdateFinal(dateActual[1]);
+
+        setPaymentsToShow(dataPayments.filter((payment) => {
+          const startDate = payment.payment_period_start_date.slice(0, 10);
+          const endDate = payment.payment_period_end_date.slice(0, 10);
+          
+          return startDate >= dateYearBefore[1] && endDate <= dateActual[1]
+        }));
 
         break;
 
@@ -153,6 +178,12 @@ function Index() {
 
           setdateInitial(dateCalendarBefore[1]);
           setdateFinal(dateCalendarAfter[1]);
+
+          setPaymentsToShow(dataPayments.filter((payment) => {
+            const startDate = payment.payment_period_start_date.slice(0, 10);
+            const endDate = payment.payment_period_end_date.slice(0, 10);
+            return startDate >= dateCalendarBefore[1] && endDate <= dateCalendarAfter[1]
+          }));
         } else if (days.length == 1) {
           const dateCalendarActual = calculateDateArrayCalendar(days[0]);
 
@@ -208,6 +239,18 @@ function Index() {
     }
   };
 
+  const getPartnerPayments = async () => {
+    try {
+      const user_id = localStorage.getItem("userid");
+      const partner = await getPartnerByUserId(Number(user_id));
+      const partner_id = partner.id;
+      const payments = await getAllPartnerPayments(partner_id);
+      setDataPayments(payments)
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   const footer = (
     <button
       onClick={() => {
@@ -231,6 +274,8 @@ function Index() {
   useEffect(() => {
     calculateComparador(numberComparate);
     SecurityPrivileges();
+    getPartnerPayments();
+    setFk_typeuser(Number(localStorage.getItem("fk_typeuser")));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   useEffect(() => {
@@ -337,14 +382,14 @@ function Index() {
                   Período actual
                 </p>
                 <p className="pay-sale-container-right-left-2">
-                  {`${dateComparator}`}
+                  {`${moment(dateWeekBefore[1]).utc().format("DD MMMM YYYY").replace(/\b\w/g, l => l.toUpperCase())} - ${moment(dateActual[1]).utc().format("DD MMMM YYYY").replace(/\b\w/g, l => l.toUpperCase())}`}
                 </p>
               </div>
               <div className="pay-sale-container-right-right">
                 <p className="pay-sale-container-right-right-1">
                   Total a Pagar
                 </p>
-                <p className="pay-sale-container-right-right-2">{}</p>
+                <p className="pay-sale-container-right-right-2">${dataPayments[0]?.amount} mxn</p>
                 <p className="pay-sale-container-right-right-3">
                   Después de comisiones
                 </p>
@@ -377,14 +422,15 @@ function Index() {
               saleOrPay ? "" : "active"
             }`}
           >
-            <ElectionDatePay electionData={electionData} />
-            <PaymentsInformation dateComparator={dateComparator} />
+            <ElectionDatePay electionData={electionData} payments={paymentsToShow} />
+            <PaymentsInformation dateComparator={dateComparator} payments={paymentsToShow} />
             <div className="sale-especific-container-general-pay">
-              {renderCards.map((object: any, index: number) => (
-                <div key={index} className="sale-especific-container-pay">
-                  <CardPaymentsSibaritta />
+              {paymentsToShow.map((payment: Payment, index) => {
+                if(index !== 0)
+                return <div key={payment.id} className="sale-especific-container-pay">
+                  <CardPaymentsSibaritta payment={payment} index={index} typeUser={fk_typeuser ?? 1} setDataPayments={setDataPayments} setPaymentsToShow={setPaymentsToShow} />
                 </div>
-              ))}
+              })}
             </div>
           </div>
         </div>
