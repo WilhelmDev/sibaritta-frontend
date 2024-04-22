@@ -46,11 +46,11 @@ const AdminSalesInformation = ({adminSalesData, status} :any) => {
           <>
             <div className="sale-total-tablet-2">
               <p className="sale-total-tablet-2-1">Reservas Canceladas</p>
-              <p className="sale-total-tablet-2-2">{adminSalesData.countCancelled}</p>
+              <p className="sale-total-tablet-2-2">{adminSalesData?.countCancelled}</p>
             </div>
             <div className="sale-total-tablet-3">
               <p className="sale-total-tablet-3-1">Reservas Reembolsadas</p>
-              <p className="sale-total-tablet-3-2">{adminSalesData.refounded}</p>
+              <p className="sale-total-tablet-3-2">{adminSalesData?.refounded}</p>
             </div>
           </>
         )
@@ -71,7 +71,7 @@ const AdminSalesInformation = ({adminSalesData, status} :any) => {
             </div>
             <div className="sale-total-tablet-3">
               <p className="sale-total-tablet-3-1">Reservas Canceladas</p>
-              <p className="sale-total-tablet-3-2">{adminSalesData.countCancelled}</p>
+              <p className="sale-total-tablet-3-2">{adminSalesData?.countCancelled}</p>
             </div>
           </>
         )
