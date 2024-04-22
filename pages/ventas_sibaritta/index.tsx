@@ -47,7 +47,7 @@ function Index() {
   const [mes, setmes] = useState(false);
   const [año, setaño] = useState(false);
   const [refounded, setRefounded] = useState(0)
-  const [dataPayments, setdataPayments] = useState<Payment[]>([]);
+  const [dataPayments, setDataPayments] = useState<Payment[]>([]);
   const [paymentsToShow, setPaymentsToShow] = useState<Payment[]>([]);
   const [fk_typeuser, setFk_typeuser] = useState<number>(1);
 
