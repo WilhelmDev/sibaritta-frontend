@@ -10,12 +10,14 @@ import { useState } from "react";
 import { PresencialWhite } from "@/components/ui/icons/PresencialWhite";
 import { PickupWhite } from "@/components/ui/icons/PickupWhite";
 import { estadosTraducidos } from "@/utils/estadosTraducidos";
+import moment from "moment";
 
 interface CardVentasSibaritta {
   DataSibaritta: any;
+  isAdmin: boolean
 }
 
-const CardVentasSibaritta = ({ DataSibaritta }: CardVentasSibaritta) => {
+const CardVentasSibaritta = ({ DataSibaritta, isAdmin }: CardVentasSibaritta) => {
 
   const [modalPartner, setmodalPartner] = useState<boolean>(false);
 
@@ -29,6 +31,10 @@ const CardVentasSibaritta = ({ DataSibaritta }: CardVentasSibaritta) => {
 
   const totalAftercommission =DataSibaritta?.total - DataSibaritta?.comision 
 
+  const parseDate = (date:string) => {
+    const dateParsed = moment(date).format('DD [de] MMMM yyyy, HH:mm:ss [hs]')
+    return dateParsed
+  } 
   return (
     <div className={`card_ventas_general`}>
       <div className="sale-especific-1-general">
@@ -44,7 +50,7 @@ const CardVentasSibaritta = ({ DataSibaritta }: CardVentasSibaritta) => {
           <p className="sale-especific-1-laptop-rigth-1">
             Orden: {DataSibaritta?.order_number}
           </p>
-          <p className="sale-especific-l-laptop-rigth-2">Estado: en curso</p>
+          <p className="sale-especific-l-laptop-rigth-2">Estado: {DataSibaritta.actualState}</p>
         </div>
       </div>
       <div className="sale-especific-2-general">
@@ -79,7 +85,7 @@ const CardVentasSibaritta = ({ DataSibaritta }: CardVentasSibaritta) => {
         </div>
         <div className="sale-especific-3-right">
           <p className="text-left-right">Devoluciones: </p>
-          <p className="text-right-right">NO</p>
+          <p className="text-right-right">{DataSibaritta.devoluciones ? 'Sí' : 'No'}</p>
         </div>
       </div>
       <div className="sale-especific-4-general">
@@ -92,6 +98,47 @@ const CardVentasSibaritta = ({ DataSibaritta }: CardVentasSibaritta) => {
           </span>
         </p>
       </div>
+      {
+        DataSibaritta.cancelation_date && 
+        (
+        <div className="sale-especific-4-general">
+          <p className="paragraph-bill">
+            <span className="paragraph-bill-left">
+              Fecha de Cancelación:
+            </span>
+            <span className="paragraph-bill-right">
+              { parseDate(DataSibaritta.cancelation_date)}
+            </span>
+          </p>
+        </div>
+        )
+      }
+      {
+        isAdmin && (
+          <>
+            <div className="sale-especific-4-general">
+              <p className="paragraph-bill">
+                <span className="paragraph-bill-left">
+                  Comisión:
+                </span>
+                <span className="paragraph-bill-right">
+                  ${ DataSibaritta.comision || 0}
+                </span>
+              </p>
+            </div>
+            <div className="sale-especific-4-general">
+              <p className="paragraph-bill">
+                <span className="paragraph-bill-left">
+                  Extra sibaritta:
+                </span>
+                <span className="paragraph-bill-right">
+                  ${ DataSibaritta.extra_sibaritta || 0}
+                </span>
+              </p>
+            </div>
+          </>
+        )
+      }
       <div className={`qualification`}>
         <div className="qualification-top">
           <div  className="qualification-top-1 cursor-pointer">

@@ -1,5 +1,6 @@
 import monthsArray from "@/lib/monthsArray";
 import daysArray from "./daysArray";
+import moment from "moment";
 
 export const transformDateAFormatHuman = (a: string) => {
   const dateActualFormat = new Date(a);
@@ -60,7 +61,9 @@ export const calculateDateActual = () => {
 export const calculateDateWeekBefore = () => {
   const dateActual = new Date();
   const dateWeekBefore = new Date(dateActual);
-  dateWeekBefore.setDate(dateActual.getDate() - (dateActual.getDay() - 1));
+  const actualWeekDay = moment(dateActual).isoWeekday();
+
+  dateWeekBefore.setDate(dateActual.getDate() - (actualWeekDay - 1));
 
   const dayWeekBefore = dateWeekBefore.getDate();
   const monthWeekBeforeNumber = dateWeekBefore.getMonth();

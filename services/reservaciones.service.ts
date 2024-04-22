@@ -3,7 +3,7 @@ import getConfig from '@/utils/getConfig';
 
 const currentReservations = 'v2/reservation';
 const currentReservationsAll = '/v1/reservation_socio';
-const cancelConfirReserva = 'v1/reservation/cancel_after';
+const cancelConfirReserva = 'v1/reservation/cancel';
 const getAllReservations = async () => {
   try {
     const result = await baseApi.get(currentReservations, getConfig());
