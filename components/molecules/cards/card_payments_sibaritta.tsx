@@ -1,10 +1,12 @@
 import { createPaymentWithInvoice, Payment } from "@/services/payment.service";
 import moment from "moment";
 import { ChangeEvent, Dispatch, SetStateAction, useState } from "react";
+import PaymentModal from "../../../pages/admin/admin_ventas_partners/PaymentModal"
 
 
 const CardPaymentsSibaritta = ({ payment, index, typeUser, setPaymentsToShow, setDataPayments }: { payment: Payment, index: number, typeUser: number, setPaymentsToShow: Dispatch<SetStateAction<Payment[]>>, setDataPayments: Dispatch<SetStateAction<Payment[]>> }) => {
   const [isUploading, setIsUploading] = useState(false);
+  const [paymentModal, setPaymentModal] = useState<Boolean>(false)
 
   const capitalize = (string: string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -46,6 +48,7 @@ const CardPaymentsSibaritta = ({ payment, index, typeUser, setPaymentsToShow, se
 
   return (
     <div className={`card-container-render render ? "activate" : ""}`}>
+      {(paymentModal && typeUser === 3) && <PaymentModal setPaymentModal={setPaymentModal} payment={payment} setDataPayments={setDataPayments} setPaymentsToShow={setPaymentsToShow} />}
       <div className="sale-especific-1-general-laptop-pay">
         <div className="sale-especific-1-laptop-left-pay">
           <p className="sale-especific-1-laptop-left-pay-1">Fecha del Pago</p>
@@ -88,7 +91,9 @@ const CardPaymentsSibaritta = ({ payment, index, typeUser, setPaymentsToShow, se
           <div className="sale-especific-2-voucher sale-especific-2">
             {
               (!payment.receipt_file_path && typeUser === 3) ?
-              <button>Pagar</button>
+              <button className="w-full text-center" onClick={() => {
+                setPaymentModal(true)
+              }}>Pagar</button>
               :
               <>
                 <p className="text-left-voucher">Comprobante de pago:</p>
