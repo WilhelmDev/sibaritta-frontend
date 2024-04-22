@@ -71,13 +71,15 @@ export const createPaymentWithInvoice = async (
 
 export const uploadReceipt = async (
   payment_id: number,
+  payment_method: string,
   file: File
 ): Promise<Payment> => {
   try {
     const formData = new FormData();
+    formData.append("payment_method", payment_method)
     formData.append("file", file);
 
-    const response = await generalBaseApi.post(
+    const response = await generalBaseApi.put(
       `/v1/payment/${payment_id}/upload_receipt`,
       formData,
       getConfig()
