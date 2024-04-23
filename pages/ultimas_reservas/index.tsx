@@ -39,9 +39,6 @@ function Index() {
   const router = useRouter();
  
 
- 
-  
-
   const allReservation = () => {
     setreservaFilter(reservations);
   };
