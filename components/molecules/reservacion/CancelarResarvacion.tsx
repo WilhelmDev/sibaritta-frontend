@@ -35,19 +35,19 @@ function CancelarResarvacion({
         />
 
         <p className="reservation_p-one">
-          Cancelación solo hasta 2 horas antes de la hora programada.
+          Estás a punto de cancelar la reservación.
         </p>
 
         <p className="reservation_p">
-          El reembolso se hará efectivo dentro de los próximos 15 días habiles.
+          Sólo se realizan reembolsos en reservas canceladas con un mínimo de 24 horas de anticipación al evento. El reembolso se hace efectivo dentro de los 15 días hábiles de la cancelación
         </p>
 
         <article className="reservation_tbns">
           <button onClick={cancelar} className="reservation_tbn_cancelar">
-            Cancelar reservación
+            Confirmar cancelación
           </button>
           <button onClick={closeModal} className="reservation_tbn_vovler">
-            Volver
+            Cancelar
           </button>
         </article>
       </Modal>

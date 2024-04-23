@@ -201,6 +201,11 @@ function CardReservacion({ card, first, reservas, index }: any) {
           )}
           <p>{card?.partner?.full_name}</p>
           <p>{card?.partner?.address}</p>
+          {
+            (card?.status === 'cancelled') && (
+              <p>Fecha de cancelación: {moment(card?.cancelation_date).format('DD [de] MMMM yyyy, HH:mm:ss [hs]')}</p>
+            )
+          }
         </p>
 
         <div className="container_card_info">
@@ -394,7 +399,6 @@ function CardReservacion({ card, first, reservas, index }: any) {
                 </p>
                 <div className="descrition-cancel-reservation-btn  ">
                   <h6 className="!no-underline">
-                    Cancelación solo hasta 2 horas antes de la hora programada.
                     La cancelación implica la aceptación de nuestra
                   </h6>
                   <h6 onClick={openPoliticaCancel} className="cursor-pointer ">
