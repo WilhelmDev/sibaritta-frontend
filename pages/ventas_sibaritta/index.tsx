@@ -231,7 +231,7 @@ function Index() {
         completed_cancelled_all
       );
       setdataImportData(data.data);
-      const refoundedEl = data.data.reduce((acc:number, el:any) => el.devoluciones && acc + 1, 0)
+      const refoundedEl = data.data.reduce((acc:number, el:any) => el.devoluciones ? acc + 1 : acc, 0)
       setRefounded(refoundedEl)
       setdataImportGeneral(data);
     } catch (error) {
