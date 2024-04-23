@@ -35,7 +35,7 @@ const AdminSalesInformation = ({adminSalesData, status} :any) => {
             {adminSalesData?.currency?.currency_symbol}
             { status === 'cancelled'
               ? (adminSalesData?.dataImportGeneral?.total_refounded || 0 )
-              : (adminSalesData?.dataImportGeneral?.total || 0 )
+              : (adminSalesData?.dataImportGeneral?.total_sells || 0 )
             }  
             {adminSalesData?.currency?.currency}</p>
           {/* <p className="sale-total-tablet-2-3"></p> */}

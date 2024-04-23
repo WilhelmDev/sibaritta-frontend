@@ -11,20 +11,40 @@ const SalesInformation = ({salesData, status}:any) => {
     <>
     <div className="sale-total-container movile">
         <div className="sale-total-head-general">
-          <p className="sale-total-head-1">Tus Ventas Totales han Sido de</p>
+          <p className="sale-total-head-1">
+            {
+              status === 'cancelled'
+              ? 'Tus reembolsos totales han sido de'
+              : 'Tus Ventas Totales han sido de'
+            }
+          </p>
           <p className="sale-total-head-2">{`${salesData?.dateComparator}`} </p>
         </div>
-        <p className="sale-total-mid">${(salesData?.dataImportGeneral?.total?salesData?.dataImportGeneral?.total:0)} mxn</p>
-        <p className="sale-total-bottom">Después de Comisiones</p>
+          {
+            status === 'cancelled'
+            ? (<p className="sale-total-mid">${(salesData?.dataImportGeneral?.total?salesData?.dataImportGeneral?.total_refounded:0)} mxn</p>)
+            : (<p className="sale-total-mid">${(salesData?.dataImportGeneral?.total?salesData?.dataImportGeneral?.total:0)} mxn</p>)
+          }
+        <p className="sale-total-bottom"></p>
       </div>
       <div className="sale-total-container-tablet laptop">
       <div className="sale-total-tablet-1">
         <p className="sale-total-tablet-1-1">{`${salesData?.dateComparator}`}</p>
       </div>
       <div className="sale-total-tablet-2">
-        <p className="sale-total-tablet-2-1">Tus Ventas Totales han sido de</p>
-        <p className="sale-total-tablet-2-2">{salesData?.currency?.currency_symbol}{(salesData?.dataImportGeneral?.total?salesData?.dataImportGeneral?.total:0)} {""} {salesData?.currency?.currency}</p>
-        <p className="sale-total-tablet-2-3">Después de Comisiones</p>
+        <p className="sale-total-tablet-2-1">
+        {
+          status === 'cancelled'
+          ? 'Tus reembolsos totales han sido de'
+          : 'Tus Ventas Totales han sido de'
+        }
+        </p>
+        {
+          status === 'cancelled'
+          ? (<p className="sale-total-tablet-2-2">{salesData?.currency?.currency_symbol}{(salesData?.dataImportGeneral?.total?salesData?.dataImportGeneral?.total_refounded:0)} {""} {salesData?.currency?.currency}</p>)
+          : (<p className="sale-total-tablet-2-2">{salesData?.currency?.currency_symbol}{(salesData?.dataImportGeneral?.total?salesData?.dataImportGeneral?.total:0)} {""} {salesData?.currency?.currency}</p>)
+        }
+        <p className="sale-total-tablet-2-3"></p>
       </div>
       <div className="sale-total-tablet-3">
         <p className="sale-total-tablet-3-1">Reservas totales</p>
