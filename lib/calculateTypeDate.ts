@@ -30,6 +30,11 @@ export const transformDateAFormatHumanReservation = (a: string) => {
 
 
 export const calculateDateActual = () => {
+  moment.tz.setDefault('America/Mexico_City');
+
+  const currentDate = moment();
+  const upcomingMonday = currentDate.startOf('week');
+  const nextSunday = upcomingMonday.clone().add(6, 'days').format('DD');
   const dateActualFormat = new Date();
   const dayActual = dateActualFormat.getDate();
   const monthActualNumber = dateActualFormat.getMonth();
@@ -45,14 +50,16 @@ export const calculateDateActual = () => {
   const monthNextNumber = dateActualNewDate.getMonth();
   const yearNext = dateActualNewDate.getFullYear();
   const dayNextPadded = String(dayNext).padStart(2, "0");
-  const dateActualEditedString = `${dayPadded} ${monthActualString} ${yearActual}`;
-  const dateActualEditedNumber = `${yearActual}-${monthPadded}-${dayPadded}`;
+  const dateActualEditedString = `${nextSunday} ${monthActualString} ${yearActual}`;
+  const dateActualEditedNumber = `${yearActual}-${monthPadded}-${nextSunday}`;
   const dateNextEditedNumber = `${yearActual}-${monthPadded}-${dayNextPadded}`;
+  const actualDate = `${dayPadded} ${monthActualString} ${yearActual}`;
 
   const dateWeekBeforeEditedArray = [
     dateActualEditedString,
     dateActualEditedNumber,
     dateNextEditedNumber,
+    actualDate
   ];
 
   return dateWeekBeforeEditedArray;

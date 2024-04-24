@@ -79,7 +79,7 @@ function Index() {
   };
   const conparadorState = () => {
     sethoy(true);
-    setdateComparator(dateActual[0]);
+    setdateComparator(dateActual[3]);
     setsemana(false);
     setmes(false);
     setaño(false);
