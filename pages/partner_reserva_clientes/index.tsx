@@ -3,6 +3,8 @@ import Calendar from "@/components/ui/icons/Calendar";
 import { StartIcons2 } from "@/components/ui/icons/StartIcons2";
 import { getAllPartnerSell } from "@/services/partnerReservaClientes";
 import { useRouter } from "next/router";
+import debounceFunction from 'debounce-fn';
+ 
 
 import Image from "next/image";
 import {
@@ -22,23 +24,31 @@ function Index() {
   const [reser, setReser] = useState<Reservation[]>()
   const [date, setDate] = useState(allHeader?.date || new Date().toISOString().split('T')[0]);
   const [currentReservationIndex, setCurrentReservationIndex] = useState(0);
-
+  const [isDebouncing, setIsDebouncing] = useState(false);
 
   const router = useRouter();
 
   const receivedData2 = router.query.data;
   
-  const incrementReservation = () => {
+  let debounceTimeoutId: NodeJS.Timeout | null = null;
+
+  const incrementReservation = debounceFunction(() => {
     if (reser && currentReservationIndex < reser.length - 1) {
       setCurrentReservationIndex(currentReservationIndex + 1);
     }
-  };
+    setIsDebouncing(true);
+    if (debounceTimeoutId) clearTimeout(debounceTimeoutId);
+    debounceTimeoutId = setTimeout(() => setIsDebouncing(false), 500);
+  }, {wait: 500});
   
-  const decrementReservation = () => {
+  const decrementReservation = debounceFunction(() => {
     if (reser && currentReservationIndex > 0) {
       setCurrentReservationIndex(currentReservationIndex - 1);
     }
-  };
+    setIsDebouncing(true);
+    if (debounceTimeoutId) clearTimeout(debounceTimeoutId);
+    debounceTimeoutId = setTimeout(() => setIsDebouncing(false), 500);
+  }, {wait: 500}); 
 
   const cupos = () => {
     const totalQuotas = allHeader?.seats;
@@ -59,16 +69,6 @@ function Index() {
         fk_user_id: localStorage.getItem("userid"),
       };
       const { data } = await getAllServicePartnersOrder(part);
-
-      // const sortedData = data.sort((a: Reservation, b: Reservation) => {
-      //   const aLatestDetail = a.details.reduce((latest, detail) => 
-      //     new Date(detail.createdAt) > new Date(latest.createdAt) ? detail : latest
-      //   );
-      //   const bLatestDetail = b.details.reduce((latest, detail) => 
-      //     new Date(detail.createdAt) > new Date(latest.createdAt) ? detail : latest
-      //   );
-      //   return new Date(bLatestDetail.createdAt).getTime() - new Date(aLatestDetail.createdAt).getTime();
-      // });
 
       setReser(data);
 
@@ -126,7 +126,13 @@ function Index() {
     <div className="--reservation_details_partners main-page">
       <div className="box_datils-partners-reservations--">
       <div className="details_partners_fecha---">
-        <button onClick={decrementReservation}>&lt;</button>
+        <button 
+          onClick={decrementReservation} 
+          style={{color: isDebouncing || currentReservationIndex === 0 ? 'gray' : 'white'}} 
+          disabled={isDebouncing || currentReservationIndex === 0}
+        >
+        &lt;
+        </button>
           <Calendar />
           <p>
           {formatearReservaFecha(
@@ -138,7 +144,13 @@ function Index() {
                 ":00"
             )}
           </p>
-        <button onClick={incrementReservation}>&gt;</button>
+          <button 
+            onClick={incrementReservation} 
+            style={{color: isDebouncing || (reser && currentReservationIndex === reser.length - 1) ? 'gray' : 'white'}}
+            disabled={isDebouncing || (reser && currentReservationIndex === reser.length - 1)}
+          >
+          &gt;
+          </button>
       </div>
         <div className="details_partners_title_dates">
           <div className="box_icon_presencial">
