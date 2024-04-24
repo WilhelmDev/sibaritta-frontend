@@ -7,7 +7,7 @@ import moment from "moment";
 import "moment/locale/es";
 moment.locale("es");
 
-function detalle() {
+function Detalle() {
   const [reservation, setReservation] = useState<ReservationInformation>();
 
   const router = useRouter();
@@ -106,4 +106,4 @@ function detalle() {
   );
 }
 
-export default detalle;
+export default Detalle;
