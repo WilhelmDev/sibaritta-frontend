@@ -13,6 +13,7 @@ import {
 import ModalPoliticasCancelacion from "@/components/molecules/partner/ModalPoliticasCancelacion";
 import RestrictionReserva from "@/components/molecules/reservacion/RestrictionReserva";
 import SecurityPrivileges from "@/security/SecurityPrivileges";
+import QRCode from "qrcode.react";
 
 
 
@@ -98,7 +99,9 @@ function Index() {
                {code}
              </h3>
            </div>
-
+           <div className="w-full flex justify-center">
+            <QRCode value={`${process.env.NEXT_PUBLIC_URl_BASIC}reserva/${code}`} size={150} />
+           </div>
            <p className=" reserva-exitosaQr-textcontents">
              Este código será solicitado el día de la experiencia
            </p>

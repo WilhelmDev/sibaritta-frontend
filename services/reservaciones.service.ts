@@ -1,3 +1,4 @@
+import { ReservationInformation } from '@/interface/reservacion';
 import { baseApi } from '@/lib/baseApi';
 import getConfig from '@/utils/getConfig';
 
@@ -82,6 +83,19 @@ const cancelReservationConfir = async (cancel: any) => {
   }
 };
 
+const getReservationInformation = async (code: string): Promise<ReservationInformation> => {
+  try {
+    const result = await baseApi.get(
+      '/v1/reservation/order_code/' + code,
+      getConfig()
+    );
+    return result.data.data;
+  } catch (error) {
+    throw error;
+  }
+
+}
+
 export {
   getAllReservations,
   createReservations,
@@ -89,4 +103,5 @@ export {
   cancelReservations,
   getReservationAll,
   cancelReservationConfir,
+  getReservationInformation,
 };
