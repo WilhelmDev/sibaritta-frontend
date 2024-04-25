@@ -8,7 +8,9 @@ import "moment/locale/es";
 moment.locale("es");
 
 function Detalle() {
-  const [reservation, setReservation] = useState<ReservationInformation>();
+  const [reservation, setReservation] = useState<ReservationInformation>(
+    {} as ReservationInformation
+  );
 
   const router = useRouter();
   const { code } = router.query;
