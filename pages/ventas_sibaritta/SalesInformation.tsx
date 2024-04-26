@@ -50,23 +50,29 @@ const SalesInformation = ({salesData, status}:any) => {
         <p className="sale-total-tablet-3-1">Reservas totales</p>
         <p className="sale-total-tablet-3-2">{(salesData?.dataImportGeneral?.quantity?salesData?.dataImportGeneral?.quantity:0)}</p>
       </div>
-      <div className="sale-total-tablet-4">
         {
           status === 'cancelled'
           ? (
             <>
-              <p className="sale-total-tablet-4-1">Reembolsado</p>
-              <p className="sale-total-tablet-4-2">{salesData.refounded}</p>
+              <div className="sale-total-tablet-4">
+                <p className="sale-total-tablet-4-1">Reembolsado</p>
+                <p className="sale-total-tablet-4-2">{salesData.refounded}</p>
+              </div>
             </>
           )
           : (
             <>
-              <p className="sale-total-tablet-4-1">Nuevos Clientes</p>
-              <p className="sale-total-tablet-4-2">{salesData?.dataImportGeneral?.news || 0}</p>
+              <div className="sale-total-tablet-3">
+                <p className="sale-total-tablet-3-1">Nuevos Clientes</p>
+                <p className="sale-total-tablet-3-2">{salesData?.dataImportGeneral?.news || 0}</p>
+              </div>
+              <div className="sale-total-tablet-4">
+                <p className="sale-total-tablet-4-1">Reservas Canceladas</p>
+                <p className="sale-total-tablet-4-2">{salesData?.cancelledCount|| 0}</p>
+              </div>
             </>
           )
         }
-      </div>
     </div>
     </>
   )

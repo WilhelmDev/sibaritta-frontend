@@ -50,6 +50,7 @@ function Index() {
   const [dataPayments, setDataPayments] = useState<Payment[]>([]);
   const [paymentsToShow, setPaymentsToShow] = useState<Payment[]>([]);
   const [fk_typeuser, setFk_typeuser] = useState<number>(1);
+  const [cancelledCount, setCancelledCount] = useState(0)
 
   function changeSale() {
     setsaleOrPay(true);
@@ -231,8 +232,10 @@ function Index() {
         completed_cancelled_all
       );
       setdataImportData(data.data);
+      const cancelled = data.data.reduce((acc:number, el:any) => (el.status === 'cancelled') ? acc + 1 : acc, 0)
       const refoundedEl = data.data.reduce((acc:number, el:any) => el.devoluciones ? acc + 1 : acc, 0)
       setRefounded(refoundedEl)
+      setCancelledCount(cancelled)
       setdataImportGeneral(data);
     } catch (error) {
       console.log(error);
@@ -307,7 +310,8 @@ function Index() {
     dataImportGeneral: dataImportGeneral,
     dateComparator: dateComparator,
     currency: currency,
-    refounded
+    refounded,
+    cancelledCount
   };
 
   const electionData = {
