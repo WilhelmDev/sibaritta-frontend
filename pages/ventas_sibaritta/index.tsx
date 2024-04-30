@@ -56,7 +56,7 @@ function Index() {
     setsaleOrPay(true);
   }
   const changePay = () => {
-    if(numberComparate === 1) electionData.calculateComparador(2);
+    if(numberComparate === 1) electionData.calculateComparador(1);
     setsaleOrPay(false);
   };
   const conparadorState = () => {
@@ -76,7 +76,7 @@ function Index() {
   };
 
   const comparadorDataMes = () => {
-    setdateComparator(`${dateMonthBefore[0]} - ${dateActual[0]}`);
+    setdateComparator(`${dateMonthBefore[0]} - ${dateActual[3]}`);
     setmes(true);
     setsemana(false);
     sethoy(false);
@@ -84,7 +84,7 @@ function Index() {
   };
 
   const comparadorDataAño = () => {
-    setdateComparator(`${dateYearBefore[0]} - ${dateActual[0]}`);
+    setdateComparator(`${dateYearBefore[0]} - ${dateActual[3]}`);
     setaño(true);
     setmes(false);
     setsemana(false);
@@ -107,7 +107,7 @@ function Index() {
         
         setnumberComparate(1);
 
-        setdateInitial(dateActual[1]);
+        setdateInitial(dateActual[4]);
         setdateFinal(dateActual[1]);
 
         break;
@@ -136,7 +136,7 @@ function Index() {
         setnumberComparate(3);
 
         setdateInitial(dateMonthBefore[1]);
-        setdateFinal(dateActual[1]);
+        setdateFinal(dateActual[4]);
 
         setPaymentsToShow(dataPayments.filter((payment) => {
           const startDate = payment.payment_period_start_date.slice(0, 10);

@@ -38,10 +38,14 @@ export const calculateDateActual = () => {
   const dateActualFormat = new Date();
   const dayActual = dateActualFormat.getDate();
   const monthActualNumber = dateActualFormat.getMonth();
-  const monthActualString = monthsArray[monthActualNumber];
+  let monthActualString = monthsArray[monthActualNumber];
   const yearActual = dateActualFormat.getFullYear();
   const dayPadded = String(dayActual).padStart(2, "0");
   const monthPadded = String(monthActualNumber + 1).padStart(2, "0");
+
+  if (+nextSunday < 7) {
+    monthActualString = monthsArray[monthActualNumber + 1]
+  }
 
   const dateActualNewDate = new Date();
   dateActualNewDate.setDate(dateActualNewDate.getDate() + 1);
@@ -51,15 +55,17 @@ export const calculateDateActual = () => {
   const yearNext = dateActualNewDate.getFullYear();
   const dayNextPadded = String(dayNext).padStart(2, "0");
   const dateActualEditedString = `${nextSunday} ${monthActualString} ${yearActual}`;
-  const dateActualEditedNumber = `${yearActual}-${monthPadded}-${nextSunday}`;
+  const dateActualEditedNumber = `${yearActual}-${(+nextSunday < 7) ? (+monthPadded + 1) : monthPadded  }-${nextSunday}`;
   const dateNextEditedNumber = `${yearActual}-${monthPadded}-${dayNextPadded}`;
-  const actualDate = `${dayPadded} ${monthActualString} ${yearActual}`;
+  const actualDate = `${dayPadded} ${monthsArray[monthActualNumber]} ${yearActual}`;
+  const actualDateFormat = moment(dateActualFormat).format('YYYY[-]MM[-]DD')
 
   const dateWeekBeforeEditedArray = [
     dateActualEditedString,
     dateActualEditedNumber,
     dateNextEditedNumber,
-    actualDate
+    actualDate,
+    actualDateFormat
   ];
 
   return dateWeekBeforeEditedArray;

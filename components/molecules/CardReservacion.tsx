@@ -145,7 +145,7 @@ function CardReservacion({ card, first, reservas, index }: any) {
     <div className="container_card ">
       <h3 className="container_card_experiencia">
         {/* Experiencia # {card.fk_experience_id} */}
-        Experiencia # {index}
+        Experiencia # {+card.id + 300}
       </h3>
 
       <div className="reservacion_titulo ">

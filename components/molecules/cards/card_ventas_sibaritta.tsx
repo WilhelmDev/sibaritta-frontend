@@ -40,15 +40,15 @@ const CardVentasSibaritta = ({ DataSibaritta, isAdmin }: CardVentasSibaritta) =>
       <div className="sale-especific-1-general">
         <p className="sale-especific-1-name">{DataSibaritta?.user_name}</p>
         <p className="sale-especific-1-code">{DataSibaritta?.order_number}</p>
-        <p className="sale-especific-1-date">{transformDateAFormatHuman(DataSibaritta?.createdAt)}</p>
+        <p className="sale-especific-1-date">{parseDate(DataSibaritta?.createdAt)}</p>
       </div>
       <div className="sale-especific-1-general-laptop">
         <p className="sale-especific-1-laptop-left">
-          {transformDateAFormatHuman(DataSibaritta?.createdAt)}
+          {parseDate(DataSibaritta?.createdAt)}
         </p>
         <div className="sale-especific-1-laptop-rigth">
           <p className="sale-especific-1-laptop-rigth-1">
-            Orden: {DataSibaritta?.order_number}
+            Orden: {+DataSibaritta?.id + 300}
           </p>
           <p className="sale-especific-l-laptop-rigth-2">Estado: {DataSibaritta.actualState}</p>
         </div>
@@ -57,7 +57,7 @@ const CardVentasSibaritta = ({ DataSibaritta, isAdmin }: CardVentasSibaritta) =>
         <div className="sale-especific-pay-comision">
           <div className="sale-especific-2-pay sale-especific-2">
             <p className="text-left-pay">Pago:</p>
-            <p className="text-right-pay">{estadosTraducidos?.[DataSibaritta?.status]}</p>
+            <p className="text-right-pay">{DataSibaritta.devoluciones ? 'Rembolsado' :DataSibaritta.actualState}</p>
           </div>
          
         </div>

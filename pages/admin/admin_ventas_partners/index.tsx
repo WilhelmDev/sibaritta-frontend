@@ -94,7 +94,7 @@ function Index() {
   };
 
   const comparadorDataMes = () => {
-    setdateComparator(`${dateMonthBefore[0]} - ${dateActual[0]}`);
+    setdateComparator(`${dateMonthBefore[0]} - ${dateActual[3]}`);
     setmes(true);
     setsemana(false);
     sethoy(false);
@@ -102,7 +102,7 @@ function Index() {
   };
 
   const comparadorDataAño = () => {
-    setdateComparator(`${dateYearBefore[0]} - ${dateActual[0]}`);
+    setdateComparator(`${dateYearBefore[0]} - ${dateActual[3]}`);
     setaño(true);
     setmes(false);
     setsemana(false);
@@ -119,7 +119,7 @@ function Index() {
         conparadorState();
         setrenderCards(dataImportData);
         setnumberComparate(1);
-        setdateInitial(dateActual[1]);
+        setdateInitial(dateActual[4]);
         setdateFinal(dateActual[1]);
         break;
       case 2:
@@ -139,7 +139,7 @@ function Index() {
         setrenderCards(dataImportData);
         setnumberComparate(3);
         setdateInitial(dateMonthBefore[1]);
-        setdateFinal(dateActual[1]);
+        setdateFinal(dateActual[4]);
         setPaymentsToShow(dataPayments.filter((payment) => {
           const startDate = payment.payment_period_start_date.slice(0, 10);
           const endDate = payment.payment_period_end_date.slice(0, 10);
@@ -151,7 +151,7 @@ function Index() {
         setrenderCards(dataImportData);
         setnumberComparate(4);
         setdateInitial(dateYearBefore[1]);
-        setdateFinal(dateActual[1]);
+        setdateFinal(dateActual[4]);
         setPaymentsToShow(dataPayments.filter((payment) => {
           const startDate = payment.payment_period_start_date.slice(0, 10);
           const endDate = payment.payment_period_end_date.slice(0, 10);
