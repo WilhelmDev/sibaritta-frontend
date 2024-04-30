@@ -122,7 +122,7 @@ const CardVentasSibaritta = ({ DataSibaritta, isAdmin }: CardVentasSibaritta) =>
                   Total:
                 </span>
                 <span className="paragraph-bill-right">
-                  ${ DataSibaritta.total || 0}
+                  ${ (DataSibaritta.total || 0) + (DataSibaritta.extra_sibaritta || 0) }
                 </span>
               </p>
             </div>
