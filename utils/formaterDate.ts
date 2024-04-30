@@ -97,7 +97,7 @@ export function formatearDataPartner(fechaOriginal: string) {
   const hora = fechaMoment.format('h:mma');
 
   // Combina la información para formar la cadena final
-  const fechaFormateada = `${nombreDia} ${dia} de ${nombreMes} , ${hora}`;
+  const fechaFormateada = `${nombreDia} ${dia} de ${nombreMes}`;
 
   return fechaFormateada;
 }

@@ -4,7 +4,7 @@ import SerataIcon from "@/public/ventas_sibarita/LOGO_SERATTA.png";
 import Image from "next/image";
 import { transformDateAFormatHuman } from "@/lib/calculateTypeDate";
 import { capitalizeFirstLetter } from "@/lib/utils_sale_pay_sibaritta";
-import { formatearDataPartner } from "@/utils/formaterDate";
+import { formatearDataPartner, formatearReservaFecha } from "@/utils/formaterDate";
 import ModalPartnerReservaVentas from "@/components/molecules/ModalPartnerReservaVentas";
 import { useState } from "react";
 import { PresencialWhite } from "@/components/ui/icons/PresencialWhite";
@@ -161,7 +161,14 @@ const CardVentasSibaritta = ({ DataSibaritta, isAdmin }: CardVentasSibaritta) =>
               </p>
               <p onClick={openModalPartnerReserva} className="qualification-top-1-right-2">
                 {capitalizeFirstLetter(
-                  formatearDataPartner(DataSibaritta?.date)
+                  `${formatearReservaFecha(
+                      DataSibaritta?.date +
+                      " " +
+                      DataSibaritta?.hour +
+                      ":" +
+                      DataSibaritta?.minute +
+                      ":00"
+                  )}`
                 )}
               </p>
             </div>

@@ -48,7 +48,8 @@ const pendingNotification = async (): Promise<boolean> => {
     }
     return result.data.data;
   } catch (error) {
-    throw error;
+    // throw error;
+    return false
   }
 };
 
