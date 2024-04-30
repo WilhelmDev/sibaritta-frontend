@@ -180,7 +180,7 @@ function CardReservacion({ card, first, reservas, index }: any) {
           <article className="three-reservation--_-  ">
             <div className="flex justify-end gap-[1rem] items-center">
               <h3>Orden :</h3>
-              <h3>{card.order_number}</h3>
+              <h3>{+card.id + 300}</h3>
             </div>
             <div className="flex justify-end w-full gap-[1rem] items-center">
               <p>Codigo reservacion :</p>

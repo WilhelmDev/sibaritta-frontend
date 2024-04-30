@@ -57,7 +57,7 @@ const CardVentasSibaritta = ({ DataSibaritta, isAdmin }: CardVentasSibaritta) =>
         <div className="sale-especific-pay-comision">
           <div className="sale-especific-2-pay sale-especific-2">
             <p className="text-left-pay">Pago:</p>
-            <p className="text-right-pay">{DataSibaritta.devoluciones ? 'Rembolsado' :DataSibaritta.actualState}</p>
+            <p className="text-right-pay">{DataSibaritta.devoluciones ? 'Rembolsado' : 'Completado'}</p>
           </div>
          
         </div>
@@ -116,6 +116,26 @@ const CardVentasSibaritta = ({ DataSibaritta, isAdmin }: CardVentasSibaritta) =>
       {
         isAdmin && (
           <>
+            <div className="sale-especific-4-general">
+              <p className="paragraph-bill">
+                <span className="paragraph-bill-left">
+                  Total:
+                </span>
+                <span className="paragraph-bill-right">
+                  ${ DataSibaritta.total || 0}
+                </span>
+              </p>
+            </div>
+            <div className="sale-especific-4-general">
+              <p className="paragraph-bill">
+                <span className="paragraph-bill-left">
+                  Comision Partner:
+                </span>
+                <span className="paragraph-bill-right">
+                  ${ totalAftercommission || 0}
+                </span>
+              </p>
+            </div>
             <div className="sale-especific-4-general">
               <p className="paragraph-bill">
                 <span className="paragraph-bill-left">
