@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Sidebar } from "primereact/sidebar";
 import Image from "next/image";
 import Link from "next/link";
@@ -11,6 +11,7 @@ import { ReservationIcons } from "../ui/icons/ReservationIcon";
 import { NotificationIcons } from "../ui/icons/NotificationIcons";
 import { SuportIcons } from "../ui/icons/SupportIcons";
 import { CloseIcons } from "../ui/icons/CloseIcons";
+import { pendingNotification } from "@/services/notifyMessage.service";
 
 interface SideBarPerfilProps {
   visibleRight: boolean;
@@ -24,6 +25,7 @@ const SideBarPerfil = ({
     setVisibleRight(false);
     // document.body.style.overflow = ""; // Restaurar el desplazamiento de la página
   };
+  const [pending, setPending] = useState<boolean>(false);
   const dispatch = useAppDispatch();
   const user = useAppSelector((state) => state.user);
   const router = useRouter();
@@ -34,6 +36,17 @@ const SideBarPerfil = ({
       // document.body.style.overflow = ""; // Restaurar el desplazamiento de la página
     }, 500);
   };
+  const checkPending = async () => {
+    try {
+      const pending = await pendingNotification();
+      setPending(pending);
+    } catch (error) {
+      throw error;
+    }
+  }
+  useEffect(() => {
+    checkPending();
+  }, [visibleRight]);
 
   const logout = () => {
     localStorage.removeItem("token");
@@ -107,6 +120,7 @@ const SideBarPerfil = ({
               className="side-items"
               onClick={() => goLink("/notificaciones")}
             >
+              {pending && <div className="animate-pulse h-5 w-5 rounded-full bg-red-500"></div>}
               <span>Notificaciones</span>
               <NotificationIcons />{" "}
             </div>

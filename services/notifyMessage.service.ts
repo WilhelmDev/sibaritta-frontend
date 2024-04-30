@@ -40,6 +40,18 @@ const updateSocioNotify = async (id:any,read:any) => {
     }
 }
 
-export { getAllNotyfi, getMessageNotify , updateSocioNotify }
+const pendingNotification = async (): Promise<boolean> => {
+  try {
+    const result = await baseApi.get("v1/notification/pending", getConfig());
+    if (!result.data.success) {
+      throw new Error(result.data.message);
+    }
+    return result.data.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export { getAllNotyfi, getMessageNotify , updateSocioNotify, pendingNotification }
 
 
