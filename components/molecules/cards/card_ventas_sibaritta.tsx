@@ -34,7 +34,17 @@ const CardVentasSibaritta = ({ DataSibaritta, isAdmin }: CardVentasSibaritta) =>
   const parseDate = (date:string) => {
     const dateParsed = moment(date).format('DD [de] MMMM yyyy, HH:mm:ss [hs]')
     return dateParsed
-  } 
+  }
+
+  const calculatePercent = (totalVenta:number, comision1:number) => {
+  
+    // Calcular el porcentaje de comisión
+    const porcentajeComision1 = (comision1 / totalVenta) * 100;
+  
+    // Retornar el porcentaje
+    return porcentajeComision1
+  }
+
   return (
     <div className={`card_ventas_general`}>
       <div className="sale-especific-1-general">
@@ -122,14 +132,14 @@ const CardVentasSibaritta = ({ DataSibaritta, isAdmin }: CardVentasSibaritta) =>
                   Total:
                 </span>
                 <span className="paragraph-bill-right">
-                  ${ (DataSibaritta.total || 0) + (DataSibaritta.extra_sibaritta || 0) }
+                  ${ ((+DataSibaritta.total || 0) + (+DataSibaritta.extra_sibaritta || 0)) }
                 </span>
               </p>
             </div>
             <div className="sale-especific-4-general">
               <p className="paragraph-bill">
                 <span className="paragraph-bill-left">
-                  Comision Partner:
+                  Comision Partner ({(100 - calculatePercent(+DataSibaritta.total || 0, DataSibaritta?.comision))}%):
                 </span>
                 <span className="paragraph-bill-right">
                   ${ totalAftercommission || 0}
@@ -139,7 +149,7 @@ const CardVentasSibaritta = ({ DataSibaritta, isAdmin }: CardVentasSibaritta) =>
             <div className="sale-especific-4-general">
               <p className="paragraph-bill">
                 <span className="paragraph-bill-left">
-                  Comisión:
+                  Comisión ({calculatePercent(+DataSibaritta.total || 0, DataSibaritta?.comision)}%):
                 </span>
                 <span className="paragraph-bill-right">
                   ${ DataSibaritta.comision || 0}

@@ -140,7 +140,7 @@ const HeaderPartner = () => {
           </header>
 
           <div className="header-general-container-2 ">
-            <Link href={"/calendar"} legacyBehavior>
+            <Link href={"/partner_reserva_clientes?data=74"} legacyBehavior>
               <div className="text-header-bottom cursor-pointer">
                 Calendario{" "}
               </div>

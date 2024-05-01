@@ -180,11 +180,6 @@ function Index() {
           </div>
           <div className='details_partners_title_type_-'>
             <h2>{allHeader?.experience_name}</h2>
-            <p>
-              {allHeader?.experience_type === "pickup"
-                ? "Pickup"
-                : "Pencresial"}
-            </p>
 
             <p>{cupos()}</p>
           </div>
