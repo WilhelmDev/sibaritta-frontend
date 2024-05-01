@@ -44,6 +44,7 @@ export const calculateDateActual = () => {
   const monthPadded = String(monthActualNumber + 1).padStart(2, "0");
 
   if (+nextSunday < 7) {
+    // console.log('monday: ' +upcomingMonday.add(6, 'days').format('YYYY[-]MM[-]DD'))
     monthActualString = monthsArray[monthActualNumber + 1]
   }
 
@@ -54,8 +55,8 @@ export const calculateDateActual = () => {
   const monthNextNumber = dateActualNewDate.getMonth();
   const yearNext = dateActualNewDate.getFullYear();
   const dayNextPadded = String(dayNext).padStart(2, "0");
-  const dateActualEditedString = `${nextSunday} ${monthActualString} ${yearActual}`;
-  const dateActualEditedNumber = `${yearActual}-${(+nextSunday < 7) ? (+monthPadded + 1) : monthPadded  }-${nextSunday}`;
+  const dateActualEditedString = upcomingMonday.add(6, 'days').format('DD MMMM YYYY')
+  const dateActualEditedNumber = upcomingMonday.add(6, 'days').format('YYYY[-]MM[-]DD')
   const dateNextEditedNumber = `${yearActual}-${monthPadded}-${dayNextPadded}`;
   const actualDate = `${dayPadded} ${monthsArray[monthActualNumber]} ${yearActual}`;
   const actualDateFormat = moment(dateActualFormat).format('YYYY[-]MM[-]DD')
