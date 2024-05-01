@@ -1,7 +1,7 @@
 "use client";
 import ModalSugesstions from "@/components/partner/modals/ModalSugesstions";
 import { allSuggestionPartner } from "@/services/partner/partnerSugesstion.service";
-import React, { FormEvent, useEffect, useState } from "react";
+import React, { FormEvent, useEffect, useRef, useState } from "react";
 import Modal from "@/components/molecules/Modal";
 import Image from "next/image";
 
@@ -10,24 +10,24 @@ interface Suggestion {
   name: string;
   description: string;
   price: number;
-  img: string;
+  img: Blob;
 }
 
-interface CreateModalSuggestion {
+type CreateModalSuggestion = FormData & {
   name: string;
   description: string;
   price: number;
-  img: string;
-  fk_partner_id: number;
-}
-
-const mockedSuggestion: Suggestion = {
-  id: 1,
-  name: "Sugerencia 1",
-  description: "Descripcion de la sugerencia 1",
-  price: 100,
-  img: "/prueba.jpg",
+  img: Blob;
+  partnerId: number;
 };
+
+// const mockedSuggestion: Suggestion = {
+//   id: 1,
+//   name: "Sugerencia 1",
+//   description: "Descripcion de la sugerencia 1",
+//   price: 100,
+//   img: "/prueba.jpg",
+// };
 
 export default function Index() {
   const [suggestions, setSuggestions] = useState<any>();
@@ -40,7 +40,7 @@ export default function Index() {
   const [chosenSuggestion, setChosenSuggestion] = useState<Suggestion | null>(
     null
   );
-  const [newSuggestion, setNewSuggestion] =
+  const [newSuggestionFormData, setNewSuggestionFormData] =
     useState<CreateModalSuggestion | null>(null);
 
   const openCreateSuggestionModal = () => {
@@ -53,33 +53,70 @@ export default function Index() {
 
   const handleCreateSuggestionModalSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const { name, description, price, img } = Object.fromEntries(
-      new FormData(e.currentTarget)
-    );
 
-    const newSuggestion = {
-      name: name as string,
+    const formData = new FormData(e.currentTarget);
+
+    const { suggestionName, description, price, img } =
+      Object.fromEntries(formData);
+
+    const newSuggestionFormData = {
+      ...formData,
+      name: suggestionName as string,
       description: description as string,
       price: parseFloat(price as string),
-      img: img as string,
-      fk_partner_id: parseInt(
-        localStorage.getItem("fk_partner_id") as string,
-        10
-      ),
+      img: img as Blob,
+      partnerId: parseInt(localStorage.getItem("fk_partner_id") as string, 10),
     };
 
-    setNewSuggestion(newSuggestion);
+    // console.log(newSuggestionFormData);
+
+    setNewSuggestionFormData(newSuggestionFormData);
   };
 
   useEffect(() => {
-    if (newSuggestion) {
+    if (newSuggestionFormData) {
+      const formData = new FormData();
+      formData.append("name", newSuggestionFormData.name);
+      formData.append("description", newSuggestionFormData.description);
+      formData.append("regular_price", newSuggestionFormData.price.toString());
+      formData.append("files", newSuggestionFormData.img);
+      formData.append(
+        "fk_partner_id",
+        newSuggestionFormData.partnerId.toString()
+      );
+      formData.append("fk_user_id", "1");
+      formData.append("alt", "alt text");
+
+      // let key: keyof typeof newSuggestionFormData;
+      // for (key in newSuggestionFormData) {
+      //   const value = newSuggestionFormData[key];
+      //   if (typeof value === "number") {
+      //     if (key === "partnerId") {
+      //       formData.append("fk_partner_id", value.toString());
+      //       continue;
+      //     }
+      //     if (key === "price") {
+      //       formData.append("regular_price", value.toString());
+      //       continue;
+      //     }
+      //     formData.append(key, value.toString());
+      //     continue;
+      //   }
+      //   if (value instanceof Blob) {
+      //     formData.append("files", value);
+      //     continue;
+      //   }
+      //   formData.append(key, value);
+      // }
+
+      console.log(Object.fromEntries(formData));
+
       fetch(`${process.env.NEXT_PUBLIC_URL}/v1/suggestion/create`, {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
-        body: JSON.stringify(newSuggestion),
+        body: formData,
       })
         .then((response) => response.json())
         .then((data) => {
@@ -91,7 +128,7 @@ export default function Index() {
           console.error(`Error: ${error}`);
         });
     }
-  }, [newSuggestion]);
+  }, [newSuggestionFormData]);
 
   const closeViewSuggestionsModal = () => {
     setViewSuggestionsModal(false);
@@ -180,53 +217,38 @@ export default function Index() {
         visible={showCreateSuggestionModal}
         closeModal={closeCreateSuggestionModal}
       >
-        <div>
-          <Image
-            src={mockedSuggestion.img}
-            alt="alt text"
-            width={300}
-            height={400}
-          />
+        <form
+          encType="multipart/form-data"
+          style={{ fontSize: 16 }}
+          onSubmit={(e) => handleCreateSuggestionModalSubmit(e)}
+        >
           <div>
-            <form
-              style={{ fontSize: 16 }}
-              onSubmit={(e) => handleCreateSuggestionModalSubmit(e)}
-            >
-              <label>
-                Nombre
-                <input
-                  type="text"
-                  name="name"
-                  placeholder={mockedSuggestion.name}
-                />
-              </label>
-              <label>
-                Descripción
-                <input
-                  type="text"
-                  name="description"
-                  placeholder={mockedSuggestion.description}
-                />
-              </label>
-              <label>
-                Precio
-                <input
-                  type="text"
-                  name="price"
-                  placeholder={mockedSuggestion.price.toString()}
-                />
-              </label>
-              <button>Guardar</button>
-            </form>
-            <button
-              style={{ fontSize: 16 }}
-              type="button"
-              onClick={closeCreateSuggestionModal}
-            >
-              Cancelar
-            </button>
+            <label>
+              Imagen
+              <input type="file" name="img" />
+            </label>
           </div>
-        </div>
+          <label>
+            Nombre
+            <input type="text" name="suggestionName" placeholder={"Hola"} />
+          </label>
+          <label>
+            Descripción
+            <input type="text" name="description" placeholder={"Hola"} />
+          </label>
+          <label>
+            Precio
+            <input type="text" name="price" placeholder={"Hola"} />
+          </label>
+          <button>Guardar</button>
+        </form>
+        <button
+          style={{ fontSize: 16 }}
+          type="button"
+          onClick={closeCreateSuggestionModal}
+        >
+          Cancelar
+        </button>
       </Modal>
     </div>
   );
