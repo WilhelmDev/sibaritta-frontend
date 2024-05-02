@@ -53,7 +53,7 @@ function ModalNotifyCalification( {visible, closeModal}:NotifyCalification) {
         <div className="sale-especific-2-pay-method sale-especific-2">
             <p className="text-left-pay-method">Método de Pago:</p>
             <p className="text-right-pay-method">
-              {capitalizeFirstLetter("hola")}
+              {capitalizeFirstLetter("stripe")}
             </p>
           </div>
           {/* <div className="sale-especific-2-commission sale-especific-2">

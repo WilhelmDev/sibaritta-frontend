@@ -37,7 +37,7 @@ const CardPaymentsSibaritta = ({}: ICardPaymentsSibaritta) => {
           </div>
           <div className="sale-especific-2-pay-method sale-especific-2">
             <p className="text-left-pay-method">Método de Pago:</p>
-            <p className="text-right-pay-method">MetodoDePago </p>
+            <p className="text-right-pay-method">Stripe </p>
           </div>
         </div>
         <div className="sale-especific-pay-comision-pay-2 sale-especific-pay-comision">

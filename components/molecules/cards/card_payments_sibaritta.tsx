@@ -117,7 +117,7 @@ const CardPaymentsSibaritta = ({ payment, index, typeUser, setPaymentsToShow, se
           </div>
           <div className="sale-especific-2-pay-method sale-especific-2">
             <p className="text-left-pay-method">Método de Pago:</p>
-            <p className="text-right-pay-method">{payment.payment_method? capitalize(payment.payment_method) : ""}</p>
+            <p className="text-right-pay-method">{payment.payment_method? capitalize('stripe') : ""}</p>
           </div>
         </div>
         <div className="sale-especific-pay-comision-pay-2 sale-especific-pay-comision">

@@ -59,7 +59,7 @@ const CardVentasSibaritta = ({ DataSibaritta }: CardVentasSibaritta) => {
           <div className="sale-especific-2-pay-method sale-especific-2">
             <p className="text-left-pay-method">Método de Pago:</p>
             <p className="text-right-pay-method">
-              {capitalizeFirstLetter(DataSibaritta?.metodo_pago)}
+              {capitalizeFirstLetter('stripe')}
             </p>
           </div>
           <div className="sale-especific-2-total sale-especific-2">
