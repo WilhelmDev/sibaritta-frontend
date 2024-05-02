@@ -94,7 +94,7 @@ function ModalPartnerReservaVentas({
               <article className="three-reservation--_-  ">
                 <div className="flex gap-[1rem] items-center">
                   <h3>Orden :</h3>
-                  <h3>{Datasibarita?.order_number}</h3>
+                  <h3>{(+Datasibarita?.id || 0) + 300}</h3>
                 </div>
                 <div className="flex w-full gap-[1rem] items-center">
                   <p>Codigo reservacion :</p>

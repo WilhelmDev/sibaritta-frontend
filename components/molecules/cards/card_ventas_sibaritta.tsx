@@ -32,7 +32,7 @@ const CardVentasSibaritta = ({ DataSibaritta, isAdmin }: CardVentasSibaritta) =>
   const totalAftercommission =DataSibaritta?.total - DataSibaritta?.comision 
 
   const parseDate = (date:string) => {
-    const dateParsed = moment(date).format('DD [de] MMMM yyyy, HH:mm:ss [hs]')
+    const dateParsed = moment(date).format('DD [de] MMMM [del] yyyy, H:mma')
     return dateParsed
   }
 
@@ -117,7 +117,12 @@ const CardVentasSibaritta = ({ DataSibaritta, isAdmin }: CardVentasSibaritta) =>
               Fecha de Cancelación:
             </span>
             <span className="paragraph-bill-right">
-              { parseDate(DataSibaritta.cancelation_date)}
+              {capitalizeFirstLetter(
+                `${parseDate(
+                  DataSibaritta.cancelation_date
+                )}`
+              )}
+              {/* { parseDate(DataSibaritta.cancelation_date)} */}
             </span>
           </p>
         </div>

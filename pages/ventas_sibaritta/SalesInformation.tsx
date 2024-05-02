@@ -20,11 +20,7 @@ const SalesInformation = ({salesData, status}:any) => {
           </p>
           <p className="sale-total-head-2">{`${salesData?.dateComparator}`} </p>
         </div>
-          {
-            status === 'cancelled'
-            ? (<p className="sale-total-mid">${(salesData?.dataImportGeneral?.total?salesData?.dataImportGeneral?.total_refounded:0)} mxn</p>)
-            : (<p className="sale-total-mid">${(salesData?.dataImportGeneral?.total?salesData?.dataImportGeneral?.total:0)} mxn</p>)
-          }
+        <p className="sale-total-mid">${(salesData?.dataImportGeneral?.total?salesData?.dataImportGeneral?.total:0)} mxn</p>)
         <p className="sale-total-bottom"></p>
       </div>
       <div className="sale-total-container-tablet laptop">
@@ -39,11 +35,7 @@ const SalesInformation = ({salesData, status}:any) => {
           : 'Tus Ventas Totales han sido de'
         }
         </p>
-        {
-          status === 'cancelled'
-          ? (<p className="sale-total-tablet-2-2">{salesData?.currency?.currency_symbol}{(salesData?.dataImportGeneral?.total?salesData?.dataImportGeneral?.total_refounded:0)} {""} {salesData?.currency?.currency}</p>)
-          : (<p className="sale-total-tablet-2-2">{salesData?.currency?.currency_symbol}{(salesData?.dataImportGeneral?.total?salesData?.dataImportGeneral?.total:0)} {""} {salesData?.currency?.currency}</p>)
-        }
+        <p className="sale-total-tablet-2-2">{salesData?.currency?.currency_symbol}{(salesData?.dataImportGeneral?.total?salesData?.dataImportGeneral?.total:0)} {""} {salesData?.currency?.currency}</p>
         <p className="sale-total-tablet-2-3"></p>
       </div>
       <div className="sale-total-tablet-3">

@@ -213,7 +213,7 @@ function Index() {
                 <div className="numeros_order_etc">
                   <div className="order-codig ">
                     <h3>Orden :</h3>
-                    <p>{dts?.order_number}</p>
+                    <p>{(+dts?.id || 0) + 300}</p>
                   </div>
 
                   <div className="reserva-codigs">
