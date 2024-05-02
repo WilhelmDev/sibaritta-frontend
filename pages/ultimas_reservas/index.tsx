@@ -375,7 +375,7 @@ function Index() {
                           </div>
 
                           <div className="-order-code-reservations">
-                            <h2>Orden: {reser?.order_number}</h2>
+                            <h2>Orden: {(reser?.id || 0) + 300}</h2>
                             <p>Codigo de reservacion: {reser?.order_code}</p>
                           </div>
                         </div>
@@ -555,7 +555,7 @@ function Index() {
                           </div>
 
                           <div className="-order-code-reservations">
-                            <h2>Orden: {reser?.order_number}</h2>
+                            <h2>Orden: {(+reser?.id || 0) + 300}</h2>
                             <p>Codigo de reservacion: {reser?.order_code}</p>
                           </div>
                         </div>

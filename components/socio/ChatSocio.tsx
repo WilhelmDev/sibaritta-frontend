@@ -31,7 +31,7 @@ function ChatSocio({socioChats , partnerChats }:any) {
             <h2>{socioChats.chat?.reservation?.user_name || "name"}</h2>
             <p>{socioChats.chat?.reservation?.user_email || "email"}</p>
             <h4>+ {socioChats.chat?.user_meta?.map((use:any) => <span key={use.id}>{use?.meta_value}</span>) || "nubmer"}</h4>
-            <h3>Orden: {socioChats.chat?.reservation?.order_number}</h3>
+            <h3>Orden: {(+socioChats?.chat?.reservation?.id || 0) + 300}</h3>
           </div>
         </div>
         <div className='message-chat-response'>
@@ -84,7 +84,7 @@ function ChatSocio({socioChats , partnerChats }:any) {
             <h2>{partnerChats?.chat?.reservation?.user_name || "name"}</h2>
             <p>{partnerChats?.chat?.reservation?.user_email || "email"}</p>
             <h4>+ {partnerChats?.chat?.user_meta?.map((use:any) => <span key={use.id}>{use?.meta_value}</span>) || "nubmer"}</h4>
-            <h3>Orden: {partnerChats?.chat?.reservation?.order_number}</h3>
+            <h3>Orden: {(+partnerChats?.chat?.reservation?.id || 0) + 300}</h3>
           </div>
         </div>
         <div className='message-chat-response'>

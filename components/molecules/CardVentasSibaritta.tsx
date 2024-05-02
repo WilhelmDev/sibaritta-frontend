@@ -41,7 +41,7 @@ const CardVentasSibaritta = ({ DataSibaritta }: CardVentasSibaritta) => {
         </p>
         <div className="sale-especific-1-laptop-rigth">
           <p className="sale-especific-1-laptop-rigth-1">
-            Orden: {DataSibaritta?.order_number}
+            Orden: {(+DataSibaritta?.id || 0) + 300 }
           </p>
           <p className="sale-especific-l-laptop-rigth-2">Estado: en curso</p>
         </div>

@@ -62,7 +62,7 @@ function Detalle() {
           </p>
         </div>
         <div>
-          <h2>Orden: {reservation?.id}</h2>
+          <h2>Orden: {(+reservation?.id || 0) + 300}</h2>
           <p>Código de reservación: {reservation?.order_code}</p>
         </div>
       </header>
