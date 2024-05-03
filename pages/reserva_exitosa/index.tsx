@@ -100,7 +100,7 @@ function Index() {
              </h3>
            </div>
            <div className="w-full flex justify-center">
-            <QRCode value={`${process.env.NEXT_PUBLIC_URl_BASIC}reserva/${code}`} size={150} />
+            <QRCode value={`${process.env.NEXT_PUBLIC_URl_BASIC}reserva/${code}`} size={150} includeMargin={true}/>
            </div>
            <p className=" reserva-exitosaQr-textcontents">
              Este código será solicitado el día de la experiencia
