@@ -23,7 +23,12 @@ const Dropdown = ({ reference }: IFormValue) => {
     const fetchCountries = async () => {
       try {
         const response = await axios.get("https://restcountries.com/v3.1/all");
-        setCountries(response.data);
+        const sortedData = response.data.sort((a:any,b:any) => {
+          const aName = a.name.common;
+          const bName = b.name.common;
+          return (aName < bName) ? -1 : (aName > bName) ? 1 : 0;
+        });
+        setCountries(sortedData);
       } catch (error) {
         console.error("Error fetching countries:", error);
       }
@@ -59,18 +64,19 @@ const Dropdown = ({ reference }: IFormValue) => {
     <div className="relative flex w-full h-full">
       <div
         className="phone-number flex items-center gap-[.5rem] cursor-pointer"
-        onClick={toggleDropdown}
+        
       >
         <div className="ml-4 ">
           <Image
             src={selectedImage!}
-            width={20}
-            height={10}
+            width={30}
+            height={30}
             alt={"..."}
             className=" "
+            onClick={toggleDropdown}
           />
         </div>
-        <div style={{ cursor: 'pointer' }}>▼</div>
+        <div style={{ cursor: 'pointer' }} onClick={toggleDropdown} className=" text-2xl" >▼</div>
         <input
           type="text"
           value={selectedCountryCode || ""}
@@ -84,7 +90,7 @@ const Dropdown = ({ reference }: IFormValue) => {
           {countries.map((country) => (
             <div
               key={country.name.common}
-              className="flex items-center px-4 py-2 cursor-pointer hover:bg-gray-100"
+              className="flex items-center px-4 py-2 cursor-pointer text-2xl hover:bg-gray-100 hover:text-black"
               onClick={() =>
                 handleSelectCountry(
                   country.name.common,
