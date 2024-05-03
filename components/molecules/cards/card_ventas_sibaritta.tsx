@@ -223,7 +223,7 @@ const CardVentasSibaritta = ({ DataSibaritta, isAdmin }: CardVentasSibaritta) =>
               <p className="qualification-top-2-2-2">{DataSibaritta?.partner_comercial_name}</p>
             </div>
             <button className="qualification-top-2-3-button">
-              <div className="qualification-top-2-3-1">Ricardo Fernandez</div>
+              <div className="qualification-top-2-3-1">{DataSibaritta?.user_name}</div>
               <div className="qualification-top-2-3-2">
                 {Array.from({ length: DataSibaritta?.ranking })?.map(
                   (_, index) => (
