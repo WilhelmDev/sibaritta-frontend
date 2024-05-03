@@ -145,7 +145,7 @@ function CardReservacion({ card, first, reservas, index }: any) {
     <div className="container_card ">
       <h3 className="container_card_experiencia">
         {/* Experiencia # {card.fk_experience_id} */}
-        Experiencia # {+card.id + 300}
+        {/* Experiencia # {+card.id + 300} */}
       </h3>
 
       <div className="reservacion_titulo ">
@@ -175,7 +175,7 @@ function CardReservacion({ card, first, reservas, index }: any) {
           <article className="two-resevation-_--- ">
             {/* <h2>{card.details[0].name}</h2> */}
             <h3>{card.experience_name}</h3>
-            <h5>{card.details[0].type}</h5>
+            {/* <h5>{card.details[0].type}</h5> */}
           </article>
           <article className="three-reservation--_-  ">
             <div className="flex justify-end gap-[1rem] items-center">
@@ -231,7 +231,7 @@ function CardReservacion({ card, first, reservas, index }: any) {
           </div>
 
           <div className="container_card_info_caja">
-            <p className="container_card_info_p">Bebida extra</p>
+            <p className="container_card_info_p">Sugerencia Sibaritta</p>
             {/* {card?.aditional.map(x => x.?price_item * x?.quantity )} */}
             <h2 className="container_card_info_h2">$ {totalPrecioItems}</h2>
           </div>
