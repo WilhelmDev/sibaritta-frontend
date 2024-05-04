@@ -41,7 +41,7 @@ const SalesInformation = ({salesData, status}:any) => {
         </p>
         {
           status === 'cancelled'
-          ? <p className="sale-total-tablet-2-2">{salesData?.currency?.currency_symbol}{(salesData?.dataImportGeneral?.total_refounded? salesData?.dataImportGeneral?.total_refounded : 0)} {""} {salesData?.currency?.currency}</p>
+          ? <p className="sale-total-tablet-2-2">{salesData?.currency?.currency_symbol}{(salesData?.dataImportGeneral?.refounded_partner? salesData?.dataImportGeneral?.refounded_partner : 0)} {""} {salesData?.currency?.currency}</p>
           : <p className="sale-total-tablet-2-2">{salesData?.currency?.currency_symbol}{(salesData?.dataImportGeneral?.total?salesData?.dataImportGeneral?.total:0)} {""} {salesData?.currency?.currency}</p>
         }
         <p className="sale-total-tablet-2-3"></p>
