@@ -56,6 +56,8 @@ function Index() {
   const [phoneNumberError, setPhoneNumberError] = useState<string>("");
   const [emailError, setEmailError] = useState<string>("");
   const [acuerdoModal, setacuerdoModal] = useState<boolean>(false);
+  const [phone, setPhone] = useState('')
+  const [code, setCode] = useState('')
   const keyStripe =
     "pk_test_51OYeYoAxcKR0527klkQXwcOwBSHfy18vOYoMUgNRuA9HiONvIPU6VJUrmvwezAxlM4WiKVJJT8wC2zLn7DZwP0pp00h5WwfQKX";
   const stripePromise = loadStripe(keyStripe);
@@ -236,7 +238,7 @@ function Index() {
         setEmailError("");
       }, 2500);
     }
-    if (phoneNumber === "") {
+    if (phone === "" || code === "") {
       setPhoneNumberError("Este campo es obligatorio");
       setTimeout(() => {
         setPhoneNumberError("");
@@ -347,6 +349,10 @@ function Index() {
     setnamePartner(namest);
   }, []);
 
+  const updatePhoneNumber = (data:any) => {
+    console.log(data)
+  }
+
   return (
     <SecurityPrivileges>
       <div className="container-general  main-page checkoutContenedor">
@@ -455,7 +461,10 @@ function Index() {
               <div className="checkout_datils_email mt-5">
                 <h5>Telefono</h5>
                 <div className="flex flex-col gap-[.2rem] relative">
-                  <Drowpdon reference={setPhoneNumber}/>
+                  <div className="flex gap-2">
+                    <Drowpdon reference={setCode}/>
+                    <input type="text" onChange={(e) => setPhone(e.target.value)} />
+                  </div>
                   {phoneNumberError && (
                     <p className="Login-error main-page !text-red-600 !text-[1.2rem] font-lato">
                       {String([phoneNumberError])}

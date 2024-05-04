@@ -47,6 +47,7 @@ const Dropdown = ({ reference }: IFormValue) => {
 
     setSelectedCountry(countryName);
     setSelectedCountryCode(fullCountryCode);
+    reference(fullCountryCode);
     setSelectedImage(image);
     setIsOpen(false);
   };
@@ -61,10 +62,10 @@ const Dropdown = ({ reference }: IFormValue) => {
   };
 
   return (
-    <div className="relative flex w-full h-full">
+    <div className="relative flex w-full h-full max-w-[12rem]">
       <div
         className="phone-number flex items-center gap-[.5rem] cursor-pointer"
-        
+        onClick={toggleDropdown}
       >
         <div className="ml-4 ">
           <Image
@@ -76,9 +77,10 @@ const Dropdown = ({ reference }: IFormValue) => {
             onClick={toggleDropdown}
           />
         </div>
-        <div style={{ cursor: 'pointer' }} onClick={toggleDropdown} className=" text-2xl" >▼</div>
+        <div style={{ cursor: 'pointer' }}  className=" text-2xl" >▼</div>
         <input
           type="text"
+          readOnly
           value={selectedCountryCode || ""}
           onChange={handleInputChange}
           className="px-4 py-2 border border-gray-300 rounded"
