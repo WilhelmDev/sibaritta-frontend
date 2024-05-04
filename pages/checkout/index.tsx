@@ -350,8 +350,19 @@ function Index() {
   }, []);
 
   const updatePhoneNumber = (data:any) => {
-    console.log(data)
+    const isValid = /^\d*$/.test(data); // Validación con expresión regular
+
+    if (isValid) {
+      setPhone(data);
+    }
   }
+
+  function validaNumericos(event:any) {
+    if(event.charCode >= 48 && event.charCode <= 57){
+      return true;
+     }
+     return false;        
+}
 
   return (
     <SecurityPrivileges>
@@ -463,7 +474,7 @@ function Index() {
                 <div className="flex flex-col gap-[.2rem] relative">
                   <div className="flex gap-2">
                     <Drowpdon reference={setCode}/>
-                    <input type="text" onChange={(e) => setPhone(e.target.value)} />
+                    <input type="text" onChange={(e) => updatePhoneNumber(e.target.value)} value={phone}/>
                   </div>
                   {phoneNumberError && (
                     <p className="Login-error main-page !text-red-600 !text-[1.2rem] font-lato">
