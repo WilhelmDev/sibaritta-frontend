@@ -468,7 +468,7 @@ function Index() {
                   Período actual
                 </p>
                 <p className="pay-sale-container-right-left-2">
-                {`${moment(dateWeekBefore[1]).utc().format("DD MMMM YYYY").replace(/\b\w/g, l => l.toUpperCase())} - ${moment(dateActual[1]).utc().format("DD MMMM YYYY").replace(/\b\w/g, l => l.toUpperCase())}`}
+                {`${moment(dateWeekBefore[1]).utc().format("DD MMMM YYYY").replace(/\b\w/g, l => l.toUpperCase())} - ${moment(dateActual[0]).utc().format("DD MMMM YYYY").replace(/\b\w/g, l => l.toUpperCase())}`}
                 </p>
               </div>
               <div className="pay-sale-container-right-right">
