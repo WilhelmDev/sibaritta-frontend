@@ -18,6 +18,7 @@ import { estadosTraducidos } from "@/utils/estadosTraducidos";
 import ModalPoliticasCancelacion from "./partner/ModalPoliticasCancelacion";
 import { PresencialWhite } from "../ui/icons/PresencialWhite";
 import { PickupWhite } from "../ui/icons/PickupWhite";
+import CancelarSuccess from "./reservacion/CancelarSuccess";
 
 interface ICardProps {
   card: IReservacions;
@@ -32,6 +33,7 @@ function CardReservacion({ card, first, reservas, index }: any) {
   const [calification, setCalification] = useState<
     ICalification[] | undefined
   >();
+  const [success, setSuccess] = useState(false)
 
   const router = useRouter();
 
@@ -98,13 +100,16 @@ function CardReservacion({ card, first, reservas, index }: any) {
           position: "top-center",
         });
       }
-      location.reload();
       setVisible(false);
+      setSuccess(true)
     } catch (error) {
       console.log(error);
     }
   };
 
+  const reload = () => {
+    location.reload();
+  }
   const ruta = () => {
     localStorage.setItem("experienId", `${card?.id}`);
     router.push({
@@ -424,6 +429,11 @@ function CardReservacion({ card, first, reservas, index }: any) {
         cancelar={cancelar}
         visible={visible}
         setVisible={setVisible}
+      />
+      <CancelarSuccess 
+        cancelar={reload}
+        visible={success}
+        setVisible={setSuccess}
       />
       <AgregarInvitado visible={agregar} setVisible={setAgregar} />
       <ModalPoliticasCancelacion
