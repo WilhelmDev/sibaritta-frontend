@@ -21,10 +21,12 @@ import { Reservation } from "@/interface/partnersInterface";
 function Index() {
   const [allData, setallData] = useState<IpartnerReservation[]>([]); // Inicializa allData como un array vacío
   const [allHeader, setallHeader] = useState<IHeader | any>();
-  const [reser, setReser] = useState<Reservation[]>()
+  const [reser, setReser] = useState<Reservation[]>([])
   const [date, setDate] = useState(allHeader?.date || new Date().toISOString().split('T')[0]);
   const [currentReservationIndex, setCurrentReservationIndex] = useState(0);
   const [isDebouncing, setIsDebouncing] = useState(false);
+  const [actualEvent, setActualEvent] = useState(0)
+  const [isAdition, setIsAdition] = useState(true)
 
   const router = useRouter();
 
@@ -34,7 +36,8 @@ function Index() {
 
   const incrementReservation = debounceFunction(() => {
     if (reser && currentReservationIndex < reser.length - 1) {
-      setCurrentReservationIndex(currentReservationIndex + 1);
+      setCurrentReservationIndex(currentReservationIndex + 1)
+      setIsAdition(true);
     }
     setIsDebouncing(true);
     if (debounceTimeoutId) clearTimeout(debounceTimeoutId);
@@ -43,7 +46,8 @@ function Index() {
   
   const decrementReservation = debounceFunction(() => {
     if (reser && currentReservationIndex > 0) {
-      setCurrentReservationIndex(currentReservationIndex - 1);
+      setCurrentReservationIndex(currentReservationIndex - 1)
+      setIsAdition(false);
     }
     setIsDebouncing(true);
     if (debounceTimeoutId) clearTimeout(debounceTimeoutId);
@@ -79,7 +83,7 @@ function Index() {
       if (initialIndex !== undefined && initialIndex !== -1) {
         setCurrentReservationIndex(initialIndex);
       }
-      
+      setActualEvent(+data[currentReservationIndex]?.details[0]?.fk_event_id)
     } catch (error) {
       console.log(error);
     }
@@ -87,12 +91,34 @@ function Index() {
 
   const getAllPartners = async () => {
     try {
-      const fk_detail_id = reser?.[currentReservationIndex]?.details?.[0]?.id ?? null;
-      const { data } = await getAllPartnerSell(fk_detail_id);
+      if (reser.length === 0) {
+        return
+      }
+      let editedIndex = currentReservationIndex
+      let newEvent = reser?.[editedIndex]?.details[0]?.fk_event_id
+      while ((Number(reser?.[editedIndex]?.details[0]?.fk_event_id) || 0) === actualEvent) {
+        //increment or decrement
+        if (isAdition) {
+          editedIndex = editedIndex + 1
+        } else {
+          editedIndex= editedIndex - 1
+        }
+      }
       
+      const fk_detail_id = reser?.[editedIndex]?.details?.[0]?.id ?? null;
+      newEvent = reser?.[editedIndex]?.details[0]?.fk_event_id
+      // console.log(reser?.[currentReservationIndex]?.details?.[0].fk_event_id)
+      const { data } = await getAllPartnerSell(fk_detail_id);
+
+      // if (data?.data?.header === allHeader) {
+      //   setCurrentReservationIndex(currentReservationIndex + 1)
+      //   return
+      // }
+      // console.log(data)
       setallData(data?.data?.data);
       setallHeader(data?.data?.header);
       setDate(data?.data?.header)
+      setActualEvent(actualEvent !== newEvent ? (newEvent || actualEvent) : actualEvent)
     } catch (error) {
       console.log(error);
     }
