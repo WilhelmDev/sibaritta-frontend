@@ -54,6 +54,12 @@ function SearchPartnerSalePay({ infoData, select, setpartId }: any) {
           <div className={`box_search_data main-page`}>
             <input onChange={captuSear} type="text" placeholder="Buscar..." />
             <div className="data_search_box_admin_socio">
+                <h3
+                  onClick={() => handleSocioClick('Todos los partners', '', 0)}
+                  key={0}
+                >
+                  Todos los partners
+                </h3>
               {filterSocio?.map((x: any) => (
                 <h3
                   onClick={() => handleSocioClick(x.names, x.photo, x.id)}
