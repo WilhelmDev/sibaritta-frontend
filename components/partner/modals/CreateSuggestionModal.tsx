@@ -1,3 +1,4 @@
+"use client";
 import { useEffect, useState } from "react";
 import { Dialog } from "primereact/dialog";
 import { CreateModalSuggestion } from "@/interface/partner/createModalSuggestion.interface";
