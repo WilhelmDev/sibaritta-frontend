@@ -62,7 +62,7 @@
   }
 
   & h2 {
-    @apply text-[#E1D4C4] text-[2.3rem] font-lato font-bold text-center;
+    @apply text-[#E1D4C4] text-[2.3rem]  font-bold text-center;
     @screen tablet {
       @apply text-start text-[2.5rem];
     }
@@ -72,7 +72,7 @@
     }
   }
   & p {
-    @apply text-[#E1D4C4] text-[1.3rem] font-lato font-normal;
+    @apply text-[#E1D4C4] text-[1.3rem]  font-normal;
     @screen tablet {
       @apply text-start text-[1.5rem];
     }
@@ -102,7 +102,7 @@
   }
 
   & h2 {
-    @apply text-[#E1D4C4] text-[2.2rem] font-lato font-bold;
+    @apply text-[#E1D4C4] text-[2.2rem]  font-bold;
     @screen laptop {
       @apply text-start;
       font-size: calc(5rem * var(--scale));
@@ -128,7 +128,7 @@
     }
   }
   & p {
-    @apply w-[100%] text-[1.2rem]  font-lato font-normal;
+    @apply w-[100%] text-[1.2rem]   font-normal;
     @screen tablet {
       @apply text-[1.6rem];
     }
@@ -160,7 +160,7 @@
 
 .box-texto-agenda-sibaritta-business {
   @apply w-full h-auto grid place-items-center text-[#E1D4C4] 
-  text-[2.5rem] font-lato font-extrabold;
+  text-[2.5rem]  font-extrabold;
   @screen laptop {
     font-size: calc(5rem * var(--scale));
   }

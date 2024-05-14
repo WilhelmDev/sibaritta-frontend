@@ -1,15 +1,20 @@
 import PerfilSocio from '@/components/socio/PerfilSocio';
-import React from 'react';
+import { useEffect } from 'react';
 import SecurityPrivileges from '@/security/SecurityPrivileges';
+import Encuesta from "../../components/encuesta/Encuesta";
+import Link from 'next/link';
+import dynamic from 'next/dynamic';
+const Profile = dynamic(() => import('@/components3/socio/Perfil'), { ssr: false })
 
-function index() {
+export default function Perfil () {
+  useEffect(() => {
+    const update = document.querySelector('body')
+    update?.classList.add('fondoPerfil')
+  }, [])
   return (
     <SecurityPrivileges>
-      <div>
-        <PerfilSocio />
-      </div>
+      <Profile />
     </SecurityPrivileges>
   );
 }
 
-export default index;

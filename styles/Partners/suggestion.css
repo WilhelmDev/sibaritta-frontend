@@ -44,9 +44,9 @@
 .suggestion-form-data-nombre{
     @apply flex flex-col gap-[1rem] ;
     & h5{
-        @apply  text-[#F89C53] font-lato font-normal text-[1.5rem];
+        @apply  text-[#F89C53]  font-normal text-[1.5rem];
         @screen laptop{
-            @apply  text-[#F89C53] font-lato font-normal;
+            @apply  text-[#F89C53]  font-normal;
             font-size: calc(1.8rem * var(--scale));
             line-height: calc(1.5rem * var(--scale));
         }
@@ -76,9 +76,9 @@
         width: calc(80.7rem * var(--scale));
     }
     & h5{
-        @apply  text-[#F89C53] font-lato font-normal text-[1.5rem];
+        @apply  text-[#F89C53]  font-normal text-[1.5rem];
         @screen laptop{
-            @apply  text-[#F89C53] font-lato font-normal;
+            @apply  text-[#F89C53]  font-normal;
             font-size: calc(1.8rem * var(--scale));
             line-height: calc(1.5rem * var(--scale));
         }
@@ -86,7 +86,7 @@
     & textarea {
         @apply   bg-[#3a343d] text-[#FFF]  rounded-[.5rem] p-[1rem];
         @screen laptop{
-            @apply bg-[#3a343d] w-[99.7%] p-[1rem] text-[#FFF]  font-lato font-medium;
+            @apply bg-[#3a343d] w-[99.7%] p-[1rem] text-[#FFF]   font-medium;
             height: calc(15.15rem * var(--scale));
             font-size: calc(1.7rem * var(--scale));
         }
@@ -102,9 +102,9 @@
         width: calc(80.7rem * var(--scale));
     }
     & h5{
-        @apply  text-[#F89C53] font-lato font-normal text-[1.5rem];
+        @apply  text-[#F89C53]  font-normal text-[1.5rem];
         @screen laptop{
-            @apply  text-[#F89C53] font-lato font-normal;
+            @apply  text-[#F89C53]  font-normal;
             font-size: calc(1.8rem * var(--scale));
             line-height: calc(1.5rem * var(--scale));
         }
@@ -112,7 +112,7 @@
     & input{
         @apply   bg-[#3a343d] text-[#FFF]  rounded-[.5rem] p-[1rem];
         @screen laptop{
-            @apply   bg-[#3a343d] text-[#FFF] font-lato font-semibold rounded-[.5rem] ;
+            @apply   bg-[#3a343d] text-[#FFF]  font-semibold rounded-[.5rem] ;
             font-size: calc(2.5rem * var(--scale));
             width: calc(18.6rem * var(--scale));
             height: calc(1.5rem * var(--scale));
@@ -144,7 +144,7 @@
         }
     }
     & h5 {
-        @apply text-[#F89C53] font-lato text-[1.2rem] cursor-pointer ;
+        @apply text-[#F89C53]  text-[1.2rem] cursor-pointer ;
         @screen laptop{
             font-size: calc(1.8rem * var(--scale)) ;
             

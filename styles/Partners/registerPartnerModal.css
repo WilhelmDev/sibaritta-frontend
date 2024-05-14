@@ -14,7 +14,7 @@
 .infos-{
     @apply flex flex-col gap-[1rem] ; 
     & h2 {
-        @apply text-[#252127] font-lato font-extrabold text-[1.4rem];
+        @apply text-[#252127]  font-extrabold text-[1.4rem];
         @screen tablet{
             @apply text-[1.8rem];
         }
@@ -23,7 +23,7 @@
         }
     }
     & p{
-        @apply text-[#252127] font-lato font-bold text-[1rem];
+        @apply text-[#252127]  font-bold text-[1rem];
         @screen tablet{
             @apply text-[1.4rem];
         }
@@ -32,7 +32,7 @@
         }
     }
     & span {
-        @apply text-[#252127] font-lato  text-[1rem];
+        @apply text-[#252127]   text-[1rem];
         @screen tablet{
             @apply text-[1.3rem];
         }
@@ -47,7 +47,7 @@
 .partner-register-input-name-cargo{
     @apply flex gap-[1rem] ;
     & input {
-        @apply py-[.5rem] rounded-lg px-[.5rem] font-lato font-semibold;
+        @apply py-[.5rem] rounded-lg px-[.5rem]  font-semibold;
         @screen laptop{
             padding-top: calc(1rem * var(--scale));
             padding-bottom:  calc(1rem * var(--scale));
@@ -76,9 +76,9 @@
     }
     & button{
         @apply bg-[#4D3452] rounded-full text-[white] px-[7rem] py-[.8rem]
-        font-lato font-extrabold text-[1.2rem] ;
+         font-extrabold text-[1.2rem] ;
     }
     & p {
-        @apply text-[#393533] font-lato text-[1.2rem] font-medium ; 
+        @apply text-[#393533]  text-[1.2rem] font-medium ; 
     }
 }

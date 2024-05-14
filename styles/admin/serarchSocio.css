@@ -12,7 +12,7 @@
     @apply flex flex-col items-end;
   }
   span {
-    @apply font-lato font-bold text-[1.5rem];
+    @apply  font-bold text-[1.5rem];
     @screen laptop {
       @apply text-[3rem];
     }
@@ -48,7 +48,7 @@
 .data_search_box_admin_socio {
   @apply flex flex-col gap-[1rem] overflow-auto h-auto items-end pr-[1rem];
   & h3 {
-    @apply text-[#E1D4C4] duration-300 ease-in-out cursor-pointer  font-lato hover:bg-[#373239] w-full text-end pr-[1rem] font-semibold first-letter:uppercase p-[.5rem];
+    @apply text-[#E1D4C4] duration-300 ease-in-out cursor-pointer   hover:bg-[#373239] w-full text-end pr-[1rem] font-semibold first-letter:uppercase p-[.5rem];
     @screen laptop {
       @apply !text-[2rem];
     }

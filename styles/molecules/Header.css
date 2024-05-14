@@ -61,7 +61,7 @@
       box-shadow: none;
 
       .-ul > li {
-        @apply text-[#E1D4C4] font-lato font-medium;
+        @apply text-[#E1D4C4]  font-medium;
         @screen laptop {
           font-size: calc(1.8rem * var(--scale));
         }
@@ -70,10 +70,10 @@
   }
 
   &.background-white {
-    @apply bg-[#4D3452];
+    @apply bg-[#100a11];
     @screen laptop {
       height: 100%;
-      @apply bg-[#4D3452];
+      @apply bg-[#100A11];
       box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
       &::before {
@@ -108,7 +108,7 @@
   @screen laptop {
     @apply bg-transparent flex items-center !sticky rounded-none;
     transition: background-color 0.25s ease;
-    height: calc(17.4rem * var(--scale));
+    height: 153px;
     left: 0;
     transform: translateX(0);
     top: 0;

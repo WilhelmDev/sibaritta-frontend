@@ -26,7 +26,7 @@
   gap: 3rem;
 }
 .container h3 {
- @apply font-lato font-bold text-[2rem];
+ @apply  font-bold text-[2rem];
   @screen laptop{
     font-size: calc(4.8rem * var(--scale));
   }
@@ -38,7 +38,7 @@
   margin-left: 1.5rem;
 }
 .container li {
-  @apply font-lato text-[1.3rem] ;
+  @apply  text-[1.3rem] ;
   @screen laptop{
     font-size: calc(2.3rem * var(--scale));
     font-weight: 400;

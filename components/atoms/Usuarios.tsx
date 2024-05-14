@@ -13,10 +13,10 @@ function Usuarios({ setCount, count }: IUsuarios) {
     <>
       <section className="gastronomy-input relative ">
         <div
-          className="w-full h-full flex justify-center items-center font-lato"
+          className="w-full h-full flex justify-center items-center "
           onClick={() => setUsers(!Users)}
         >
-          <span className="text-[#E1D4C4] font-lato font-semibold">
+          <span className="text-[#E1D4C4]  font-semibold">
             {" "}
             # de personas
           </span>

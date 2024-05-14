@@ -17,6 +17,7 @@ import {
   filtredDataOfDateComparator,
 } from "@/lib/extract_sum_date";
 import { useRouter } from "next/router";
+import moment from "moment";
 
 function Index() {
   const [estado, setestado] = useState<string>("");
@@ -183,6 +184,11 @@ function Index() {
       });
     });
     return Array.from(uniqueNames);
+  }
+
+  const parseDate = (date:string) => {
+    const dateParsed = moment(date).format('DD [de] MMMM [del] yyyy, H:mma')
+    return dateParsed
   }
   return (
     <div className="box-reservatios-all-general-container main-page">
@@ -484,7 +490,7 @@ function Index() {
                         )}`,
                       }}
                     >
-                      {transformDateAFormatHumanReservation(reser.createdAt)}
+                      {parseDate(reser.createdAt)}
                     </h2>
                     <div className="info-box-datos--reservations">
                       <div className="info-box-title-orde ">

@@ -1,26 +1,29 @@
 .ModalSession-container {
-  @apply flex flex-col gap-[1.5rem] pb-[5rem];
+  @apply flex flex-col gap-[1.5rem];
 }
 
 .ModalSession-title {
-  @apply text-[2.5rem] text-center text-[#4D3452] font-bold font-lato;
+  font-size: 28px;
+  color: #100A11;
+  text-transform: uppercase;
+  text-align: center
 }
 .ModalSession-text {
-  @apply text-[1.8rem] text-center text-[#4D3452] font-bold font-lato;
+  @apply text-[1.8rem] text-center text-[#4D3452] font-bold ;
 }
 .modalSession-span {
   color: #4d3452;
-  @apply text-[1.5rem] block text-center text-[#4D3452] font-normal font-lato underline;
+  @apply text-[1.5rem] block text-center text-[#100A11] font-normal  underline;
 }
 .modalSession-button {
-  @apply text-[1.5rem] block text-center text-[#F0EFEB] bg-[#4D3452] font-normal font-lato py-[1rem] px-[4rem];
+  @apply text-[1.5rem] block text-center text-[#F0EFEB] bg-[#4D3452] font-normal  py-[1rem] px-[4rem];
   border-radius: 5rem;
   /* @screen laptop {
     @apply hidden;
   } */
 }
 .modalSession-buttons {
-  @apply text-[1.5rem] block text-center  bg-[#e1d4c4] font-normal font-lato py-[1rem] px-[4rem];
+  @apply text-[1.5rem] block text-center  bg-[#e1d4c4] font-normal  py-[1rem] px-[4rem];
   border-radius: 5rem;
   @screen laptop {
     @apply hidden;
@@ -34,7 +37,7 @@
 }
 
 .facebook-icon {
-  @apply !bg-[#FFF]  w-[10rem] h-[10rem] text-[#000] font-lato font-bold !text-[1.1rem] p-[.5rem] laptop:p-[2rem] flex justify-center items-center flex-col;
+  @apply !bg-[#FFF]  w-[10rem] h-[10rem] text-[#000]  font-bold !text-[1.1rem] p-[.5rem] laptop:p-[2rem] flex justify-center items-center flex-col;
   i {
     @apply text-[#3C5A9A] text-[3rem];
     @screen laptop {
@@ -51,22 +54,17 @@
 }
 
 .google-buttom {
-  @apply !bg-[#FFF] w-[10rem] h-[10rem] text-[#000] font-lato font-bold !text-[1.1rem] flex justify-center items-center flex-col;
-  i {
-    @apply text-[#3C5A9A] text-[3rem];
-  }
+  margin: 0;
   border-radius: 1rem;
-  background: #fff;
-
-  @screen laptop {
-    font-size: calc(1.6rem * var(--scale)) !important ;
-    width: calc(15.6rem * var(--scale));
-    height: calc(15.6rem * var(--scale));
+  text-align: center;
+  background-color: #E9E3DB;
+  img{
+    margin:auto;
   }
 }
 
 .container-socials {
-  @apply flex justify-center gap-[0rem] pt-[3.4rem] pb-[1.4rem];
+  @apply flex justify-center gap-[0rem] pt-[2rem];
   button{
     margin-right: 15px;
   }

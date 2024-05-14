@@ -103,7 +103,7 @@ function InitReservationModalCalendar({ data }: ModalSessionProps) {
     filteramountPickup();
   }, [days]);
 
-  let userId: any = null;
+  let userId: any = null as any;
   if (typeof window !== "undefined") {
     const storedUserId = localStorage.getItem("userid");
     userId = storedUserId ? parseInt(storedUserId, 10) : null;

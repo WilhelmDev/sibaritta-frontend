@@ -26,33 +26,34 @@ function Index() {
   const [currentReservationIndex, setCurrentReservationIndex] = useState(0);
   const [isDebouncing, setIsDebouncing] = useState(false);
   const [actualEvent, setActualEvent] = useState(0)
-  const [isAdition, setIsAdition] = useState(true)
+  const [isAdition, setIsAdition] = useState(0)
+  const [isLast, setIsLast] = useState(false)
 
   const router = useRouter();
 
   const receivedData2 = router.query.data;
   
-  let debounceTimeoutId: NodeJS.Timeout | null = null;
+  let debounceTimeoutId: NodeJS.Timeout | null = null as any;
 
   const incrementReservation = debounceFunction(() => {
     if (reser && currentReservationIndex < reser.length - 1) {
       setCurrentReservationIndex(currentReservationIndex + 1)
-      setIsAdition(true);
+      setIsAdition(1);
     }
     setIsDebouncing(true);
     if (debounceTimeoutId) clearTimeout(debounceTimeoutId);
-    debounceTimeoutId = setTimeout(() => setIsDebouncing(false), 500);
-  }, {wait: 500});
+    debounceTimeoutId = setTimeout(() => setIsDebouncing(false), 300);
+  }, {wait: 300});
   
   const decrementReservation = debounceFunction(() => {
     if (reser && currentReservationIndex > 0) {
       setCurrentReservationIndex(currentReservationIndex - 1)
-      setIsAdition(false);
+      setIsAdition(2);
     }
     setIsDebouncing(true);
     if (debounceTimeoutId) clearTimeout(debounceTimeoutId);
-    debounceTimeoutId = setTimeout(() => setIsDebouncing(false), 500);
-  }, {wait: 500}); 
+    debounceTimeoutId = setTimeout(() => setIsDebouncing(false), 300);
+  }, {wait: 300}); 
 
   const cupos = () => {
     const totalQuotas = allHeader?.seats;
@@ -94,19 +95,29 @@ function Index() {
       if (reser.length === 0) {
         return
       }
-      let editedIndex = currentReservationIndex
-      let newEvent = reser?.[editedIndex]?.details[0]?.fk_event_id
-      while ((Number(reser?.[editedIndex]?.details[0]?.fk_event_id) || 0) === actualEvent) {
-        //increment or decrement
-        if (isAdition) {
-          editedIndex = editedIndex + 1
-        } else {
-          editedIndex= editedIndex - 1
+      let editedIndex = currentReservationIndex;
+      let newEvent = reser?.[editedIndex]?.details[0]?.fk_event_id;
+
+        const iterateForward = isAdition === 1;
+        const iterateLimit = iterateForward ? reser.length - 1 : 0;
+        // Loop until a different event is found or loop limit is reached
+        while (isAdition > 0 && editedIndex < iterateLimit && reser?.[editedIndex]?.details[0]?.fk_event_id === actualEvent) {
+          editedIndex = iterateForward 
+          ? (editedIndex + 1)
+          : editedIndex - 1
+  
+        // Check if loop reached the end (without finding a different event)
+        if (editedIndex === iterateLimit) {
+          setIsLast(true);
+          return;
         }
+  
+        newEvent = reser?.[editedIndex]?.details[0]?.fk_event_id;
+        
+        // Update state variables based on the new event
+        setActualEvent(actualEvent !== newEvent ? (newEvent || actualEvent) : actualEvent);
       }
-      
       const fk_detail_id = reser?.[editedIndex]?.details?.[0]?.id ?? null;
-      newEvent = reser?.[editedIndex]?.details[0]?.fk_event_id
       // console.log(reser?.[currentReservationIndex]?.details?.[0].fk_event_id)
       const { data } = await getAllPartnerSell(fk_detail_id);
 
@@ -115,10 +126,11 @@ function Index() {
       //   return
       // }
       // console.log(data)
+      setCurrentReservationIndex(editedIndex || 0)
       setallData(data?.data?.data);
       setallHeader(data?.data?.header);
       setDate(data?.data?.header)
-      setActualEvent(actualEvent !== newEvent ? (newEvent || actualEvent) : actualEvent)
+      // setActualEvent(actualEvent !== newEvent ? (newEvent || actualEvent) : actualEvent)
     } catch (error) {
       console.log(error);
     }

@@ -62,7 +62,7 @@
   @apply flex  justify-between py-[1rem]
 }
 .paymets-notify h2 {
-  @apply text-[#E1D4C4] text-[1.6rem] font-lato font-bold ;
+  @apply text-[#E1D4C4] text-[1.6rem]  font-bold ;
   @screen laptop{
     font-size: calc(2.5rem * var(--scale));
   }
@@ -75,7 +75,7 @@
 }
 
 .paymets-notify-btns button {
-  @apply w-[6rem] h-[2.5rem] text-[#252127] bg-[#F89C53] rounded-[1rem] font-lato font-bold text-[1rem] ;
+  @apply w-[6rem] h-[2.5rem] text-[#252127] bg-[#F89C53] rounded-[1rem]  font-bold text-[1rem] ;
   @screen laptop{
     width: calc(15rem * var(--scale));
     height: calc(5.2rem * var(--scale));
@@ -84,7 +84,7 @@
 }
 
 .paymets-notify-btns .btns-two-notify-{
-  @apply w-[6rem] h-[2.5rem] text-[#252127] bg-[#E1D4C4] rounded-[1rem] font-lato font-bold text-[1rem] ;
+  @apply w-[6rem] h-[2.5rem] text-[#252127] bg-[#E1D4C4] rounded-[1rem]  font-bold text-[1rem] ;
   @screen laptop{
     width: calc(15rem * var(--scale));
     height: calc(5.2rem * var(--scale));
@@ -98,7 +98,7 @@
     gap: calc(3rem * var(--scale));
   }
   & h3{
-    @apply text-[#F89C53] font-lato text-[1.2rem] font-bold leading-[1.8rem];
+    @apply text-[#F89C53]  text-[1.2rem] font-bold leading-[1.8rem];
     @screen laptop{
       font-size: calc(2.1rem * var(--scale));
       line-height: calc(1.8rem * var(--scale));
@@ -138,7 +138,7 @@
 .unread_notifications--{
   @apply flex justify-between items-center;
   & h4 {
-    @apply text-[#E1D4C4] font-lato text-[1.1rem] font-bold leading-[1.8rem] ;
+    @apply text-[#E1D4C4]  text-[1.1rem] font-bold leading-[1.8rem] ;
     @screen laptop{
       font-size: calc(1.8rem * var(--scale));
       line-height: calc(1.8rem * var(--scale));
@@ -154,7 +154,7 @@
   }
 }
 .btn--notify-unread-1{
-  @apply bg-[#252127] w-[8rem] h-[3rem] text-[#E1D4C4] font-lato text-[1rem] font-medium rounded-[1rem];
+  @apply bg-[#252127] w-[8rem] h-[3rem] text-[#E1D4C4]  text-[1rem] font-medium rounded-[1rem];
   @screen laptop{
     width: calc(14.2rem * var(--scale));
     height: calc(5.2rem * var(--scale));
@@ -184,7 +184,7 @@
     padding-bottom: calc(3rem * var(--scale));
 }
 & p{
-  @apply text-[#E1D4C4] font-lato text-[1rem] font-bold  leading-[1.8rem] ;
+  @apply text-[#E1D4C4]  text-[1rem] font-bold  leading-[1.8rem] ;
   @screen laptop {
     font-size: calc(1.8rem * var(--scale));
     line-height: calc(1.8rem * var(--scale));

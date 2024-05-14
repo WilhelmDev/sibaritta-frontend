@@ -37,7 +37,7 @@ align-items: center;
 .title_update_add_invita--- {
   @apply h-auto grid justify-start w-full;
   & .txt {
-    @apply text-[#E1D4C4] font-lato font-bold ;
+    @apply text-[#E1D4C4]  font-bold ;
 
   }
 }
@@ -59,7 +59,7 @@ align-items: center;
 }
 
 .add_user_increment_number_ {
-  @apply text-[#E1D4C4] font-lato font-semibold grid place-items-center;
+  @apply text-[#E1D4C4]  font-semibold grid place-items-center;
   @screen laptop {
     font-size: calc(2.4rem * var(--scale));
     font-weight: 600;
@@ -104,7 +104,7 @@ align-items: center;
 }
 
 .details_page_title h2 {
-  @apply text-[#E1D4C4] font-lato   font-extrabold w-[15rem];
+  @apply text-[#E1D4C4]    font-extrabold w-[15rem];
   @screen laptop {
     @apply w-full;
   }
@@ -115,7 +115,7 @@ align-items: center;
 }
 
 .details_page_city h3 {
-  @apply text-[#F89C53]   font-lato font-normal leading-normal text-end;
+  @apply text-[#F89C53]    font-normal leading-normal text-end;
   @screen laptop {
     @apply text-[#E1D4C4] ;
     line-height: calc(1.5rem * var(--scale));
@@ -130,7 +130,7 @@ align-items: center;
   }
 }
 .details_page_info span {
-  @apply text-[#E1D4C4] text-[1.8rem]   font-lato  font-normal
+  @apply text-[#E1D4C4] text-[1.8rem]     font-normal
   leading-[1.4rem];
   @screen laptop {
     margin-bottom: 0rem;
@@ -178,14 +178,14 @@ align-items: center;
 } */
 
 .option span {
-  @apply text-[#E1D4C4] text-[1.8rem] font-lato font-normal leading-normal;
+  @apply text-[#E1D4C4] text-[1.8rem]  font-normal leading-normal;
   @screen laptop {
     font-size: calc(1.8rem * var(--scale));
     font-weight: 400;
   }
 }
 .option h4 {
-  @apply text-[#E1D4C4] text-[1.8rem] font-lato font-extrabold  leading-normal;
+  @apply text-[#E1D4C4] text-[1.8rem]  font-extrabold  leading-normal;
   @screen laptop {
     font-size: calc(1.8rem * var(--scale));
     font-weight: 800;
@@ -193,7 +193,7 @@ align-items: center;
 }
 
 .optionTwo span {
-  @apply text-[#E1D4C4] text-[1.8rem] font-lato font-normal leading-normal;
+  @apply text-[#E1D4C4] text-[1.8rem]  font-normal leading-normal;
   @screen laptop {
     font-size: calc(1.8rem * var(--scale));
     font-weight: 400;
@@ -201,7 +201,7 @@ align-items: center;
 }
 
 .optionTwo h4 {
-  @apply text-[#E1D4C4] text-[1.8rem] font-lato font-extrabold  leading-normal;
+  @apply text-[#E1D4C4] text-[1.8rem]  font-extrabold  leading-normal;
   @screen laptop {
     font-size: calc(1.8rem * var(--scale));
     font-weight: 800;
@@ -226,10 +226,10 @@ align-items: center;
 }
 
 .datails_duration_one h5 {
-  @apply text-[#E1D4C4] font-lato  font-normal;
+  @apply text-[#E1D4C4]   font-normal;
 }
 .datails_duration_one h5 {
-  @apply text-[#E1D4C4] font-lato  font-bold;
+  @apply text-[#E1D4C4]   font-bold;
 
 }
 
@@ -258,14 +258,14 @@ align-items: center;
 }
 
 .details_card_experenci h3 {
-  @apply text-[#F89C53] font-lato font-bold;
+  @apply text-[#F89C53]  font-bold;
 
 }
 
 
 
 .datails_card_loren p {
-  @apply text-[#E1D4C4]  font-lato font-normal leading-[2.4rem];
+  @apply text-[#E1D4C4]   font-normal leading-[2.4rem];
   @screen laptop {
     line-height: calc(2.4rem * var(--scale));
   }
@@ -288,11 +288,11 @@ align-items: center;
 }
 
 .details_card_restaurant h3 {
-  @apply text-[#F89C53] font-lato text-[2.4rem] font-bold;
+  @apply text-[#F89C53]  text-[2.4rem] font-bold;
 
 }
 .details_card_restaurant p {
-  @apply text-[#E1D4C4]  font-lato font-normal leading-[2.4rem];
+  @apply text-[#E1D4C4]   font-normal leading-[2.4rem];
   @screen laptop {
     line-height: calc(2.4rem * var(--scale));
   }
@@ -364,14 +364,14 @@ align-items: center;
   }
 }
 .datails_locaiton_ h6 {
-  @apply text-[#F89C53] font-lato text-[1.4rem] font-normal;
+  @apply text-[#F89C53]  text-[1.4rem] font-normal;
   @screen laptop {
     font-weight: 400;
   }
 }
 
 .datails_locaiton_ h5 {
-  @apply text-[#E1D4C4] text-[1.8rem] font-lato  font-normal leading-[2.2rem];
+  @apply text-[#E1D4C4] text-[1.8rem]   font-normal leading-[2.2rem];
   @screen laptop {
     line-height: calc(2.2rem * var(--scale));
   }
@@ -386,14 +386,14 @@ align-items: center;
   }
 }
 .datails_locaiton_parkin h6 {
-  @apply text-[#F89C53] font-lato text-[1.4rem] font-normal leading-normal;
+  @apply text-[#F89C53]  text-[1.4rem] font-normal leading-normal;
   @screen laptop {
     font-weight: 400;
     line-height: calc(1.5rem * var(--scale));
   }
 }
 .datails_locaiton_parkin h5 {
-  @apply text-[#E1D4C4] text-[1.8rem] font-lato  font-normal leading-[2.2rem];
+  @apply text-[#E1D4C4] text-[1.8rem]   font-normal leading-[2.2rem];
   @screen laptop {
     font-weight: 400;
     line-height: calc(2.2rem * var(--scale));
@@ -409,7 +409,7 @@ align-items: center;
 }
 
 .datails_locaiton_political h6 {
-  @apply text-[#F89C53] font-lato text-[1.4rem] font-normal leading-normal;
+  @apply text-[#F89C53]  text-[1.4rem] font-normal leading-normal;
   @screen laptop {
     font-weight: 400;
     line-height: calc(1.5rem * var(--scale));
@@ -454,7 +454,7 @@ align-items: center;
 }
 
 .box_social_details_data h3 {
-  @apply text-center  text-[#E1D4C4] font-lato  font-bold leading-[2.5rem]
+  @apply text-center  text-[#E1D4C4]   font-bold leading-[2.5rem]
   w-[17.3rem];
 
   @screen laptop {
@@ -490,7 +490,7 @@ align-items: center;
 }
 
 .details_calendar h2 {
-  @apply text-[#E1D4C4] font-lato  font-bold;
+  @apply text-[#E1D4C4]   font-bold;
   @screen laptop {
     font-size: calc(3rem * var(--scale));
   }
@@ -511,11 +511,11 @@ align-items: center;
     height: auto;
   }
   & h4 {
-    @apply font-lato font-bold text-[1.4rem] text-[#E1D4C4] py-[.5rem];
+    @apply  font-bold text-[1.4rem] text-[#E1D4C4] py-[.5rem];
 
   }
   & h6 {
-    @apply font-lato font-extrabold text-[1.4rem];
+    @apply  font-extrabold text-[1.4rem];
 
   }
 }
@@ -526,9 +526,9 @@ align-items: center;
     height: auto;
   }
   & h4 {
-    @apply font-lato font-extrabold text-[1.3rem];
+    @apply  font-extrabold text-[1.3rem];
     @screen laptop {
-      @apply font-lato font-extrabold;
+      @apply  font-extrabold;
       font-size: calc(1.6rem * var(--scale));
     }
   }
@@ -654,11 +654,8 @@ align-items: center;
   }
 }
 & h4 {
-  @apply font-lato font-extrabold text-[1.4rem];
-  @screen laptop {
-    @apply font-lato font-extrabold;
-    font-size: calc(1.6rem * var(--scale)) !important;
-  }
+  @apply  font-extrabold text-[1.4rem];
+
 }
 .details_btn_hora {
   @apply flex flex-wrap  gap-[1.5rem];
@@ -669,7 +666,7 @@ align-items: center;
 
 .hora_btn {
   @apply bg-[#F89C53]  text-[#252127]
-     font-semibold font-lato;
+     font-semibold ;
   @screen laptop {
     width: calc(16rem * var(--scale));
     height: calc(4.4rem * var(--scale));
@@ -679,7 +676,7 @@ align-items: center;
 }
 
 .hora_btn_two {
-  @apply bg-[#EAEAEA]  font-lato  duration-300 ease-in-out text-[#252127] font-bold;
+  @apply bg-[#EAEAEA]    duration-300 ease-in-out text-[#252127] font-bold;
   @screen laptop {
     width: calc(16rem * var(--scale));
     height: calc(4.4rem * var(--scale));
@@ -689,7 +686,7 @@ align-items: center;
 }
 
 .details_btns p {
-  @apply text-[#E1D4C4] text-center m-auto  font-lato  font-normal;
+  @apply text-[#E1D4C4] text-center m-auto    font-normal;
   @screen laptop {
     font-size: calc(1.8rem * var(--scale));
     margin-bottom: 5px;
@@ -705,7 +702,7 @@ align-items: center;
 
 .datails_footer button {
   @apply bg-[#4D3452]   text-[#E1D4C4]
-    font-lato  font-bold;
+      font-bold;
   @screen laptop {
     /* width: calc(51.2rem * var(--scale)); */
     border-radius: calc(5rem * var(--scale));
@@ -714,7 +711,7 @@ align-items: center;
   }
 }
 .datails_footer h3 {
-  @apply text-[#E1D4C4]  font-lato font-bold text-center;
+  @apply text-[#E1D4C4]   font-bold text-center;
   @screen laptop {
     font-size: calc(2.1rem * var(--scale));
   }

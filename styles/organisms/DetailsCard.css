@@ -128,7 +128,7 @@ align-items: center;
       @apply text-[#E1D4C4] font-bold ;
     }
     h5 {
-      @apply text-[#E1D4C4] text-[1.8rem] font-light font-lato flex gap-[1rem]   items-center;
+      @apply text-[#E1D4C4] text-[1.8rem] font-light  flex gap-[1rem]   items-center;
       i {
         @apply text-[1rem];
       }

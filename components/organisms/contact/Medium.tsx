@@ -28,7 +28,7 @@ const Medium = () => {
         unstyled: true,
         classNames: {
           toast:
-            'bg-[#252127]  w-full  h-[5rem] rounded-[1rem] flex items-center justify-center text-[#F89C53] shadow-[1px_1px_1px_#E1D4C4] font-lato',
+            'bg-[#252127]  w-full  h-[5rem] rounded-[1rem] flex items-center justify-center text-[#F89C53] shadow-[1px_1px_1px_#E1D4C4] ',
           title: ' text-[2rem]  ',
         },
         position: 'top-center',
@@ -47,7 +47,7 @@ const Medium = () => {
   };
 
   return (
-    <form className=' Medium main-page' onSubmit={handleSubmit(createContact)}>
+    <form className=' Medium main-page boton' onSubmit={handleSubmit(createContact)}>
       <h2 className='contact-h2'>¿En qué podemos ayudarte?</h2>
       <div className='container-form'>
         <div className='conta-inpu'>

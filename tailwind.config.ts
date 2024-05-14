@@ -21,7 +21,7 @@ module.exports = {
         secondary: '#4D3452',
       },
       fontFamily: {
-        lato: ['var(--font-lato)'],
+        lato: ['var(--)'],
         inter: ['var(--font-inter)'],
       },
       screens: {

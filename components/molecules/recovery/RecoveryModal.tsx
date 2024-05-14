@@ -71,7 +71,7 @@ function RecoveryModal({ openForgot, closeModalForgot }: RecoveryModal) {
   };
 
   return (
-    <div onClick={closeModalForgot}>
+    <div>
       <Modal
         visible={openForgot}
         closeModal={closeModalForgot}

@@ -21,7 +21,7 @@ function Fecha({ selected, setSelected }: DateProps) {
         onClick={handleClick}
         className="w-full h-full text-center font-inter"
       >
-        <span className="text-[#E1D4C4] font-lato font-semibold">Fecha</span>
+        <span className="text-[#E1D4C4]  font-semibold">Fecha</span>
       </article>
 
       {fechaVisible && (

@@ -41,7 +41,7 @@
 }
 
 .last_reservations_one {
-  @apply bg-[#F89C53] w-full h-[2.5rem] rounded-[.5rem] text-[#252127] font-lato  text-[1.5rem] font-bold py-[2rem] flex justify-center items-center;
+  @apply bg-[#F89C53] w-full h-[2.5rem] rounded-[.5rem] text-[#252127]   text-[1.5rem] font-bold py-[2rem] flex justify-center items-center;
   @screen laptop {
     width: calc(19.2rem * var(--scale));
     height: calc(5.2rem * var(--scale));
@@ -51,7 +51,7 @@
 }
 
 .last_reservations_two- {
-  @apply bg-[#E1D4C4] w-full  h-[2.5rem] rounded-[.5rem] text-[#252127] font-lato text-[1.5rem] font-bold  py-[2rem] flex justify-center items-center;
+  @apply bg-[#E1D4C4] w-full  h-[2.5rem] rounded-[.5rem] text-[#252127]  text-[1.5rem] font-bold  py-[2rem] flex justify-center items-center;
   @screen laptop {
     width: calc(19.2rem * var(--scale));
     height: calc(5.2rem * var(--scale));
@@ -66,7 +66,7 @@
     gap: calc(3rem * var(--scale));
   }
   & h2 {
-    @apply text-[1.2rem] font-lato font-bold;
+    @apply text-[1.2rem]  font-bold;
     @screen tablet {
       @apply text-[1.9rem];
     }
@@ -128,7 +128,7 @@
 }
 
 .last_reservations_state {
-  @apply w-full py-[1rem] pl-[1.5rem] text-[#E1D4C4]  font-lato font-bold rounded-[.5rem] bg-[#37323A];
+  @apply w-full py-[1rem] pl-[1.5rem] text-[#E1D4C4]   font-bold rounded-[.5rem] bg-[#37323A];
   @screen laptop {
     width: calc(19.2rem * var(--scale));
     height: 100%;
@@ -144,7 +144,7 @@
   }
 
   & option {
-    @apply text-[1.5rem]  font-lato font-bold text-[#E1D4C4];
+    @apply text-[1.5rem]   font-bold text-[#E1D4C4];
   }
 }
 
@@ -185,7 +185,7 @@
 .info_box_reservations-- {
   @apply flex flex-col  gap-[1rem];
   & h2 {
-    @apply text-[#E1D4C4] text-[1.5rem] font-lato font-semibold;
+    @apply text-[#E1D4C4] text-[1.5rem]  font-semibold;
     @screen tablet {
       @apply text-[1.8rem];
     }
@@ -234,7 +234,7 @@
 }
 
 .-title-date-reservations {
-  @apply flex flex-col  gap-[1rem]  font-lato;
+  @apply flex flex-col  gap-[1rem]  ;
   & h2 {
     @apply text-[#F89C53]  font-bold text-[1.5rem];
     @screen tablet {
@@ -245,7 +245,7 @@
     }
   }
   & p {
-    @apply text-[.9rem] font-lato font-medium text-[#E1D4C4];
+    @apply text-[.9rem]  font-medium text-[#E1D4C4];
     @screen tablet {
       @apply text-[1.2rem];
     }
@@ -267,7 +267,7 @@
   }
 
   .-title-date-reservations-button-2 {
-    @apply text-[.9rem] font-lato font-medium text-[#E1D4C4];
+    @apply text-[.9rem]  font-medium text-[#E1D4C4];
     @screen tablet {
       @apply text-[1.2rem];
     }
@@ -279,7 +279,7 @@
 }
 
 .-order-code-reservations {
-  @apply flex flex-col  gap-[0.5rem]  font-lato;
+  @apply flex flex-col  gap-[0.5rem]  ;
   justify-content: flex-end;
   & h2 {
     @apply text-[#F89C53]  font-bold text-[1.5rem];
@@ -292,7 +292,7 @@
     }
   }
   & p {
-    @apply text-[.9rem] font-lato font-medium text-[#E1D4C4];
+    @apply text-[.9rem]  font-medium text-[#E1D4C4];
     @screen tablet {
       @apply text-[1.2rem];
     }
@@ -311,9 +311,9 @@
 
 .inputs-valor-one {
   @apply flex items-center justify-between p-[1rem] w-full h-[3rem] bg-[#1f1a24] 
-    rounded-[.5rem] text-[1.3rem] font-lato font-semibold;
+    rounded-[.5rem] text-[1.3rem]  font-semibold;
   @screen tablet {
-    @apply w-[48%] h-[3.8rem]  text-[1.7rem] font-lato font-semibold;
+    @apply w-[48%] h-[3.8rem]  text-[1.7rem]  font-semibold;
   }
   @screen laptop {
     width: calc(33rem * var(--scale));
@@ -346,9 +346,9 @@
     border-radius: 1rem;
   }
   & h6 {
-    @apply text-[#E1D4C4] text-[1.3rem] font-lato font-semibold;
+    @apply text-[#E1D4C4] text-[1.3rem]  font-semibold;
     @screen tablet {
-      @apply text-[1.7rem] font-lato font-semibold;
+      @apply text-[1.7rem]  font-semibold;
     }
     @screen laptop {
       font-size: calc(1.4rem * var(--scale));
@@ -356,9 +356,9 @@
     }
   }
   & h6 {
-    @apply  text-[1.3rem] font-lato font-semibold;
+    @apply  text-[1.3rem]  font-semibold;
     @screen tablet {
-      @apply text-[1.4rem] font-lato font-semibold;
+      @apply text-[1.4rem]  font-semibold;
     }
     @screen laptop {
       font-size: calc(1.4rem * var(--scale));
@@ -379,9 +379,9 @@
     border-radius: 1rem;
   }
   & p {
-    @apply text-[#E1D4C4] text-[1.3rem] font-lato font-semibold;
+    @apply text-[#E1D4C4] text-[1.3rem]  font-semibold;
     @screen tablet {
-      @apply text-[1.7rem] font-lato font-semibold;
+      @apply text-[1.7rem]  font-semibold;
     }
     @screen laptop {
       font-size: calc(1.4rem * var(--scale));
@@ -389,9 +389,9 @@
     }
   }
   & h6 {
-    @apply text-[#F89C53] text-[1.3rem] font-lato font-semibold;
+    @apply text-[#F89C53] text-[1.3rem]  font-semibold;
     @screen tablet {
-      @apply text-[1.7rem] font-lato font-semibold;
+      @apply text-[1.7rem]  font-semibold;
     }
     @screen laptop {
       font-size: calc(1.4rem * var(--scale));
@@ -436,7 +436,7 @@
     /* gap: calc(1.5rem * var(--scale)); */
   }
   & p {
-    @apply text-[1.2rem] font-lato font-bold;
+    @apply text-[1.2rem]  font-bold;
     @screen tablet {
       @apply text-[1.8rem];
     }
@@ -446,7 +446,7 @@
     }
   }
   & h6 {
-    @apply text-[1.4rem] font-lato font-bold  text-[#F89C53];
+    @apply text-[1.4rem]  font-bold  text-[#F89C53];
     @screen tablet {
       @apply text-[1.8rem];
     }
@@ -470,7 +470,7 @@
     gap: calc(0.9rem * var(--scale));
   }
   & p {
-    @apply text-[1.2rem] font-lato font-bold;
+    @apply text-[1.2rem]  font-bold;
     @screen tablet {
       @apply text-[1.8rem];
     }
@@ -480,7 +480,7 @@
     }
   }
   & h3 {
-    @apply text-[1.4rem] !text-[#F89C53] font-lato font-bold  ;
+    @apply text-[1.4rem] !text-[#F89C53]  font-bold  ;
     @screen tablet {
       @apply text-[1.8rem];
     }
@@ -501,7 +501,7 @@
     justify-content: center;
   }
   & p {
-    @apply text-[1.5rem] font-lato font-bold;
+    @apply text-[1.5rem]  font-bold;
     @screen tablet {
       @apply text-[1.8rem];
     }

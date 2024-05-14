@@ -40,19 +40,14 @@ const HomeBanner = ({
   return (
 
     <div className="homeBanner ">
-      <div
-        className="icon-scroll absolute z-10 "
-        onClick={() => {
-          handleGoToSection("/somos");
-        }}
-      ></div>
+
       <div className="homeBanner-video-mobil- ">
         <div
           onClick={() => setmodalVideo(true)}
           className="icon-home-baner-video-mobil"
         >
           <Image
-            src={"/partner_home/mobil_home/play_icon.svg"}
+            src={"/playvideo.png"}
             width={1000}
             height={1000}
             alt="logo"
@@ -60,24 +55,23 @@ const HomeBanner = ({
           />
         </div>
 
-        <Link href={"/sibaritta"} className="link-comofunciona-home-baner">
-          <span>¿Cómo funciona Sibaritta</span>
-          <div className="w-[3rem] h-[3rem] font-extrabold">
-            <Image
-              src={"/partner_home/mobil_home/derecha2.svg"}
-              width={1000}
-              height={1000}
-              alt="logo"
-              className="w-full  h-full"
-            />
-          </div>
-        </Link>
+        {/* <Link href={"/sibaritta"} className="link-comofunciona-home-baner">
+          <span>
+
+            Quienes Somos
+            <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14.5 5L21.5 12M21.5 12L14.5 19M21.5 12L3.5 12" stroke="#E1D4C4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+
+          </span>
+
+        </Link> */}
       </div>
 
       <div className=" homeBanner-video">
         {/* <Image src={"/home/fondoNuevo.jpg"} className="w-full h-full object-cover " width={1000} height={1000} alt="xd"/> */}
         <video
-          src={"/home/sibaritta-video-home.mp4"}
+          src={"/home/MuyprontWeb.mp4"}
           autoPlay
           muted
           loop
@@ -115,8 +109,12 @@ const HomeBanner = ({
         </div>
       </div> */}
       <ModalVideoHome visible1={modalVideo} setVisible1={setmodalVideo} />
+      {/* <button>HOLA</button> */}
+
     </div>
+
   );
 };
 
 export default HomeBanner;
+ 

@@ -46,10 +46,10 @@
   @apply w-[0.1rem] h-full  bg-[#E1D4C4];
 }
 .card_titulo_gastronomy {
-  @apply !font-lato !font-semibold   text-[#E1D4C4] ;
+  @apply  font-semibold   text-[#E1D4C4] ;
  
 }
-.card_btns {
+.card_btns { 
   @apply flex;
   @screen laptop {
     @apply grid grid-cols-4 gap-[2rem];
@@ -201,7 +201,7 @@
 }
 
 .gastronomy-input {
-  @apply cursor-pointer h-[4.4rem] w-full rounded-[10px] flex items-center  justify-center bg-[#37323A] font-lato text-[white] text-center font-semibold leading-normal text-[1.5rem] px-[1.5rem] relative;
+  @apply cursor-pointer h-[4.4rem] w-full rounded-[10px] flex items-center  justify-center bg-[#37323A]  text-[white] text-center font-semibold leading-normal text-[1.5rem] px-[1.5rem] relative;
   white-space: nowrap;
   article {
     display: flex;
@@ -266,7 +266,7 @@
   }
 
   p {
-    @apply font-lato font-light text-[#A59484] text-[3rem] leading-[3.5rem];
+    @apply  font-light text-[#A59484] text-[3rem] leading-[3.5rem];
 
     @screen laptop {
       font-size: calc(3.5rem * var(--scale));
@@ -279,7 +279,7 @@
   @apply hidden;
 
   @screen laptop {
-    @apply flex h-full rounded-[1rem] font-lato font-light text-[#A59484] items-end;
+    @apply flex h-full rounded-[1rem]  font-light text-[#A59484] items-end;
     border: 2px solid #393533;
     padding: calc(3rem * var(--scale));
     font-size: calc(3.5rem * var(--scale));
@@ -318,7 +318,7 @@
     }
 
     &-number {
-      @apply font-lato text-center text-[2.4rem] font-semibold leading-[1.4rem] text-[#252127];
+      @apply  text-center text-[2.4rem] font-semibold leading-[1.4rem] text-[#252127];
 
       @screen laptop {
         font-size: calc(2.2rem * var(--scale));
@@ -331,13 +331,12 @@
   @apply w-full h-[22rem] cursor-pointer bg-[#252127] flex flex-col items-center gap-[1rem] justify-center p-[2rem];
 
   @screen laptop {
-    height: calc(16.4rem * var(--scale));
     gap: calc(2rem * var(--scale));
     padding: calc(2rem * var(--scale));
   }
 
   &-description {
-    @apply w-full h-[7.2rem] text-[#E1D4C4] font-lato  font-normal leading-[2.4rem];
+    @apply w-full text-[#E1D4C4]   font-normal leading-[2.4rem];
 
     @screen laptop {
      
@@ -352,7 +351,7 @@
       @apply flex items-center gap-2;
 
       h5 {
-        @apply !text-[#F89C53] font-lato text-[1.8rem] font-normal leading-normal;
+        @apply !text-[#F89C53]  text-[1.8rem] font-normal leading-normal;
 
         @screen laptop {
           
@@ -361,7 +360,7 @@
       }
 
       h5 {
-        @apply text-[#E1D4C4] font-lato  font-bold leading-normal;
+        @apply text-[#E1D4C4]   font-bold leading-normal;
 
         @screen laptop {
           

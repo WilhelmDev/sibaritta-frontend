@@ -67,7 +67,7 @@ function PerfilSocio() {
     }));
   };
 
-  let userType = null;
+  let userType = null as any;
   if (typeof window !== "undefined") {
     const typeUser = localStorage.getItem("fk_typeuser");
     userType = typeUser ? parseInt(typeUser, 10) : null;
@@ -90,7 +90,7 @@ function PerfilSocio() {
     is_social = localStorage.getItem("is_social");
   }
 
-  let userId = null;
+  let userId = null as any;
   if (typeof window !== "undefined") {
     const storedUserId = localStorage.getItem("userid");
     userId = storedUserId ? parseInt(storedUserId, 10) : null;

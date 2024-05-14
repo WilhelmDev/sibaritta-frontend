@@ -68,7 +68,7 @@ align-items: center;
 }
 
 .reservation_tnb_actules {
-  @apply w-full h-[5.2rem]    text-center font-lato rounded-[1rem] font-bold leading-normal text-[1.6rem]  duration-300 ease-in-out;
+  @apply w-full h-[5.2rem]    text-center  rounded-[1rem] font-bold leading-normal text-[1.6rem]  duration-300 ease-in-out;
   @screen tablet {
     @apply w-[31.2rem];
   }
@@ -80,7 +80,7 @@ align-items: center;
 }
 
 .reservation_tnb_pasadas {
-  @apply w-full h-[5.2rem] bg-[#2F2A32] text-[#E1D4C4]   text-center font-lato rounded-[1rem] font-bold leading-normal text-[1.6rem]  duration-300 ease-in-out;
+  @apply w-full h-[5.2rem] bg-[#2F2A32] text-[#E1D4C4]   text-center  rounded-[1rem] font-bold leading-normal text-[1.6rem]  duration-300 ease-in-out;
   @screen tablet {
     @apply w-[31.2rem];
   }
@@ -128,7 +128,7 @@ align-items: center;
 }
 
 .container_card_experiencia {
-  @apply text-[#E1D4C4] font-lato   font-bold leading-normal text-left 
+  @apply text-[#E1D4C4]    font-bold leading-normal text-left 
   py-[1.5rem];
   @screen laptop {
     padding-top: calc(1.5rem * var(--scale));
@@ -155,13 +155,13 @@ align-items: center;
     width: calc(20rem * var(--scale));
   }
   & h3 {
-    @apply text-[#F89C53]   font-lato font-extrabold leading-normal;
+    @apply text-[#F89C53]    font-extrabold leading-normal;
     @screen laptop {
       /* font-size: calc(2.4rem *var(--scale)); */
     }
   }
   & h5 {
-    @apply  text-[#E1D4C4] font-lato font-normal;
+    @apply  text-[#E1D4C4]  font-normal;
     
   }
 }
@@ -173,12 +173,12 @@ align-items: center;
     gap: calc(0.5rem * var(--scale));
   }
   & h3 {
-    @apply text-[#F89C53]   font-lato font-extrabold leading-normal;
+    @apply text-[#F89C53]    font-extrabold leading-normal;
     @screen laptop {
     }
   }
   & p {
-    @apply text-[#E1D4C4]  font-lato font-normal;
+    @apply text-[#E1D4C4]   font-normal;
     @screen laptop {
       /* font-size:   * var(--scale)); */
     }
@@ -186,7 +186,7 @@ align-items: center;
 }
 
 .fecha_reservation_reserva {
-  @apply text-[#E1D4C4] font-lato font-medium text-[1.5rem];
+  @apply text-[#E1D4C4]  font-medium text-[1.5rem];
   @screen laptop {
     font-size: calc(1.8rem * var(--scale));
   }
@@ -231,7 +231,7 @@ align-items: center;
 }
 
 .reservacion_titulo_h3 {
-  @apply font-lato font-extrabold leading-[2.2rem] text-[1.8rem] 
+  @apply  font-extrabold leading-[2.2rem] text-[1.8rem] 
     text-[#E1D4C4];
   @screen laptop {
     font-size: calc(1.8rem * var(--scale));
@@ -240,7 +240,7 @@ align-items: center;
 }
 
 .reservacion_titulo_ciudad {
-  @apply font-lato text-[1.8rem] font-normal leading-normal text-[#F89C53];
+  @apply  text-[1.8rem] font-normal leading-normal text-[#F89C53];
   @screen laptop {
     font-size: calc(1.8rem * var(--scale));
   }
@@ -267,14 +267,14 @@ align-items: center;
 }
 
 .container_card_info_p {
-  @apply font-lato text-[1.4rem] font-normal leading-normal text-[#E1D4C4];
+  @apply  text-[1.4rem] font-normal leading-normal text-[#E1D4C4];
   @screen laptop {
     font-size: calc(1.4rem * var(--scale));
   }
 }
 
 .container_card_info_h2 {
-  @apply font-lato text-[1.8rem] font-bold leading-normal text-[#F89C53];
+  @apply  text-[1.8rem] font-bold leading-normal text-[#F89C53];
   @screen laptop {
     font-size: calc(1.4rem * var(--scale));
   }
@@ -283,14 +283,14 @@ align-items: center;
 .clasifiacion_card- {
   @apply flex flex-col  justify-center items-center gap-[1rem] py-[1rem];
   & p {
-    @apply text-[#F89C53]   text-[1.3rem] font-lato font-normal;
+    @apply text-[#F89C53]   text-[1.3rem]  font-normal;
     @screen laptop {
       font-size: calc(1.8rem * var(--scale));
     }
   }
   & button {
     @apply w-full bg-[#4D3452] h-[4.5rem] rounded-[1rem] text-[#F0EFEB]  
-    text-[1.1rem] font-lato font-bold;
+    text-[1.1rem]  font-bold;
     @screen laptop {
       font-size: calc(1.6rem * var(--scale));
       height: calc(4rem * var(--scale));
@@ -302,14 +302,14 @@ align-items: center;
 .clasifiacion_card-two {
   @apply flex flex-col  justify-center items-center gap-[1rem] py-[1rem];
   & p {
-    @apply text-[#F89C53]   text-[1.3rem] font-lato font-normal;
+    @apply text-[#F89C53]   text-[1.3rem]  font-normal;
     @screen laptop {
       font-size: calc(1.8rem * var(--scale));
     }
   }
   & button {
     @apply w-full bg-[#242424] h-[4.5rem] rounded-[1rem] text-[#E1D4C4]  
-    text-[1.1rem] font-lato font-bold;
+    text-[1.1rem]  font-bold;
     @screen laptop {
       font-size: calc(1.6rem * var(--scale));
       height: calc(4.5rem * var(--scale));
@@ -324,7 +324,7 @@ align-items: center;
     gap: calc(1.5rem * var(--scale));
   }
   & p {
-    @apply text-[#F89C53] font-lato font-bold  text-[1.2rem];
+    @apply text-[#F89C53]  font-bold  text-[1.2rem];
     @screen laptop {
       font-size: calc(1.9rem * var(--scale));
     }
@@ -332,7 +332,7 @@ align-items: center;
 }
 
 .response-rating_response__ {
-  @apply bg-[#252026] rounded-[1rem] p-[1rem] font-lato text-[1rem] text-[#E1D4C4] w-full h-[7rem] text-center;
+  @apply bg-[#252026] rounded-[1rem] p-[1rem]  text-[1rem] text-[#E1D4C4] w-full h-[7rem] text-center;
   @screen laptop {
     font-size: calc(1.5rem * var(--scale));
     padding: calc(1rem * var(--scale));
@@ -340,7 +340,7 @@ align-items: center;
 }
 
 .btn-coments-order {
-  @apply w-full h-[3.7rem] bg-[#4D3452] text-[#E1D4C4] font-lato text-[1rem] 
+  @apply w-full h-[3.7rem] bg-[#4D3452] text-[#E1D4C4]  text-[1rem] 
   font-bold rounded-[1rem];
   @screen laptop {
     height: calc(3.7rem * var(--scale));
@@ -355,7 +355,7 @@ align-items: center;
     @apply flex;
   }
   & p {
-    @apply text-[#E1D4C4]  w-[40%] font-lato font-bold leading-[1.6rem]  text-center 
+    @apply text-[#E1D4C4]  w-[40%]  font-bold leading-[1.6rem]  text-center 
     text-[1.1rem];
     @screen laptop {
       font-size: calc(1.6rem * var(--scale));
@@ -384,7 +384,7 @@ align-items: center;
 }
 .btn-cancel-_--_reservation {
   @apply w-full bg-transparent border h-[3.8rem] rounded-[1rem] text-[#E1D4C4] text-[1rem] 
-  font-lato font-bold;
+   font-bold;
   @screen tablet {
     @apply hidden;
   }
@@ -392,7 +392,7 @@ align-items: center;
 
 .btn-restricciones-reservation {
   @apply w-full bg-[#4D3452] h-[3.8rem] rounded-[1rem] text-[#E1D4C4] text-[1rem] 
-  font-lato font-bold;
+   font-bold;
   @screen laptop {
     font-size: calc(1.6rem * var(--scale));
     height: calc(4rem * var(--scale));

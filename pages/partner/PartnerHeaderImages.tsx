@@ -100,7 +100,7 @@ const PartnerHeaderImages = ({
             <div className="title_data_inputb">
               <input type="text" value={title} onChange={handleInputChange} />
               {titleError !== "" && (
-                <span className=" text-[1rem] laptop:text-[1.2rem] text-red-600  font-lato">
+                <span className=" text-[1rem] laptop:text-[1.2rem] text-red-600  ">
                   Este campo es requerido
                 </span>
               )}
@@ -255,7 +255,7 @@ const PartnerHeaderImages = ({
                 onChange={handleInputText}
               />
               {descriptionError !== "" && (
-                <span className=" text-[1rem] laptop:text-[1.2rem] text-red-600  font-lato">
+                <span className=" text-[1rem] laptop:text-[1.2rem] text-red-600  ">
                   Este campo es requerido
                 </span>
               )}

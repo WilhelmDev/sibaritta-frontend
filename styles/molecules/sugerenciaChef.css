@@ -14,7 +14,7 @@
   @apply w-full h-auto   rounded-[1.5rem];
 }
 .chef_sugerencia_ h2 {
-  @apply text-[#E1D4C4] text-[2.4rem] font-bold font-lato;
+  @apply text-[#E1D4C4] text-[2.4rem] font-bold ;
 }
 
 .cheft_cards {
@@ -46,18 +46,18 @@
 }
 
 .cardsito_info_one h2 {
-  @apply text-[#E1D4C4] text-[2rem] font-lato font-extrabold;
+  @apply text-[#E1D4C4] text-[2rem]  font-extrabold;
 }
 
 .cardsito_info_one p {
-  @apply text-[#F89C53] font-lato text-[2rem] font-bold;
+  @apply text-[#F89C53]  text-[2rem] font-bold;
 }
 
 .cardsito_info_two textarea {
-  @apply text-[#E1D4C4]  bg-transparent rounded-[.5rem] p-[.5rem] w-full h-auto font-lato  font-normal;
+  @apply text-[#E1D4C4]  bg-transparent rounded-[.5rem] p-[.5rem] w-full h-auto   font-normal;
 }
 
 .cardsito_info_tree button {
   @apply w-full h-[5rem] bg-[#E1D4C4] rounded-[1rem] text-[#4D3452]
-    font-lato text-[1.6rem] font-bold;
+     text-[1.6rem] font-bold;
 }

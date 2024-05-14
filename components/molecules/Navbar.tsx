@@ -133,7 +133,7 @@ export const Navbar: FC<NavbarProps> = ({ isMenuOpen, closeMenu }) => {
 
   const menuPartTwo = [...polylang.menu].slice(half);
 
-  let userId = null;
+  let userId = null as any;
   if (typeof window !== "undefined") {
     const storedUserId = localStorage.getItem("userid");
     userId = storedUserId ? parseInt(storedUserId, 10) : null;
@@ -181,7 +181,7 @@ export const Navbar: FC<NavbarProps> = ({ isMenuOpen, closeMenu }) => {
           <Logo className="Navbar-logo" alt={true} />
           <Logo className={`Header-Logo`} />
 
-          <div className="Navbar-ctn">
+          <div className="Navbar-ctn hidden">
             <ul className="Navbar-ul">
               {menuPartOne.map(({ id, label, url }) =>
                 !userRedux.email ? (

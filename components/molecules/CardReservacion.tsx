@@ -9,6 +9,7 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import { formatearReservaFecha } from "@/utils/formaterDate";
 import moment from "moment";
+import 'moment-timezone';
 import { cancelReservationConfir } from "@/services/reservaciones.service";
 import { getCalificationSocio } from "@/services/calificacion.service";
 import { ICalification } from "@/interface/calificationInterface";
@@ -72,6 +73,25 @@ function CardReservacion({ card, first, reservas, index }: any) {
     0
   );
 
+  const isValidAction = () => {
+    const actualDate = moment()
+    const eventDate = moment().tz("America/Mexico_City")
+    .set({ 
+      year: moment(card?.details[0]?.date).get('year'),
+      month: moment(card?.details[0]?.date).get('month'),
+      day: moment(card?.details[0]?.date).get('day'),
+      hour: card?.details[0]?.hour,
+      minute: card?.details[0]?.minute
+    });
+    const hoursDifference = eventDate.diff(actualDate, 'hours');
+    return hoursDifference >= 24
+  }
+
+  const parseDate = (date:string) => {
+    const dateParsed = moment(date).format('DD [de] MMMM [del] yyyy, H:mma')
+    return dateParsed
+  }
+
   const cancelar = async () => {
     try {
       const idDelete = {
@@ -84,7 +104,7 @@ function CardReservacion({ card, first, reservas, index }: any) {
           unstyled: true,
           classNames: {
             toast:
-              "bg-[#252127]  w-full  h-[5rem] rounded-[1rem] flex items-center justify-center text-[#F89C53] shadow-[0px_0px_2px_1px_#E1D4C4] font-lato",
+              "bg-[#252127]  w-full  h-[5rem] rounded-[1rem] flex items-center justify-center text-[#F89C53] shadow-[0px_0px_2px_1px_#E1D4C4] ",
             title: " text-[2rem]  ",
           },
           position: "top-center",
@@ -94,7 +114,7 @@ function CardReservacion({ card, first, reservas, index }: any) {
           unstyled: true,
           classNames: {
             toast:
-              "bg-[#252127]  w-full  h-[5rem] rounded-[1rem] flex items-center justify-center text-[#F89C53] shadow-[0px_0px_2px_1px_#E1D4C4] font-lato",
+              "bg-[#252127]  w-full  h-[5rem] rounded-[1rem] flex items-center justify-center text-[#F89C53] shadow-[0px_0px_2px_1px_#E1D4C4] ",
             title: " text-[2rem]  ",
           },
           position: "top-center",
@@ -119,7 +139,10 @@ function CardReservacion({ card, first, reservas, index }: any) {
   };
 
   const openModal = () => {
-    setVisible(true);
+    const valid = isValidAction()
+    if (valid) {
+      setVisible(true);
+    }
     // document.body.style.overflow = 'hidden';
   };
   const openModalRestriction = () => {
@@ -144,6 +167,8 @@ function CardReservacion({ card, first, reservas, index }: any) {
     (xd) => xd.status === "calified-partner" && xd.ranking > 0
   );
   status_partner = status_partner?.length! > 0 ? status_partner : undefined;
+
+  
 
 
   return (
@@ -256,7 +281,7 @@ function CardReservacion({ card, first, reservas, index }: any) {
           <div className="container_card_info_caja">
             <p className="container_card_info_p">Fecha y hora del pago</p>
             <h2 className="container_card_info_h2">
-              {formatearFechaReserva(card?.order_paymentAt)}
+              {parseDate(card?.order_paymentAt)}
             </h2>
           </div>
           <div className="container_card_info_caja">
@@ -399,12 +424,16 @@ function CardReservacion({ card, first, reservas, index }: any) {
             .isSameOrBefore(moment(card.details[0].date).startOf("day")) && (
             <>
               <div className="btn-cancel-reservation ">
-                <p onClick={openModal} className="cursor-pointer">
-                  Cancelar reservación
+                <p onClick={openModal} className={`${isValidAction() ? 'cursor-pointer' : 'opacity-50'}`}>
+                  Solicitar reembolso
                 </p>
                 <div className="descrition-cancel-reservation-btn  ">
                   <h6 className="!no-underline">
-                    La cancelación implica la aceptación de nuestra
+                    { isValidAction() 
+                      ? 'El reembolso implica la aceptación de nuestra'
+                      : 'El reembolso sólo es posible hasta 24 horas antes de la Experiencia. Ver nuestra' 
+                    }
+                    
                   </h6>
                   <h6 onClick={openPoliticaCancel} className="cursor-pointer ">
                     Política de Cancelaciones
@@ -413,9 +442,9 @@ function CardReservacion({ card, first, reservas, index }: any) {
               </div>
             </>
           )}
-        <div className="w-full  font-lato text-[1.6rem] md:hidden ">
+        <div className="w-full   text-[1.6rem] md:hidden ">
           <span>
-            La cancelación implica la aceptación de nuestra Política de
+            El reembolso implica la aceptación de nuestra
             Cancelaciones.
           </span>
         </div>

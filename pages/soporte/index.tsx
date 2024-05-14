@@ -6,6 +6,8 @@ import Image from "next/image";
 import { classNames } from "primereact/utils";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 
 const Index = () => {
@@ -56,6 +58,11 @@ const SecurityPrivileges = () => {
   useEffect(() => {
     SecurityPrivileges();
   // eslint-disable-next-line react-hooks/exhaustive-deps
+  AOS.init();
+
+  const update = document.querySelector('body')
+  update?.classList.add('Experienciabg')
+
   }, [])
 
 
@@ -90,7 +97,7 @@ const SecurityPrivileges = () => {
             )}
           </div>
           <div className="contact-destok">
-            <div className="container-buttom ">
+            <div className="container-buttom boton">
               <h2 className="contact-title">Soporte en línea</h2>
 
               {item.map((i) => (

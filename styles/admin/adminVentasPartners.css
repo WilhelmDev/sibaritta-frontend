@@ -425,7 +425,6 @@
   }
 
   .pay-sale-button-sale {
-    @apply font-lato;
     width: 100%;
     height: 5.2rem;
     border-radius: 1rem;
@@ -460,7 +459,7 @@
   }
 
   .pay-sale-button-pay {
-    @apply font-lato;
+    
     width: 100%;
     height: 5.2rem;
     border-radius: 1rem;
@@ -638,7 +637,7 @@
     padding: 2rem;
 
     @screen tablet {
-      display: flex;
+      display: block;
       margin-bottom: calc(3rem * var(--scale));
     }
 
@@ -649,7 +648,6 @@
   }
 
   .sale-total-tablet-1 {
-    height: 100%;
     font-size: 1.8rem;
     font-weight: 300;
   }
@@ -681,7 +679,6 @@
   }
 
   .sale-total-tablet-2-2 {
-    font-size: 5rem;
     font-weight: 500;
     line-height: 4.5rem;
 
@@ -719,11 +716,9 @@
 
   .sale-total-tablet-3-2,
   .sale-total-tablet-4-2 {
-    font-size: 5rem;
     line-height: 6rem;
     font-weight: 500;
 
-    margin-bottom: 2rem;
     margin-left: 2rem;
   }
 
@@ -735,8 +730,8 @@
       flex-wrap: wrap;
       row-gap: calc(7rem * var(--scale));
       /* @apply grid grid-cols-2;
-           
-            
+
+
             /* width:calc(150rem * var(--scale)); */
     }
   }
@@ -1010,7 +1005,7 @@
   }
 
   .text-left-total {
-    width: 3.9rem;
+    width: auto;
     height: 4rem;
     font-weight: 600;
     font-size: 1.5rem;

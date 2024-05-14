@@ -20,18 +20,18 @@
 }
 
 .suggestion_time p {
-  @apply text-[#E1D4C4] font-lato text-[1.5rem]  font-bold;
+  @apply text-[#E1D4C4]  text-[1.5rem]  font-bold;
 
 }
 .suggestion_time h3 {
-  @apply text-[#E1D4C4]  font-lato font-bold;
+  @apply text-[#E1D4C4]   font-bold;
   @screen laptop {
     font-size: calc(3rem * var(--scale));
   }
 }
 
 .suggestion_title h2 {
-  @apply text-[#E1D4C4]  font-lato font-bold;
+  @apply text-[#E1D4C4]   font-bold;
   @screen laptop {
     font-size: calc(var(--text-thirty) * var(--scale));
   }
@@ -80,21 +80,21 @@
 }
 
 .card_info_precio h2 {
-  @apply text-[#E1D4C4]  font-lato font-extrabold;
+  @apply text-[#E1D4C4]   font-extrabold;
   @screen laptop {
     font-size: calc(2rem * var(--scale));
     line-height: normal;
   }
 }
 .card_info_precio p {
-  @apply text-[#F89C53]  font-bold font-lato;
+  @apply text-[#F89C53]  font-bold ;
   @screen laptop {
     font-size: calc(2rem * var(--scale));
   }
 }
 
 .card_info_description p {
-  @apply text-[#E1D4C4]  bg-transparent rounded-[.5rem] p-[.5rem] w-full h-auto font-lato  font-normal;
+  @apply text-[#E1D4C4]  bg-transparent rounded-[.5rem] p-[.5rem] w-full h-auto   font-normal;
   @screen laptop {
     @apply text-center text-balance;
     font-size: calc(1.6rem * var(--scale));
@@ -105,7 +105,7 @@
   @apply flex justify-center flex-col  items-center gap-[1rem];
 }
 .card_info_btn button {
-  @apply w-full bg-[#E1D4C4]   text-[#4D3452] font-lato font-bold;
+  @apply w-full bg-[#E1D4C4]   text-[#4D3452]  font-bold;
   @screen laptop {
     font-size: calc(1.6rem * var(--scale));
     height: calc(5rem * var(--scale));
@@ -141,7 +141,7 @@
 }
 
 .suggention_previous {
-  @apply bg-[#4D3452] w-full  text-[#E1D4C4] font-lato font-bold;
+  @apply bg-[#4D3452] w-full  text-[#E1D4C4]  font-bold;
   @screen laptop {
     height: calc(5rem * var(--scale));
     font-size: calc(2rem * var(--scale));
@@ -150,7 +150,7 @@
 }
 
 .suggention_next {
-  @apply bg-[#4D3452] w-full  text-[#E1D4C4] font-lato font-bold;
+  @apply bg-[#4D3452] w-full  text-[#E1D4C4]  font-bold;
   @screen laptop {
     height: calc(5rem * var(--scale));
     font-size: calc(2rem * var(--scale));
@@ -159,7 +159,7 @@
 }
 
 .suggestion_nota {
-  @apply w-full text-[#E1D4C4] font-lato text-center  font-bold;
+  @apply w-full text-[#E1D4C4]  text-center  font-bold;
   @screen laptop {
     font-size: calc(2.2rem * var(--scale));
   }

@@ -8,10 +8,13 @@ import ModalSession from "../molecules/ModalSession";
 import { useRouter } from "next/router";
 import RecoveryModal from "../molecules/recovery/RecoveryModal";
 import ModalConfirmation from "../molecules/session/ModalConfirmation";
+import ModalAcuerdo from "@/components/molecules/reservationExitosa/ModalAcuerdo";
+import PoliticModal from "../organisms/contact/PoliticModal";
 import { Instagram } from "./icons/Instagram";
 import { Twiter } from "./icons/Twiter";
 import { Tiktok } from "./icons/Tiktok";
 import { Youtube } from "./icons/Youtube";
+import { newRoutes } from '@/utils/routes';
 
 const Footer = () => {
   const router = useRouter();
@@ -20,6 +23,17 @@ const Footer = () => {
   const [openConfirmacion, setOpenConfirmacion] = useState(false);
   const [openForgot, setOpenForgot] = useState(false);
   const [auttenti, setauttenti] = useState(false);
+  const [acuerdoModal, setacuerdoModal] = useState<boolean>(false);
+  const [politicaModal, setpoliticaModal] = useState<boolean>(false);
+  const [modalAcuerdo, setModalAcuerdo] = useState(false)
+
+
+  const openAcuerdoModal = () => {
+    setacuerdoModal(true);
+  };
+  const openPoliticaModal = () => {
+    setpoliticaModal(true);
+  };
 
   const openModalLogin = () => {
     setOpenLogin(true);
@@ -64,151 +78,128 @@ const Footer = () => {
   };
 
   return (
-    <div className=" bg-[#161417]">
+    <div className="footer ">
       <div className="container-general">
-    <div className="w-full ">
-      <footer className="homeFooter">
-      <section className="homeFooter_info">
-        <div className="  flex flex-col items-center  gap-[1.5rem]">
-          <div className="logosibarita-foter-logo  ">
-            <Image
-              src="/home/social/logo.svg"
-              alt="logo"
-              className="w-full h-full"
-              width={1000}
-              height={1000}
-            />
+        <div className="footer__card">
+          <div className="footer__card__top 	">
+            <img src={"/footer/icono.png"} alt='logo' className="m-auto"/>
+            <svg className="m-auto mt-5 mb-5" width="35" height="2" viewBox="0 0 35 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 1H34.93" stroke="black" strokeLinecap="butt"/>
+            </svg>
+
+            <h6 className="text-center">“SETTING YOU APART FROM THE REST”</h6>
           </div>
-          <div className="homeSocial_info-icons ">
-            <Link
-              href={
-                "https://www.instagram.com/sibaritta_mx?igsh=MTB2eXl4ZTM0NnZmYg%3D%3D"
-              }
-              target="_blank"
-              className="homeSocial_info_icon-two"
-            >
-              <Instagram />
-            </Link>
-            <Link
-              href={"https://www.facebook.com/SibarittaMx?mibextid=ZbWKwL"}
-              target="_blank"
-              className="homeSocial_info_icon-two"
-            >
-              <Twiter />
-            </Link>
-            <Link
-              href={"https://www.tiktok.com/@sibaritta_mx?_t=8jifkXuaDMz&_r=1"}
-              target="_blank"
-              className="homeSocial_info_icon-two"
-            >
-              <Tiktok />
-            </Link>
-            <Link
-              href={"https://www.youtube.com/@Sibaritta-Experiencias"}
-              target="_blank"
-              className="homeSocial_info_icon-two"
-            >
-              <Youtube />
-            </Link>
+          <div className="footer__card__center ">
+            <div className="lg:flex flex-wrap block">
+              <div className="lg:w-1/3 w-100">
+                <div className="footer__center__card ">
+                  <h6 className="text-center">
+                    SOCIOS SIBARITTA
+                  </h6>
+                  <ul className="text-center">
+                    <li className="	">
+                      <Link href={newRoutes.nosotros}>CONÓCEME</Link>
+                    </li>
+                    <li className="opacity-0	">
+                      <Link href="#">REGÍSTRATE</Link>
+                    </li>
+                    <li className="opacity-0	">
+                      <Link href="#">INICIO DE SESIÓN</Link>
+                    </li>
+                   
+                    <li className="opacity-0	">
+                      <Link href="#">SIBARITTA PARTNERS</Link>
+                    </li>
+                  </ul>
+                </div>
+
+              </div>
+              <div className="lg:w-1/3 w-100">
+                <div className="footer__center__card ">
+                  <h6 className="text-center">
+                    SOPORTE EN LÍNEA
+                  </h6>
+                  <ul className="text-center">
+                    <li>
+                      <a href="#">LUNES A DOMINGO 10 AM – 10 PM</a>
+                    </li>
+                    <li>
+                      <a href="mailto:SOCIOS@SIBARITTA.COM">SOCIOS@SIBARITTA.COM</a>
+                    </li>
+                    
+                    <li>
+                      <a href="https://wa.link/952ld9" target="_blank">WHATSAPP +52 81 42364447</a>
+                    </li>
+                    {/* <li>
+                      <Link href="/soporte">FORMULARIO DE CONTACTO</Link>
+                    </li> */}
+                  </ul>
+                </div>
+              </div>
+              <div className="lg:w-1/3 w-100">
+                <div className="footer__center__card footer__center__card--3 ">
+                  <h6 className="text-center">
+                    REDES SOCIALES
+                  </h6>
+                  <ul className="text-center">
+                    <li>
+                      <a href="https://www.instagram.com/sibaritta_">INSTAGRAM</a>
+                    </li>
+                    <li>
+                      <a href="https://www.facebook.com/Sibarittafb">FACEBOOK</a>
+                    </li>
+                    <li>
+                      <a href="https://www.tiktok.com/@.sibaritta_?_t=8keSH9YhQBB&_r=1">TIKTOK</a>
+                    </li>
+                    {/* <li>
+                      <a href="#">YOUTUBE</a>
+                    </li> */}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="footer__card__bottom lg:flex block">
+            <div className="lg:w-1/2 w-100">
+              <div className="footer__card__bottom__left">
+                <p>©2024 SIBARITTA</p>
+              </div>
+            </div>
+            <div className="lg:w-1/2 w-100">
+              <div className="footer__card__bottom__right">
+                <ul className="lg:flex justify-between	">
+                  <li>
+                    <Link href={newRoutes.experiencias}>VER EXPERIENCIAS           </Link>
+                  </li>
+
+                  <li>
+                    <Link href={newRoutes.nosotros}>INSIGNIAS SIBARITTA     </Link>
+                  </li>
+                  {/* <li>
+                    <Link href={newRoutes.nosotros}>CONÓCEME</Link>
+                  </li> */}
+                  <li>
+                  <a onClick={openPoliticaModal} className="cursor-pointer">
+                      POLÍTICAS DE PRIVACIDAD
+                    </a>
+                  </li>
+                  <li>
+                    <a onClick={openAcuerdoModal} className="cursor-pointer">
+                      TÉRMINOS Y CONDICIONES
+                    </a>
+                  </li>
+                  {/* <li>
+                    <a href="#">DATOS DE LA EMPRESA</a>
+                  </li> */}
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
+      </div>
 
-
-
-
-        <article className="homeFooter_info_datos">
-          <h3 className="homeFooter_info_datos_h2">Sibaritta</h3>
-          <Link href={"/sibaritta"} className={`Navbar-ul-link`}>
-            <p className="homeFooter_info_datos_p">¿Cómo funciona?</p>
-          </Link>
-          <Link href={"/soporte"} className={`Navbar-ul-link`}>
-            <p className="homeFooter_info_datos_p">FAQs</p>
-          </Link>
-          <Link href={"/soporte"} className={`Navbar-ul-link`}>
-            <p className="homeFooter_info_datos_p">Contáctanos</p>
-          </Link>
-
-          {/* <p className="homeFooter_info_datos_p">Lorem Ipsum</p> */}
-
-        </article>
-
-        <article className="homeFooter_info_datos">
-          <h3 className="homeFooter_info_datos_h2">Socios</h3>
-          <p
-            onClick={openModalRegistro}
-            className="homeFooter_info_datos_p cursor-pointer"
-          >
-            Regístrate
-          </p>
-          <p
-            onClick={openModalLogin}
-            className="homeFooter_info_datos_p cursor-pointer"
-          >
-            Iniciar sesión
-          </p>
-          {/* <p className="homeFooter_info_datos_p">Lorem Ipsum</p>
-          <p className="homeFooter_info_datos_p">Lorem Ipsum</p> */}
-        </article>
-        <article className="homeFooter_info_datos">
-          <h3 className="homeFooter_info_datos_h2">Partners</h3>
-          <Link href={"/sibaritta_business"} className={`Navbar-ul-link`}>
-            <p className="homeFooter_info_datos_p">Partner Sibaritta</p>
-          </Link>
-
-          {/* <p className="homeFooter_info_datos_p">Lorem Ipsum</p>
-          <p className="homeFooter_info_datos_p">Lorem Ipsum</p>
-          <p className="homeFooter_info_datos_p">Lorem Ipsum</p> */}
-        </article>
-
-
-
-
-      </section>
-      <section className="home_footer_copy">
-        <h5 className="home_footer_copy_p">©2024 Sibarita.</h5>
-        {/* <div className="home_footer_copy_terminos">
-      <p className="home_footer_copy_p">Privacidad</p>
-      <p className="home_footer_copy_p">Términos</p>
-      <p className="home_footer_copy_p">Mapa del sitio</p>
-      <p className="home_footer_copy_p">Datos de  la empresa</p>
-  </div> */}
-      </section>
-
-
-      <ModalSession
-        // setautenti={autenticationUser}
-        closeModalLogin={closeModalLogin}
-        openModalRegistro={openModalRegistro}
-        openRegistro={openRegistro}
-        openLogin={openLogin}
-        openModalForgot={openModalForgot}
-      />
-
-      {openRegistro && (
-        <ModalRegister
-          closeModalRegistro={closeModalRegistro}
-          openModalLogin={openModalLogin}
-          openLogin={openLogin}
-          openRegistro={openRegistro}
-          openModalConfirmacion={openModalConfirmacion}
-          setautenti={autenticationUser}
-        />
-      )}
-      {openForgot && (
-        <RecoveryModal
-          openForgot={openForgot}
-          closeModalForgot={closeModalForgot}
-        />
-      )}
-      {openConfirmacion && (
-        <ModalConfirmation
-          closeModalConfirmacion={closeModalConfirmacion}
-          openConfirmacion={openConfirmacion}
-        />
-      )}
-    </footer>
-    </div>
-    </div>
+      <ModalAcuerdo visible={acuerdoModal} setVisible={setacuerdoModal} />
+      <PoliticModal visible={politicaModal} setVisible={setpoliticaModal}/>
     </div>
   );
 };

@@ -19,14 +19,14 @@
 }
 
 .checkout-modal-bebida .title {
-  @apply text-[2rem] text-[#E1D4C4] font-semibold font-lato;
+  @apply text-[2rem] text-[#E1D4C4] font-semibold ;
   @screen laptop {
     font-size: calc(3.5rem * var(--scale));
   }
 }
 
 .checkout-modal-bebida .precio- {
-  @apply text-[#E1D4C4] text-[1.5rem] font-lato font-medium;
+  @apply text-[#E1D4C4] text-[1.5rem]  font-medium;
   @screen laptop {
     font-size: calc(2.5rem * var(--scale));
   }
@@ -66,10 +66,10 @@
 
 .modal-cancel-checkout- {
   @apply border-[#E1D4C4] border w-[10rem] h-[4rem] rounded-[1rem] text-[#E1D4C4]
-    text-[1.5rem] font-lato font-medium;
+    text-[1.5rem]  font-medium;
 }
 
 .modal-keep-checkout- {
   @apply bg-[#E1D4C4]  w-[10rem] h-[4rem] rounded-[1rem] text-[#37323A]
-    text-[1.5rem] font-lato font-medium;
+    text-[1.5rem]  font-medium;
 }

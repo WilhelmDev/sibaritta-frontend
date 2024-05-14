@@ -8,7 +8,7 @@ import { Instagram } from "../ui/icons/Instagram";
 
 const HomeSocial = () => {
   return (
-    <div className="container-general">
+    <div className="container-general hidden">
     <section className="homeSocial bg-[#252127]">
       <article className="homeSocial_info">
         <div>
@@ -40,13 +40,7 @@ const HomeSocial = () => {
           >
             <Tiktok />
           </Link>
-          <Link
-            href={"https://www.youtube.com/@Sibaritta-Experiencias"}
-            target="_blank"
-            className="homeSocial_info_icon"
-          >
-            <Youtube />
-          </Link>
+
         </div>
       </article>
     </section>

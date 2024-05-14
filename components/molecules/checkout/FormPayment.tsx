@@ -61,7 +61,7 @@ const FormPayment = ({ reference }: IFormPayment) => {
         className="car-payment text-white"
       />
       {errorCard.trim() && (
-        <p className="main-page  Login-error text-[1.2rem]  text-red-600  font-lato">
+        <p className="main-page  Login-error text-[1.2rem]  text-red-600  ">
           {errorCard}
         </p>
       )}

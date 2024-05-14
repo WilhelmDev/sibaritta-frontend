@@ -6,6 +6,12 @@ export interface IUser {
   partner?: IPartner
   avatar?: any
 }
+
+export interface IUserNew extends IUser {
+  insignias: {
+    imageName: string
+  }[]
+}
 export interface IMetadata {
   meta_key: string;
   meta_value: string;

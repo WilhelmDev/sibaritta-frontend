@@ -19,9 +19,9 @@
 }
 
 .ModalConfirmation-title {
-  @apply text-[#E1D4C4] font-lato font-extrabold text-[2.5rem];
+  @apply text-[#E1D4C4]  font-extrabold text-[2.5rem];
 }
 
 .modal_box p {
-  @apply text-[#E1D4C4]  font-lato text-[1.8rem] font-normal text-center;
+  @apply text-[#E1D4C4]   text-[1.8rem] font-normal text-center;
 }

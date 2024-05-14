@@ -14,7 +14,7 @@
     }
 
     &-name {
-      @apply font-lato font-normal text-[1.4rem] leading-[1.68rem] tracking-[0.3rem] text-[#E1D4C4];
+      @apply  font-normal text-[1.4rem] leading-[1.68rem] tracking-[0.3rem] text-[#E1D4C4];
 
       @screen laptop {
         font-size: calc(1.5rem * var(--scale));
@@ -23,7 +23,7 @@
     }
 
     &-number {
-      @apply font-lato font-normal text-[1.4rem] leading-[1.68rem]  text-[#E1D4C4] mt-[0.6rem] flex items-center gap-[1.5rem];
+      @apply  font-normal text-[1.4rem] leading-[1.68rem]  text-[#E1D4C4] mt-[0.6rem] flex items-center gap-[1.5rem];
 
       span {
         @apply relative text-[2rem] top-[0.4rem];
@@ -53,7 +53,7 @@
     @apply mt-[2.5rem] flex items-center;
 
     p {
-      @apply font-lato font-normal text-[1.4rem] leading-[1.68rem] tracking-[-0.03rem] text-[#E1D4C4] w-[58%];
+      @apply  font-normal text-[1.4rem] leading-[1.68rem] tracking-[-0.03rem] text-[#E1D4C4] w-[58%];
 
       @screen laptop {
         font-size: calc(1.5rem * var(--scale));

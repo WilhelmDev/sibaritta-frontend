@@ -31,7 +31,6 @@ const ModalCancel = ({ visible, setVisible }: ModalCancelProps) => {
   };
 
   const toGoHome = () => {
-    router.push("/");
     closeModal();
     // dispatch(setNameExperience(""));
     // dispatch(setPriceExperience(""));
@@ -41,18 +40,19 @@ const ModalCancel = ({ visible, setVisible }: ModalCancelProps) => {
     // dispatch(setHorario(""));
     // dispatch(setExperiencieId(""));
     // dispatch(setEventId(""));
-    dispatch(resetReservation());
-    dispatch(
-      updateDates({
-        startDate: "",
-        startTime: "",
-        idReservation: 0,
-        order_code: "",
-        order_number: "",
-      })
-    );
-    localStorage.removeItem("reservation");
+    // dispatch(resetReservation());
+    // dispatch(
+    //   updateDates({
+    //     startDate: "",
+    //     startTime: "",
+    //     idReservation: 0,
+    //     order_code: "",
+    //     order_number: "",
+    //   })
+    // );
+    // localStorage.removeItem("reservation");
     localStorage.removeItem("Stripe");
+    router.push("/");
   };
 
   return (

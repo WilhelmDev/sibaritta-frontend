@@ -18,7 +18,7 @@
   }
 
   .add_container_p{
-    @apply text-center font-lato text-[1.6rem] font-bold leading-[2.4rem] text-[#E1D4C4]
+    @apply text-center  text-[1.6rem] font-bold leading-[2.4rem] text-[#E1D4C4]
   }
   .add_container_btns{
     @apply flex flex-col items-center w-full justify-center gap-[1.5rem] ;
@@ -28,9 +28,9 @@
   }
 
   .add_container_btns_one {
-    @apply bg-[#E1D4C4] p-[1.2rem] text-[1.6rem] w-full h-[4.5rem] rounded-[1rem] text-[#4D3452] py-[1rem] px-[2rem] text-center font-lato font-bold leading-normal
+    @apply bg-[#E1D4C4] p-[1.2rem] text-[1.6rem] w-full h-[4.5rem] rounded-[1rem] text-[#4D3452] py-[1rem] px-[2rem] text-center  font-bold leading-normal
   }
 
   .add_container_btns_two{
-    @apply  border border-[#E1D4C4] text-[#E1D4C4] font-lato text-[1.6rem] font-bold py-[1.2rem] px-[4rem] rounded-[1rem] w-full h-[4.5rem]
+    @apply  border border-[#E1D4C4] text-[#E1D4C4]  text-[1.6rem] font-bold py-[1.2rem] px-[4rem] rounded-[1rem] w-full h-[4.5rem]
   }

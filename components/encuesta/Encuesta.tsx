@@ -63,20 +63,19 @@ function Encuesta() {
                 className="w-full h-full"
               />
             </div>
-            <div className="container-card">
-              <h2 className="title-card">Perfil Sibaritta</h2>
+            <div className="container-card perfil__contenedor__right__card">
+              <h5 className="tituloh5">Perfil Sibaritta</h5>
               <p className="text-card">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-                at pretium lorem, a malesuada diam. Vivamus blandit egestas
-                turpis. Integer at ultricies ipsum. Integer venenatis consequat
-                consectetur.
+                Nos gustaría conocer tus gustos y preferencias para brindarte notificaciones exclusivas y actualizaciones de experiencias cuidadosamente seleccionadas para ti y tu estilo de vida Sibaritta.
               </p>
-              <button
-                onClick={() => setEncuesta(1)}
-                className="profile-button cursor pointer"
-              >
-                Realizar encuesta
-              </button>
+              <div className="boton">
+                <button
+                  onClick={() => setEncuesta(1)}
+                  className="profile-button cursor pointer m-auto"
+                >
+                  Realizar encuesta
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -115,7 +114,7 @@ function Encuesta() {
                 </div>
               ))}
             </ul>
-            <article className="survey_btns">
+            <article className="survey_btns boton">
               <button
                 onClick={() => {
                   setEncuesta(0), setDataEncuesta([]);
@@ -168,7 +167,7 @@ function Encuesta() {
                 </div>
               ))}
             </ul>
-            <article className="survey_btns">
+            <article className="survey_btns boton">
               <button
                 onClick={() => {
                   setEncuesta(0), setDataEncuesta([]);
@@ -221,14 +220,14 @@ function Encuesta() {
                 </div>
               ))}
             </ul>
-            <article className="survey_btns">
+            <article className="survey_btns boton">
               <button
                 onClick={() => {
                   setEncuesta(0), setDataEncuesta([]);
                 }}
                 className="servery_btn_one"
               >
-                Cancelar
+                Cancelar 
               </button>
               <div>{encuesta}/3</div>
               <button

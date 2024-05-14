@@ -29,7 +29,7 @@ const CardVentasSibaritta = ({ DataSibaritta, isAdmin }: CardVentasSibaritta) =>
   }
   const numberStairs2 = 3;
 
-  const totalAftercommission =DataSibaritta?.total - DataSibaritta?.comision 
+  const totalAftercommission =DataSibaritta?.total - DataSibaritta?.comision - (+DataSibaritta?.extra_sibaritta || 0)
 
   const parseDate = (date:string) => {
     const dateParsed = moment(date).format('DD [de] MMMM [del] yyyy, H:mma')
@@ -46,7 +46,12 @@ const CardVentasSibaritta = ({ DataSibaritta, isAdmin }: CardVentasSibaritta) =>
   }
 
   return (
+
     <div className={`card_ventas_general`}>
+      <div className={`ventasCard__abajo`}>
+          <div>
+          </div>
+      </div>
       <div className="sale-especific-1-general">
         <p className="sale-especific-1-name">{DataSibaritta?.user_name}</p>
         <p className="sale-especific-1-code">{DataSibaritta?.order_number}</p>
@@ -69,7 +74,7 @@ const CardVentasSibaritta = ({ DataSibaritta, isAdmin }: CardVentasSibaritta) =>
             <p className="text-left-pay">Pago:</p>
             <p className="text-right-pay">{DataSibaritta.devoluciones ? 'Rembolsado' : 'Completado'}</p>
           </div>
-         
+
         </div>
         <div className="sale-especific-pay-comision">
         <div className="sale-especific-2-pay-method sale-especific-2">
@@ -82,10 +87,13 @@ const CardVentasSibaritta = ({ DataSibaritta, isAdmin }: CardVentasSibaritta) =>
             <p className="text-left-commission">Total comisión</p>
             <p className="text-right-commission">${DataSibaritta?.comision}</p>
           </div> */}
-          <div className="sale-especific-2-total sale-especific-2">
-            <p className="text-left-total">Total despues de comisiones:</p>
-            <p className="text-right-total">${totalAftercommission}</p>
-          </div>
+          {
+            !isAdmin &&
+            <div className="sale-especific-2-total sale-especific-2">
+              <p className="text-left-total">Total despues de comisiones:</p>
+              <p className="text-right-total">${totalAftercommission}</p>
+            </div>
+          }
         </div>
       </div>
       <div className="sale-especific-3-general">
@@ -109,7 +117,7 @@ const CardVentasSibaritta = ({ DataSibaritta, isAdmin }: CardVentasSibaritta) =>
         </p>
       </div>
       {
-        DataSibaritta.cancelation_date && 
+        DataSibaritta.cancelation_date &&
         (
         <div className="sale-especific-4-general">
           <p className="paragraph-bill">
@@ -137,14 +145,14 @@ const CardVentasSibaritta = ({ DataSibaritta, isAdmin }: CardVentasSibaritta) =>
                   Total:
                 </span>
                 <span className="paragraph-bill-right">
-                  ${ ((+DataSibaritta.total || 0) + (+DataSibaritta.extra_sibaritta || 0)) }
+                  ${ ((+DataSibaritta.total || 0)) }
                 </span>
               </p>
             </div>
             <div className="sale-especific-4-general">
               <p className="paragraph-bill">
                 <span className="paragraph-bill-left">
-                  Comision Partner ({(100 - calculatePercent(+DataSibaritta.total || 0, DataSibaritta?.comision))}%):
+                  Comision Partner ({(100 - calculatePercent((+DataSibaritta.total - +DataSibaritta.extra_sibaritta) || 0, DataSibaritta?.comision))}%):
                 </span>
                 <span className="paragraph-bill-right">
                   ${ totalAftercommission || 0}
@@ -154,7 +162,7 @@ const CardVentasSibaritta = ({ DataSibaritta, isAdmin }: CardVentasSibaritta) =>
             <div className="sale-especific-4-general">
               <p className="paragraph-bill">
                 <span className="paragraph-bill-left">
-                  Comisión ({calculatePercent(+DataSibaritta.total || 0, DataSibaritta?.comision)}%):
+                  Comisión ({calculatePercent((+DataSibaritta.total - +DataSibaritta.extra_sibaritta) || 0, DataSibaritta?.comision)}%):
                 </span>
                 <span className="paragraph-bill-right">
                   ${ DataSibaritta.comision || 0}
@@ -196,13 +204,12 @@ const CardVentasSibaritta = ({ DataSibaritta, isAdmin }: CardVentasSibaritta) =>
               </p>
               <p onClick={openModalPartnerReserva} className="qualification-top-1-right-2">
                 {capitalizeFirstLetter(
-                  `${formatearReservaFecha(
+                  `${parseDate(
                       DataSibaritta?.date +
                       " " +
                       DataSibaritta?.hour +
                       ":" +
-                      DataSibaritta?.minute +
-                      ":00"
+                      DataSibaritta?.minute
                   )}`
                 )}
               </p>

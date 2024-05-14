@@ -27,7 +27,7 @@ function UpdatePerfilModal({visible,closeModal , setpasswordNew ,updateUsers ,ha
              <form onSubmit={handleSubmit(updateUsers)} 
              className='conten-box-cookis '>
           <div className='logo-pagina'>
-            <Image src={"/home/social/logo.svg"} width={1000} height={1000} alt='logo' className='w-full h-full'/>
+            <Image src={"/logo.png"} width={1000} height={1000} alt='logo' className='w-full h-full'/>
           </div>
 
           <h5 className='w-[60%] m-auto '>Ingresar constraseña actual para procede con la Actualización</h5>

@@ -14,7 +14,7 @@ import HeaderAdmin from "../organisms/admin/HeaderAdmin";
 const loto = Lato({
   subsets: ["latin"],
   weight: ["100", "300", "400", "700", "900"],
-  variable: "--font-lato",
+  variable: "--",
 });
 
 const inter = Inter({
@@ -34,7 +34,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       const fkTypeuserFromLocalStorage = localStorage.getItem("fk_typeuser");
       dispatch(
         setLocal(
-          fkTypeuserFromLocalStorage !== null
+          fkTypeuserFromLocalStorage !== null as any
             ? fkTypeuserFromLocalStorage
             : null
         )
@@ -48,7 +48,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <CustomHeadWsp />
         {/* <CustomHead /> */}
         <ObserverTop />
-        {(local.local === null || local.local == 1) && <Header />}
+        {(local.local === null as any || local.local == 1) && <Header />}
         {local.local === "2" && <HeaderPartner />}
         {local.local === "3" && <HeaderAdmin />}
         {children}

@@ -52,13 +52,13 @@ align-items: center;
 }
 
 .homeFooter_info_datos_h2{
-  @apply text-[#F89C53] text-center font-lato  font-extrabold leading-normal
+  @apply text-[#F89C53] text-center   font-extrabold leading-normal
   ;
 }
 
 
 .homeFooter_info_datos_p{
-  @apply text-[#E1D4C4] font-lato text-center text-[1.8rem] font-bold leading-normal;
+  @apply text-[#E1D4C4]  text-center text-[1.8rem] font-bold leading-normal;
   @screen tabletlg{
     @apply text-right
   }
@@ -82,7 +82,7 @@ align-items: center;
   }
 }
 .home_footer_copy_p{
-  @apply text-[#E1D4C4] font-lato text-[1.8rem] font-bold  leading-normal ;
+  @apply text-[#E1D4C4]  text-[1.8rem] font-bold  leading-normal ;
   text-align: center;
 
 

@@ -22,7 +22,7 @@ function CookisModal( {visible,closeModal}:CookisModal) {
         >
         <div className='conten-box-cookis '>
           <div className='logo-pagina'>
-            <Image src={"/home/social/logo.svg"} width={1000} height={1000} alt='logo' className='w-full h-full'/>
+            <Image src={"/logo.png"} width={1000} height={1000} alt='logo' className='w-full h-full'/>
           </div>
 
           <h5 className='w-[70%] m-auto '>Utilizamos cookies para asegurarnos de brindarte la mejor experiencia en nuestro sitio web. Para obtener más información, consulta nuestra <span className='underline'>política de cookies</span></h5>

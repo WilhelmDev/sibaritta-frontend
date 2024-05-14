@@ -514,7 +514,7 @@ const Index = () => {
                       onChange={(event) => handleInputChange(event, "outfit")}
                     />
                     {outfitError !== "" && (
-                      <span className=" text-[1rem] laptop:text-[1.2rem] text-red-600  font-lato">
+                      <span className=" text-[1rem] laptop:text-[1.2rem] text-red-600  ">
                         Este campo es requerido
                       </span>
                     )}
@@ -532,7 +532,7 @@ const Index = () => {
                       onChange={(event) => handleInputChange(event, "price")}
                     />{" "}
                     {priceError !== "" && (
-                      <span className=" text-[1rem] laptop:text-[1.2rem] text-red-600  font-lato">
+                      <span className=" text-[1rem] laptop:text-[1.2rem] text-red-600  ">
                         Este campo es requerido
                       </span>
                     )}
@@ -554,7 +554,7 @@ const Index = () => {
                       onChange={(event) => handleInputChange(event, "duration")}
                     />{" "}
                     {durationError !== "" && (
-                      <span className=" text-[1rem] laptop:text-[1.2rem] text-red-600  font-lato">
+                      <span className=" text-[1rem] laptop:text-[1.2rem] text-red-600  ">
                         Este campo es requerido
                       </span>
                     )}
@@ -578,7 +578,7 @@ const Index = () => {
                       }
                     />{" "}
                     {cancelledError !== "" && (
-                      <span className=" text-[1rem] laptop:text-[1.2rem] text-red-600  font-lato">
+                      <span className=" text-[1rem] laptop:text-[1.2rem] text-red-600  ">
                         Este campo es requerido
                       </span>
                     )}
@@ -600,7 +600,7 @@ const Index = () => {
                       onChange={(event) => handleInputChange(event, "addres")}
                     />
                     {addresError !== "" && (
-                      <span className=" text-[1rem] laptop:text-[1.2rem] text-red-600  font-lato">
+                      <span className=" text-[1rem] laptop:text-[1.2rem] text-red-600  ">
                         Este campo es requerido
                       </span>
                     )}
@@ -622,7 +622,7 @@ const Index = () => {
                       onChange={(event) => handleInputChange(event, "parking")}
                     />
                     {parkingError !== "" && (
-                      <span className=" text-[1rem] laptop:text-[1.2rem] text-red-600  font-lato">
+                      <span className=" text-[1rem] laptop:text-[1.2rem] text-red-600  ">
                         Este campo es requerido
                       </span>
                     )}
@@ -646,7 +646,7 @@ const Index = () => {
                       }
                     />
                     {aditionalError !== "" && (
-                      <span className=" text-[1rem] laptop:text-[1.2rem] text-red-600  font-lato">
+                      <span className=" text-[1rem] laptop:text-[1.2rem] text-red-600  ">
                         Este campo es requerido
                       </span>
                     )}
@@ -668,7 +668,7 @@ const Index = () => {
                       onChange={(event) => handleInputChange(event, "age")}
                     />{" "}
                     {ageError !== "" && (
-                      <span className=" text-[1rem] laptop:text-[1.2rem] text-red-600  font-lato">
+                      <span className=" text-[1rem] laptop:text-[1.2rem] text-red-600  ">
                         Este campo es requerido
                       </span>
                     )}

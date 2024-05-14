@@ -144,7 +144,7 @@ function SugerenciaChefModal({
               <Clock trigger={trigger} />
             </article>
             <article className="suggestion_title main-page">
-              <h2 className="tex-[#E1D4C4] !font-semibold font-lato mb-5 text-left">
+              <h2 className="tex-[#E1D4C4] !font-semibold  mb-5 text-left">
                 Sugerencias del chef
               </h2>
             </article>
@@ -247,7 +247,7 @@ function SugerenciaChefModal({
                                     unstyled: true,
                                     classNames: {
                                       toast:
-                                        "bg-[#252127]  w-full  h-[5rem] rounded-[1rem] flex items-center justify-center text-[#F89C53] shadow-[1px_1px_1px_#E1D4C4] font-lato  z-[99] ",
+                                        "bg-[#252127]  w-full  h-[5rem] rounded-[1rem] flex items-center justify-center text-[#F89C53] shadow-[1px_1px_1px_#E1D4C4]   z-[99] ",
                                       title: " text-[2rem]  ",
                                     },
                                     position: "top-center",
@@ -266,7 +266,7 @@ function SugerenciaChefModal({
             </article>
             {suggestionDatas && suggestionDatas.length === 0 && (
               <div className="w-full h-[40rem] grid place-items-center">
-                <h2 className="text-[white] font-lato font-bold text-[2rem] text-center">
+                <h2 className="text-[white]  font-bold text-[2rem] text-center">
                   No tenemos adicionales para esta experiencia
                 </h2>
               </div>
@@ -274,19 +274,19 @@ function SugerenciaChefModal({
             <div className="w-full py-[1rem] flex   gap-[1rem]">
               {/* <button
                 onClick={() => setBoolSugerencia(false)}
-                className="bg-[#4D3452] w-full h-[5rem] rounded-[1rem] text-[#FFF] !font-lato text-[2rem] font-semibold"
+                className="bg-[#4D3452] w-full h-[5rem] rounded-[1rem] text-[#FFF] ! text-[2rem] font-semibold"
               >
                 Anterior
               </button> */}
               <button
                 onClick={handleButtonClick}
-                className="bg-[#4D3452] w-full h-[5rem] rounded-[1rem] text-[#E1D4C4] font-lato text-[2rem] font-semiboldd"
+                className="bg-[#4D3452] w-full h-[5rem] rounded-[1rem] text-[#E1D4C4]  text-[2rem] font-semiboldd"
               >
                 Pagar
               </button>
             </div>
             <div className="reserva_modal_footer">
-            <h3 className="w-full text-[#E1D4C4] text-center text-[1.7rem] font-lato font-semibold">
+            <h3 className="w-full text-[#E1D4C4] text-center text-[1.7rem]  font-semibold">
               NOTA: Nuestras experiencias se ofrecen en horarios exclusivos.
             </h3>
 

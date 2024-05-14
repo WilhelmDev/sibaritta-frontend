@@ -10,7 +10,7 @@
   border-radius: 1rem;
 
   p {
-    @apply text-[1.6rem] font-lato font-normal leading-[2.5rem] text-[#E1D4C4];
+    @apply text-[1.6rem]  font-normal leading-[2.5rem] text-[#E1D4C4];
     @screen laptop {
       font-size: calc(1.6rem * var(--scale));
       line-height: calc(2.5rem * var(--scale));
@@ -36,9 +36,9 @@
   }
 }
 .question-buttoms {
-  @apply text-[1.6rem] text-[#E1D4C4] font-semibold font-lato flex justify-end items-center gap-[1rem] pt-[4.2rem] pb-[1rem];
+  @apply text-[1.6rem] text-[#E1D4C4] font-semibold  flex justify-end items-center gap-[1rem] pt-[4.2rem] pb-[1rem];
   @screen laptop {
-    @apply bg-[#2F2A32] text-[#E1D4C4] font-lato text-[1.6rem] font-semibold flex justify-center items-center cursor-pointer;
+    @apply bg-[#2F2A32] text-[#E1D4C4]  text-[1.6rem] font-semibold flex justify-center items-center cursor-pointer;
     padding-top: calc(1rem * var(--scale));
     padding-bottom: calc(1rem * var(--scale));
     padding-left: calc(5rem * var(--scale));

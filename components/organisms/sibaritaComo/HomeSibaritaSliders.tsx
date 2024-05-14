@@ -4,7 +4,7 @@ import IconDouble from "@/public/partner_home/iconDouble.png"
 
 function HomeSibaritaSliders() {
   return (
-    <div className="box_sldier_sibarita" data-section={"/sibaritta"}>
+    <div className="box_sldier_sibarita d-none" data-section={"/sibaritta"}>
       <div className="sldier-sibarita-da-fusioned">
       <Image
           src={"/partner_home/iconDouble.png"}

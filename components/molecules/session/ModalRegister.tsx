@@ -132,7 +132,7 @@ const ModalRegister = ({
         full_name: data.full_name,
         email: data.email,
         password: data.password,
-        callback_url: `${process.env.NEXT_PUBLIC_URl_BASIC}validate`,
+        callback_url: `https://anyer.web.v2.sibaritta.mensorestudio.com/validate`,
         captcha_token: captchaResponse,
       };
 
@@ -167,37 +167,33 @@ const ModalRegister = ({
       <Modal
         visible={openRegistro}
         closeModal={closeModalRegistro}
-        width="w-[90%] tablet:w-[55%]  laptop:w-[30%] laptop:!px-[5rem] "
+        width="w-[90%] tablet:w-[55%]  laptop:w-[30%] "
         className="modalsession"
       >
-        <div className="!bg-[#F0EFEB]">
-          <h2 className="ModalSession-title w-[30rem]  mx-auto ">
-            Registrate para completar la reserva
-          </h2>
-          <div className="container-socials">
-            <button
-              className="google-buttom  p-[.5rem] laptop:p-[2rem]"
-              onClick={() => loginsss()}
-            >
-              <Image
-                src={"/img/google-icon.jpg"}
-                alt=""
-                height={100}
-                width={100}
-                className="w-[3rem] h-[3rem] laptop:w-[4.5493rem] laptop:h-[4.5493rem]"
-              />
-              Iniciar sesión con Google
-            </button>
+        <div className="!bg-[#E2D5C4] modalsession__card" >
+          <div>
+            <Image
+                    src={"/home/login.png"}
+                    alt=""
+                    height={70}
+                    width={53}
+                    className="   m-auto"
+            />
           </div>
-          <div className="ModalSession-container">
+          <div className="formRegister__titulo">
+            <h2 className="ModalSession-title">Registrate para completar la reserva</h2>
+            {/* <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at pretium lorem, a malesuada diam. Vivamus blandit egestas turpis. Integer at ultricies ipsum.</p> */}
+          </div>
+         
+          <div className="ModalSession-container formRegister__campos">
             <form onSubmit={handleSubmit(onSubmit)} className="pt-[1rem]">
               <div className="w-full">
                 <input
                   type="text"
-                  className="profile-input h-[4rem] bg-[#FFF] text-[#A59484]  "
-                  placeholder="Full name"
+                  className="profile-input h-[4rem] bg-[#e9e3db] text-[#e9e3db]  "
+                  placeholder="Nombre completo"
                   {...register("full_name", {
-                    required: "este campo es requerido",
+                    required: "Este campo es requerido",
                   })}
                 />
                 {errors.full_name && (
@@ -205,14 +201,14 @@ const ModalRegister = ({
                     {String(errors.full_name.message)}
                   </p>
                 )}
-                <div className="flex gap-[1.5rem] pt-[1rem]">
+                <div className="contenedorInput lg:flex gap-[1.5rem] pt-[1rem]">
                   <div className="w-full">
                     <input
                       type="text"
-                      className="profile-input h-[4rem] bg-[#FFF] text-[#A59484]"
+                      className="profile-input h-[4rem] bg-[#e9e3db] text-[#e9e3db]"
                       placeholder="Correo electrónico"
                       {...register("email", {
-                        required: "este campo es requerido",
+                        required: "Este campo es requerido",
                         pattern: {
                           value: emailPattern,
                           message: "formato incorrecto",
@@ -226,7 +222,7 @@ const ModalRegister = ({
                     )}
 
                     {emailExit && (
-                      <p className="Login-error text-red-600 pl-[.5rem]">
+                      <p className="Login-error text-red-600 text-[1rem] pl-[.5rem]">
                         {String(emailExit)}
                       </p>
                     )}
@@ -234,35 +230,37 @@ const ModalRegister = ({
                   <div className="w-full ">
                     <input
                       type="password"
-                      className="profile-input h-[4rem] bg-[#FFF] text-[#A59484]  "
+                      className="profile-input h-[4rem] text-[1rem]  bg-[#e9e3db] text-[#A59484]  "
                       placeholder="Contraseña"
                       {...register("password", {
-                        required: "este campo es requerido",
+                        required: "Este campo es requerido",
                       })}
                     />
                     {errors.password && (
-                      <p className="Login-error text-red-600">
+                      <p className="Login-error text-red-600 text-[1rem]">
                         {String(errors.password.message)}
                       </p>
                     )}
                   </div>
                 </div>
-                <div className="flex  pt-[1rem]">
-                  <label
-                    htmlFor="checkBox"
-                    className="cursor-pointer flex gap-[.5rem]"
-                  >
-                    <input
-                      checked={checkBox}
-                      id="checkBox"
-                      onChange={(e) => setcheckBox(e.target.checked)}
-                      type="checkbox"
-                      className="w-[1.7rem]"
-                    />
-                    <p className="text-[1rem] text-black">
-                      Confirmo que tengo más de 18 años
-                    </p>
-                  </label>
+                <div className="flex  pt-[1rem] mb-5 lg:mb-0">
+                    <div className="checkRegistro">
+                      <label
+                      htmlFor="checkBox"
+                      className="cursor-pointer flex gap-[.5rem] "
+                    >
+                      <input
+                        checked={checkBox}
+                        id="checkBox"
+                        onChange={(e) => setcheckBox(e.target.checked)}
+                        type="checkbox"
+                        className="w-[1.7rem] h-auto checkboxCard"
+                      />
+                      <p className="text-[1rem] text-black">
+                        Confirmo que tengo más de 18 años
+                      </p>
+                    </label>
+                    </div>
                 </div>
                 {messageErrorCheck && (
                   <p className="Form-error text-red-500 text-[1.3rem]">
@@ -287,9 +285,12 @@ const ModalRegister = ({
                   </p>
                 )}
               </div>
-              <button className="modalSession-button w-full  ">
-                Registarse
-              </button>
+              <div className="boton boton--transparente">
+                <button className="modalSession-button w-full  m-auto">
+                  Registrarse
+                </button>
+              </div>
+              
             </form>
             <p className="modalSession-account flex items-center gap-[1rem] text-[1.5rem] text-[#4D3452]  justify-center">
               ¿Ya tienes una cuenta?
@@ -301,6 +302,37 @@ const ModalRegister = ({
               </span>
             </p>
           </div>
+          <div className="ModalSession-container  ">
+            <div className="container-socials hidden">
+              <button
+                className="google-buttom  p-[.5rem] laptop:p-[2rem]"
+                onClick={() => loginsss()}
+              >
+                <Image
+                  src={"/home/google.png"}
+                  alt=""
+                  height={100}
+                  width={100}
+                  className=""
+                />
+              </button>
+
+              {/* <FacebookLogin
+                appId={appIDFacebook}
+                fields="name,email,picture"
+                callback={responseFacebook}
+                icon="fa-facebook"
+                cssClass="facebook-icon"
+                textButton="Iniciar sesión con Facebook"
+              /> */}
+            </div>
+           
+            <p className="modalSession-account flex items-center gap-[1rem] text-[1.5rem] text-[#4D3452]  justify-center hidden">
+              ¿No tienes una cuenta?
+            
+            </p>
+          </div>
+         
         </div>
       </Modal>
     </div>

@@ -46,7 +46,7 @@ function RegisterPartner({ visible1, setVisible1 }: ModalRegisterPartnerProps) {
         toast("Solicitud de registro de partner exitoso",{
           unstyled: true,
           classNames: {
-            toast: 'bg-[#252127]  w-full  h-[5rem] rounded-[1rem] flex items-center justify-center text-[#F89C53] shadow-[1px_1px_1px_#E1D4C4] font-lato',
+            toast: 'bg-[#252127]  w-full  h-[5rem] rounded-[1rem] flex items-center justify-center text-[#F89C53] shadow-[1px_1px_1px_#E1D4C4] ',
             title: ' text-[2rem]  ',
           },
            position :"top-center" 
@@ -55,7 +55,7 @@ function RegisterPartner({ visible1, setVisible1 }: ModalRegisterPartnerProps) {
         toast("algo fallo registro intentar nueva mente",{
           unstyled: true,
           classNames: {
-            toast: 'bg-[#252127]  w-full  h-[5rem] rounded-[1rem] flex items-center justify-center text-[#F89C53] shadow-[1px_1px_1px_#E1D4C4] font-lato',
+            toast: 'bg-[#252127]  w-full  h-[5rem] rounded-[1rem] flex items-center justify-center text-[#F89C53] shadow-[1px_1px_1px_#E1D4C4] ',
             title: ' text-[2rem]  ',
           },
            position :"top-center" 

@@ -20,7 +20,7 @@
 }
 
 .card {
-@apply grid place-items-center font-lato;
+@apply grid place-items-center ;
   padding: 2rem;
   border-radius: 0.5rem;
   background-color: rgba(37, 33, 39, 0.75);
@@ -41,7 +41,7 @@
   }
 }
 .card p {
-  @apply font-lato text-center; 
+  @apply  text-center; 
   font-size: 1.4rem;
   @screen laptop {
     font-size: Calc(2.5rem * var(--scale));  

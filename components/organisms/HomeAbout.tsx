@@ -3,7 +3,7 @@ import React from "react";
 import { Button } from "../molecules/Button";
 const HomeAbout = () => {
   return (
-    <section className="homeAbout bg-[#252127] " data-section={"/businnes"}>
+    <section className="homeAbout bg-[#252127]  " data-section={"/businnes"}>
       <article className="homeAbout_contendor  ">
         <div className="w-[50%]">
           <Image
