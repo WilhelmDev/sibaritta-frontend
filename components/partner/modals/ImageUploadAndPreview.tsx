@@ -51,7 +51,7 @@ function ImageUploadAndPreview({
   return (
     <FileUpload
       ref={fileUpload}
-      accept="image/*"
+      accept="image/png, image/jpeg, image/jpg, image/gif"
       maxFileSize={1000000}
       itemTemplate={itemTemplate}
       emptyTemplate={emptyTemplate}
