@@ -31,7 +31,7 @@ export default function Index() {
   const showViewAndEditModalPreviousValue = useRef(false);
 
   async function getPartnerSuggestions() {
-    let partnerId = null;
+    let partnerId: number | null = null;
     if (typeof window !== "undefined") {
       const storedPartnerId = localStorage.getItem("fk_partner_id");
       partnerId = storedPartnerId ? parseInt(storedPartnerId, 10) : null;
