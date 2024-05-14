@@ -25,7 +25,7 @@ export const CustomLoading = () => {
           <div className="global-loading__shine">
             <Image
               priority
-              src="/home/logo.png"
+              src="/logo.png"
               alt=""
               width={500}
               height={500}

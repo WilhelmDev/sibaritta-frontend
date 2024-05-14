@@ -228,7 +228,7 @@ function ChefSuggestion({
                               unstyled: true,
                               classNames: {
                                 toast:
-                                  "bg-[#252127]  w-full  h-[5rem] rounded-[1rem] flex items-center justify-center text-[#F89C53] shadow-[1px_1px_1px_#E1D4C4] font-lato",
+                                  "bg-[#252127]  w-full  h-[5rem] rounded-[1rem] flex items-center justify-center text-[#F89C53] shadow-[1px_1px_1px_#E1D4C4] ",
                                 title: " text-[2rem]  ",
                               },
                               position: "top-center",
@@ -246,7 +246,7 @@ function ChefSuggestion({
           </article>
           {suggestionDatas && suggestionDatas.length === 0 && (
             <div className="w-full h-[50rem] grid place-items-center">
-              <h2 className="text-[white] font-lato font-bold tablet:text-[2rem] laptop:text-[3rem] text-center">
+              <h2 className="text-[white]  font-bold tablet:text-[2rem] laptop:text-[3rem] text-center">
                 No tenemos adicionales para esta experiencia
               </h2>
             </div>

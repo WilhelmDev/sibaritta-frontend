@@ -76,7 +76,7 @@
   }
 
   & h2 {
-    @apply text-[#E1D4C4] text-center text-[1.7rem] font-lato font-medium;
+    @apply text-[#E1D4C4] text-center text-[1.7rem]  font-medium;
     text-align: left;
     margin-left: 4rem;
     @screen tablet{

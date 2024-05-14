@@ -73,7 +73,7 @@ function GastronomiaInputs({
             onClick={changeFilter}
             className=" flex items-center justify-between w-full h-[4.4rem] rounded-[5rem] py-[1rem] px-[2rem] bg-[#F89C53] laptop:hidden"
           >
-            <span className="font-lato text-[1.5rem] font-semibold leading-normal text-[#252127]">
+            <span className=" text-[1.5rem] font-semibold leading-normal text-[#252127]">
               Filter
             </span>
             <Arow />
@@ -98,7 +98,7 @@ function GastronomiaInputs({
 
               <Fecha selected={selected} setSelected={setSelected} />
 
-              <div className='cursor-pointer w-full laptop:w-[28.8rem] h-[4.4rem] p-[1rem] rounded-[5rem] bg-[#37323A] font-lato text-[white] font-semibold leading-normal text-[1.8rem] md:hidden'>
+              <div className='cursor-pointer w-full laptop:w-[28.8rem] h-[4.4rem] p-[1rem] rounded-[5rem] bg-[#37323A]  text-[white] font-semibold leading-normal text-[1.8rem] md:hidden'>
                 Clasificacion
               </div>
             </div>
@@ -118,7 +118,7 @@ function GastronomiaInputs({
               </div>
               <Usuarios setCount={setCount} count={count} />
               <Fecha selected={selected} setSelected={setSelected} />
-              <div className="cursor-pointer w-[28.8rem] h-[4.4rem] p-[1rem] rounded-[5rem] bg-[#37323A] font-lato text-[white] font-semibold leading-normal text-center text-[1.8rem] md:w-[19rem] md:hidden">
+              <div className="cursor-pointer w-[28.8rem] h-[4.4rem] p-[1rem] rounded-[5rem] bg-[#37323A]  text-[white] font-semibold leading-normal text-center text-[1.8rem] md:w-[19rem] md:hidden">
                 Clasificacion
               </div>
             </div>

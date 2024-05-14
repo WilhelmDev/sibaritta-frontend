@@ -436,7 +436,7 @@
     }
   
     .pay-sale-button-sale {
-      @apply font-lato;
+      
       width: 100%;
       height: 5.2rem;
       border-radius: 1rem;
@@ -465,7 +465,7 @@
     }
   
     .pay-sale-button-pay {
-      @apply font-lato;
+      
       width: 100%;
       height: 5.2rem;
       border-radius: 1rem;

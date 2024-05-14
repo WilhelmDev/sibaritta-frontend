@@ -45,7 +45,7 @@
 }
 
 .add_user_amount_person-checkout {
-  @apply text-[#E1D4C4] font-lato text-[1.8rem] font-bold
+  @apply text-[#E1D4C4]  text-[1.8rem] font-bold
     leading-[2.4renm];
   @screen laptop {
     font-size: calc(1.8rem * var(--scale));
@@ -109,14 +109,14 @@
 }
 
 .checkout_content p {
-  @apply text-[1.6rem] font-lato font-normal text-[#F0EFEB] text-center;
+  @apply text-[1.6rem]  font-normal text-[#F0EFEB] text-center;
   @screen laptop {
     font-size: calc(2rem * var(--scale));
     width: calc(68.7rem * var(--scale));
   }
 }
 .checkout-one h2 {
-  @apply text-[#E1D4C4] font-lato font-extrabold text-[2.4rem] text-center;
+  @apply text-[#E1D4C4]  font-extrabold text-[2.4rem] text-center;
 
   @screen laptop {
     font-size: calc(2.4rem * var(--scale));
@@ -138,7 +138,7 @@
   }
 }
 .checkout_info p {
-  @apply text-[#A59484] font-lato  font-bold leading-[2.4rem];
+  @apply text-[#A59484]   font-bold leading-[2.4rem];
   @screen laptop {
     line-height: calc(1.3rem * var(--scale));
     line-height: normal;
@@ -154,7 +154,7 @@
 }
 
 .cheackout_details_pay h3 {
-  @apply  font-lato font-bold  text-[#E1D4C4] text-center py-[1rem];
+  @apply   font-bold  text-[#E1D4C4] text-center py-[1rem];
   @screen laptop {
     text-align: start;
     font-size: calc(2.5rem * var(--scale));
@@ -167,7 +167,7 @@
 }
 
 .checkout_datils_email h5 {
-  @apply  font-lato font-bold text-[#F89C53];
+  @apply   font-bold text-[#F89C53];
   @screen laptop {
     /* text-align: start; */
     font-weight: 700;
@@ -181,7 +181,7 @@
   @apply w-full h-auto flex flex-col gap-[1rem];
 }
 .checkout_paymet_icons h5 {
-  @apply text-[#F89C53] font-lato  font-bold;
+  @apply text-[#F89C53]   font-bold;
 }
 
 .checkout_paymet_icons {
@@ -235,7 +235,7 @@
 
 .checkout_address article {
   @apply w-full rounded-[1rem] bg-[#37323A] p-[1rem] text-[#A59484]
-    font-lato text-[1.4rem] font-normal;
+     text-[1.4rem] font-normal;
   @screen laptop {
     font-size: calc(1.4rem * var(--scale));
 
@@ -254,7 +254,7 @@
   }
 }
 .checkout_two h3 {
-  @apply text-[#E1D4C4] font-lato  font-bold;
+  @apply text-[#E1D4C4]   font-bold;
   @screen laptop {
 
     font-weight: 700;
@@ -273,14 +273,14 @@
   }
 }
 .checkout_time p {
-  @apply text-[#E1D4C4]  font-lato  font-bold;
+  @apply text-[#E1D4C4]    font-bold;
   @screen laptop {
 
     font-weight: 700;
   }
 }
 .checkout_time h2 {
-  @apply text-[#E1D4C4] text-[3rem] font-lato  font-bold;
+  @apply text-[#E1D4C4] text-[3rem]   font-bold;
   @screen laptop {
     font-size: calc(3rem * var(--scale));
     font-weight: 700;
@@ -313,7 +313,7 @@
 }
 
 .order_datos {
-  @apply text-[1.8rem] font-lato text-[#E1D4C4] font-normal;
+  @apply text-[1.8rem]  text-[#E1D4C4] font-normal;
   @screen laptop {
     font-size: calc(1.8rem * var(--scale));
     font-weight: 400;
@@ -322,12 +322,12 @@
 .btn-checkout_modific- {
   @apply hidden w-full h-[3rem]
   bg-[#4D3452]  rounded-[1rem]
-  text-[#E1D4C4] font-lato text-[1.4rem] font-bold;
+  text-[#E1D4C4]  text-[1.4rem] font-bold;
   @screen tablet{
     @apply w-[11.3rem] grid place-items-center;
   }
   @screen laptop {
-    @apply font-lato;
+    
     font-size: calc(1.8rem * var(--scale));
     width: calc(11.3rem * var(--scale));
   }
@@ -343,7 +343,7 @@
     padding-right: calc(5rem * var(--scale));
   }
   & p{
-    @apply text-[1.5rem] font-lato;
+    @apply text-[1.5rem] ;
     @screen laptop {
       font-size: calc(1.8rem * var(--scale));
     }
@@ -355,7 +355,7 @@
 }
 
 .order_datos_price span {
-  @apply text-[1.5rem] font-lato text-[#F89C53] font-bold;
+  @apply text-[1.5rem]  text-[#F89C53] font-bold;
   @screen laptop {
     font-size: calc(1.8rem * var(--scale));
     font-weight: 700;
@@ -364,7 +364,7 @@
 
 .btm_modifi {
   @apply w-[15rem] bg-[#4D3452] h-[3rem] rounded-[1rem]
-    text-[#E1D4C4] font-lato text-[1.4rem] font-bold;
+    text-[#E1D4C4]  text-[1.4rem] font-bold;
   @screen laptop {
     width: calc(15rem * var(--scale));
     height: calc(3rem * var(--scale));
@@ -389,21 +389,21 @@
 
 
 .checkout-terminos p {
-  @apply text-[#E1D4C4] font-lato text-[1.2rem] leading-[1.2rem];
+  @apply text-[#E1D4C4]  text-[1.2rem] leading-[1.2rem];
   @screen laptop {
     font-size: calc(1.3rem * var(--scale));
     line-height: calc(1.2rem * var(--scale));
   }
 }
 .restaured-inputs-_{
-  @apply text-[#E1D4C4] font-lato text-[1.2rem] leading-[1.2rem];
+  @apply text-[#E1D4C4]  text-[1.2rem] leading-[1.2rem];
   @screen laptop {
     font-size: calc(1.3rem * var(--scale));
     line-height: calc(1.2rem * var(--scale));
   }
 }
 .checkout-p {
-  @apply text-[#E1D4C4] font-lato underline text-[1.2rem] font-normal
+  @apply text-[#E1D4C4]  underline text-[1.2rem] font-normal
     leading-[1.2rem];
   @screen laptop {
     font-size: calc(1.3rem * var(--scale));
@@ -413,7 +413,7 @@
 
 .checkout-btn {
   @apply w-full bg-[#4D3452] h-[5.8rem] rounded-[1rem]
-    text-[#E1D4C4] font-lato text-[1.6rem] font-extrabold;
+    text-[#E1D4C4]  text-[1.6rem] font-extrabold;
   @screen laptop {
     height: calc(5.8rem * var(--scale));
     border-radius: calc(1rem * var(--scale));

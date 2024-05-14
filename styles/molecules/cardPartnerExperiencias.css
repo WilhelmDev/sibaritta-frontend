@@ -1,6 +1,6 @@
 .CardPartnerExperiencias{
 
-    @apply rounded-[1rem] bg-[url("/prueba5.jpg")] bg-cover bg-center h-[34.5rem] w-full font-lato flex flex-col justify-between items-center relative p-[2rem] ;
+    @apply rounded-[1rem] bg-[url("/prueba5.jpg")] bg-cover bg-center h-[34.5rem] w-full  flex flex-col justify-between items-center relative p-[2rem] ;
 
 
     @screen laptop{

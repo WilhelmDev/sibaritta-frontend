@@ -14,6 +14,7 @@ const nextConfig = {
       "imagen.jpg",
       "flagcdn.com",
       "upload.wikimedia.org",
+      "api.v2.sibarita.mensorestudio.com"
     ],
   },
 };

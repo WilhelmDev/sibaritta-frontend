@@ -20,7 +20,7 @@
 }
 
 .validate_ h2{
-    @apply text-[2.5rem] text-[#F89C53] font-lato font-extrabold;
+    @apply text-[2.5rem] text-[#F89C53]  font-extrabold;
     @screen laptop{
         font-size: calc(4rem * var(--scale));
       
@@ -28,7 +28,7 @@
 }
 
 .validate_ h3 {
-    @apply text-[1.6rem] text-center font-lato font-medium
+    @apply text-[1.6rem] text-center  font-medium
     text-[#E1D4C4] ;
     @screen laptop{
         font-size: calc(2.4rem * var(--scale));

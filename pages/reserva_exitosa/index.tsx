@@ -85,7 +85,7 @@ function Index() {
      <div className="flex space-x-4 gap-4">
        <article className="reserva_exitosa-container w-1/4">
 
-         <h3 className="text-[#E1D4C4] text-center font-lato   font-bold laptop:text-start">
+         <h3 className="text-[#E1D4C4] text-center    font-bold laptop:text-start">
            ¡Gracias por tu reservación!
          </h3>
 
@@ -122,7 +122,7 @@ function Index() {
          <div className=" w-full flex  flex-col gap-[2rem]">
 
          <div className="w-full rounded-[1rem] h-[7.8rem] bg-[#4D3452]  flex justify-center items-center">
-           <p className="text-[#E1D4C4]  font-extrabold font-lato text-center duration-300 ease-in-out text-destok px-[.5rem]">
+           <p className="text-[#E1D4C4]  font-extrabold  text-center duration-300 ease-in-out text-destok px-[.5rem]">
              Para ver  las restricciones haz
              <span
                onClick={openModalRestricciones}
@@ -134,7 +134,7 @@ function Index() {
          </div>
 
          <div className="w-full rounded-[1rem] h-[7.8rem] bg-[#4D3452]  flex justify-center items-center">
-           <p className="text-[#E1D4C4]  font-extrabold font-lato text-center duration-300 ease-in-out text-destok px-[.5rem]">
+           <p className="text-[#E1D4C4]  font-extrabold  text-center duration-300 ease-in-out text-destok px-[.5rem]">
              Si deseas conocer todas las políticas de cancelación da
              <span
                onClick={openModal}
@@ -150,7 +150,7 @@ function Index() {
        </article>
 
        <article className="reservas_card w-3/4">
-         <h3 className="text-[#E1D4C4] text-center font-lato   font-bold laptop:text-start">
+         <h3 className="text-[#E1D4C4] text-center    font-bold laptop:text-start">
            Sugerencias Sibaritta
          </h3>
          <div className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 gap-[1rem] container-qr-card">

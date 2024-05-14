@@ -19,7 +19,7 @@
 }
 
 .homeSocial_info_h3 {
-  @apply !text-[#E1D4C4] font-bold  leading-normal w-[17.3rem] text-center font-lato;
+  @apply !text-[#E1D4C4] font-bold  leading-normal w-[17.3rem] text-center ;
   @screen laptop {
     @apply flex  w-full;
     white-space: nowrap;

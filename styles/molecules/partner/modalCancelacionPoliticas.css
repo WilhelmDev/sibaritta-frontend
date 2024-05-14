@@ -16,12 +16,12 @@
     @apply w-full h-full bg-[#2F2A32] flex flex-col gap-[2rem] p-[1rem] ;
     padding-right: 2rem;
     & h2{
-        @apply text-[1.5rem] font-lato font-extrabold text-[#E1D4C4];
+        @apply text-[1.5rem]  font-extrabold text-[#E1D4C4];
         @screen laptop{
             font-size: calc(2rem * var(--scale));
         }
     }
     & p{
-        @apply text-[#E1D4C4] font-lato text-[1.2rem];
+        @apply text-[#E1D4C4]  text-[1.2rem];
     }
  }

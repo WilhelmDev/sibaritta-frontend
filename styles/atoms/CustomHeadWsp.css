@@ -3,18 +3,21 @@
     width: 5.4rem;
     height: 5.4rem;
     position:fixed;
-    animation: breathe 0.45s infinite alternate;
-    background-color: #F89C53;
+    /* animation: breathe 0.45s infinite alternate; */
+    background-color: transparent;
+    border: 1px solid #D7CABA;
     z-index: 100;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0px 0px 0px 5px #f89d5342;
     @screen laptop{
-      right: calc(5rem * var(--scale));
-      bottom: calc(1.3rem * var(--scale));
-}
+      right: 50px;
+      bottom: 50px
+    }
+    path{
+      fill: #F0A160;
+    }
 }
 
 @keyframes breathe {

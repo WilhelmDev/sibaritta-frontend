@@ -142,7 +142,7 @@ export const NavbarPartner: FC<NavbarProps> = ({ isMenuOpen, closeMenu }) => {
 
   const menuPartTwo = [...polylang.menu].slice(half);
 
-  let userId = null;
+  let userId = null as any;
   if (typeof window !== "undefined") {
     const storedUserId = localStorage.getItem("userid");
     userId = storedUserId ? parseInt(storedUserId, 10) : null;

@@ -32,13 +32,13 @@
 .details_partners_title_type_-{
     @apply flex flex-col gap-[.5rem] ;
     & h2 {
-        @apply text-[2.5rem] text-[#F89C53] font-lato font-bold ;
+        @apply text-[2.5rem] text-[#F89C53]  font-bold ;
         @screen laptop {
             font-size: calc(3rem *  var(--scale));
         }
     }
     & p{
-        @apply text-[1.5rem] font-lato font-bold text-[white] ;
+        @apply text-[1.5rem]  font-bold text-[white] ;
         @screen laptop {
             font-size: calc(2rem *  var(--scale));
         }
@@ -47,7 +47,7 @@
 
 
 .details_partners_fecha---{
-    @apply flex items-center gap-[1rem] text-[1.3rem] font-lato font-bold text-[white];
+    @apply flex items-center gap-[1rem] text-[1.3rem]  font-bold text-[white];
     @screen tablet{
         @apply text-[2rem] ;
     }
@@ -71,7 +71,7 @@
         gap: calc(1.2rem *  var(--scale));
     }
     & p {
-        @apply text-[1.3rem] font-lato  text-[#F89C53];
+        @apply text-[1.3rem]   text-[#F89C53];
         @screen laptop{
             font-size: calc(1.7rem * var(--scale));
         }
@@ -81,13 +81,13 @@
 .details_partners_name_calification{
     @apply flex items-center gap-[1rem]  ;
     & h3 {
-        @apply text-[1.8rem] font-lato font-bold  text-[white];
+        @apply text-[1.8rem]  font-bold  text-[white];
         @screen laptop{
             font-size: calc(2.7rem * var(--scale));
         }
     }
     & p{
-        @apply  text-[1.3rem] font-lato font-bold text-[white] ;
+        @apply  text-[1.3rem]  font-bold text-[white] ;
         @screen laptop{
             font-size: calc(1.8rem * var(--scale));
         }
@@ -110,13 +110,13 @@
 .order-codig {
  @apply   flex items-center gap-[.5rem];
  & h3{
-    @apply font-lato text-[#F89C53] font-extrabold text-[1.8rem]; 
+    @apply  text-[#F89C53] font-extrabold text-[1.8rem]; 
     @screen laptop{
         font-size: calc(2.5rem * var(--scale));
     }
  }
  & p {
-    @apply font-lato text-[#F89C53] font-extrabold text-[1.8rem]; 
+    @apply  text-[#F89C53] font-extrabold text-[1.8rem]; 
     @screen laptop{
         font-size: calc(2.5rem * var(--scale));
     }
@@ -126,7 +126,7 @@
 .reserva-codigs{
     @apply   flex items-center gap-[.5rem];
     & h4{
-       @apply font-lato text-[white]  text-[1.4rem]; 
+       @apply  text-[white]  text-[1.4rem]; 
     }
    
 }
@@ -167,10 +167,10 @@
     }
     
     & p{
-        @apply  text-[1.7rem] font-lato font-bold text-[white]
+        @apply  text-[1.7rem]  font-bold text-[white]
     }
     & h3 {
-        @apply text-[1.7rem] font-lato  font-bold text-[#F89C53];
+        @apply text-[1.7rem]   font-bold text-[#F89C53];
     }
 }
 
@@ -183,10 +183,10 @@
         height : calc(6.6rem * var(--scale));
     }
     & p{
-        @apply  text-[1.5rem] font-lato font-bold text-[white]
+        @apply  text-[1.5rem]  font-bold text-[white]
     }
     & h3 {
-        @apply text-[1.5rem] font-lato font-bold text-[#F89C53];
+        @apply text-[1.5rem]  font-bold text-[#F89C53];
     }
 }
 
@@ -200,10 +200,10 @@
     }
     
     & p{
-        @apply  text-[1.5rem] font-lato font-bold  text-[white]
+        @apply  text-[1.5rem]  font-bold  text-[white]
     }
     & h3 {
-        @apply text-[1.5rem] font-lato font-bold text-[#F89C53];
+        @apply text-[1.5rem]  font-bold text-[#F89C53];
     }
 }
 
@@ -219,7 +219,7 @@
     }
     
     & p{
-        @apply  text-[1.5rem] font-lato font-bold  text-[white]
+        @apply  text-[1.5rem]  font-bold  text-[white]
     }
     
 }

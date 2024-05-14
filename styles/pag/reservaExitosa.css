@@ -85,14 +85,14 @@ align-items: center;
   }
 }
 .reserva-exitosaQr-textcontents {
-  @apply text-center font-lato text-[#E1D4C4];
+  @apply text-center  text-[#E1D4C4];
   @screen laptop {
 
   }
 }
 
 .reserva-exitosaQr-textcontents-two-p{
-  @apply text-center font-lato text-[#E1D4C4] font-bold ;
+  @apply text-center  text-[#E1D4C4] font-bold ;
   @screen laptop {
   }
 }
@@ -114,7 +114,7 @@ align-items: center;
   }
   & h6 {
     @screen laptop{
-      @apply   font-lato font-medium  ;
+      @apply    font-medium  ;
 
       line-height: auto;
     }
@@ -124,7 +124,7 @@ align-items: center;
 .reservations-exi-p-two{
   @apply text-[1rem] ;
   @screen laptop{
-    @apply  text-[#E1D4C4] font-lato   leading-10 ;
+    @apply  text-[#E1D4C4]    leading-10 ;
     font-size: 10px !important;
     line-height: normal;
   }

@@ -1,6 +1,6 @@
 import React from "react";
 
-const linkWhatsApp = `https://api.whatsapp.com/send?phone=${process.env.NEXT_PUBLIC_WHATSAPP}&text=Quiero%20informaci%C3%B3n%20sobre%20experiencias%20Sibaritta`
+const linkWhatsApp = `https://wa.link/952ld9`
 const CustomHeadWsp = () => {
   return (
     <a

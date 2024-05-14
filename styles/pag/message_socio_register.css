@@ -9,12 +9,12 @@
     @apply  w-full h-full  flex flex-col  justify-center items-center;
 
     & p {
-        @apply w-[100%]  text-center text-[#E1D4C4] text-[1.8rem] font-lato  ;
+        @apply w-[100%]  text-center text-[#E1D4C4] text-[1.8rem]   ;
         @screen tablet{
-            @apply w-[50%] font-lato;
+            @apply w-[50%] ;
         }
         @screen laptop{
-            @apply w-[60%] font-lato;
+            @apply w-[60%] ;
             font-size: calc(3.6rem * var(--scale));
         }
     }

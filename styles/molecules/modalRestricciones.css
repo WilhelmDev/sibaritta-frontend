@@ -18,24 +18,24 @@
   }
 
  .conten-restricciones{
-    @apply flex flex-col font-lato gap-[1rem];
+    @apply flex flex-col  gap-[1rem];
     padding-right: 1rem;
     @screen laptop{
         @apply w-[99%];
         gap: calc(1.5rem * var(--scale));
     }
     & h2{
-        @apply text-[2rem] text-[#E1D4C4] font-lato;
+        @apply text-[2rem] text-[#E1D4C4] ;
         @screen laptop{
-            @apply font-lato font-extrabold text-[#E1D4C4];
+            @apply  font-extrabold text-[#E1D4C4];
             font-size: calc(2rem * var(--scale));
             text-transform: uppercase;
         }
     }
     & p{
-        @apply text-[1.1rem] font-lato text-[#E1D4C4];
+        @apply text-[1.1rem]  text-[#E1D4C4];
         @screen laptop{
-            @apply font-lato  text-[#E1D4C4];
+            @apply   text-[#E1D4C4];
         font-size: calc(1.2rem * var(--scale)); 
         }
     }

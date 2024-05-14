@@ -68,7 +68,7 @@
 }
 
 .add_user_increment_number {
-  @apply p-[1rem] font-semibold leading-[1.4rem] font-lato text-[#F0EFEB];
+  @apply p-[1rem] font-semibold leading-[1.4rem]  text-[#F0EFEB];
   @screen laptop {
     font-size: calc(2.4rem * var(--scale));
   }
@@ -79,7 +79,7 @@
     text-[#F0EFEB]  text-center font-bold;
 }
 .add_user_p {
-  @apply text-[#F0EFEB] font-lato text-[1.6rem] font-normal text-center;
+  @apply text-[#F0EFEB]  text-[1.6rem] font-normal text-center;
 }
 
 .add_user_btns {
@@ -91,7 +91,7 @@
 
 .add_user_one {
   @apply bg-[#E1D4C4]  w-[26rem]  h-[4.5rem] text-center 
-    rounded-[1rem] text-[#4D3452] font-lato text-[1.6rem] font-semibold;
+    rounded-[1rem] text-[#4D3452]  text-[1.6rem] font-semibold;
 }
 
 .add_user_two {

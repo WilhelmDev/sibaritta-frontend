@@ -34,7 +34,7 @@
     padding-right: calc(1.8rem * var(--scale));
   }
   span {
-    @apply text-[#252127] font-lato font-semibold;
+    @apply text-[#252127]  font-semibold;
     @screen laptop {
       @apply text-[1.8rem];
     }
@@ -55,8 +55,8 @@
   }
 }
 .side-h1 {
-  @apply text-[#252127] text-[2.4rem] font-lato font-normal text-right;
+  @apply text-[#252127] text-[2.4rem]  font-normal text-right;
   h3 {
-    @apply text-[#252127] font-semibold font-lato;
+    @apply text-[#252127] font-semibold ;
   }
 }

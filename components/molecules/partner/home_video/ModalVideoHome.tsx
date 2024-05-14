@@ -19,7 +19,7 @@ function ModalVideoHome({ visible1, setVisible1 }: ModalVideoProps) {
           <div className=''>
             <video
             className=''
-              src={'/home/sibaritta-video-home.mp4'}
+              src={'/home/MuyprontoCell.mp4'}
               autoPlay
               muted
               loop

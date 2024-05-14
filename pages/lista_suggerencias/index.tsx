@@ -13,7 +13,7 @@ export default function Index() {
     }
 
 const sugesstionAllPartner = async () => {
-    let partner_Id = null;
+    let partner_Id = null as any;
   if (typeof window !== "undefined") {
     const storedPartnerId = localStorage.getItem("fk_partner_id");
     partner_Id = storedPartnerId ? parseInt(storedPartnerId, 10) : null;

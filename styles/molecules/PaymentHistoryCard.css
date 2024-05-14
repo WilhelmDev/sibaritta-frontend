@@ -9,7 +9,7 @@
   }
 
   &-title {
-    @apply font-lato font-extrabold text-[1.8rem] leading-[2.2rem] text-[#E1D4C4];
+    @apply  font-extrabold text-[1.8rem] leading-[2.2rem] text-[#E1D4C4];
 
     @screen laptop {
       font-size: calc(2.4rem * var(--scale));
@@ -18,7 +18,7 @@
   }
 
   &-subtitle {
-    @apply font-lato font-normal text-[1.8rem] leading-[2.16rem] text-[#F89C53] mt-[0.3rem];
+    @apply  font-normal text-[1.8rem] leading-[2.16rem] text-[#F89C53] mt-[0.3rem];
 
     @screen laptop {
       font-size: calc(1.8rem * var(--scale));
@@ -44,7 +44,7 @@
       }
 
       h5 {
-        @apply font-lato font-normal text-[1.4rem] leading-[1.68rem] text-[#E1D4C4];
+        @apply  font-normal text-[1.4rem] leading-[1.68rem] text-[#E1D4C4];
 
         @screen laptop {
           font-size: calc(1.4rem * var(--scale));
@@ -53,7 +53,7 @@
       }
 
       p {
-        @apply font-lato font-bold text-[1.8rem] leading-[2.16rem] text-[#F89C53];
+        @apply  font-bold text-[1.8rem] leading-[2.16rem] text-[#F89C53];
 
         @screen laptop {
           font-size: calc(1.4rem * var(--scale));
@@ -64,7 +64,7 @@
   }
 
   button {
-    @apply bg-[#4D3452] rounded-[1rem] h-[4.5rem] p-[2rem] font-lato font-bold text-[1.6rem] leading-[1.92rem] text-[#F0EFEB] flex items-center justify-center w-full mt-[2rem] cursor-pointer;
+    @apply bg-[#4D3452] rounded-[1rem] h-[4.5rem] p-[2rem]  font-bold text-[1.6rem] leading-[1.92rem] text-[#F0EFEB] flex items-center justify-center w-full mt-[2rem] cursor-pointer;
 
     @screen laptop {
       margin-top: calc(2rem * var(--scale));

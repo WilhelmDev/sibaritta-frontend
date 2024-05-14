@@ -36,7 +36,7 @@ function ModalPartnerReservaVentas({
 
   const bebidaExtra = Datasibarita?.reservation_details?.reduce(
     (accumulator: number, currentValue: any) => {
-      if (currentValue.fk_event_id == null) {
+      if (currentValue.fk_event_id == null as any) {
         return (
           accumulator +
           parseInt(currentValue.price_item) * parseInt(currentValue.quantity)
@@ -120,7 +120,7 @@ function ModalPartnerReservaVentas({
                 <p className="container_card_info_p">Nº de personas</p>
                 <h2 className="container_card_info_h2">
                   {Datasibarita?.reservation_details.find(
-                    (detail: any) => detail.fk_event_id !== null
+                    (detail: any) => detail.fk_event_id !== null as any
                   )?.quantity || "No data"}
                 </h2>
               </div>

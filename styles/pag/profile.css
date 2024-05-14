@@ -48,13 +48,13 @@
 }
 
 .profile-h2 {
-  @apply text-[#E1D4C4] font-lato font-bold py-[4rem];
+  @apply text-[#E1D4C4]  font-bold py-[4rem];
   padding-top: calc(4rem * var(--scale));
   padding-bottom: calc(4rem * var(--scale));
 }
 
 .profile-label {
-  @apply font-lato text-[1.4rem] text-[#E1D4C4] font-normal;
+  @apply  text-[1.4rem] text-[#E1D4C4] font-normal;
   @screen laptop {
     width: calc(22rem * var(--scale));
     font-size: calc(1.6rem * var(--scale));
@@ -68,7 +68,7 @@
   }
 }
 .profile-text {
-  @apply font-lato text-[1.6rem] text-[#E1D4C4] font-bold pt-[3.5rem];
+  @apply  text-[1.6rem] text-[#E1D4C4] font-bold pt-[3.5rem];
 }
 .profile-image2 {
   @apply  w-[17.2rem] h-[17.2rem] rounded-full mx-auto bg-[#252127] p-[2rem];
@@ -87,10 +87,10 @@
   }
 }
 .title-card {
-  @apply font-lato     font-bold text-[#4D3452];
+  @apply      font-bold text-[#4D3452];
 }
 .text-card {
-  @apply font-lato  font-bold text-[#575757] leading-[2.4rem] py-[3.5rem];
+  @apply   font-bold text-[#575757] leading-[2.4rem] py-[3.5rem];
 
   @screen laptop {
     padding-bottom: calc(3.5rem * var(--scale));
@@ -114,26 +114,12 @@
     padding-top: calc(3.5rem * var(--scale));
   }
 }
-.profile-button {
-  @apply bg-[#4D3452] p-[2rem] w-full text-center text-[#E1D4C4] font-lato text-[1.6rem];
-  border-radius: 5rem;
-  @screen laptop {
-    padding: calc(2rem * var(--scale));
-  }
-}
 
-.profile-card {
-  border-radius: 1rem;
-  border: 1px solid #4d3452;
-  @screen laptop {
-    width: calc(44.3rem * var(--scale));
-    margin-bottom: calc(10rem * var(--scale));
-  }
-}
+
 
 .profile-buttons {
   border-radius: 1rem;
-  @apply !bg-[#4D3452] text-[#E1D4C4] font-lato font-bold text-[1.4rem] 
+  @apply !bg-[#4D3452] text-[#E1D4C4]  font-bold text-[1.4rem] 
   p-[1.5rem] duration-300 ease-in-out hover:!bg-[#F89C53] hover:!text-[#4D3452];
   @screen laptop {
     padding: calc(1.5rem * var(--scale));
@@ -150,13 +136,13 @@
 }
 
 .survey_options {
-  @apply w-full  flex flex-col gap-[2rem] p-[3rem] bg-[#FFFFFF] rounded-b-[1rem];
+  @apply w-full  flex flex-col gap-[2rem] p-[3rem] bg-[#2F2A32] rounded-b-[1rem];
   @screen laptop {
     @apply p-[3rem];
   }
 }
 .survey_options p {
-  @apply text-[#4D3452] text-[1.8rem] font-mono  font-bold;
+  @apply text-[#fff] text-[1.8rem];
 }
 
 .option-survey {
@@ -171,22 +157,22 @@
   @apply flex flex-col items-center gap-[1rem];
 }
 .option_card p {
-  @apply text-[#575757] text-[1.2rem] text-center font-normal leading-[2.4rem];
+  @apply text-[#fff] text-[1.2rem] text-center font-normal leading-[2.4rem];
   @screen laptop {
     font-size: calc(1.6rem * var(--scale));
   }
 }
 
 .servery_btn_one {
-  @apply w-full h-[4.4rem] bg-[#F0EFEB] text-[#A59484] text-[1.6rem] font-lato font-bold  rounded-[1rem];
+  @apply w-full h-[4.4rem] bg-[#F0EFEB] text-[#A59484] text-[1.6rem]  font-bold  rounded-[1rem];
 }
 
 .survey_btns div {
-  @apply text-[#A59484] font-lato text-[1.6rem] font-bold leading-[2.4rem];
+  @apply text-[#A59484]  text-[1.6rem] font-bold leading-[2.4rem];
 }
 
 .servery_btn_two {
-  @apply bg-[#4D3452] w-full h-[4.4rem] text-[1.6rem] font-bold font-lato text-[#F0EFEB] rounded-[1rem];
+  @apply bg-[#4D3452] w-full h-[4.4rem] text-[1.6rem] font-bold  text-[#F0EFEB] rounded-[1rem];
 }
 
 .survey-finis {
@@ -207,11 +193,11 @@
 }
 
 .survey_box_info h2 {
-  @apply text-[#4D3452] text-[4rem] font-lato font-bold leading-normal text-center;
+  @apply text-[#4D3452] text-[4rem]  font-bold leading-normal text-center;
 }
 
 .survey_box_info button {
-  @apply bg-[#4D3452] w-full rounded-[1rem] text-[#F0EFEB] font-lato text-[1.6rem]
+  @apply bg-[#4D3452] w-full rounded-[1rem] text-[#F0EFEB]  text-[1.6rem]
   font-bold h-[5.8rem];
 }
 

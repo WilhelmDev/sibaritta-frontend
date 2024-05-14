@@ -645,7 +645,7 @@ const PerfilPartnerGeneral = ({ dataProps }: perfilPartnerGeneral) => {
                       )}
                       <div className="w-full h-full flex justify-center items-center">
                         {
-                          dataProps?.infoData?.fk_user_id !== null && <>
+                          dataProps?.infoData?.fk_user_id !== null as any && <>
                           <Dropzone onDrop={dataProps.handleDrop}>
                           {({ getRootProps, getInputProps }) => (
                             <div className="w-full h-full " {...getRootProps()}>
@@ -874,7 +874,7 @@ const PerfilPartnerGeneral = ({ dataProps }: perfilPartnerGeneral) => {
                           />
 
                           {dataProps.errors.commission && (
-                            <span className="text-[red] font-lato">
+                            <span className="text-[red] ">
                               {dataProps.errors.commission.message}
                             </span>
                           )}

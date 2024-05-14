@@ -94,7 +94,7 @@ const HeaderPartner = () => {
                 <Image
                   width={2000}
                   height={2000}
-                  src={"/home/social/logo.svg"}
+                  src={"/logo.png"}
                   alt="Logo de la marca"
                 />
               </Link>

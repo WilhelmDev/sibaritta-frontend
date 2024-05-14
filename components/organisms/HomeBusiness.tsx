@@ -53,7 +53,7 @@ const HomeBusiness = () => {
   };
 
   return (
-    <div className="container-general">
+    <div className="container-general hidden">
       <section className="" >
         <h2 className="homeBusiness_h2 mba-5">Sibaritta Business </h2>
         <article className="homeBusiness_carrusel">

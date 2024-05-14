@@ -7,7 +7,7 @@ align-items: center;
 }
 
 .contact {
-  @apply bg-[#252127] pt-[10rem] ;
+  @apply pt-[10rem] ;
   /* width: 100%; */
 
   @screen laptop {
@@ -59,7 +59,7 @@ align-items: center;
   }
 }
 .contact-button {
-  @apply bg-[#4D3452] w-full py-[2rem] text-[1.6rem] text-[#F0EFEB] font-lato font-semibold;
+  @apply bg-[#4D3452] w-full py-[2rem] text-[1.6rem] text-[#F0EFEB]  font-semibold;
   border-radius: 1rem;
   @screen laptop {
     @apply w-[31.2rem];
@@ -72,7 +72,7 @@ align-items: center;
   border-radius: 1rem;
   padding: 1rem 2rem;
   span {
-    @apply font-lato text-[#E1D4C4] text-[1.8rem] font-bold;
+    @apply  text-[#E1D4C4] text-[1.8rem] font-bold;
   }
   i {
     @apply text-[#E1D4C4] -rotate-90 !text-[1.5rem] duration-500 ease-in-out;
@@ -109,7 +109,7 @@ align-items: center;
 
 .contact-title {
   @screen laptop {
-    @apply font-lato font-bold text-[#E1D4C4];
+    @apply  font-bold text-[#E1D4C4];
     padding-right: calc(11rem * var(--scale));
     padding-bottom: calc(3.8rem * var(--scale));
   }
@@ -117,7 +117,7 @@ align-items: center;
 
 .contact-buttom {
   @screen laptop {
-    @apply text-center bg-[#E1D4C4] text-[1.6rem] text-[#252127] font-lato font-normal;
+    @apply text-center bg-[#E1D4C4] text-[1.6rem] text-[#252127]  font-normal;
     width: calc(33.1rem * var(--scale));
     height: calc(5.2rem * var(--scale));
     border-radius: 1rem;

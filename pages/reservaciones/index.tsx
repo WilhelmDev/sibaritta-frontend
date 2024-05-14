@@ -15,7 +15,7 @@ function Index() {
     setFirst(index);
   };
 
-  let user: any | null = null;
+  let user: any | null = null as any;
   if (typeof window !== "undefined") {
     const users = localStorage.getItem("userid");
     user = users ? JSON.parse(users) : null;

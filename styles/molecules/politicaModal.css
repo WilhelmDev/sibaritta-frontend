@@ -26,14 +26,14 @@
     & h2{
         @apply text-[2rem] text-white;
         @screen laptop{
-            @apply font-lato font-bold text-white;
+            @apply  font-bold text-white;
             font-size: calc(2rem * var(--scale));
         }
     }
     & p{
         @apply text-[1.1rem] text-white;
         @screen laptop{
-            @apply font-lato  text-white;
+            @apply   text-white;
         font-size: calc(1.4rem * var(--scale)); 
         }
     }

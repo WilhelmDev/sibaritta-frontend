@@ -12,7 +12,7 @@
 }
 
 .homeBusiness_h2 {
-  @apply text-[#E1D4C4] font-lato  font-semibold leading-normal;
+  @apply text-[#E1D4C4]   font-semibold leading-normal;
 
 }
 .homeBusiness_carrusel {

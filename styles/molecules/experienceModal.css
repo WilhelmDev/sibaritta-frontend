@@ -25,7 +25,7 @@
 
 
   .experiencie_user_p{
-    @apply text-[#F89C53] font-lato text-[2rem]  font-medium leading-[2.4rem]
+    @apply text-[#F89C53]  text-[2rem]  font-medium leading-[2.4rem]
     text-left w-full;
   } 
 
@@ -43,7 +43,7 @@
     }
   }
   .experiencie_user_stars_p{
-    @apply font-lato text-[1.8rem] font-bold leading-[2.4rem] text-[#E1D4C4];
+    @apply  text-[1.8rem] font-bold leading-[2.4rem] text-[#E1D4C4];
   }
   
 
@@ -62,7 +62,7 @@
 
   .experiencie_user_btns_one{
     @apply border border-[#E1D4C4] h-[4.5rem] rounded-[1rem] w-[12.5rem]
-    text-[1.6rem] font-lato font-bold leading-3 text-[#E1D4C4];
+    text-[1.6rem]  font-bold leading-3 text-[#E1D4C4];
     @screen tablet{
         @apply w-full
     }
@@ -70,7 +70,7 @@
 
   .experiencie_user_btns_two{
     @apply bg-[#E1D4C4]  h-[4.5rem] rounded-[1rem] w-[12.5rem]
-    text-[1.6rem] font-lato font-bold leading-3 text-[#4D3452];
+    text-[1.6rem]  font-bold leading-3 text-[#4D3452];
     @screen tablet{
         @apply w-full
     }

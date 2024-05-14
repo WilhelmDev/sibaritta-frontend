@@ -32,7 +32,7 @@
   }
 }
 .recovery_box h2 {
-  @apply text-[#F89C53] text-[2.3rem] font-lato font-bold;
+  @apply text-[#F89C53] text-[2.3rem]  font-bold;
   @screen laptop {
     font-size: calc(3rem * var(--scale));
   }
@@ -52,7 +52,7 @@
 }
 
 .recovery_inputs label {
-  @apply text-[#F89C53] text-[1.6rem] font-lato;
+  @apply text-[#F89C53] text-[1.6rem] ;
 }
 .recovery_inputs input {
   @apply h-[3.5rem] rounded-[1rem] bg-[#252127] text-[#F89C53];

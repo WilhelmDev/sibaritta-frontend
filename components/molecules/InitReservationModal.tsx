@@ -92,7 +92,7 @@ function InitReservationModal({
   const goReservation = () => {
     scrollFunctionReservation();
   };
-  let userId: any = null;
+  let userId: any = null as any;
   if (typeof window !== "undefined") {
     const storedUserId = localStorage.getItem("userid");
     userId = storedUserId ? parseInt(storedUserId, 10) : null;
@@ -617,7 +617,7 @@ function InitReservationModal({
                     //     unstyled: true,
                     //     classNames: {
                     //       toast:
-                    //         "bg-[#252127]  w-full  h-[5rem] rounded-[1rem] flex items-center justify-center text-[#F89C53] shadow-[1px_1px_1px_#E1D4C4] font-lato",
+                    //         "bg-[#252127]  w-full  h-[5rem] rounded-[1rem] flex items-center justify-center text-[#F89C53] shadow-[1px_1px_1px_#E1D4C4] ",
                     //       title: " text-[2rem]  ",
                     //     },
                     //     position: "top-center",
@@ -672,7 +672,7 @@ function InitReservationModal({
                     //     unstyled: true,
                     //     classNames: {
                     //       toast:
-                    //         "bg-[#252127]  w-full  h-[5rem] rounded-[1rem] flex items-center justify-center text-[#F89C53] shadow-[1px_1px_1px_#E1D4C4] font-lato",
+                    //         "bg-[#252127]  w-full  h-[5rem] rounded-[1rem] flex items-center justify-center text-[#F89C53] shadow-[1px_1px_1px_#E1D4C4] ",
                     //       title: " text-[2rem]  ",
                     //     },
                     //     position: "top-center",

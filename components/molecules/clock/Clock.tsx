@@ -72,7 +72,7 @@ const Clock = ({ trigger }: IClock) => {
     }
   };
 
-  let userId = null;
+  let userId = null as any;
   if (typeof window !== "undefined") {
     const storedUserId = localStorage.getItem("userid");
     userId = storedUserId ? parseInt(storedUserId, 10) : null;
@@ -132,7 +132,7 @@ const Clock = ({ trigger }: IClock) => {
   return (
     <div>
       <p>
-        <span className="text-[3rem] laptop:text-[3rem] text-[#E1D4C4] font-lato font-bold ">
+        <span className="text-[3rem] laptop:text-[3rem] text-[#E1D4C4]  font-bold ">
           {" "}
           {formatTime(remainingTime)}
         </span>

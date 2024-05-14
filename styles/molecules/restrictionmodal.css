@@ -24,7 +24,7 @@
 
   .resttriction_modal_btn_one{
     @apply p-[1rem] text-center bg-[#37323A] rounded-[1rem] h-[4.4rem] 
-    w-[90%]  text-[1.6rem] font-lato  font-normal leading-[2.4rem] text-[#E1D4C4] ;
+    w-[90%]  text-[1.6rem]   font-normal leading-[2.4rem] text-[#E1D4C4] ;
     @screen laptop{
       @apply w-full 
     }
@@ -32,7 +32,7 @@
 
   .resttriction_modal_btn_two{
     @apply text-center  rounded-[1rem] h-[4.4rem] text-[1.6rem] 
-    w-[90%] font-lato border border-[#37323A]  font-normal leading-[2.4rem] 
+    w-[90%]  border border-[#37323A]  font-normal leading-[2.4rem] 
     text-[#E1D4C4] p-[1rem] ;
     @screen laptop{
       @apply w-[15.9rem]
@@ -40,7 +40,7 @@
   }
   .resttriction_modal_btn_close{
     @apply border text-center  rounded-[1rem] h-[4.4rem] w-[80%]  
-    text-[1.6rem] font-lato text-[#E1D4C4] p-[1rem] border-[#E1D4C4];
+    text-[1.6rem]  text-[#E1D4C4] p-[1rem] border-[#E1D4C4];
     @screen laptop{
       @apply w-[91%] 
     }

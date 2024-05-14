@@ -15,8 +15,6 @@
 
 /* PRINCIPAL */
 .Navbar {
-  padding-top: 8rem;
-  padding-bottom: 2rem;
   border-radius: 0 0 1.5rem 1.5rem;
   transform: translateY(-120%);
   transition: transform 0.3s ease;
@@ -34,7 +32,7 @@
   }
 
   &-socials {
-    @apply absolute top-[8%] right-32;
+    @apply absolute top-[8%];
     i {
       @apply text-[2.3rem];
     }
@@ -63,7 +61,7 @@
       
       padding: 0.4rem 0;
       transition: color 0.5s ease;
-      @apply px-12 py-4 relative cursor-pointer font-[300] font-lato capitalize text-center !text-[#E1D4C4];
+      @apply px-12 py-4 relative cursor-pointer font-[300]  capitalize text-center !text-[#E1D4C4];
       position: relative;
       text-decoration: none;
       color: #ffff;
@@ -119,10 +117,6 @@
 
   @screen laptop {
     @apply static inset-auto rounded-xl p-0 mx-auto flex items-center justify-between transform-none bg-transparent;
-    height: calc(17.4rem * var(--scale));
-    padding-top: calc(6.7rem * var(--scale));
-    padding-bottom: calc(6.7rem * var(--scale));
-    /* width: calc(150rem * var(--scale)); */
     transition: all 0.3s ease-in-out;
     width: 100%;
     &-ctn {
@@ -164,7 +158,7 @@
           transition-duration: 0.2s;
 
           &-li {
-            @apply m-0 flex items-center gap-[0.75rem] !text-[#4D3452] font-lato font-semibold;
+            @apply m-0 flex items-center gap-[0.75rem] !text-[#4D3452]  font-semibold;
 
             padding: calc(0.95rem * var(--scale)) calc(2.5rem * var(--scale));
 
@@ -231,7 +225,7 @@
    @apply bg-black;
 } */
 .Navbar-ul-li.profile {
-  @apply   !bg-[#E1D4C4] font-lato font-extrabold  !text-[#4D3452];
+  @apply   !bg-[#E1D4C4]  font-extrabold  !text-[#4D3452];
   @screen laptop{
 @apply !text-[#4D3452] ;
   }

@@ -12,14 +12,14 @@
 .list_suggestion_title{
     @apply  flex justify-between  items-center;
     & h2 {
-        @apply text-[#E1D4C4] text-start font-lato font-bold text-[1.8rem];
+        @apply text-[#E1D4C4] text-start  font-bold text-[1.8rem];
         @screen laptop{
-            @apply text-[#E1D4C4] font-lato font-bold ;
+            @apply text-[#E1D4C4]  font-bold ;
             font-size: calc(3rem * var(--scale));
         }
     }
     & .list_suggestion_btn{
-        @apply bg-[#F89C53] font-lato font-semibold flex justify-center items-center text-[#252127] rounded-[1rem]
+        @apply bg-[#F89C53]  font-semibold flex justify-center items-center text-[#252127] rounded-[1rem]
         w-[15rem] h-[3rem] gap-[1rem] text-[1.2rem];
         @screen laptop{
             width: calc(27rem * var(--scale));
@@ -28,13 +28,13 @@
             gap: calc(2rem * var(--scale));
         }
         & span {
-            @apply text-[#252127] font-lato font-bold;
+            @apply text-[#252127]  font-bold;
             @screen laptop{
                 font-size: calc(1.8rem * var(--scale));
             }
         }
         & p{
-            @apply text-[#252127] font-lato font-bold;
+            @apply text-[#252127]  font-bold;
             @screen laptop{
                 font-size: calc(1.8rem * var(--scale));
             }
@@ -75,7 +75,7 @@
         min-height: calc(16.5rem * var(--scale));
     }
     & .h2-h2 {
-        @apply w-[60%] text-[#F89C53] text-start font-lato font-bold text-[1.7rem];
+        @apply w-[60%] text-[#F89C53] text-start  font-bold text-[1.7rem];
         @screen tablet {
             @apply text-[2.2rem]
         }
@@ -100,7 +100,7 @@
 .suggestion_asset-price {
     @apply  flex items-center gap-[.5rem];
     & h2{
-        @apply text-[#F89C53]  font-lato font-bold text-[1.2rem];
+        @apply text-[#F89C53]   font-bold text-[1.2rem];
         @screen tablet{
             @apply text-[1.6rem] ;
         }
@@ -109,7 +109,7 @@
         }
     }
     & h3 {
-        @apply  text-[#E1D4C4] font-lato font-bold text-[1.2rem];
+        @apply  text-[#E1D4C4]  font-bold text-[1.2rem];
         @screen tablet{
             @apply text-[1.6rem] ;
         }
@@ -125,7 +125,7 @@
         gap: calc(3rem * var(--scale));
     }
     & button{
-        @apply border rounded-[.5rem] font-lato font-bold w-[5.5rem] h-[2.5rem] text-[1rem];
+        @apply border rounded-[.5rem]  font-bold w-[5.5rem] h-[2.5rem] text-[1rem];
         @screen tablet{
             @apply  w-[10rem] h-[3rem] text-[1.5rem];
         }
@@ -150,7 +150,7 @@
         height: calc(6.4rem * var(--scale));
     }
     & p{
-        @apply text-[1.1rem] font-lato font-bold;
+        @apply text-[1.1rem]  font-bold;
         @screen tablet{
             @apply text-[1.5rem] ;
         }
@@ -164,6 +164,6 @@
 .paginations_list_sugessstion{
     @apply  w-full h-[5rem] flex justify-center items-center ;
     & h3 {
-        @apply cursor-pointer font-lato font-bold text-[#E1D4C4] duration-300 ease-in-out hover:text-[#F89C53];
+        @apply cursor-pointer  font-bold text-[#E1D4C4] duration-300 ease-in-out hover:text-[#F89C53];
     }
 }

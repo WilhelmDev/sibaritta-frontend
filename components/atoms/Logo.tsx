@@ -13,7 +13,7 @@ export const Logo: FC<LogoProps> = ({ className, alt }) => {
       <picture className={`logoCont ${className} cursor-pointer`}>
         {alt ? (
           <Image
-            src={"/home/social/logo.svg"}
+            src={"/logo.png"}
             width={1000}
             height={1000}
             className='h-full  object-contain'
@@ -21,16 +21,11 @@ export const Logo: FC<LogoProps> = ({ className, alt }) => {
           ></Image>
         ) : (
           <Image
-            src={"/home/social/logo.svg"}
+            src={"/logo.png"}
             width={1000}
             height={1000}
             className='w-full h-full object-contain'
             alt=''
-            style={{
-              textAlign: "left",
-              width: "auto",
-              marginLeft: "calc(-1.7rem * var(--scale))"
-            }}
           ></Image>
         )}
       </picture>

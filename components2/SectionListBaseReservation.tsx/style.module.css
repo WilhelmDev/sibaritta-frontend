@@ -22,7 +22,7 @@
 }
 
 .container h3 {
-  @apply text-[2.5rem] pt-[3rem] font-lato font-bold;
+  @apply text-[2.5rem] pt-[3rem]  font-bold;
   justify-content: left;
   @screen laptop {
     font-size: calc(4.3rem * var(--scale));
@@ -40,7 +40,7 @@
   }
 }
 .container li {
-  @apply font-lato  font-normal;
+  @apply   font-normal;
   font-size: 2rem;
   justify-content: left;
   @screen laptop {
@@ -75,7 +75,7 @@
 }
 
 .containers h3 {
-  @apply font-lato font-bold;
+  @apply  font-bold;
   font-size: calc(4rem * var(--scale));
   justify-content: left;
 
@@ -107,7 +107,7 @@
 }
 
 .containers li {
-  @apply font-lato  font-normal;
+  @apply   font-normal;
   font-size: calc(1.7rem * var(--scale));
 
   @screen laptop {

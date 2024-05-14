@@ -30,7 +30,8 @@ function CancelarSuccess({
       >
 
         <p className="reservation_p-one">
-        La cancelación ha sido confirmada.
+        La cancelación ha sido confirmada. <br />
+        El reembolso se hará efectivo dentro de los próximos 15 días hábiles
         </p>
 
       </Modal>

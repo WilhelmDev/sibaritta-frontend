@@ -46,6 +46,11 @@ const CardPaymentsSibaritta = ({ payment, index, typeUser, setPaymentsToShow, se
     }
   }
 
+  const parseDate = (date:string) => {
+    const dateParsed = moment(date).format('DD [de] MMMM [del] yyyy, H:mma')
+    return dateParsed
+  }
+
   return (
     <div className={`card-container-render render ? "activate" : ""}`}>
       {(paymentModal && typeUser === 3) && <PaymentModal setPaymentModal={setPaymentModal} payment={payment} setDataPayments={setDataPayments} setPaymentsToShow={setPaymentsToShow} />}
@@ -53,7 +58,7 @@ const CardPaymentsSibaritta = ({ payment, index, typeUser, setPaymentsToShow, se
         <div className="sale-especific-1-laptop-left-pay">
           <p className="sale-especific-1-laptop-left-pay-1">Fecha del Pago</p>
           <p className="sale-especific-1-laptop-left-pay-2">
-            {payment.payment_date ? capitalizeMonth(moment(payment.payment_date).utc().format("DD MMMM YYYY")) : ""}
+            {payment.payment_date ? capitalizeMonth(parseDate(payment.payment_date)) : ""}
           </p>
         </div>
         <div className="sale-especific-1-laptop-rigth-pay">

@@ -45,11 +45,19 @@ html {
 }
 
 body {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 26px;
+  letter-spacing: 0.1em;
+  font-family: "Proxima Nova Rg"!important;
+
   @apply !mr-0;
   &.no-scroll {
     @apply overflow-hidden;
   }
-  font-family: "Lato", sans-serif!important;
+  .algo {
+    background-color: darkgreen
+  }
 }
 input,
 select,
@@ -132,7 +140,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #4d3452;
+  background-color: #100a11;
 }
 
 .p-sidebar-icons {
@@ -173,7 +181,7 @@ body {
 }
 
 .p-dropdown {
-  @apply h-[4.4rem] text-[#E1D4C4] font-lato !bg-[#2f2a32];
+  @apply h-[4.4rem] text-[#E1D4C4]  !bg-[#2f2a32];
 }
 .p-inputwrapper {
   @apply rounded-[10px] overflow-hidden;
@@ -182,7 +190,7 @@ body {
   background-color: #2f2a32 !important;
 }
 .p-dropdown-label {
-  @apply flex justify-center items-center text-[1.5rem] font-semibold font-lato;
+  @apply flex justify-center items-center text-[1.5rem] font-semibold ;
 
   @apply bg-[#37323A] text-[#E1D4C4];
   @screen laptop {
@@ -193,7 +201,7 @@ body {
   @apply bg-[#37323A];
 }
 .p-dropdown-item {
-  @apply py-[1rem] text-[#E1D4C4] font-lato pl-[1rem]  text-[1.5rem] font-semibold;
+  @apply py-[1rem] text-[#E1D4C4]  pl-[1rem]  text-[1.5rem] font-semibold;
 }
 
 .p-dropdown:not(.p-disabled).p-focus {
@@ -249,55 +257,32 @@ body {
 }
 
 h2 {
-  font-size: 2.5rem;
-  @screen tablet {
-    font-size: 3.5rem;
-  }
-  @screen laptop {
-    font-size: calc(var(--variante-h2) * var(--scale));
-  }
+  font-size: 37px;
+  font-weight: 400;
+  line-height: 50px;
+
 }
 
-h3{
-  @apply text-[1.5rem] ;
-  @screen laptop{
-    font-size: calc(var(--variante-h3) * var(--scale))!important;
-  }
-}
+
 
 h4{
-  @apply  font-lato text-[1.5rem] ;
-  @screen laptop{
-    font-size: calc(2rem * var(--scale)) !important;
-  }
+  @apply   text-[1.5rem] ;
+
 }
 
-h5{
-  @apply text-[1.5rem] ;
-  @screen laptop{
-    font-size: calc(var(--variante-h5) * var(--scale)) !important;
-  }
-}
 
 h6{
-  @screen tablet{
-    @apply text-[1.6rem];
-  }
-  @screen laptop{
-    font-size: calc(var(--variante-h6) * var(--scale));
-  }
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 26px;
+  letter-spacing: 0.1em;
+  text-align: left;
+
 }
 
-p {
-  @apply text-[1.6rem];
-  @screen tablet{
-    @apply text-[1.6rem];
-  }
-  @screen laptop {
-    font-size: calc(var(--variante-parrafo) * var(--scale));
-  }
-}
+
 @import "./responsive";
+@import "./fonts";
 
 
 .containers-width-general{
@@ -306,7 +291,7 @@ p {
 
 
 .p-toast-message  {
-@apply bg-[#4D3452] p-[1rem] text-[#E1D4C4] font-lato font-bold text-[1.3rem];
+@apply bg-[#4D3452] p-[1rem] text-[#E1D4C4]  font-bold text-[1.3rem];
 & svg{
   @apply text-[#E1D4C4] ;
 }

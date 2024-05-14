@@ -18,6 +18,7 @@ import RecoveryModal from "./recovery/RecoveryModal";
 import { log } from "console";
 import { useRouter } from "next/router";
 import { emailPattern } from "@/lib/formUtils";
+import { classNames } from 'primereact/utils';
 
 interface ModalSessionProps {
   children?: string;
@@ -78,7 +79,7 @@ const ModalSession = ({
       avatar: response?.picture?.data?.url,
       external_id: response?.userID,
       external_auth: "facebook",
-      home_url: `${process.env.NEXT_PUBLIC_URl_BASIC}`,
+      home_url: `https://anyer.web.v2.sibaritta.mensorestudio.com/`,
     };
 
     try {
@@ -115,7 +116,7 @@ const ModalSession = ({
         avatar: res.data.picture,
         external_id: res.data.sub,
         external_auth: "google",
-        home_url: `${process.env.NEXT_PUBLIC_URl_BASIC}`,
+        home_url: `https://anyer.web.v2.sibaritta.mensorestudio.com/`,
       };
 
       try {
@@ -175,22 +176,22 @@ const ModalSession = ({
       localStorage.removeItem("modal_validate");
       localStorage.setItem("is_social", result?.data?.is_social);
       localStorage.removeItem("modal_validate");
-      window.location.reload();
       if (!result.success) {
         toast.error("Credenciales incorrectas", {
           unstyled: true,
           classNames: {
             toast:
-              "bg-[#252127]  w-full  h-[5rem] rounded-[1rem] flex items-center justify-center text-[#F89C53] shadow-[1px_1px_1px_#E1D4C4] font-lato",
+              "bg-[#252127]  w-full  h-[5rem] rounded-[1rem] flex items-center justify-center text-[#F89C53] shadow-[1px_1px_1px_#E1D4C4] ",
             title: " text-[2rem]  ",
           },
           position: "top-center",
         });
+        return
       }else{
         toast("usuario logeado",{
           unstyled: true,
           classNames: {
-            toast: 'bg-[#252127]  w-full  h-[5rem] rounded-[1rem] flex items-center justify-center text-[#F89C53] shadow-[1px_1px_1px_#E1D4C4] font-lato',
+            toast: 'bg-[#252127]  w-full  h-[5rem] rounded-[1rem] flex items-center justify-center text-[#F89C53] shadow-[1px_1px_1px_#E1D4C4] ',
             title: ' text-[2rem]  ',
           },
            position :"top-center" 
@@ -211,7 +212,6 @@ const ModalSession = ({
         push("/admin/admin_home");
       }
 
-     
       closeModalLogin();
       setautenti();
     } catch (error) {
@@ -231,52 +231,31 @@ const ModalSession = ({
         width="w-[90%] tablet:w-[55%]  laptop:w-[30%] "
         className="modalsession "
       >
-        <div className="!bg-[#F0EFEB] " >
-          <h2 className="ModalSession-title">¡Bienvenido Sibaritta!</h2>
-          <p className="ModalSession-text">
-            Inicia sesión para completar la reserva
-          </p>
-          <div className="ModalSession-container">
-            <div className="container-socials">
-              <button
-                className="google-buttom  p-[.5rem] laptop:p-[2rem]"
-                onClick={() => loginsss()}
-              >
-                <Image
-                  src={"/img/google-icon.jpg"}
-                  alt=""
-                  height={100}
-                  width={100}
-                  className="w-[3rem] h-[3rem] laptop:w-[4.5493rem] laptop:h-[4.5493rem]"
-                />
-                Iniciar sesión con Google
-              </button>
-
-              {/* <FacebookLogin
-                appId={appIDFacebook}
-                fields="name,email,picture"
-                callback={responseFacebook}
-                icon="fa-facebook"
-                cssClass="facebook-icon"
-                textButton="Iniciar sesión con Facebook"
-              /> */}
-            </div>
-            <div className="flex items-center justify-center gap-[1rem]">
-              <div className="w-[12rem] bg-[#585858] h-[.1rem]"></div>
-              <span className="text-[#000] font-lato text-[1.8rem] font-medium">
-                o
-              </span>
-              <div className="w-[12rem] bg-[#585858] h-[.1rem]"></div>
-            </div>
-            <form onSubmit={handleSubmit(onSubmit)}>
-              <div className="flex gap-[1.5rem] ">
+        <div className="!bg-[#E2D5C4] modalsession__card" >
+          <div>
+            <Image
+                    src={"/home/login.png"}
+                    alt=""
+                    height={64}
+                    width={52}
+                    className="   m-auto"
+            />
+          </div>
+          <div className="formRegister__titulo">
+            <h2 className="ModalSession-title">BIENVENIDO A SIBARITTA</h2>
+            <h5>Inicia sesión o registrate</h5>
+            {/* <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at pretium lorem, a malesuada diam. Vivamus blandit egestas turpis. Integer at ultricies ipsum.</p> */}
+          </div>
+          <div className="formRegister__campos">
+          <form onSubmit={handleSubmit(onSubmit)}>
+              <div className="contenedorInput lg:flex gap-[1.5rem] contenedorInput">
                 <div className="w-full">
                   <input
                     type="email"
-                    className="profile-input h-[4rem] bg-[#FFF] text-[#A59484]"
+                    className="profile-input h-[4rem] bg-[#E9E3DB] text-[#A59484]"
                     placeholder="Correo electrónico"
                     {...register("email", {
-                      required: "este campo es requerido",
+                      required: "Este campo es requerido",
                       pattern: {
                         value: emailPattern,
                         message: "formato incorrecto",
@@ -292,10 +271,10 @@ const ModalSession = ({
                 <div className="w-full ">
                   <input
                     type="password"
-                    className="profile-input h-[4rem] bg-[#FFF] text-[#A59484]  "
+                    className="profile-input h-[4rem] bg-[#E9E3DB] text-[#A59484]  "
                     placeholder="Contraseña"
                     {...register("password", {
-                      required: "este campo es requerido",
+                      required: "Este campo es requerido",
                     })}
                   />
                   {errors.password && (
@@ -322,18 +301,56 @@ const ModalSession = ({
                   </p>
                 )}
               </div>
-              <span
-                onClick={openModalForgot}
-                className="modalSession-span cursor-pointer pt-[1rem]"
-              >
-                ¿Has olvidado tu contraseña?
-              </span>
-              <div className="w-full pt-[1rem]">
-                <button className="modalSession-button w-full">
+             
+              <div className="w-full pt-[1rem] boton boton--transparente mt-5 ">
+                <button className="modalSession-button w-full m-auto">
                   Iniciar sesión
                 </button>
               </div>
+              <span
+                onClick={openModalForgot}
+                className="modalSession-span cursor-pointer pt-[1rem] mb-5"
+              >
+                ¿Has olvidado tu contraseña?
+              </span>
             </form>
+          </div>
+          <div className="flex items-center justify-center gap-[1rem] divisorCard">
+              <div className="w-[12rem] bg-[#585858] h-[.1rem]"></div>
+              <span className="text-[#000]  text-[1.8rem] font-medium">
+                o
+              </span>
+              <div className="w-[12rem] bg-[#585858] h-[.1rem]"></div>
+          </div>
+          <div className="formRegister__titulo">
+            <h5>Continúa con tus redes sociales</h5>
+            {/* <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at pretium lorem, a malesuada diam. Vivamus blandit egestas turpis. Integer at ultricies ipsum.</p> */}
+          </div>
+          <div className="ModalSession-container  ">
+            <div className="container-socials">
+              <button
+                className="google-buttom  p-[.5rem] laptop:p-[2rem]"
+                onClick={() => loginsss()}
+              >
+                <Image
+                  src={"/home/google.png"}
+                  alt=""
+                  height={100}
+                  width={100}
+                  className=""
+                />
+              </button>
+
+              {/* <FacebookLogin
+                appId={appIDFacebook}
+                fields="name,email,picture"
+                callback={responseFacebook}
+                icon="fa-facebook"
+                cssClass="facebook-icon"
+                textButton="Iniciar sesión con Facebook"
+              /> */}
+            </div>
+           
             <p className="modalSession-account flex items-center gap-[1rem] text-[1.5rem] text-[#4D3452]  justify-center">
               ¿No tienes una cuenta?
               <span
@@ -346,6 +363,7 @@ const ModalSession = ({
           </div>
         </div>
       </Modal>
+      <Toaster />
       <ModalRegister
         handleGoogleLogin={handleGoogleLogin}
         openModalLogin={openModalLogin}

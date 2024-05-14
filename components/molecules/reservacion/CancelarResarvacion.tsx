@@ -39,7 +39,7 @@ function CancelarResarvacion({
         </p>
 
         <p className="reservation_p">
-          Sólo se realizan reembolsos en reservas canceladas con un mínimo de 24 horas de anticipación al evento. El reembolso se hace efectivo dentro de los 15 días hábiles de la cancelación
+        El reembolso se hace efectivo dentro de los 15 días hábiles de la cancelación
         </p>
 
         <article className="reservation_tbns">

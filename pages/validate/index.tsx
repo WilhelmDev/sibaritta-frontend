@@ -39,7 +39,7 @@ function Index() {
             const reservationString = localStorage.getItem("reservation");
             const reservation = reservationString ? JSON.parse(reservationString) : null;
   
-            if (reservation !== null) {
+            if (reservation !== null as any) {
               localStorage.setItem("userid", response?.data?.id);
               localStorage.setItem("fk_typeuser", response?.data?.fk_typeuser);
               localStorage.setItem("token", response?.data?.token);
@@ -66,7 +66,7 @@ function Index() {
           {invalidad === true && <h2>Validacion incorrecta</h2>}
 
           <div className='box-content-register-message '>
-          <Image src={"/home/social/logo.svg"} width={1000} height={1000} alt='logo'/>
+          <Image src={"/logo.png"} width={1000} height={1000} alt='logo'/>
         </div>
 
         <div className='box_animacion-content'>
