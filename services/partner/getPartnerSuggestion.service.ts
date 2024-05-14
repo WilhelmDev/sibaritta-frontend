@@ -60,8 +60,8 @@ export const getPartnerSuggestion = async (
       (image) => image.resolution === "large"
     );
 
-    let img = sortedByMostRecentDateImages[0].path;
-    let alt = sortedByMostRecentDateImages[0].alt;
+    let img = sortedByMostRecentDateImages[0]?.path;
+    let alt = sortedByMostRecentDateImages[0]?.alt;
 
     if (largeImage) {
       img = largeImage.path;
@@ -76,7 +76,7 @@ export const getPartnerSuggestion = async (
       img,
       alt,
     };
-  } catch {
+  } catch (e) {
     console.error("Error getting partner suggestion");
   }
   return null;
