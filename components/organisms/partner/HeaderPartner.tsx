@@ -171,10 +171,10 @@ const HeaderPartner = () => {
               </div>
             </Link>
             <Link
-              href={"/policies"}
+              href={"/ventas_sibaritta"}
               className="text-header-bottom cursor-pointer"
             >
-              Politicas
+              Políticas
             </Link>
             <Link
               href={"/notificacion_partner"}
