@@ -257,6 +257,12 @@
   filter: invert(84%) sepia(16%) saturate(5022%) hue-rotate(320deg) brightness(99%) contrast(97%);
 }
 
+.section-active .icon-bell{
+  filter: invert(84%) sepia(16%) saturate(5022%) hue-rotate(320deg) brightness(99%) contrast(97%);
+}
+.section-active{
+  color: #f89c53;
+}
 
 .containerrrr{
 
