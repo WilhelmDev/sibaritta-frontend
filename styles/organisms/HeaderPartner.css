@@ -253,6 +253,17 @@
   filter: invert(94%) sepia(10%) saturate(505%) hue-rotate(333deg) brightness(92%) contrast(91%);
 }
 
+.num-notification{
+  background-color: #f89c53;
+  color: #252127;
+  width: 1.7rem;
+  height: 1.7rem;
+  line-height: 1.9rem;
+  text-align: center;
+  border-radius: 20px;
+  margin-left: 5px;
+}
+
 .notification-bottom:hover .icon-bell{
   filter: invert(84%) sepia(16%) saturate(5022%) hue-rotate(320deg) brightness(99%) contrast(97%);
 }

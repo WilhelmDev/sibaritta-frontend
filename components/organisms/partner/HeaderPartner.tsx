@@ -197,6 +197,7 @@ const HeaderPartner = () => {
                 alt=""
                 className="icon-bell"
               />
+              <div className="num-notification">1</div>
             </Link>
           </div>
         </div>
