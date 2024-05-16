@@ -106,6 +106,9 @@ const HeaderPartner = () => {
                 <p className="header-general-text-2">
                   {infoData?.partner?.comercial_name}{" "}
                 </p>
+                <div className="header-general-button cursor-pointer" onClick={logout}>
+                  Cerrar sesión
+                </div>
               </div>
               <div className="header-general-image-right-1 overflow-hidden">
                 <Image
@@ -140,19 +143,14 @@ const HeaderPartner = () => {
           </header>
 
           <div className="header-general-container-2 ">
-            <Link href={"/partner_reserva_clientes?data=74"} legacyBehavior>
+            <Link href={"/ultimas_reservas"} legacyBehavior>
               <div className="text-header-bottom cursor-pointer">
-                Calendario{" "}
+                Dashboard
               </div>
             </Link>
             <Link href={"/perfil_partner"} legacyBehavior>
               <div className="text-header-bottom cursor-pointer">
-                Perfil restaurante
-              </div>
-            </Link>
-            <Link href={"/ultimas_reservas"} legacyBehavior>
-              <div className="text-header-bottom cursor-pointer">
-                Reservaciones
+                Perfil partner
               </div>
             </Link>
             <Link
@@ -161,20 +159,36 @@ const HeaderPartner = () => {
             >
               Experiencias
             </Link>
+            <Link
+              href={"/suggestion"}
+              className="text-header-bottom cursor-pointer"
+            >
+              Sugerencias
+            </Link>
             <Link href={"/ventas_sibaritta"} legacyBehavior>
               <div className="text-header-bottom cursor-pointer">
                 Facturación
               </div>
             </Link>
             <Link
-              href={"/notificacion_partner"}
+              href={"/policies"}
               className="text-header-bottom cursor-pointer"
             >
-              Notificaciones
+              Politicas
             </Link>
-            <div className="text-header-bottom cursor-pointer" onClick={logout}>
-              Cerrar sesión
-            </div>
+            <Link
+              href={"/notificacion_partner"}
+              className="text-header-bottom notification-bottom cursor-pointer"
+            >
+              Notificaciones
+              <Image
+                src={"/icons/campana.svg"}
+                width={500}
+                height={500}
+                alt=""
+                className="icon-bell"
+              />
+            </Link>
           </div>
         </div>
       </div>
