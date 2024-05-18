@@ -1,4 +1,5 @@
 import React from 'react'
+import { useEffect, useState } from 'react';
 import Image from "next/image";
 import CalendarIcon from "@/public/ventas_sibarita/calendarIcon.png";
 
@@ -17,6 +18,15 @@ import CalendarIcon from "@/public/ventas_sibarita/calendarIcon.png";
 // }
 
 const SelectionDateVentas = ({selectionData}:any ) => {
+
+    useEffect(() =>{
+      if(localStorage.saleFilter){
+        selectionData?.calculateComparador(+localStorage.saleFilter)
+      } else {
+        selectionData?.calculateComparador(1);
+        localStorage.setItem("saleFilter", "1");
+      }
+    })
 
     const changeVisibility = () => {
       selectionData?.setvisibleMenu(!selectionData?.visibleMenu);
@@ -96,6 +106,7 @@ const SelectionDateVentas = ({selectionData}:any ) => {
         <button
           onClick={() => {
             selectionData?.calculateComparador(1);
+            localStorage.setItem("saleFilter", "1")
           }}
           className={`dates-tipes-3 dates-tipes-child  ${
             selectionData?.hoy && "border border-[#f89c53]"
@@ -106,6 +117,7 @@ const SelectionDateVentas = ({selectionData}:any ) => {
         <button
           onClick={() => {
             selectionData?.calculateComparador(2);
+            localStorage.setItem("saleFilter", "2")
           }}
           className={`dates-tipes-4 dates-tipes-child  ${
             selectionData?.semana && "border border-[#f89c53]"
@@ -114,7 +126,12 @@ const SelectionDateVentas = ({selectionData}:any ) => {
           Total semana
         </button>
         <button
-          onClick={() => selectionData?.calculateComparador(3)}
+          onClick={() => {
+            selectionData?.calculateComparador(3);
+            localStorage.setItem("saleFilter", "3")
+          }
+
+          }
           className={`dates-tipes-5 dates-tipes-child ${
             selectionData?.mes && "border border-[#f89c53]"
           }`}
@@ -122,7 +139,11 @@ const SelectionDateVentas = ({selectionData}:any ) => {
           Total mes
         </button>
         <button
-          onClick={() => selectionData?.calculateComparador(4)}
+          onClick={() => {
+            selectionData?.calculateComparador(4)
+            localStorage.setItem("saleFilter", "4")
+          }
+          }
           className={`dates-tipes-6 dates-tipes-child ${
             selectionData?.año && "border border-[#f89c53]"
           }`}
