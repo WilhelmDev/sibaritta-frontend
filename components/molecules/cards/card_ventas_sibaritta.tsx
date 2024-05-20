@@ -43,7 +43,7 @@ const CardVentasSibaritta = ({ DataSibaritta, isAdmin }: CardVentasSibaritta) =>
   
     // Retornar el porcentaje
     return porcentajeComision1
-  }
+  }  
 
   return (
 

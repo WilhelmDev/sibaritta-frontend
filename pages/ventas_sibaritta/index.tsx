@@ -52,13 +52,12 @@ function Index() {
   const [fk_typeuser, setFk_typeuser] = useState<number>(1);
   const [cancelledCount, setCancelledCount] = useState(0)
 
-  function changeSale() {
-    setsaleOrPay(true);
-  }
-  const changePay = () => {
-    if(numberComparate === 1) electionData.calculateComparador(1);
-    setsaleOrPay(false);
-  };
+  useEffect(() => {
+    if (localStorage.saleStateFilter === "pay") setsaleOrPay(false);
+    else setsaleOrPay(true);
+    
+  })
+  
   const conparadorState = () => {
     sethoy(true);
     setdateComparator(dateActual[3]);
@@ -358,7 +357,8 @@ function Index() {
             <div className="pay-sale-container-left boton">
               <button
                 onClick={() => {
-                  changeSale(), calculateDateActual();
+                  localStorage.setItem("saleStateFilter", "sale");
+                  calculateDateActual();
                 }}
                 className={`pay-sale-button-sale ${
                   saleOrPay
@@ -369,7 +369,9 @@ function Index() {
                 Ventas
               </button>
               <button
-                onClick={changePay}
+                onClick={() => {
+                  localStorage.setItem("saleStateFilter", "pay");
+                }}
                 className={`pay-sale-button-pay duration-[300ms] ease-in-out
           ${saleOrPay ? "bg-[#4D3452]" : "!bg-[#f89c53] !text-[#252127]"}`}
               >
