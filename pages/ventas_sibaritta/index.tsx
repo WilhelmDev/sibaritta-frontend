@@ -213,8 +213,8 @@ function Index() {
     setSearchText(searchText)
     const filter = renderCards?.filter(
       (data) => 
-        data.order_code.toLowerCase().includes(searchText) ||
-        data.user_name.toLowerCase().includes(searchText)
+        data?.order_code.toLowerCase().includes(searchText) ||
+        data?.user_name.toLowerCase().includes(searchText)
     )
     setFilterSearch(filter)
     console.log(filter)
@@ -434,7 +434,8 @@ function Index() {
             <SelectionDateVentas selectionData={selectionData} />
             <SalesInformation salesData={salesData} status={canceledOrCompleted} />
             <div className="sale-especific-container-general">
-              {[...filterSearch]
+              {
+              ((searchText !== "") ? [...filterSearch] : [...renderCards])
                 ?.map((object: any, index: number) => {
                   return (
                     <div
@@ -444,7 +445,8 @@ function Index() {
                       <CardVentasSibaritta DataSibaritta={object} isAdmin={false}/>
                     </div>
                   );
-                })}
+                })
+              }
             </div>
           </div>
           <div
