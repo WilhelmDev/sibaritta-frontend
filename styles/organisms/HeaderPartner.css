@@ -94,9 +94,11 @@
   text-align: right;
   line-height: 1.2;
   display: none;
+  margin-bottom: 0.5rem;
 
   @screen laptop {
     font-size: calc(2.4rem * var(--scale));
+    display: block;
     text-align: right;
     line-height: 1.2;
   }
@@ -107,6 +109,7 @@
   font-weight: 700;
   line-height: 1.2;
   display: none;
+  margin-bottom: 0.5rem;
 
   @screen laptop {
     display: block;
@@ -114,6 +117,26 @@
     font-weight: 700;
     line-height: 1.2;
   }
+}
+
+.header-general-button{
+  font-size: calc(2.4rem * var(--scale));
+  text-align: right;
+  line-height: 1.2;
+  display: none;
+  margin-bottom: 1rem;
+  transition: .2s all;
+
+  @screen laptop {
+    font-size: calc(1.7rem * var(--scale));
+    display: block;
+    text-align: right;
+    line-height: 1;
+  }
+}
+
+.header-general-button:hover{
+  color: #f89c53;
 }
 
 .header-general-image-right-1 {
@@ -205,6 +228,7 @@
 .text-header-bottom {
   font-size: calc(1.8rem * var(--scale));
   font-weight: 400;
+  transition: .2s all;
 
   @screen laptop {
     font-size: calc(1.8rem * var(--scale));
@@ -212,7 +236,44 @@
   }
 }
 
+.text-header-bottom:hover{
+  color: #f89c53;
+}
 
+.notification-bottom{
+  display: flex;
+  align-items: center;
+} 
+
+.icon-bell{
+  margin-left: .5rem;
+  width: 15px;
+  height: 15px;
+  transition: .2s all;
+  filter: invert(94%) sepia(10%) saturate(505%) hue-rotate(333deg) brightness(92%) contrast(91%);
+}
+
+.num-notification{
+  background-color: #f89c53;
+  color: #252127;
+  width: 1.7rem;
+  height: 1.7rem;
+  line-height: 1.9rem;
+  text-align: center;
+  border-radius: 20px;
+  margin-left: 5px;
+}
+
+.notification-bottom:hover .icon-bell{
+  filter: invert(84%) sepia(16%) saturate(5022%) hue-rotate(320deg) brightness(99%) contrast(97%);
+}
+
+.section-active .icon-bell{
+  filter: invert(84%) sepia(16%) saturate(5022%) hue-rotate(320deg) brightness(99%) contrast(97%);
+}
+.section-active{
+  color: #f89c53;
+}
 
 .containerrrr{
 

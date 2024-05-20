@@ -15,12 +15,21 @@ import { Logo } from "@/components/atoms/Logo";
 import { Container } from "@/components/globals/Container";
 import { getUserById } from "@/services/login.services";
 import { IUser } from "@/interface/user.interface";
+import { log } from "console";
 
 const HeaderPartner = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const { isTopZero } = useNavbarContext();
   const { asPath } = useRouter();
   const [infoData, setinfoData] = useState<IUser>();
+
+  // active section
+
+  const actualUrl = window.location.href;
+  console.log(actualUrl.includes("ultimas_reservas"));
+
+
+  // end active section
 
   const [width, setWith] = useState<number>(0);
 
@@ -106,6 +115,9 @@ const HeaderPartner = () => {
                 <p className="header-general-text-2">
                   {infoData?.partner?.comercial_name}{" "}
                 </p>
+                <div className="header-general-button cursor-pointer" onClick={logout}>
+                  Cerrar sesión
+                </div>
               </div>
               <div className="header-general-image-right-1 overflow-hidden">
                 <Image
@@ -140,41 +152,53 @@ const HeaderPartner = () => {
           </header>
 
           <div className="header-general-container-2 ">
-            <Link href={"/partner_reserva_clientes?data=74"} legacyBehavior>
-              <div className="text-header-bottom cursor-pointer">
-                Calendario{" "}
+            <Link href={"/ultimas_reservas"} legacyBehavior>
+              <div className={`text-header-bottom cursor-pointer ${actualUrl.includes("/ultimas_reservas") ? "section-active" : ""}`}>
+                Dashboard
               </div>
             </Link>
             <Link href={"/perfil_partner"} legacyBehavior>
-              <div className="text-header-bottom cursor-pointer">
-                Perfil restaurante
-              </div>
-            </Link>
-            <Link href={"/ultimas_reservas"} legacyBehavior>
-              <div className="text-header-bottom cursor-pointer">
-                Reservaciones
+              <div className={`text-header-bottom cursor-pointer ${actualUrl.includes("/perfil_partner") ? "section-active" : ""}`}>
+                Perfil partner
               </div>
             </Link>
             <Link
               href={"/partner"}
-              className="text-header-bottom cursor-pointer"
+              className={`text-header-bottom cursor-pointer ${actualUrl.includes("/partner") ? "section-active" : ""}`}
             >
               Experiencias
             </Link>
+            <Link
+              href={"/suggestion"}
+              className={`text-header-bottom cursor-pointer ${actualUrl.includes("/suggestion") ? "section-active" : ""}`}
+            >
+              Sugerencias
+            </Link>
             <Link href={"/ventas_sibaritta"} legacyBehavior>
-              <div className="text-header-bottom cursor-pointer">
+              <div className={`text-header-bottom cursor-pointer ${actualUrl.includes("/ventas_sibaritta") ? "section-active" : ""}`}>
                 Facturación
               </div>
             </Link>
             <Link
+              href={"/policies"}
+              className={`text-header-bottom cursor-pointer ${actualUrl.includes("/policies") ? "section-active" : ""}`}
+            >
+              Políticas
+            </Link>
+            <Link
               href={"/notificacion_partner"}
-              className="text-header-bottom cursor-pointer"
+              className={`text-header-bottom cursor-pointer notification-bottom ${actualUrl.includes("/notificacion_partner") ? "section-active" : ""}`}
             >
               Notificaciones
+              <Image
+                src={"/icons/campana.svg"}
+                width={500}
+                height={500}
+                alt=""
+                className="icon-bell"
+              />
+              <div className="num-notification">1</div>
             </Link>
-            <div className="text-header-bottom cursor-pointer" onClick={logout}>
-              Cerrar sesión
-            </div>
           </div>
         </div>
       </div>
