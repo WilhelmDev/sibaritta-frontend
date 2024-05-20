@@ -203,6 +203,23 @@ function Index() {
     }
   };
 
+
+  const [searchText, setSearchText] = useState("");
+  const [filterSearch, setFilterSearch] = useState([])
+
+  const handleSearch = (e: any) => {
+    const searchText = e.target.value.toLowerCase().trim();
+    setSearchText(searchText)
+    const filter = renderCards?.filter(
+      (data) => 
+        data?.order_code.toLowerCase().includes(searchText) ||
+        data?.user_name.toLowerCase().includes(searchText)
+    )
+    setFilterSearch(filter)
+    console.log(filter)
+    console.log(renderCards)
+  }
+
   const changeViewCalendar = () => {
     setviewCalendar(!viewCalendar);
     sethoy(false);
@@ -378,6 +395,15 @@ function Index() {
                 Pagos
               </button>
             </div>
+            <div>
+              <input
+                  value={searchText}
+                  onChange={handleSearch}
+                  placeholder="Buscar"
+                  type="text"
+                  className="last_reservations_state-input"
+                />
+            </div>
             <div
               className={`pay-sale-container-right  ${
                 saleOrPay ? "" : "active"
@@ -414,7 +440,8 @@ function Index() {
             <SelectionDateVentas selectionData={selectionData} />
             <SalesInformation salesData={salesData} status={canceledOrCompleted} />
             <div className="sale-especific-container-general">
-              {[...renderCards]
+              {
+              ((searchText !== "") ? [...filterSearch] : [...renderCards])
                 ?.map((object: any, index: number) => {
                   return (
                     <div
@@ -424,7 +451,8 @@ function Index() {
                       <CardVentasSibaritta DataSibaritta={object} isAdmin={false}/>
                     </div>
                   );
-                })}
+                })
+              }
             </div>
           </div>
           <div
