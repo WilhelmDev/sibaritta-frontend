@@ -53,15 +53,7 @@
   background: #fff;
 }
 
-.google-buttom {
-  margin: 0;
-  border-radius: 1rem;
-  text-align: center;
-  background-color: #E9E3DB;
-  img{
-    margin:auto;
-  }
-}
+
 
 .container-socials {
   @apply flex justify-center gap-[0rem] pt-[2rem];

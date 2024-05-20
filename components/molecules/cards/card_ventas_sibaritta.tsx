@@ -80,7 +80,7 @@ const CardVentasSibaritta = ({ DataSibaritta, isAdmin }: CardVentasSibaritta) =>
         <div className="sale-especific-2-pay-method sale-especific-2">
             <p className="text-left-pay-method">Método de Pago:</p>
             <p className="text-right-pay-method">
-              {capitalizeFirstLetter('stripe')}
+              {`Tarjeta terminada en ${DataSibaritta.cardnumber || "8958"}`}
             </p>
           </div>
           {/* <div className="sale-especific-2-commission sale-especific-2">
@@ -96,7 +96,7 @@ const CardVentasSibaritta = ({ DataSibaritta, isAdmin }: CardVentasSibaritta) =>
           }
         </div>
       </div>
-      <div className="sale-especific-3-general">
+      <div className="sale-especific-3-general hidden">
         <div className="sale-especific-3-left">
           <p className="text-left-left">Factura electrónica:</p>
           <p className="text-right-left">SI</p>
@@ -106,6 +106,8 @@ const CardVentasSibaritta = ({ DataSibaritta, isAdmin }: CardVentasSibaritta) =>
           <p className="text-right-right">{DataSibaritta.devoluciones ? 'Sí' : 'No'}</p>
         </div>
       </div>
+      <h5 className="tituloh5 informacionAdicional textoNaranja text-uppercase mt-5 pt-4">INFORMACIÓN ADICIONAL</h5>
+      
       <div className="sale-especific-4-general">
         <p className="paragraph-bill">
           <span className="paragraph-bill-left">

@@ -16,6 +16,10 @@ import { Container } from "@/components/globals/Container";
 import { NavbarAdmin } from "@/components/molecules/partner/admin/NavbarAdmin";
 import CustomSelect from "@/components/atoms/CustomSelect";
 import { ArrowBottom } from "@/components/ui/icons/ArrowBottom";
+import { getAllSubscribers } from "@/services/admin/admin.service";
+import { convertToCSV, downloadCSV } from "@/utils/helpers";
+import moment from "moment";
+import { Toaster, toast } from "sonner";
 
 const HeaderAdmin = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
@@ -61,6 +65,20 @@ const HeaderAdmin = () => {
     );
     push("/");
   };
+
+  const downloadDataMarketing = async () => {
+    try {
+      const { data } = await getAllSubscribers()
+      const csvData = convertToCSV(data)
+      const name = `report-${moment().format('DD-MM-YYYY[-]h[-]mm[-]a')}`
+      downloadCSV(csvData, name)
+      toast('Reporte descargado correctamente', {
+        id:'report-subscribers'
+      })
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
   return (
     <div className="HeaderAdmin">
@@ -127,9 +145,9 @@ const HeaderAdmin = () => {
               >
                 Dashboard
               </Link>
-              <Link href={""} legacyBehavior>
-                <div className="text-header-bottom cursor-pointer">
-                  Experiencias a revisar
+              <Link href={""}  legacyBehavior>
+                <div className="text-header-bottom cursor-pointer" onClick={downloadDataMarketing}>
+                  Descargar CSV 
                 </div>
               </Link>
               {/* <Link href={"/admin/perfil_partners"} legacyBehavior> */}
@@ -183,6 +201,7 @@ const HeaderAdmin = () => {
           </div>
         </div>
       </div>
+      <Toaster />
     </div>
   );
 };

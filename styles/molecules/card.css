@@ -9,7 +9,7 @@
 }
 
 .card-inters {
-  @apply w-full h-[49.2rem] border-[0.3rem] border-[#4D3452] rounded-[2.5rem] overflow-hidden;
+  @apply w-full h-[49.2rem] border-[0.3rem] border-[#4D3452]  overflow-hidden;
 
   @screen laptop {
     border: 2px solid #393533;
@@ -17,7 +17,7 @@
   }
 
   &-cont {
-    @apply flex flex-col w-full h-full duration-300 ease-in-out bg-cover bg-center rounded-[2.5rem];
+    @apply flex flex-col w-full h-full duration-300 ease-in-out bg-cover bg-center ;
   }
 }
 

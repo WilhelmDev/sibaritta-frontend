@@ -1,3 +1,4 @@
+import { Logo } from '@/components/atoms/Logo';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
@@ -22,7 +23,8 @@ const ProtectedRoute = ({ children }: any) => {
   }, []);
 
   return <div>{loading ? <div className='w-full h-screen grid place-items-center'>
-  <div className="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    <Logo className="logo-spinner" />
+    <div className="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
   </div> : <>{children}</>}</div>;
 };
 

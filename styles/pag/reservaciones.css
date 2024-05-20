@@ -135,6 +135,7 @@ align-items: center;
     padding-bottom: calc(1.5rem * var(--scale));
   }
 }
+
 .reservation_titulo_two- {
   @apply hidden;
   @screen tablet {

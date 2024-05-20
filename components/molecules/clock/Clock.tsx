@@ -1,27 +1,38 @@
-import { useAppSelector } from "@/redux/hook";
 import { cancelReservations } from "@/services/reservaciones.service";
-import React, { useEffect, useState } from "react";
-import ModalCancel from "../checkout/ModalCancel";
 import { IReservation } from "@/interface/checkout.interface";
-import { getClock } from "@/services/clock.services";
+import { useRouter } from "next/router";
+import AlertCard from "@/components3/alerts/AlertCard";
+import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { updateTimer } from '@/redux/slice/clockSlice';
 
 export interface IClock {
   trigger?: boolean;
+  outOfTimeModal?: boolean;
 }
 
-const Clock = ({ trigger }: IClock) => {
+const Clock = ({ trigger, outOfTimeModal }: IClock) => {
   // Almacena la fecha y hora iniciales en el estado
+  const dispatch = useDispatch();
+  const router = useRouter();
   const [currentDateTime, setCurrentDateTime] = useState<Date | null>(null);
   const [remainingTime, setRemainingTime] = useState(0);
   const [hasTimeEnded, setHasTimeEnded] = useState(false);
   const [openModalCancel, setOpenModalCancel] = useState(false);
   const [idReservations, setidReservations] = useState(0);
   const [datos, setDatos] = useState<IReservation | null | undefined>();
-  const [timer, settimer] = useState<any>();
+
+
   const openModal = () => {
     setOpenModalCancel(true);
     // document.body.style.overflow = "hidden";
   };
+
+  useEffect(() => {
+    if (outOfTimeModal) {
+      openModal();
+    }
+  }, [outOfTimeModal])
 
   const cancelReservation = async () => {
     try {
@@ -66,9 +77,13 @@ const Clock = ({ trigger }: IClock) => {
       );
 
       setRemainingTime(timeLeft);
+
       if (timeLeft <= 0) {
         handleTimeEnd();
       }
+
+
+      dispatch(updateTimer(timeLeft))
     }
   };
 
@@ -130,7 +145,7 @@ const Clock = ({ trigger }: IClock) => {
   }
 
   return (
-    <div>
+    <div >
       <p>
         <span className="text-[3rem] laptop:text-[3rem] text-[#E1D4C4]  font-bold ">
           {" "}
@@ -139,9 +154,25 @@ const Clock = ({ trigger }: IClock) => {
       </p>
 
       {openModalCancel && (
-        <ModalCancel
+        <AlertCard
+          content={
+            "<p>El TIEMPO PARA CONSERVAR TU RESERVACIÓN SE HA TERMINADO.</p>" +
+            "<p>POR FAVOR VUELVE A INICIAR EL PROCESO NUEVAMENTE.</p>"
+          }
+
           visible={openModalCancel}
+          className=""
           setVisible={setOpenModalCancel}
+          actionButton="IR AL INICIO"
+          callback={() => {
+            setOpenModalCancel(false);
+
+            router.push("/");
+          }}
+          closable={false}
+          closeOnClickOutside={false}
+          contentFontSize="1.5rem"
+          actionButtonWidth="100vh"
         />
       )}
     </div>

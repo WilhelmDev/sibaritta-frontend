@@ -1,9 +1,11 @@
 .resttriction_modal{ 
+  border-radius: 10px;
     .p-dialog-header {
+
         @apply  bg-[#2F2A32]
     }
     .p-dialog-content {
-      @apply grid place-items-center !bg-[#2F2A32] gap-[2rem] py-[2rem];
+      @apply grid place-items-center !bg-[#E2D5C4] gap-[2rem] py-[2rem];
       @screen laptop{
         padding-top: calc(2rem * var(--scale));
         padding-bottom: calc(4rem * var(--scale));

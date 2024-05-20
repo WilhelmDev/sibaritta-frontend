@@ -46,7 +46,7 @@ function RecoveryModal({ openForgot, closeModalForgot }: RecoveryModal) {
     try {
       const datas = {
         email: data.email,
-        callback_url: `${process.env.NEXT_PUBLIC_URl_BASIC}recovery`,
+        callback_url: `https://anyer.web.v2.sibaritta.mensorestudio.com/recovery`,
         captcha_token: captchaResponse,
       };
 
@@ -75,57 +75,66 @@ function RecoveryModal({ openForgot, closeModalForgot }: RecoveryModal) {
       <Modal
         visible={openForgot}
         closeModal={closeModalForgot}
-        width="w-[80%] min-h-[43rem] tablet:w-[58rem]  "
+        width="w-[80%] tablet:w-[58rem]  "
         className="modalsession"
       >
-        <article className="recovery_box_ !bg-[#F0EFEB] ">
-          <h2 className="recovery_box_title">¡Bienvenido a Sibaritta!</h2>
-          <h2 className="recovery_box_indication">
-            Coloca tu email para recuperar tu contraseña
-          </h2>
-          <form onSubmit={handleSubmit(onSubmit)} className="recovery_btns">
-            <div>
-              <input
-                {...register("email", {
-                  required: "Este campo es requerido",
-                  pattern: {
-                    value: emailPattern,
-                    message: "formato incorrecto",
-                  },
-                })}
-                type="text"
-                placeholder="sibarita@gmail.com"
-              />
-              {errors.email && (
-                <p className="Login-error text-red-600 pt-[.2rem] pl-[.2rem] text-[1rem] ml-[.5rem]">
-                  {String(errors.email.message)}
-                </p>
-              )}
-              {emailExit && (
-                <p className="Login-error text-red-600 pt-[.2rem] pl-[.2rem]">
-                  {String(emailExit)}
-                </p>
-              )}
-            </div>
-            <div className="flex  flex-col justify-center items-center">
-              <ReCAPTCHA
-                sitekey={captchaKey}
-                ref={captchaRef}
-                onChange={onChangeRecaptcha}
-              />
-              {showCaptchaError && (
-                <p className="Form-error text-red-500 text-[1.3rem]">
-                  completa el captcha
-                </p>
-              )}
-              {messageErroCaptcha && (
-                <p className="Form-error text-red-500 text-[1.3rem]">
-                  completa el captcha
-                </p>
-              )}
-            </div>
-            <button type="submit">Enviar</button>
-          </form>
+        <article className="!bg-[#E2D5C4] modalsession__card ">
+          <div className="formRegister__titulo">
+            <h2 className="ModalSession-title">¡Bienvenido a Sibaritta!</h2>
+            <h5 className="">
+              Coloca tu email para recuperar tu contraseña
+            </h5>
+          </div>
+          <div className="formRegister__campos">
+            <form onSubmit={handleSubmit(onSubmit)}>
+              <div className="contenedorInput">
+                <input className="profile-input  h-[4rem] bg-[#E9E3DB]"
+                  {...register("email", {
+                    required: "Este campo es requerido",
+                    pattern: {
+                      value: emailPattern,
+                      message: "Formato incorrecto",
+                    },
+                  })}
+                  type="text"
+                  placeholder="sibarita@gmail.com"
+                />
+                {errors.email && (
+                  <p className="Login-error text-red-600 text-[1rem] pt-[.2rem] pl-[.2rem] text-[1rem] ml-[.5rem]">
+                    {String(errors.email.message)}
+                  </p>
+                )}
+                {emailExit && (
+                  <p className="Login-error text-red-600 text-[1rem] pt-[.2rem] pl-[.2rem]">
+                    {String(emailExit)}
+                  </p>
+                )}
+              </div>
+              <div className="flex  mt-5 flex-col justify-center items-center">
+                <ReCAPTCHA
+                  sitekey={captchaKey}
+                  ref={captchaRef}
+                  onChange={onChangeRecaptcha}
+                />
+                {showCaptchaError && (
+                  <p className="Form-error text-red-500 text-[1.3rem]">
+                    completa el captcha
+                  </p>
+                )}
+                {messageErroCaptcha && (
+                  <p className="Form-error text-red-500 text-[1.3rem]">
+                    completa el captcha
+                  </p>
+                )}
+              </div>
+              <div className="w-full pt-[1rem] boton boton--transparente mt-5 ">
+                <button className="modalSession-button w-full m-auto">
+                Enviar
+                </button>
+              </div>
+            </form>
+          </div>
+
         </article>
       </Modal>
       <MensajeRecoveryModal

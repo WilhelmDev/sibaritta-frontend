@@ -203,8 +203,11 @@
   }
 
   .header-general-container-2 {
-    display: none;
-
+    display: flex;
+    overflow-x: scroll;
+    .text-header-bottom{
+      margin-right: 15px;
+    }
     @screen laptop {
       display: flex;
       width: 79%;

@@ -38,4 +38,13 @@ const getAllPartnerGeneral = async () => {
   }
 };
 
-export { getPartAll, getPartById, getClient, getAllPartnerGeneral };
+const getAllSubscribers = async () => {
+  try {
+    const { data } = await baseApi.get(`/v1/suscribers`, getConfig());
+    return data;
+  } catch (error) {
+    throw error;
+  }
+}
+
+export { getPartAll, getPartById, getClient, getAllPartnerGeneral, getAllSubscribers };

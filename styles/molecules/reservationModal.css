@@ -11,7 +11,7 @@
   }
 
   .reservation_p-one{
-   @apply text-[#E1D4C4]  text-[1.4rem] font-medium leading-[2.4rem] text-center;
+   @apply text-[#110b12]  text-[1.4rem] font-medium leading-[2.4rem] text-center;
    @screen tablet{
      @apply w-[45.3rem] text-[2.19rem] leading-[3.5rem]; 
    }

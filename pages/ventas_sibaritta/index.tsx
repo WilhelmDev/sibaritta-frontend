@@ -355,7 +355,7 @@ function Index() {
             <p className="header-text-seratta">Seratta Gourmand Market</p>
           </div>
           <div className="pay-sale-container">
-            <div className="pay-sale-container-left">
+            <div className="pay-sale-container-left boton">
               <button
                 onClick={() => {
                   changeSale(), calculateDateActual();
@@ -399,6 +399,10 @@ function Index() {
                 </p>
               </div>
             </div>
+          </div>
+          <div>
+
+          sale-especific-container-general
           </div>
           <div
             className={`sale-sibaritta-general main-page ${

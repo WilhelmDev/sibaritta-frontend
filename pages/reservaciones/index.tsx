@@ -15,6 +15,13 @@ function Index() {
     setFirst(index);
   };
 
+  const [refundCard, setrefundCard] = useState(false)
+  const closeRefundCard = () => setrefundCard(false)
+  const eventRefundCard = () => {
+    // Event to be executed when confirmation is done
+    closeRefundCard
+  }
+
   let user: any | null = null as any;
   if (typeof window !== "undefined") {
     const users = localStorage.getItem("userid");
@@ -30,7 +37,7 @@ function Index() {
           return;
         }
         const { data } = await getReservationAll(user);
-        setTriggers(true);
+        // setTriggers(true);
         setdata(data);
       } catch (error) {
         console.log(error);
@@ -45,7 +52,7 @@ function Index() {
 
   return (
     <SecurityPrivileges>
-       <div className="reservacion-container">
+      <div className="reservacion-container">
       <section className="reservacion  main-page1 ">
       <article className="reservacion-image relative">
         <Image
@@ -106,7 +113,6 @@ function Index() {
     </section>
     </div>
     </SecurityPrivileges>
-   
   );
 }
 

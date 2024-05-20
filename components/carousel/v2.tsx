@@ -1,12 +1,16 @@
-import React, { useState } from 'react'
+'use client'
+
+import React, { useMemo, useState } from 'react'
 import { useSpringCarousel } from 'react-spring-carousel'
 import Image from 'next/image'
 import { IDetalle } from '@/interface/reservacion'
-interface IDetailsInfo{
+import useWindowDimensions from '@/hook/global/useWindowDimensions';
+
+interface IDetailsInfo {
     data: IDetalle;
 }
 
-const CarouselV2 = ({data}: IDetailsInfo) => {
+const CarouselV2 = ({ data }: IDetailsInfo) => {
     // const mockItems = data?.images;
     const mockItems = [
         {
@@ -42,33 +46,38 @@ const CarouselV2 = ({data}: IDetailsInfo) => {
     ]
     const [currentSlide, setCurrentSlide] = useState(mockItems[0]?.id)
 
+    const { width } = useWindowDimensions()
+
+    const imageWidth = useMemo(() => width && width <= 420 ? 250 : 500, [width]);
+    const itemsPerSlide = useMemo(() => width && width <= 420 ? 1 : 3, [width]);
+    
     const {
         carouselFragment,
         slideToPrevItem, // go back to previous slide
         slideToNextItem, // move to next slide
         useListenToCustomEvent //custom hook to listen event when the slide changes
     } = useSpringCarousel({
-        itemsPerSlide: 3, // number of slides per view
+        itemsPerSlide: itemsPerSlide, // number of slides per view
         withLoop: true, // will loop
         initialStartingPosition: 'center', // the active slide will be at the center
-        gutter: 100, // to add the space between slides
+        gutter: 100,
         items: mockItems.map((item) => {
             return {
                 ...item,
                 renderItem: (
                     <div
-                        className={`grid  transition-all duration-700 ${currentSlide === item.id
+                        className={`grid w-full  transition-all duration-700 ${currentSlide === item.id
                             ? 'z-10 zoomCarousel'
                             : 'opacityCarousel'
                             }`}>
-                        <Image width={500} height={500} src={item?.path as string} className='m-auto' alt='imagen'/>
+                        <Image width={imageWidth} height={imageWidth} src={item?.path as string} className=' mx-auto m-auto' alt='imagen' />
                     </div>
                 )
             }
         })
     })
 
-    useListenToCustomEvent((event:any) => {
+    useListenToCustomEvent((event: any) => {
         if (event.eventName === 'onSlideStartChange') {
             setCurrentSlide(event?.nextItem?.id)
         }
@@ -115,7 +124,7 @@ const Eventos = () => {
             dia: 'VIERNES',
             hora: '7:00 pm'
         }
-       
+
     ]
     const [currentSlide, setCurrentSlide] = useState(mockItems[0].idFecha)
 
@@ -133,27 +142,27 @@ const Eventos = () => {
             return {
                 ...item,
                 renderItem: (
-                    <div  className={`grid internaExperiencia__reserva__right__contenedor__card ${currentSlide === item.idFecha
+                    <div className={`grid internaExperiencia__reserva__right__contenedor__card ${currentSlide === item.idFecha
                         ? 'active'
                         : ''
                         }`}>
-                      <h3 className="tituloh3">
-                        {item.title}
-                      </h3>
-                      <hr/>
-                      <h4>{item.title}</h4>
-                      <p>
-                        VIERNES
-                      </p>
-                      <hr/>
-                      <h5 className="tituloh5">7:00 pm</h5>
+                        <h3 className="tituloh3">
+                            {item.title}
+                        </h3>
+                        <hr />
+                        <h4>{item.title}</h4>
+                        <p>
+                            VIERNES
+                        </p>
+                        <hr />
+                        <h5 className="tituloh5">7:00 pm</h5>
                     </div>
                 )
             }
         })
     })
 
-    useListenToCustomEvent((event:any) => {
+    useListenToCustomEvent((event: any) => {
         if (event.eventName === 'onSlideStartChange') {
             setCurrentSlide(event?.nextItem?.idFecha)
         }
@@ -177,7 +186,7 @@ const Eventos = () => {
         </div>
     )
 }
-export{
+export {
     Eventos
 }
 export default CarouselV2

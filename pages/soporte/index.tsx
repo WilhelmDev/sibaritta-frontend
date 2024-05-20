@@ -1,19 +1,31 @@
-import Conditions from "@/components/organisms/contact/Conditions";
-import Legal from "@/components/organisms/contact/Legal";
-import Medium from "@/components/organisms/contact/Medium";
-import Questions from "@/components/organisms/contact/Questions";
-import Image from "next/image";
-import { classNames } from "primereact/utils";
-import React, { useEffect, useState } from "react";
-import { useRouter } from "next/router";
+'use client'
+import Image from 'next/image'
+import HomeBanner from '@/components/organisms/HomeBanner';
+import Footer from "@/components/ui/Footer";
+import { useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Link from 'next/link';
+import { newRoutes } from '@/utils/routes';
+import Carrousel from '@/components/carousel';
+import ModalSession from '@/components/molecules/ModalSession';
+import Medium from '@/components/organisms/contact/Medium';
+import Questions from '@/components/organisms/contact/Questions';
+import Conditions from '@/components/organisms/contact/Conditions';
+import Legal from '@/components/organisms/contact/Legal';
 
+export default function Nosotros () {
 
-const Index = () => {
+  useEffect(() => {
+    AOS.init();
+
+    const update = document.querySelector('body')
+    update?.classList.add('fondoSoporte')
+  }, [])
+
   const [submenu, setSubmenu] = useState(false);
   const [selectedOption, setSelectedOption] = useState(
-    "Contáctanos"
+    "CONTÁCTOS"
   );
   const openSubmenu = () => {
     setSubmenu(!submenu);
@@ -22,127 +34,110 @@ const Index = () => {
     setSelectedOption(option);
     setSubmenu(false);
   };
-
+  
   const item = [
-    { id: 1, items: "Contáctanos" },
-    { id: 2, items: "FAQ's" },
-    { id: 3, items: "Términos y condiciones" },
-    { id: 4, items: "Aviso de privacidad" },
+    { id: 1, items: "CONTÁCTOS" },
+    { id: 2, items: "PREGUNTAS FRECUENTES" },
+    { id: 3, items: "TÉRMINOS Y CONDICIONES" },
+    { id: 4, items: "POLÍTICAS DE PRIVACIDAD" },
   ];
 
   const selectedComponent = () => {
     switch (selectedOption) {
-      case "Contáctanos":
+      case "CONTÁCTO":
         return <Medium />;
-      case "FAQ's":
+      case "PREGUNTAS FRECUENTES":
         return <Questions handleOptionClick={handleOptionClick} />;
-      case "Términos y condiciones":
+      case "TÉRMINOS Y CONDICIONES":
         return <Conditions />;
-      case "Aviso de privacidad":
+      case "POLÍTICAS DE PRIVACIDAD":
         return <Legal />;
       default:
         return <Medium />;
     }
   };
-
-  const router = useRouter();
-
-const SecurityPrivileges = () => {
-    const user_id = localStorage.getItem("fk_typeuser");
-
-    // user_id === "1" ? router.push("/") : "";
-    user_id === "2"?router.push("/home_partner"):"";
-    user_id === "3" ? router.push("/admin/admin_home") : "";
-  };
-
-  useEffect(() => {
-    SecurityPrivileges();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  AOS.init();
-
-  const update = document.querySelector('body')
-  update?.classList.add('Experienciabg')
-
-  }, [])
-
-
+  
   return (
-    <div className="contact-general-container">
-      <div className="contact">
-      <div className="contact-container main-page">
-        <div className="relative">
-          <div className=" laptop:hidden">
-            <div className="contact-select" onClick={openSubmenu}>
-              <span>{selectedOption || "Soporte en línea"} </span>
-              <i className={`icon-arrow ${submenu && "rotate-active"}`}></i>
-            </div>
-            {submenu && (
-              <div className="submenu absolute z-[101] main-page1">
-                <div className="flex flex-col    w-full">
-                  <div className="container-submenu flex justify-center items-center">
-                    {item.map((label) => (
-                      <span
-                        key={label.id}
-                        className={`cursor-pointer block w-full text-center ${
-                          selectedOption === label.items && "bg-[#4D3452]"
-                        }`}
-                        onClick={() => handleOptionClick(label.items)}
-                      >
-                        {label.items}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            )}
-          </div>
-          <div className="contact-destok">
-            <div className="container-buttom boton">
-              <h2 className="contact-title">Soporte en línea</h2>
+    <main className="soporteCard">
 
-              {item.map((i) => (
-                <button
-                  key={i.id}
-                  className={`contact-buttom ${
-                    selectedOption === i.items &&
-                    "bg-[#F89C53] duration-500  ease-in-out"
-                  }`}
-                  onClick={() => handleOptionClick(i.items)}
-                >
-                  {i.items}
-                </button>
-              ))}
-              {/*
-              <button className="contact-buttom">Formulario de contacto</button>
-              <button className="contact-buttom">Preguntas frecuentes</button>
-              <button className="contact-buttom">Legal</button>
-              <button className="contact-buttom">Condiciones</button> */}
-            </div>
-            <div className="contac-imagedesk">
-              <Image
-                alt=""
-                src={"/img/img-destok.jpg"}
-                width={1000}
-                height={1000}
-                className="w-full h-full"
-              />
-            </div>
+      <div className="migajaPan">
+        <div className="container-general">
+          <div className="migajaPan__card " >
+            <ul className="flex">
+              <li>
+                <Link href={newRoutes.home} className=' hover:text-yellow-600'>
+                  &gt; Home
+                </Link>
+              </li>
+              <li>
+                <Link href={newRoutes.home} className=' hover:text-yellow-600'>
+                  &gt; PERFIL
+                </Link>
+              </li>
+              <li className="activeMigaja">
+                &gt; SOPORTE EN LÍNEA
+              </li>
+            </ul>
           </div>
         </div>
-        <div>{selectedComponent()}</div>
       </div>
-      <div className="contact-image">
-        <Image
-          alt=""
-          src={"/img/contacto.jpg"}
-          width={1000}
-          height={1000}
-          className="w-full h-full"
-        />
+      <div className='soporteCard__card'>
+        <div className='soporteCard__card__titulo'>
+            <h1 className='tituloh2 text-center'>SOPORTE EN LÍNEA</h1>
+        </div>
+        <div className='soporteCard__card__formulario'>
+            <div className='container-general'>
+                <div className="xl:flex block">
+                    <div className="xl:w-1/3 w-full">
+                      <div className='soporteCard__card__formulario__left block xl:hidden mb-10'>
+                        <div className="contact-select !bg-[#252127]" onClick={openSubmenu}>
+                          <span>{selectedOption || "Soporte en línea"} </span>
+                          <i className={`icon-arrow ${submenu && "rotate-active"}`}></i>
+                        </div>
+                        {submenu && (
+                          <div className="submenu main-page1">
+                            <div className="flex flex-col w-full">
+                              <div className="container-submenu flex justify-center items-center">
+                                {item.map((label) => (
+                                  <span
+                                    key={label.id}
+                                    className={`cursor-pointer block w-full text-center ${
+                                      selectedOption === label.items && "bg-[#4D3452]"
+                                    }`}
+                                    onClick={() => handleOptionClick(label.items)}
+                                  >
+                                    {label.items}
+                                  </span>
+                                ))}
+                              </div>
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                        <div className='soporteCard__card__formulario__left hidden xl:block'>
+                            <ul>
+                              {item.map((i) => (
+                                <li key={i.id}>
+                                  <Link
+                                    href={''}
+                                    onClick={() => handleOptionClick(i.items)}
+                                    className={`${selectedOption === i.items && 'active'}`}>
+                                      {i.items}
+                                  </Link>
+                                </li>
+                              ))}
+                            </ul>
+                        </div>
+                    </div>
+                    <div className="xl:w-2/3  w-full">
+                        <div className='soporteCard__card__formulario__right'>
+                          {selectedComponent()}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
       </div>
-    </div>
-    </div>
+    </main>
   );
-};
-
-export default Index;
+}

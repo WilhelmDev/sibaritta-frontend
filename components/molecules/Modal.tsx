@@ -8,6 +8,8 @@ interface Modal {
   width?: string;
   bg?: string;
   className?: string;
+  closeOnClickOutside?: boolean;
+  closable?: boolean;
 }
 
 const Modal = ({
@@ -17,12 +19,15 @@ const Modal = ({
   width = "w-[auto] laptop:w-[auto]",
   bg = "bg-[#F0EFEB]",
   className,
+  closeOnClickOutside = false,
+  closable = true,
 }: Modal) => {
   return (
     <Dialog
       visible={visible}
+      closable={closable}
       onHide={closeModal}
-      dismissableMask={true}
+      dismissableMask={closeOnClickOutside}
       className={`${bg} ${width} ${className}  laptop: rounded-[2rem] z-50`}
     >
       {children}

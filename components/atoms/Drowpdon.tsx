@@ -1,12 +1,14 @@
 import axios from "axios";
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import OutsideClick from "@/components3/OutsideClick"
 
 interface IFormValue {
   reference: any;
+  color?: any
 }
 
-const Dropdown = ({ reference }: IFormValue) => {
+const Dropdown = ({ reference, color }: IFormValue) => {
   const [countries, setCountries] = useState<any[]>([]);
   const [selectedCountry, setSelectedCountry] = useState<string | null>(
     "Mexico "
@@ -18,14 +20,15 @@ const Dropdown = ({ reference }: IFormValue) => {
     "https://flagcdn.com/w320/mx.png"
   );
   const [isOpen, setIsOpen] = useState(false);
+  const ref = useRef(null);
 
   useEffect(() => {
     const fetchCountries = async () => {
       try {
         const response = await axios.get("https://restcountries.com/v3.1/all");
         const sortedData = response.data.sort((a:any,b:any) => {
-          const aName = a.name.common;
-          const bName = b.name.common;
+          const aName = a.translations.spa.common;
+          const bName = b.translations.spa.common;
           return (aName < bName) ? -1 : (aName > bName) ? 1 : 0;
         });
         setCountries(sortedData);
@@ -61,41 +64,44 @@ const Dropdown = ({ reference }: IFormValue) => {
     reference(e.target.value);
   };
 
+  OutsideClick(ref,toggleDropdown);
+
   return (
-    <div className="relative flex w-full h-full max-w-[12rem]">
+    <div className="relative flex max-w-[12rem] formularioNumero">
+      
       <div
-        className="phone-number flex items-center gap-[.5rem] cursor-pointer"
+        className={`phone-number flex items-center gap-[.5rem] cursor-pointer ${color}`}
         onClick={toggleDropdown}
       >
         <div className="ml-4 ">
           <Image
             src={selectedImage!}
-            width={30}
-            height={30}
+            width={40}
+            height={40}
             alt={"..."}
             className=" "
             onClick={toggleDropdown}
           />
         </div>
-        <div style={{ cursor: 'pointer' }}  className=" text-2xl" >▼</div>
+        <div className=" text-2xl cursor-pointer" >▼</div>
         <input
           type="text"
           readOnly
           value={selectedCountryCode || ""}
           onChange={handleInputChange}
-          className="px-4 py-2 border border-gray-300 rounded"
+          className="md:px-3 h-full border border-gray-300 !w-20 text-xl cursor-pointer !bg-transparent"
           placeholder="Enter country code"
         />
       </div>
       {isOpen && (
-        <div className="absolute border rounded max-h-60 overflow-y-auto z-10  w-[20rem] mt-[2.7rem]">
+        <div ref={ref} className="absolute border rounded max-h-60 overflow-y-auto z-10 w-[20rem] mt-[2.7rem]" id="country">
           {countries.map((country) => (
             <div
-              key={country.name.common}
+              key={country.translations.spa.common}
               className="flex items-center px-4 py-2 cursor-pointer text-2xl hover:bg-gray-100 hover:text-black"
               onClick={() =>
                 handleSelectCountry(
-                  country.name.common,
+                  country.translations.spa.common,
                   country.idd.root,
                   country.idd.suffixes[0],
                   country?.flags?.png
@@ -106,10 +112,10 @@ const Dropdown = ({ reference }: IFormValue) => {
                 src={country.flags.png}
                 width={30}
                 height={20}
-                alt={country.name.common}
+                alt={country.translations.spa.common}
                 className="mr-2"
               />
-              <span>{country.name.common}</span>
+              <span>{country.translations.spa.common}</span>
             </div>
           ))}
         </div>

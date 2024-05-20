@@ -21,6 +21,7 @@ import { useRouter } from "next/router";
 import { getClient } from "@/services/admin/admin.service";
 import UpdatePerfilModal from "@/components/molecules/session/UpdatePerfilModal";
 import { setTimeout } from "timers";
+import { Toaster } from 'sonner';
 
 interface EditingState {
   [key: string]: boolean;
@@ -38,8 +39,8 @@ export default function PerfilSocioV2() {
 
   const toast = useRef<Toast>(null);
 
-  const show = () => {
-    toast.current?.show({ severity:'success', summary: 'Success', detail: 'Actualización correcta' ,life: 2000});
+  const show = (text:string) => {
+    toast.current?.show({ severity:'success', summary: '', detail: text ,life: 2000});
   }
 
   const router = useRouter()
@@ -192,26 +193,28 @@ export default function PerfilSocioV2() {
       const id = asPath === "/admin/perfil_socio" ? clientId : userId!;
 
       const res = await updateUser(id, formData);
+      console.log('tezstssts')
       if (res.success === true){
-        show()
-        closeModal()
-        setpasswordNew("")
+        show('Actualizacion Exitosa')
         // Si actualizas la contraseña, desloguea al usuario
-        if (data.password) {
-          await logout(); // Desloguea al usuario
-          router.push('/')
-          setTimeout(() => {
-            window.location.reload(); // Recarga la página después de redirigir a la página de inicio
-          }, 200);
-        }
-      }
-      
-      
+        // if (data.password) {
+        //   await logout(); // Desloguea al usuario
+        //   router.push('/')
+        //   setTimeout(() => {
+        //     window.location.reload(); // Recarga la página después de redirigir a la página de inicio
+        //   }, 200);
+        // }
+      } 
       resetEditingState();
       getUserByIds();
       
     } catch (error) {
       console.log(error);
+      show('Los datos ingresados no son correctos, verifique e intente de nuevo')
+      
+    } finally {
+      closeModal()
+      setpasswordNew("")
     }
   };
 
@@ -285,10 +288,10 @@ export default function PerfilSocioV2() {
             </div>
           </div>
         </div>
-        <div className='perfil__contenedor'>
+        <div className='perfil__contenedor' id='send'>
           <div className='container-general'>
             <div className="lg:flex block ">
-              <div className='lg:w-1/4 w-full items-center flex'>
+              <div className='lg:w-1/4 w-full items-center flex justify-center'>
                   <div className='perfil__contenedor__left'>
                     <Image src={ infoData?.avatar || "/perfil/perfil.png"} alt='logo' width={250} height={250}/>
                   </div>
@@ -301,7 +304,6 @@ export default function PerfilSocioV2() {
                           <input type="text" className="profile-input " placeholder="Nombre"
                           {...register("name")}
                            />
-                          <i className="cursor-pointer icon-edit text-[#E1D4C4] text-[1.4rem] absolute top-[1.8rem] right-[1.5rem]"></i>
                         </div>
 
                       </div>
@@ -309,35 +311,33 @@ export default function PerfilSocioV2() {
                         <div className="perfil__contenedor__center__card relative">
                           <input type="email" className="profile-input " placeholder="Correo"
                           {...register("email")}/>
-                          <i className="cursor-pointer icon-edit text-[#E1D4C4] text-[1.4rem] absolute top-[1.8rem] right-[1.5rem]"></i>
                         </div>
                       </div>
                     </div>
                     <div className="lg:flex lg:space-x-4 ">
                       <div className="lg:w-1/2 w-full">
                         <div className="perfil__contenedor__center__card relative">
-                          <input type="tel" className="profile-input " placeholder="Celular" name="name"
-                          readOnly={!isEditing["phone"]}
+                          <input type="tel" className="profile-input " placeholder="Celular"
+                          {...register("user_contact_phone")}
                           onInput={(e) => {
                             onInputNumberOnly(setValue, "phone", e);
                           }}/>
-                          <i onClick={() => toggleEditing("phone")} 
-                          className="cursor-pointer icon-edit text-[#E1D4C4] text-[1.4rem] absolute top-[1.8rem] right-[1.5rem]"></i>
                         </div>
                       </div>
                       <div className="lg:w-1/2 w-full">
                         <div className="perfil__contenedor__center__card relative">
-                          <input type="text" className="profile-input " placeholder="Dirección" name="name"
-                          readOnly={!isEditing["address"]}/>
-                          <i onClick={() => toggleEditing("address")}
-                          className="cursor-pointer icon-edit text-[#E1D4C4] text-[1.4rem] absolute top-[1.8rem] right-[1.5rem]"></i>
+                          <input type="text" className="profile-input " placeholder="Dirección"
+                          {...register("user_address")}
+                          />
                         </div>
                       </div>
                     </div>
-                    <div className="lg:flex lg:space-x-4 ">
+                    <div className="lg:flex lg:space-x-4">
                       <div className="lg:w-1/2 w-full">
                         <div className="perfil__contenedor__center__card relative">
-                          <input type="date" className="profile-input " placeholder="Fecha de nacimiento" name="name" />
+                          <input type="date" className="profile-input " placeholder="Fecha de nacimiento"
+                          { ...register("user_other_phone")}
+                          />
                           <i className="cursor-pointer icon-edit text-[#E1D4C4] text-[1.4rem] absolute top-[1.8rem] right-[1.5rem]"></i>
                         </div>
                       </div> 
@@ -352,18 +352,9 @@ export default function PerfilSocioV2() {
                         </div>
                       </div>
                     </div>
-                    <div className="lg:flex lg:space-x-4 ">
-                      <div className="lg:w-1/2 w-full">
-                        <div className="perfil__contenedor__center__card relative">
-                          <div className="boton ">
-                            <Link href="/v2/nosotros">CAMBIAR CONTRASEÑA</Link>
-                          </div>
-
-                        </div>
-                      </div> 
-                    </div>
+                   
                     <hr />
-                    <h2 className="tituloh2">Fechas especiales</h2>
+                    <h2 className="lg:tituloh2 tituloh5">Fechas especiales</h2>
                     <div className="lg:flex lg:space-x-4 items-center">
                       <div className="lg:w-1/3  w-full">
                         <div className="perfil__contenedor__center__card relative">
@@ -378,7 +369,6 @@ export default function PerfilSocioV2() {
                           onInput={(e) => {
                           onInputNumberOnly1(setValue, "birthday_day", e);
                           }}/>
-                          <i className="cursor-pointer icon-edit text-[#E1D4C4] text-[1.4rem] absolute top-[1.8rem] right-[1.5rem]"></i>
                         </div>
                       </div> 
                       <div className="lg:w-1/3  w-full">
@@ -389,7 +379,6 @@ export default function PerfilSocioV2() {
                           onInput={(e) => {
                           onInputNumberOnly2(setValue, "birthday_month", e);
                           }}/>
-                          <i className="cursor-pointer icon-edit text-[#E1D4C4] text-[1.4rem] absolute top-[1.8rem] right-[1.5rem]"></i>
                         </div>
                       </div>
                     </div>
@@ -407,7 +396,6 @@ export default function PerfilSocioV2() {
                           onInput={(e) => {
                           onInputNumberOnly1(setValue, "couple_month", e);
                           }}/>
-                          <i className="cursor-pointer icon-edit text-[#E1D4C4] text-[1.4rem] absolute top-[1.8rem] right-[1.5rem]"></i>
                         </div>
                       </div> 
                       <div className="lg:w-1/3  w-full">
@@ -418,7 +406,6 @@ export default function PerfilSocioV2() {
                           onInput={(e) => {
                             onInputNumberOnly2(setValue, "couple_day", e);
                           }}/>
-                          <i className="cursor-pointer icon-edit text-[#E1D4C4] text-[1.4rem] absolute top-[1.8rem] right-[1.5rem]"></i>
                         </div>
                       </div>
                     </div>
@@ -436,10 +423,9 @@ export default function PerfilSocioV2() {
                           onInput={(e) => {
                             onInputNumberOnly1(setValue, "anniversary_month", e);
                           }} />
-                          <i className="cursor-pointer icon-edit text-[#E1D4C4] text-[1.4rem] absolute top-[1.8rem] right-[1.5rem]"></i>
                         </div>
                       </div> 
-                      <div className="lg:w-1/3  w-full">
+                      <div className="lg:w-1/3  w-full" >
                         <div className="perfil__contenedor__center__card relative">
                           <input type="text" className="profile-input " placeholder="Día"
                           {...register("anniversary_day")}
@@ -447,9 +433,18 @@ export default function PerfilSocioV2() {
                           onInput={(e) => {
                             onInputNumberOnly2(setValue, "anniversary_day", e);
                           }}/>
-                          <i className="cursor-pointer icon-edit text-[#E1D4C4] text-[1.4rem] absolute top-[1.8rem] right-[1.5rem]"></i>
                         </div>
                       </div>
+                    </div>
+                    <div className="lg:flex lg:space-x-4 " >
+                      <div className=" w-full">
+                        <div className="perfil__contenedor__center__card relative">
+                          <div className="boton w-full" onClick={handleSubmitForm} >
+                            <Link href={'#send'} className='w-full' >GUARDAR CAMBIOS</Link>
+                          </div>
+
+                        </div>
+                      </div> 
                     </div>
                     <div className='w-full'>
                       <p>
@@ -482,7 +477,7 @@ export default function PerfilSocioV2() {
           </div>
           <div className='perfil__insignias__card'>
             <div className='container-general'>
-              <div className='grid-cols-2	 grid lg:flex'>
+              <div className='grid-cols-2 	 flex lg:flex justify-center'>
                 {
                   (infoData?.insignias && infoData.insignias.length > 0)
                   ? infoData.insignias.map((element, i) => (
@@ -519,18 +514,27 @@ export default function PerfilSocioV2() {
           </div>
           <div className='perfil__insignias__card--2'> 
             <div className='container-general'>
-              <div className='grid-cols-2	 grid lg:flex lg:w-2/3	m-auto items-center	'>
-                <div className=' w-full lg:w-1/3'>
+              <div className='grid-cols-2	  flex lg:w-2/3	m-auto items-center	'>
+                <div className=' w-full lg:w-1/3 w-1/2'>
                   <div className='perfil__insignias__card__imagen '>
                     <img src={"/perfil/ocultas.png"} alt='logo' className='m-auto'/>
                   </div>
                 </div>
-                <div className=' w-full lg:w-1/3'>
+                <div className=' w-full lg:w-1/3 w-1/2'>
                   <div className='perfil__insignias__card__imagen '>
                   <img src={"/perfil/ocultas.png"} alt='logo' className='m-auto'/>
                   </div>
                 </div>
-                <div className=' w-full lg:w-1/3'>
+                <div className=' w-full lg:w-1/3 hidden lg:block'>
+                  <div className='perfil__insignias__card__imagen '>
+                  <img src={"/perfil/ocultas.png"} alt='logo' className='m-auto'/>
+                  </div>
+                </div>
+                
+              </div>
+              <div className='grid-cols-2	block lg:hidden  flex lg:w-2/3	m-auto items-center	justify-center'>
+               
+                <div className=' w-1/2'>
                   <div className='perfil__insignias__card__imagen '>
                   <img src={"/perfil/ocultas.png"} alt='logo' className='m-auto'/>
                   </div>
@@ -541,15 +545,17 @@ export default function PerfilSocioV2() {
           </div>
           <div className='w-full'>
               <div className="boton ">
-                <Link href="#" className='m-auto'>¿CÓMO GANAS INSIGNIAS?</Link>
+                <Link href="/insignias" className='m-auto'>¿CÓMO GANAS INSIGNIAS?</Link>
               </div>
           </div>
         </div>
+        <UpdatePerfilModal handleSubmit={handleSubmit} setpasswordNew={setpasswordNew} visible={modalupdate} updateUsers={updateUsers} closeModal={closeModal}/>
+        <Toast ref={toast} position="top-center" />
       </div>
   )
 }
 function Insignia({imageName}) {
-  return <div className='w-full lg:w-1/3'>
+  return <div className=' lg:w-1/3 w-1/2  '>
     <div className='perfil__insignias__card__imagen '>
       <Image src={`/perfil/${imageName || 'ocultas'}.png`} alt='logo' className='m-auto' width={300} height={300}/>
     </div>

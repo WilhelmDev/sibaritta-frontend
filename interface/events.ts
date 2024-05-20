@@ -9,4 +9,5 @@ export interface Events {
   price:            string;
   status:           string;
   fk_experience_id: number;
+  seats_free?:      number;
 }

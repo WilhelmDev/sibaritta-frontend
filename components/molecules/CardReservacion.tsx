@@ -20,6 +20,8 @@ import ModalPoliticasCancelacion from "./partner/ModalPoliticasCancelacion";
 import { PresencialWhite } from "../ui/icons/PresencialWhite";
 import { PickupWhite } from "../ui/icons/PickupWhite";
 import CancelarSuccess from "./reservacion/CancelarSuccess";
+import RefundCard from "@/components3/alerts/RefundCard"
+
 
 interface ICardProps {
   card: IReservacions;
@@ -34,6 +36,7 @@ function CardReservacion({ card, first, reservas, index }: any) {
   const [calification, setCalification] = useState<
     ICalification[] | undefined
   >();
+
   const [success, setSuccess] = useState(false)
 
   const router = useRouter();
@@ -180,6 +183,16 @@ function CardReservacion({ card, first, reservas, index }: any) {
 
       <div className="reservacion_titulo ">
         <div className="reservation_box">
+          <article className="three-reservation--_-  lg:hidden">
+            <div className="flex justify-end  items-center cardOrden">
+              <h3 className="mr-2">Orden:</h3>
+              <h3>{+card.id + 300}</h3>
+            </div>
+            <div className="block justify-end w-full gap-[1rem] items-center text-right">
+              <p>Código reservación:</p>
+              <p>{card.order_code}</p>
+            </div>
+          </article>
           <div className="reservation_box_text">
             {/* {card?.details?.map((expe) => (
               <h3 key={expe.id} className=' reservacion_titulo_h3'>
@@ -187,13 +200,14 @@ function CardReservacion({ card, first, reservas, index }: any) {
               </h3>
             ))} */}
             <h3 className=" reservacion_titulo_h3">{card.experience_name}</h3>
-            <p className="reservacion_titulo_ciudad">Ciudad</p>
+            
+            <p className="reservacion_titulo_ciudad hidden">Ciudad</p>
           </div>
 
-          <div className="reservacion_card_imagen "></div>
+          {/* <div className="reservacion_card_imagen "></div> */}
         </div>
         <section className="reservation_titulo_two-">
-          <article className="one-reservation-">
+          {/* <article className="one-reservation-">
             <div className="logo_reservations_id  ">
               {card.details[0].type === "presencial" ? (
                 <PickupWhite />
@@ -201,19 +215,19 @@ function CardReservacion({ card, first, reservas, index }: any) {
                 <PresencialWhite />
               )}
             </div>
-          </article>
+          </article> */}
           <article className="two-resevation-_--- ">
             {/* <h2>{card.details[0].name}</h2> */}
             <h3>{card.experience_name}</h3>
             {/* <h5>{card.details[0].type}</h5> */}
           </article>
           <article className="three-reservation--_-  ">
-            <div className="flex justify-end gap-[1rem] items-center">
-              <h3>Orden :</h3>
+            <div className="flex justify-end  items-center cardOrden">
+              <h3 className="mr-2">Orden:</h3>
               <h3>{+card.id + 300}</h3>
             </div>
-            <div className="flex justify-end w-full gap-[1rem] items-center">
-              <p>Codigo reservacion :</p>
+            <div className="block justify-end w-full gap-[1rem] items-center text-right">
+              <p>Código reservación:</p>
               <p>{card.order_code}</p>
             </div>
           </article>
@@ -392,24 +406,25 @@ function CardReservacion({ card, first, reservas, index }: any) {
             </>
           )}
         </div>
-        <button onClick={openModal} className="btn-cancel-_--_reservation ">
-          Cancelar
-        </button>
-        {card.status === "completed" &&
-          moment()
-            .startOf("day")
-            .isSameOrBefore(moment(card.details[0].date).startOf("day")) && (
-            <button onClick={ruta} className="btn-coments-order">
-              Mensaje
-            </button>
-          )}
+        
+        <div className="boton botonReservacion lg:flex">
+          {card.status === "completed" &&
+            moment()
+              .startOf("day")
+              .isSameOrBefore(moment(card.details[0].date).startOf("day")) && (
+              <button onClick={ruta} className="btn-coments-order ml-2 mr-2">
+                Mensaje
+              </button>
+            )}
 
-        <button
-          onClick={openModalRestriction}
-          className="btn-restricciones-reservation"
-        >
-          Restricciones
-        </button>
+          <button
+            onClick={openModalRestriction}
+            className="btn-restricciones-reservation ml-2 mr-2"
+          >
+            Restricciones
+          </button>
+        </div>
+       
         {/* {card?.restricciones === true ? (
           ''
         ) : (
@@ -436,25 +451,36 @@ function CardReservacion({ card, first, reservas, index }: any) {
                     
                   </h6>
                   <h6 onClick={openPoliticaCancel} className="cursor-pointer ">
-                    Política de Cancelaciones
+                  Política de Cancelaciones
                   </h6>
                 </div>
               </div>
             </>
           )}
-        <div className="w-full   text-[1.6rem] md:hidden ">
-          <span>
-            El reembolso implica la aceptación de nuestra
-            Cancelaciones.
+        <button onClick={openModal} className={`btn-cancel-_--_reservation ${isValidAction() ? 'cursor-pointer' : 'opacity-50'}`}>
+          Solicitar reembolso
+        </button>
+        <div className="w-full   text-[1.6rem] md:hidden text-center">
+          <span onClick={openPoliticaCancel} className="cursor-pointer ">
+          { isValidAction() 
+            ? 'El reembolso implica la aceptación de nuestra Política de Cancelaciones'
+            : 'El reembolso sólo es posible hasta 24 horas antes de la Experiencia. Ver nuestra Política de Cancelaciones' 
+          }
           </span>
         </div>
+       
       </div>
       <RestrictionReserva
         card={card}
         visible={restricion}
         setVisible={setRestriction}
       />
-      <CancelarResarvacion
+      {/* <CancelarResarvacion
+        cancelar={cancelar}
+        visible={visible}
+        setVisible={setVisible}
+      /> */}
+      <RefundCard 
         cancelar={cancelar}
         visible={visible}
         setVisible={setVisible}

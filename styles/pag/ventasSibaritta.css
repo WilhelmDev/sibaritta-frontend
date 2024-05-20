@@ -1,3 +1,10 @@
+.container_card_experiencia{
+  padding: 0 24px;
+  padding-bottom: 0!important;
+}
+.reservacion_titulo{
+  border:0;
+}
 .VentasSibaritta{
 
      /* color: #686561; */
@@ -374,7 +381,7 @@
     }
   
     .dates-tipes-2 {
-      width: calc(16rem * var(--scale));
+      width: calc(20rem * var(--scale));
     }
   
     .dates-tipes-3 {
@@ -448,8 +455,6 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: #e1d4c4;
-      color: #252127;
   
       @screen tablet {
         width: 50%;
@@ -458,7 +463,6 @@
       @screen laptop {
         width: calc(19rem * var(--scale));
         height: calc(19rem * var(--scale));
-        background-color: #f89c53;
         height: calc(6.3rem * var(--scale));
         font-size: calc(1.6rem * var(--scale));
       }
@@ -477,14 +481,12 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: #2f2a32;
   
       @screen tablet {
         width: 50%;
       }
   
       @screen laptop {
-        background-color: #4d3452;
         width: calc(19rem * var(--scale));
   
         height: calc(6.3rem * var(--scale));
@@ -526,6 +528,7 @@
       font-size: calc(4rem * var(--scale));
       color: #f89c53;
       font-weight: 500;
+      margin-bottom: 15px;
       display: flex;
     }
     .pay-sale-container-right-left-2 {
@@ -534,7 +537,8 @@
       text-align: left;
     }
     .pay-sale-container-right-right {
-      display: flex;
+      display: grid;
+      gap: 15px;
       flex-direction: column;
       justify-content: right;
     }
@@ -865,12 +869,13 @@
         /* flex-direction: row; */
         align-items: center;
         justify-content: center;
-        gap: calc(2rem * var(--scale));
       }
     }
-  
+    .sale-especific-2-pay-method{
+      margin-bottom: 10px;
+    }
     .sale-especific-pay-comision {
-      display: flex;
+      display: block;
       flex-direction: column;
       width: 100%;
   
@@ -882,7 +887,12 @@
         justify-content: center;
       }
     }
-  
+    .sale-especific-2-general{
+      gap: calc(1rem * var(--scale));
+    }
+    .sale-especific-pay-comision{
+      gap: calc(1rem * var(--scale));
+    }
     .sale-especific-2 {
       width: 100%;
       height: 4rem;
@@ -893,7 +903,7 @@
       justify-content: space-between;
       align-items: center;
       margin-top: 1rem;
-  
+      gap: calc(1rem * var(--scale));
       @screen laptop {
         height: calc(5.5rem * var(--scale));
         /* width: calc(4rem * var(--scale)); */
@@ -1393,9 +1403,9 @@
         padding: calc(5rem * var(--scale));
       }
     }
-  
+    
     .dates-tipes-calendar-image-1-pay {
-      width: calc(38rem * var(--scale));
+      width: calc(20rem * var(--scale));
       /* margin-left: calc(4.5rem * var(--scale));
       margin-right: calc(7rem * var(--scale)); */
     }

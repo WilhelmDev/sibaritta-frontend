@@ -1,48 +1,50 @@
 'use client'
-import Image from 'next/image'
-import HomeBanner from '@/components/organisms/HomeBanner';
-import Footer from "@/components/ui/Footer";
-import { useState, useEffect, useRef } from 'react';
-import HomeBusiness from "@/components/organisms/HomeBusiness";
-import { newRoutes } from '@/utils/routes';
-import ModalAcuerdo from "@/components/molecules/reservationExitosa/ModalAcuerdo";
-
-import { IReservation } from "@/interface/checkout.interface";
-import Clock from "@/components/molecules/clock/Clock";
-import ModalUpdateBebida from "@/components/molecules/checkout/ModalUpdateBebida";
-
-import Link from 'next/link';
-import { DeleteIcons } from '@/components/ui/icons/Delete';
-import Loading from '@/components/atoms/Loading';
-import router, { useRouter } from 'next/router';
-import { getUserById } from '@/services/login.services';
-import { loadStripe } from '@stripe/stripe-js';
-import { useAppDispatch, useAppSelector } from '@/redux/hook';
-import { formatDates } from '@/utils/formaterDate';
 import { createReservationsConfirm } from '@/services/reservaciones.service';
-import { resetReservation } from '@/redux/slice/detalle.slice';
-import { updateDates } from '@/redux/slice/clockSlice';
+import { DeleteIcons } from '@/components/ui/icons/Delete';
+import { Elements } from '@stripe/react-stripe-js';
+import { formatDates } from '@/utils/formaterDate';
+import { getUserById } from '@/services/login.services';
+import { IReservation } from "@/interface/checkout.interface";
+import { loadStripe } from '@stripe/stripe-js';
+import { newRoutes } from '@/utils/routes';
+import { resetReservation} from '@/redux/slice/detalle.slice';
 import { toast } from 'sonner';
+import { selectRemainingTime, updateDates } from '@/redux/slice/clockSlice';
+import { useAppDispatch } from '@/redux/hook';
+import { usePathname } from 'next/navigation'
+import { useRouter } from 'next/router';
+ import { useState, useEffect,useRef } from 'react';
+import Clock from "@/components/molecules/clock/Clock";
+import Dropdown from '@/components/atoms/Drowpdon';
+import FormPayment from '@/components/molecules/checkout/FormPayment';
+import Link from 'next/link';
+import Loading from '@/components/atoms/Loading';
+import ModalAcuerdo from "@/components/molecules/reservationExitosa/ModalAcuerdo";
+import ModalPoliticasCancelacion from '@/components/molecules/partner/ModalPoliticasCancelacion';
+import ModalUpdateBebida from "@/components/molecules/checkout/ModalUpdateBebida";
 import moment from 'moment';
 import SecurityPrivileges from "@/security/SecurityPrivileges";
-import { Elements } from '@stripe/react-stripe-js';
-import FormPayment from '@/components/molecules/checkout/FormPayment';
-import ModalPoliticasCancelacion from '@/components/molecules/partner/ModalPoliticasCancelacion';
+import { useSelector } from 'react-redux';
 
 interface FechaState {
     month: string | null;
     year: number | null;
     day: number | null;
-    hour: string | null;
   }
 
 export default function Experiencia () {
-
     const [cancelationPoliti, setcancelationPoliti] = useState<boolean>(false);
 
     const router = useRouter();
+    const pathname = usePathname()
+
+    const remainingTime = useSelector(selectRemainingTime);
+    const [outOfTimeModal, setOutOfTimeModal] = useState<boolean>(false);
     const [isEditing, setIsEditing] = useState<any>({});
   
+    const [visibleAlert, setVisibleAlert] = useState<boolean>(false);
+    const [alertModal, setAlertModal] = useState<string>('')
+
     const [visible, setVisible] = useState<boolean>(false);
     const [propina, setPropina] = useState(10);
     const [checkBox, setcheckBox] = useState(false);
@@ -67,12 +69,12 @@ export default function Experiencia () {
     const [phoneNumberError, setPhoneNumberError] = useState<string>("");
     const [emailError, setEmailError] = useState<string>("");
     const [acuerdoModal, setacuerdoModal] = useState<boolean>(false);
+    
   const [phone, setPhone] = useState('')
   const [code, setCode] = useState('')
     const keyStripe =
       "pk_test_51OYeYoAxcKR0527klkQXwcOwBSHfy18vOYoMUgNRuA9HiONvIPU6VJUrmvwezAxlM4WiKVJJT8wC2zLn7DZwP0pp00h5WwfQKX";
     const stripePromise = loadStripe(keyStripe);
-    const reservaStore = useAppSelector((state: any) => state.reservation);
     const dispatch = useAppDispatch();
     const handleReservation = () => {
       router.push({
@@ -83,7 +85,6 @@ export default function Experiencia () {
     const openAcuerdoModal = () => {
       setacuerdoModal(true);
     };
-  
     const date = formatDates(datos?.fecha || "");
   
     const getUserByIds = async () => {
@@ -96,7 +97,7 @@ export default function Experiencia () {
   
           setuserLoginDatos(data);
           setemail(data.email);
-          setAddress(data?.meta_data[0]?.meta_value);
+          setAddress(data?.meta_data[0]?.meta_value || "");
         } else {
           console.log("El valor de userid en localStorage es nulo");
         }
@@ -107,9 +108,7 @@ export default function Experiencia () {
     useEffect(() => {
       getUserByIds();
     }, []);
-  
-    let totalExperience = parseInt(datos?.priceExperience ?? "0", 10) * (datos?.personas ?? "0", 10);
-    
+      
     const datePart = datos?.horario;
     const part = datePart?.split(":");
     const horas = parseInt(part?.[0] ?? "0", 10);
@@ -143,20 +142,6 @@ export default function Experiencia () {
         [inputName]: !prev[inputName],
       }));
     };
-    //comment
-    // const subTotal = () => {
-    //   let subtotal =
-    //     parseInt(datos?.priceExperience ?? "0", 10) * (datos?.personas ?? 0);
-    //   if (datos?.sugerencias && datos.sugerencias.length > 0) {
-    //     subtotal += datos.sugerencias.reduce((total, bebida) => {
-    //       let cantidad = bebida?.count || 0;
-    //       let precio: any = parseInt(bebida?.regular_price ?? "0", 10) || 0;
-    //       return total + cantidad * precio;
-    //     }, 0);
-    //   }
-    //   subtotal += cargoServicio;
-    //   return subtotal;
-    // };
   
     const calcularPropia = () => {
       const subtotal = subTotal();
@@ -183,10 +168,7 @@ export default function Experiencia () {
   
     const calcularTotal = () => {
       const subtotal = subTotal();
-      // const propinas = calcularPropia();
-  
-      // return subtotal + propinas;
-  
+
       return subtotal;
     };
   
@@ -203,10 +185,19 @@ export default function Experiencia () {
         setDatos(parsedReservation);
       }
     }, []);
-    //pago stripe
+    // pago stripe
+
   
     const accionStripe = async () => {
       setLoading(true);
+      if(!remainingTime || remainingTime <= 0) {
+
+        setOutOfTimeModal(true)
+        setLoading(false)
+
+        return; 
+      } 
+      
       let idStripe = "";
       let idNumberCard = "";
       stripeRef.current?.click();
@@ -243,28 +234,51 @@ export default function Experiencia () {
       //     setCheckBoxTreeError("");
       //   }, 2500);
       // }
+
+
+      const ModalAlert = () => {
+        setAlertModal('Todos los campos son obligatorios')
+        setVisibleAlert(true)
+        setTimeout(() => {
+          setVisibleAlert(false)
+        }, 2500);
+      }
+
+      
   
       if (address === "") {
+        ModalAlert()
         setAddressError("Este campo es obligatorio");
         setTimeout(() => {
           setAddressError("");
         }, 2500);
       }
       if (email === "") {
+        ModalAlert()
         setEmailError("Este campo es obligatorio");
         setTimeout(() => {
           setEmailError("");
         }, 2500);
       }
-      // if (phone === "" || code === "") {
-      //   setPhoneNumberError("Este campo es obligatorio");
-      //   setTimeout(() => {
-      //     setPhoneNumberError("");
-      //   }, 2500);
-      // }
+      if (phone === "") {
+        setPhoneNumberError("Este campo es obligatorio");
+        setTimeout(() => {
+          setPhoneNumberError("");
+        }, 2500);
+      }
       if (
         address === "" ||
         email === "" ||
+        phone === ""
+      ) {
+        setLoading(false);
+        router.push(`${pathname}#error`)
+  
+        // Muestra mensajes de error o toma alguna acción
+        return;
+      }
+
+      if (
         !checkBox ||
         !checkBoxTwo
       ) {
@@ -295,7 +309,7 @@ export default function Experiencia () {
             order_hour_event: horas,
             order_minute_event: minutos,
             cardnumber: idNumberCard,
-            numberPhone: "+00 00000000",
+            numberPhone: code + phone,
             user_address: address,
             order_details: datos?.sugerencias 
             ? datos.sugerencias.map((e: any) => {
@@ -381,14 +395,13 @@ export default function Experiencia () {
     if(event.charCode >= 48 && event.charCode <= 57){
       return true;
      }
-     return false;        
+     return false;
 }
   
     const [fechaState, setFechaState] = useState<FechaState>({
         month: null,
         year: null,
         day: null,
-        hour: null,
       });
       
     useEffect(() => {
@@ -398,9 +411,7 @@ export default function Experiencia () {
             month: FechaDate.toLocaleString('es-ES', { month: 'long' }),
             year: FechaDate.getFullYear(),
             day: FechaDate.getDate(),
-            hour: `${FechaDate.getHours()}:${FechaDate.getMinutes()}`,
           }));
-
     }, [datos])
 
   useEffect(() => {
@@ -425,7 +436,7 @@ export default function Experiencia () {
                           &gt; Experiencias
                       </Link>
                   </li>
-                  <li className="activeMigaja">
+                  <li className="activeMigaja" >
                   <Link href={newRoutes.home} className=' hover:text-yellow-600'>
                           &gt; Reservación
                       </Link>
@@ -438,16 +449,26 @@ export default function Experiencia () {
               <div className='container-general'>
                   <div className="flex space-x-5">
                       <div className="w-3/5">
-                          <div className='checkout__contenedor__left'>
+                          <div className='checkout__contenedor__left' >
+                              <h5 className='tituloh5 mb-5 xl:hidden tituloh4 '>Resumen de la orden</h5>
+
+                              <div className='checkout__contenedor__right__hora__left xl:hidden'>
+                                <p>Tiempo para conservar tu reservación</p>
+                              </div>
+                              <div className='checkout__contenedor__right__hora__right xl:hidden mb-5'>
+                                <h3 className='tituloh3 mb-5 pb-4 pt-0 mt-0'>
+                                   <Clock outOfTimeModal={outOfTimeModal} /> 
+                                </h3>
+                              </div>
                               <div className='checkout__contenedor__left__top'>
-                                  <h5 className='tituloh5 mb-5'>Observaciones del Socio para el establecimiento</h5>
+                                  <h5 className='tituloh5 mb-5'>Observaciones del Socio (opcional)</h5>
                                   <textarea
                                       value={comment}
                                       onChange={handleInputChange}
                                       placeholder="Escribe aquí"
                                       cols={30}
                                       rows={10}
-                                      className="text-[#fff] "
+                                      className="text-[#fff] placeholder:text-[#574e5c]"
                                   ></textarea>
                                   <p>Si tienes alguna observación adicional que no incluyas en esta casilla, por favor comunicarlo al personal del establecimiento el día del evento</p>
                                   <p
@@ -458,9 +479,9 @@ export default function Experiencia () {
                                   </p>
 
                               </div>
-                              <div className='checkout__contenedor__left__bottom'>
+                              <div className='checkout__contenedor__left__bottom' id='error' >
                                   <h5 className='tituloh5'>Detalles del pago</h5>
-                                  <div className='checkout__contenedor__left__bottom__card'>
+                                  <div className='checkout__contenedor__left__bottom__card' >
                                       <label htmlFor="" className='mb-4 block'>Correo</label>
                                       <input
                                           className={email === "" ? "border-red" : ""}
@@ -476,24 +497,13 @@ export default function Experiencia () {
                                           </p>
                                       )}
                                   </div>
-                                  <div className='checkout__contenedor__left__bottom__card'>
+                                  <div className='checkout__contenedor__left__bottom__card' >
                                       <div className="flex space-x-4 mb-4">
                                           <div className="w-3/4">
                                               <label htmlFor="">Método de pago</label>
                                           </div>
                                           <div className="w-1/6">
                                           </div>
-                                          {/* <div className="w-1/6">
-                                              <div className='checkout__contenedor__left__bottom__card__label'>
-                                                  <button>
-                                                      agregar
-                                                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                      <path d="M4 20.0001H20M4 20.0001V16.0001L14.8686 5.13146L14.8704 5.12976C15.2652 4.73488 15.463 4.53709 15.691 4.46301C15.8919 4.39775 16.1082 4.39775 16.3091 4.46301C16.5369 4.53704 16.7345 4.7346 17.1288 5.12892L18.8686 6.86872C19.2646 7.26474 19.4627 7.46284 19.5369 7.69117C19.6022 7.89201 19.6021 8.10835 19.5369 8.3092C19.4628 8.53736 19.265 8.73516 18.8695 9.13061L18.8686 9.13146L8 20.0001L4 20.0001Z" stroke="#E1D4C4" strokeWidth="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                                      </svg>
-
-                                                  </button>
-                                              </div>
-                                          </div> */}
                                       </div>
                                       <div className="flex space-x-4">
                                           <div className="w-full">
@@ -504,19 +514,39 @@ export default function Experiencia () {
                                       </div>
                                       
                                   </div>
-                                  <div className='checkout__contenedor__left__bottom__card mb-0'>
+                                  <div className='checkout__contenedor__left__bottom__card mb-5' >
                                       <label htmlFor="" className='mb-4 block'>Dirección</label>
                                       <input
                                           value={address}
                                           onChange={handleAddress}
                                           type="text"
-                                          placeholder='Cra 50a #176-30, casa, segundo piso  /  Bogotá, Barrio Nueva Zelandia'
+                                          className='placeholder:text-[#574e5c]'
+                                          placeholder='Dirección'
                                       />
-                                      {addressError && (
+                                       {addressError && (
                                           <p className="Login-error main-page !text-red-600 !text-[1.2rem] ">
                                               {String(addressError)}
                                           </p>
-                                      )}
+                                        )}
+                                      </div>
+                                       
+                                  <div className='checkout__contenedor__left__bottom__card mb-5' id='phone'>
+                                      <label htmlFor="" className='mb-4 block'>Teléfono</label>
+                                      <div className="!flex gap-5 ">
+                                        <Dropdown reference={setCode}/>
+                                        <input
+                                            value={phone}
+                                            onChange={(e) => updatePhoneNumber(e.target.value)}
+                                            type="text"
+                                            placeholder='Teléfono'
+                                            className='placeholder:text-[#574e5c]'
+                                        />
+                                      </div>
+                                        {phoneNumberError && (
+                                          <p className="Login-error main-page !text-red-600 !text-[1.2rem] font-lato">
+                                            {String([phoneNumberError])}
+                                          </p>
+                                        )}
                                   </div>
                               </div>
                           </div>
@@ -524,21 +554,21 @@ export default function Experiencia () {
                       <div className="lg:w-2/5 w-100">
                           <div className='checkout__contenedor__right'>
                               <div className="checkout__contenedor__right__card__top">
-                                  <h5 className='tituloh5 mb-5'>Resumen de la orden</h5>
+                                  <h5 className='tituloh5 mb-5 hidden xl:block'>Resumen de la orden</h5>
                                   <div className='checkout__contenedor__right__hora'>
 
                                   </div>
                                   <div className='flex'>
                                       <div className="w-3/5">
-                                          <div className='checkout__contenedor__right__hora__left'>
+                                          <div className='checkout__contenedor__right__hora__left hidden xl:block'>
                                               <p>Tiempo para conservar tu reservación</p>
                                                   
                                           </div>
                                       </div>
                                       <div className="w-2/5">
-                                          <div className='checkout__contenedor__right__hora__right'>
+                                          <div className='checkout__contenedor__right__hora__right hidden xl:block'>
                                               <h3 className='tituloh3'>
-                                                  <Clock />
+                                                  <Clock outOfTimeModal={outOfTimeModal} /> 
                                               </h3>
                                           </div>
                                       </div>
@@ -556,7 +586,7 @@ export default function Experiencia () {
                                           <div className="w-1/2">
                                               <div className='checkout__contenedor__right__card__bottom__card__right'>
                                                   <button className='flex justify-end w-full'>
-                                                      ${datos?.nameExperience || 0}
+                                                      {datos?.nameExperience || 0}
                                                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                       <path d="M19 7L18.1327 19.1425C18.0579 20.1891 17.187 21 16.1378 21H7.86224C6.81296 21 5.94208 20.1891 5.86732 19.1425L5 7M10 11V17M14 11V17M15 7V4C15 3.44772 14.5523 3 14 3H10C9.44772 3 9 3.44772 9 4V7M4 7H20" stroke="#E1D4C4" strokeWidth="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                                       </svg>
@@ -684,8 +714,7 @@ export default function Experiencia () {
                                           </div>
                                           <div className="w-1/2">
                                               <div className='checkout__contenedor__right__card__bottom__card__right  '>
-                                                
-                                                  <p className='text-end'>{fechaState.hour}pm</p>
+                                                  <p className='text-end'>{datos?.horario}</p>
                                               </div>
                                           </div>
                                       </div>
@@ -803,9 +832,16 @@ export default function Experiencia () {
               setReserva={setDatos}
           />
           <ModalPoliticasCancelacion
-          visible1={cancelationPoliti}
-          setVisible1={setcancelationPoliti}
-      />
+            visible1={cancelationPoliti}
+            setVisible1={setcancelationPoliti}
+          />
+          {/* {isMobile &&
+            <AlertCard
+              content={alertModal}
+              visible={visibleAlert}
+              setVisible={setVisibleAlert}
+            />
+          } */}
       </main>
     </SecurityPrivileges>
   );

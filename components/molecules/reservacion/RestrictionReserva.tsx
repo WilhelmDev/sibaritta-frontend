@@ -20,63 +20,67 @@ function RestrictionReserva({ visible, setVisible , card }: ModalSessionProps) {
       <Modal
         visible={visible}
         closeModal={closeModal}
-        width="w-[80%] min-h-[43rem] tablet:w-[58rem] "
+        width="w-[80%]  tablet:w-[58rem] "
         bg="#2F2A32"
-        className="resttriction_modal"
+        className="resttriction_modal modalsession__card"
       >
-        <article className=" resttriction_modal_btns ">
-          <button className="resttriction_modal_btn_one  ">
-            Código de vestimenta
+        <div className="tablaRestriciones">
+          <table className="table-auto w-full">
+            <tr>
+              <td>
+                Código de vestimenta
+              </td>
+              <td>
+              {card?.experience_dress_code || "Formal"}
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Duración
+              </td>
+              <td>
+                {card?.experience_duration || "No"} Horas
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Hora de llegada
+              </td>
+              <td>
+                {card?.experience_checkin || "No"} 
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Rango de edad
+              </td>
+              <td>
+                {card?.experience_age || "Todos"}
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Adicionales
+              </td>
+              <td>
+                {card?.experience_aditionals || "Sin adicionales"}
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Zona de fumadores
+              </td>
+              <td>
+              {card?.experience_smoking_zone || "No"}
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div className="boton boton--transparente">
+          <button onClick={closeModal} className="resttriction_modal_btn_close">
+            Volver
           </button>
-          <button className="  resttriction_modal_btn_two">{card?.experience_dress_code || "Formal"}</button>
-        </article>
-
-        <article className="resttriction_modal_btns ">
-          <button className=" resttriction_modal_btn_one ">
-          Duración
-          </button>
-          <button className="resttriction_modal_btn_two">{card?.experience_duration || "No"} Horas</button>
-        </article>
-
-        <article className="resttriction_modal_btns">
-          <button className=" resttriction_modal_btn_one ">
-            Hora de llegada
-          </button>
-          <button className="resttriction_modal_btn_two text-[1.2rem] ">
-            {card?.experience_checkin || "No"} 
-          </button>
-        </article>
-
-        <article className="resttriction_modal_btns">
-          <button className=" resttriction_modal_btn_one ">
-          Rango de edad
-          </button>
-          <button className="resttriction_modal_btn_two text-[1.2rem] ">
-            {card?.experience_age || "Todos"}
-          </button>
-        </article>
-
-        <article className="resttriction_modal_btns">
-          <button className=" resttriction_modal_btn_one ">
-          Adicionales
-          </button>
-          <button className="resttriction_modal_btn_two text-[1.2rem] ">
-            {card?.experience_aditionals || "Sin adicionales"}
-          </button>
-        </article>
-
-        <article className="resttriction_modal_btns">
-          <button className=" resttriction_modal_btn_one ">
-          Zona de fumadores
-          </button>
-          <button className="resttriction_modal_btn_two text-[1.2rem] ">
-            {card?.experience_smoking_zone || "No"}
-          </button>
-        </article>
-
-        <button onClick={closeModal} className="resttriction_modal_btn_close">
-          Volver
-        </button>
+        </div>
       </Modal>
     </div>
   );

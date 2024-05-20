@@ -1,7 +1,8 @@
 .Medium {
   @screen laptop {
-    width: calc(85.1rem * var(--scale));
-    padding-left: calc(5rem * var(--scale));
+    padding-left: calc(8rem * var(--scale));
+    margin-left: calc(4rem * var(--scale));
+
     @apply border-l-2 border-[#3E3940];
   }
 }

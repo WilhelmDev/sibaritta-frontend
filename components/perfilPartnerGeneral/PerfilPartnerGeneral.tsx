@@ -151,7 +151,7 @@ const PerfilPartnerGeneral = ({ dataProps }: perfilPartnerGeneral) => {
                           required: "Este campo es obligatorio",
                           pattern: {
                             value: emailPattern,
-                            message: "formato incorrecto",
+                            message: "Formato incorrecto",
                           },
                         })}
                         className={`${
@@ -167,7 +167,7 @@ const PerfilPartnerGeneral = ({ dataProps }: perfilPartnerGeneral) => {
                         className="icon-edit icon_perfil_partners"
                       ></i>
                       {dataProps.errors?.business_email && (
-                        <p className="Login-error text-red-600">
+                        <p className="Login-error text-red-600 text-[1rem]">
                           {String(dataProps.errors?.business_email.message)}
                         </p>
                       )}
@@ -335,7 +335,7 @@ const PerfilPartnerGeneral = ({ dataProps }: perfilPartnerGeneral) => {
                             className="cursor-pointer icon-edit text-[#E1D4C4] text-[1.5rem] absolute top-[4.5rem] right-[1.5rem] laptop:top-[1.5rem]"
                           ></i>
                           {dataProps.errors?.full_name && (
-                            <p className="Login-error text-red-600 text-[1rem]">
+                            <p className="Login-error text-red-600 text-[1rem] text-[1rem]">
                               {String(dataProps.errors?.full_name.message)}
                             </p>
                           )}
@@ -357,7 +357,7 @@ const PerfilPartnerGeneral = ({ dataProps }: perfilPartnerGeneral) => {
                             className="cursor-pointer icon-edit text-[#E1D4C4] text-[1.5rem] absolute top-[4.5rem] right-[1.5rem] laptop:top-[1.5rem]"
                           ></i>
                           {dataProps.errors?.rfc && (
-                            <p className="Login-error text-red-600 text-[1rem]">
+                            <p className="Login-error text-red-600 text-[1rem] text-[1rem]">
                               {String(dataProps.errors?.rfc.message)}
                             </p>
                           )}
@@ -385,7 +385,7 @@ const PerfilPartnerGeneral = ({ dataProps }: perfilPartnerGeneral) => {
                               className="icon-edit icon_perfil_partners"
                             ></i>
                             {dataProps.errors?.responsable_name && (
-                              <p className="Login-error text-red-600 text-[1rem]">
+                              <p className="Login-error text-red-600 text-[1rem] text-[1rem]">
                                 {String(
                                   dataProps.errors?.responsable_name.message
                                 )}
@@ -418,7 +418,7 @@ const PerfilPartnerGeneral = ({ dataProps }: perfilPartnerGeneral) => {
                               className="icon-edit icon_perfil_partners"
                             ></i>
                             {dataProps.errors?.phone1 && (
-                              <p className="Login-error text-red-600 text-[1rem]">
+                              <p className="Login-error text-red-600 text-[1rem] text-[1rem]">
                                 {String(dataProps.errors?.phone1.message)}
                               </p>
                             )}
@@ -450,7 +450,7 @@ const PerfilPartnerGeneral = ({ dataProps }: perfilPartnerGeneral) => {
                               required: "Este campo es obligatorio",
                               pattern: {
                                 value: emailPattern,
-                                message: "formato incorrecto",
+                                message: "Formato incorrecto",
                               },
                             })}
                             className={`${
@@ -466,7 +466,7 @@ const PerfilPartnerGeneral = ({ dataProps }: perfilPartnerGeneral) => {
                             className="icon-edit icon_perfil_partners"
                           ></i>
                           {dataProps.errors?.business_email && (
-                            <p className="Login-error text-red-600 text-[1rem]">
+                            <p className="Login-error text-red-600 text-[1rem] text-[1rem]">
                               {String(dataProps.errors?.business_email.message)}
                             </p>
                           )}
@@ -489,7 +489,7 @@ const PerfilPartnerGeneral = ({ dataProps }: perfilPartnerGeneral) => {
                               className="icon-edit icon_perfil_partners"
                             ></i>
                             {dataProps.errors?.curp && (
-                              <p className="Login-error text-red-600 text-[1rem]">
+                              <p className="Login-error text-red-600 text-[1rem] text-[1rem]">
                                 {String(dataProps.errors?.curp.message)}
                               </p>
                             )}
@@ -574,7 +574,7 @@ const PerfilPartnerGeneral = ({ dataProps }: perfilPartnerGeneral) => {
                             className="icon-edit icon_perfil_partners"
                           ></i>
                           {dataProps.errors?.commission && (
-                            <p className="Login-error text-red-600 text-[1rem]">
+                            <p className="Login-error text-red-600 text-[1rem] text-[1rem]">
                               {String(dataProps.errors?.commission.message)}
                             </p>
                           )}
@@ -747,7 +747,7 @@ const PerfilPartnerGeneral = ({ dataProps }: perfilPartnerGeneral) => {
                               required: "Este campo es obligatorio",
                               pattern: {
                                 value: emailPattern,
-                                message: "formato incorrecto",
+                                message: "Formato incorrecto",
                               },
                             })}
                             className={`${
@@ -763,7 +763,7 @@ const PerfilPartnerGeneral = ({ dataProps }: perfilPartnerGeneral) => {
                             className="icon-edit icon_perfil_partners"
                           ></i>
                           {dataProps.errors?.business_email && (
-                            <p className="Login-error text-red-600">
+                            <p className="Login-error text-red-600 text-[1rem]">
                               {String(dataProps.errors?.business_email.message)}
                             </p>
                           )}

@@ -25,8 +25,8 @@ function CancelarSuccess({
         visible={visible}
         closeModal={closeModal}
         width="w-[80%] tablet:w-[58rem]  "
-        bg="#2F2A32"
-        className="reservacion_modal min-h-32"
+        bg="#E9E3DB"
+        className="reservacion_modal alertaCard "
       >
 
         <p className="reservation_p-one">

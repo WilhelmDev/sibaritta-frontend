@@ -93,7 +93,7 @@ const Card = ({ card, index, className, classNames }: any) => {
                 />
               </div>
             </div>
-            <div className="w-full h-full z-0 rounded-[2.3rem] absolute  bottom-0 bg-gradient-to-b from-transparent to-[#252127] "></div>
+            <div className="w-full h-full z-0  absolute  bottom-0 bg-gradient-to-b from-transparent to-[#252127] "></div>
           </article>
         </div>
 

@@ -49,7 +49,7 @@ const FormPayment = ({ reference }: IFormPayment) => {
               fontSmoothing: "antialiased",
               fontSize: "15px",
               "::placeholder": {
-                color: "#A59484",
+                color: "#574e5c",
               },
             },
             invalid: {

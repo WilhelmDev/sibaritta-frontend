@@ -48,9 +48,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <CustomHeadWsp />
         {/* <CustomHead /> */}
         <ObserverTop />
-        {(local.local === null as any || local.local == 1) && <Header />}
-        {local.local === "2" && <HeaderPartner />}
-        {local.local === "3" && <HeaderAdmin />}
+        {(local.local === null || +local.local === 1) && <Header />}
+        {+local.local === 2 && <HeaderPartner />}
+        {+local.local === 3 && <HeaderAdmin />}
         {children}
         {!hideFooter && <Footer />}
       </div>

@@ -1,42 +1,34 @@
-import Card from "@/components/molecules/Card";
-import React, { useEffect, useState } from "react";
-import Image from "next/image";
-import { useAppSelector } from "@/redux/hook";
-import ModalPolitica from "@/components/molecules/reservationExitosa/ModalPolitica";
-import { useRouter } from "next/router";
-import QRcode from "qrcode.react";
+'use client'
+import Image from 'next/image'
+import HomeBanner from '@/components/organisms/HomeBanner';
+import Footer from "@/components/ui/Footer";
+import { useEffect, useState } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import Link from 'next/link';
+import { newRoutes } from '@/utils/routes';
+import Carrousel from '@/components/carousel';
+import ModalSession from '@/components/molecules/ModalSession';
+import Medium from '@/components/organisms/contact/Medium';
 import {
   checkoutExperience,
   fetchExperienceByCategory,
 } from "@/services/experience.service";
+import QRCode from 'qrcode.react';
+import Card from '@/components3/Cards/Card';
 
-import ModalPoliticasCancelacion from "@/components/molecules/partner/ModalPoliticasCancelacion";
-import RestrictionReserva from "@/components/molecules/reservacion/RestrictionReserva";
-import SecurityPrivileges from "@/security/SecurityPrivileges";
-import QRCode from "qrcode.react";
+export default function Nosotros () {
 
-
-
-
-function Index() {
-  const [visible, setVisible] = useState<boolean>(false);
-  const [restricciones, setrestricciones] = useState<boolean>(false);
-  const [status, setStatus] = useState<boolean>(false);
-  const police = useAppSelector((state) => state.police);
   const [code, setCode] = useState<string>("");
-  const [polices, setPolices] = useState<string>(police);
   const [data, setData] = useState< any>([]);
+  const [status, setStatus] = useState<boolean>(false);
 
+  useEffect(() => {
+    AOS.init();
 
-  const router = useRouter();
-
-  const openModal = () => {
-    setVisible(true);
-  };
-
-  const openModalRestricciones = () => {
-    setrestricciones(true);
-  };
+    const update = document.querySelector('body')
+    update?.classList.add('Experienciabg')
+  }, [])
 
   useEffect(() => {
     // Solo ejecutar en el lado del cliente
@@ -66,108 +58,79 @@ function Index() {
     }
   };
 
-// const SecurityPrivileges = () => {
-//     const user_id = localStorage.getItem("fk_typeuser");
-
-//     // user_id === "1" ? router.push("/") : "";
-//     user_id === "2"?router.push("/home_partner"):"";
-//     user_id === "3" ? router.push("/admin/admin_home") : "";
-//   };
-
   useEffect(() => {
     getAllOtherReservation();
   }, []);
 
+  
   return (
-   <SecurityPrivileges>
-    <div className="reserva_exitosa_general_container graciasCard">
-     <section className="container-general ">
-     <div className="flex space-x-4 gap-4">
-       <article className="reserva_exitosa-container w-1/4">
+    <main className="gracias pb-5 mb-5">
+        <div className='gracias__titulo'  data-aos="fade-up" data-aos-duration="3000">
+            <h1 className='tituloh2 uppercase text-center'>
+                gracias por tu rereservación
+                <svg className='m-auto mt-5 pt-5 mbt-5 pt-5' width="3" height="71" viewBox="0 0 3 71" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_5161_6941)">
+                <path d="M2.85156 70.4575L2.85156 0.542491C2.85156 0.242881 2.22924 0 1.46156 0L1.39156 0C0.623888 0 0.00156403 0.242881 0.00156403 0.542491L0.00156403 70.4575C0.00156403 70.7571 0.623888 71 1.39156 71H1.46156C2.22924 71 2.85156 70.7571 2.85156 70.4575Z" fill="#F4A560"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_5161_6941">
+                <rect width="2.85" height="71" fill="white"/>
+                </clipPath>
+                </defs>
+                </svg>
 
-         <h3 className="text-[#E1D4C4] text-center    font-bold laptop:text-start">
-           ¡Gracias por tu reservación!
-         </h3>
+            </h1>
+        </div>
+        <div className='gracias__codigo'  data-aos="zoom-in" data-aos-duration="3000">
+            <div className='container-general'>
+                <div className='flex justify-center'>
+                    <div className='md:w-2/5'>
+                        <div className='gracias__codigo__card'>
+                            <h3 className='tituloh3 text-center'>TU CÓDIGO DE RESERVACIÓN</h3>
+                            <div className="w-full flex justify-center my-10">
+                              <QRCode value={`${process.env.NEXT_PUBLIC_URl_BASIC}reserva/${code}`} size={150} includeMargin={true}/>
+                            </div>
+                            <h4 className='text-center'>{code}</h4>
+                            <p className='text-center'>
+                                Recuerda llegar 10 minutos antes de la hora de tu reservación<br/><br/>
 
-         <div className="reserva-exitosaQr">
+                                Si quieres recibir el 100% de tu reembolso y cancelar tu reservación, recuerda que tienes hasta 24 horas antes de la hora de tu experiencia para hacer la solicitud. Ingresa a “Reservaciones actuales” en “Solicitar reembolso”
 
-           <div className="reserva-exitosaQr-text">
-             <h4>
-               Código de reservación:
-             </h4>
-             <h3 className="code-reserva-exitosa-h2">
-               {code}
-             </h3>
-           </div>
-           <div className="w-full flex justify-center">
-            <QRCode value={`${process.env.NEXT_PUBLIC_URl_BASIC}reserva/${code}`} size={150} includeMargin={true}/>
-           </div>
-           <p className=" reserva-exitosaQr-textcontents">
-             Este código será solicitado el día de la experiencia
-           </p>
-           <p className=" reserva-exitosaQr-textcontents">
-             Recuerda llegar 10 minutos antes de la Hora de la Reservación
-           </p>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div className="home__experiencia hidden" id="formulario">
+          <div className="container-general ">
+            <div className="lg:flex block flex-wrap">
+              <div className="lg:w-2/6 w-100  flex items-center justify-center">
+                <div className="home__intro__left " data-aos="fade-right" data-aos-duration="3000">
+                  <h2 className="tituloh2 md:text-center lg:text-left">SUGERENCIAS<br/>SIBARITTA</h2>
+                  <p className='md:text-center lg:text-left'>
+                  Continúa tu camino para convertirte en maestro Sibaritta
+                  </p>
+                  <div className="boton ">
+                    <Link href={newRoutes.experiencias}>
+                      VER EXPERIENCIAS
+                    </Link>
+                  </div> 
+                </div>
+              </div>
+              <div className="lg:w-4/6 w-100">
+                <div className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 gap-[1rem] container-qr-card" data-aos="fade-left" data-aos-duration="3000">
+                  {data?.slice(0, 3).map((card: any, index: any) => (
+                    <Card key={card.id} card={card} index={index} />
+                  ))}
+                </div>
+              
+              
+              </div>
 
-           <div className="text-reservation-exi  ">
-           <p className=" reserva-exitosaQr-textcontents">
-             Si necesitas factura electrónica, por favor envíanos un correo a: facturacion@sibaritta.com
-           </p>
-           <p className=" reserva-exitosaQr-textcontents">
-             Tienes hasta 1 día antes (24 Horas) de tu reservación para realizar el proceso de cancelación y recibir el 100% de reembolso
-           </p>
-           </div>
-         </div>
-
-         <div className=" w-full flex  flex-col gap-[2rem]">
-
-         <div className="w-full rounded-[1rem] h-[7.8rem] bg-[#4D3452]  flex justify-center items-center">
-           <p className="text-[#E1D4C4]  font-extrabold  text-center duration-300 ease-in-out text-destok px-[.5rem]">
-             Para ver  las restricciones haz
-             <span
-               onClick={openModalRestricciones}
-               className="cursor-pointer hover:text-[#F89C53] pl-[.5rem]"
-               >
-               click aquí
-             </span>
-           </p>
-         </div>
-
-         <div className="w-full rounded-[1rem] h-[7.8rem] bg-[#4D3452]  flex justify-center items-center">
-           <p className="text-[#E1D4C4]  font-extrabold  text-center duration-300 ease-in-out text-destok px-[.5rem]">
-             Si deseas conocer todas las políticas de cancelación da
-             <span
-               onClick={openModal}
-               className="cursor-pointer hover:text-[#F89C53] pl-[.5rem]"
-               >
-               click aquí
-             </span>
-           </p>
-         </div>
-
-               </div>
-
-       </article>
-
-       <article className="reservas_card w-3/4">
-         <h3 className="text-[#E1D4C4] text-center    font-bold laptop:text-start">
-           Sugerencias Sibaritta
-         </h3>
-         <div className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 gap-[1rem] container-qr-card">
-           {data?.slice(0, 3).map((card: any, index: any) => (
-             <Card key={card.id} card={card} index={index} />
-           ))}
-         </div>
-       </article>
-     </div>
-
-      {visible && <ModalPoliticasCancelacion visible1={visible} setVisible1={setVisible} />}
-
-      <RestrictionReserva card={data} visible={restricciones} setVisible={setrestricciones} />
-    </section>
-   </div>
-   </SecurityPrivileges>
+            </div>
+          </div>
+        </div>
+    </main>
   );
 }
-
-export default Index;

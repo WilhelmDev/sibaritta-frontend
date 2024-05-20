@@ -78,7 +78,7 @@ function ModalPartnerReservaVentas({
               <div className="reservacion_card_imagen "></div>
             </div>
             <section className="reservation_titulo_two-">
-              <article className="one-reservation-">
+              {/* <article className="one-reservation-">
                 <div className="logo_reservations_id  ">
                   {Datasibarita?.type === "presencial" ? (
                     <PickupWhite />
@@ -86,7 +86,7 @@ function ModalPartnerReservaVentas({
                     <PresencialWhite />
                   )}
                 </div>
-              </article>
+              </article> */}
               <article className="two-resevation-_--- ">
                 <h2>{capitalizeFirstLetter(Datasibarita?.experience)} </h2>
                 <p>{Datasibarita?.partner_address} </p>
@@ -96,7 +96,7 @@ function ModalPartnerReservaVentas({
                   <h3>Orden :</h3>
                   <h3>{(+Datasibarita?.id || 0) + 300}</h3>
                 </div>
-                <div className="flex w-full gap-[1rem] items-center">
+                <div className="flex w-full gap-[1rem] items-center justify-end">
                   <p>Codigo reservacion :</p>
                   <p>{Datasibarita?.order_code} </p>
                 </div>

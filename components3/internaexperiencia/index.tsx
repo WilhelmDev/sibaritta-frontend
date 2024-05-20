@@ -1,43 +1,31 @@
 'use client'
-import Image from 'next/image'
-import Link from 'next/link';
-import HomeBanner from '@/components/organisms/HomeBanner';
-import Footer from "@/components/ui/Footer";
-import HomeBusiness from "@/components/organisms/HomeBusiness";
-
-import React, { useState, useEffect, useRef } from 'react';
-import { Button } from 'primereact/button';
-import { Carousel } from 'primereact/carousel';
-import { Tag } from 'primereact/tag';
-import { productsDataTest} from '@/utils/data'
-import { newRoutes } from '@/utils/routes';
-import AOS from 'aos';
 import 'aos/dist/aos.css';
-
-
-
-import Carrousel from '@/components/carousel';
-import CarouselV2 from '@/components/carousel/v2';
-import Eventos from '@/components/carousel/v2';
-import ModalExperiencia from '@/pages/v2/modalanyer';
-import { Events } from '@/interface/events';
-import moment from 'moment';
-import { updateDates } from '@/redux/slice/clockSlice';
+import 'moment/locale/es';
 import { addSugerencia, setAddres, setEventId, setExperiencieId, setFecha, setHorario, setIdReservation, setNameExperience, setPersonas, setPriceExperience, setStartDate, setTimeDate, setTipoReserva } from '@/redux/slice/detalle.slice';
 import { createReservations } from '@/services/reservaciones.service';
+import { Events } from '@/interface/events';
+import { getEventDataById } from '@/services/events.service';
+import { newRoutes } from '@/utils/routes';
+import { productsDataTest} from '@/utils/data'
 import { setPolitices } from '@/redux/slice/policeSlice';
 import { Sugerencia } from '@/interface/detalle.interface';
-import { useDispatch, useSelector } from 'react-redux';
+import { updateDates } from '@/redux/slice/clockSlice';
 import { useAppSelector } from '@/redux/hook';
+import { useDispatch, useSelector } from 'react-redux';
 import { useRouter } from 'next/navigation';
-import ModalSession from '@/components/molecules/ModalSession';
-import ModalRegister from '@/components/molecules/session/ModalRegister';
-import RecoveryModal from '@/components/molecules/recovery/RecoveryModal';
-import ModalConfirmation from '@/components/molecules/session/ModalConfirmation';
-// import Link from 'next/link';
-// import { newRoutes } from '@/utils/routes';
-import 'moment/locale/es';
+import AOS from 'aos';
+import CarouselV2 from '@/components/carousel/v2';
 import Event from './Event';
+import Image from 'next/image'
+import Link from 'next/link';
+import ModalConfirmation from '@/components/molecules/session/ModalConfirmation';
+import ModalRegister from '@/components/molecules/session/ModalRegister';
+import ModalSession from '@/components/molecules/ModalSession';
+import ModalUbication from '@/components3/modal/Ubication';
+import moment from 'moment';
+import React, { useState, useEffect, useRef } from 'react';
+import RecoveryModal from '@/components/molecules/recovery/RecoveryModal';
+import CarrouselEvents from './Events';
 moment.locale('es');
 
 interface IDetailsCard {
@@ -50,7 +38,12 @@ export default function Experiencia ({data}: IDetailsCard) {
   const [remainingSeats, setRemainingSeats] = useState(0);
   const [addSugestion, setAddSugestion] = useState(0);
   const [person, setPerson] = useState<number>(0);
-  const [events, setEvents] = useState<any[]>(data?.events || []);
+  const [events, setEvents] = useState<any[]>(
+    data?.events?.length === 2
+    ? [...data?.events, ...data?.events ]
+    : data?.events
+    || []
+  );
   const [suggestion, setSuggestion] = useState<number>(0);
   const [visible, setVisible] = useState<boolean>(false);
   const [counts, setCounts] = useState<number>(0);
@@ -72,6 +65,8 @@ export default function Experiencia ({data}: IDetailsCard) {
   const [openConfirmacion, setOpenConfirmacion] = useState(false);
   const [openForgot, setOpenForgot] = useState(false);
   const [auttenti, setauttenti] = useState(false);
+  const [loading, setloading] = useState(false)
+  const [modalLocation, setModalLocation] = useState(false)
   
   const router = useRouter();
   const typeReservations = useAppSelector((state) => state.reservation);
@@ -389,6 +384,7 @@ export default function Experiencia ({data}: IDetailsCard) {
 
   const autenticationUser = () => {
     setauttenti(true);
+    router.push('/checkout')
   };
 
   const closeModalConfirmacion = () => {
@@ -534,6 +530,8 @@ export default function Experiencia ({data}: IDetailsCard) {
       return;
     }
 
+
+
     // if (reserva.horario === "" && reserva.fecha !== "") {
     //   setalerts(true);
     // }
@@ -620,180 +618,39 @@ export default function Experiencia ({data}: IDetailsCard) {
     );
 };
 
-const selectEvent = (el: Events) => {
+const selectEvent = async (el: Events) => {
   handleDayClick(new Date(el.date), events, typeReservations.tipoReserva)
   handleHoraClick(
     `${el.hour}:${el.minute}pm`,
     el,
     reserva.tipoReserva
   )
+  try {
+    setloading(true)
+    const data = await getEventDataById(el.id)
+    setRemainingSeats(data.seats_free || 0)
+    setSelectedEvent({...el, seats: data.seats_free || 0})
+  } catch (error) {
+    console.log(error)
+    setRemainingSeats(0)
+  } finally {
+    setloading(false)
+  }
 }
 
-useEffect(() => {
-  AOS.init();
+  useEffect(() => {
+    AOS.init();
 
-  const update = document.querySelector('body')
-  update?.classList.add('fondoNosotros')
-}, [])
+    const update = document.querySelector('body')
+    update?.classList.add('fondoNosotros')
+  }, [])
 
-  console.log(data?.seats_free)
+  const triggerLocation = () => {
+    setModalLocation(false)
+  }
+
   return (
     <main className="internaExperiencia">
-        <div className='menuGlobal'>
-            <div className='menuGlobal__general menuGlobal--general hidden'>
-              <div className='menuGlobal__general__top'>
-                <div className='flex items-center'>
-                  <div className="w-1/2">
-                    <div className='menuGlobal__general__left'>
-                      <Link href={newRoutes.nosotros}>
-                          <Image src={"/header_partner/logogeneral.png"} width={50} height={50} alt='logo'/>
-
-                      </Link>
-                    </div>
-                  </div>
-                  <div className="w-1/2">
-                    <div className='menuGlobal__general__right text-right'>
-                      <button>
-                        <Image src={"/header_partner/menuright.png"} className='ml-auto' width={50} height={50} alt='logo'/>
-
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              <div className='menuGlobal__general__item'>
-                <ul>
-                  <li>
-                    <Link href={newRoutes.nosotros}>
-                      ¿Quiénes somos?
-                      <span>
-                        <img src={"/header_partner/user.png"}  alt='logo'/>
-
-                      </span>
-                    </Link>
-
-                  </li>
-                  <li>
-                    <Link href={newRoutes.nosotros}>
-                      Sibaritta Partners
-                      <span>
-                        <img src={"/header_partner/sibaritta.png"}  alt='logo'/>
-
-                      </span>
-                    </Link>
-
-                  </li>
-                  <li>
-                    <Link href={newRoutes.nosotros}>
-                      ¿Cómo funciona?
-                      <span>
-                        <img src={"/header_partner/funciona.png"}  alt='logo'/>
-
-                      </span>
-                    </Link>
-
-                  </li>
-                  <li>
-                    <Link href={newRoutes.nosotros}>
-                      Insignias
-                      <span>
-                        <img src={"/header_partner/lock.png"}  alt='logo'/>
-
-                      </span>
-                    </Link>
-
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div className='menuGlobal__general menuGlobal--perfil hidden'>
-              <div className='menuGlobal__general__top'>
-                <div className='flex items-center'>
-                  <div className="w-1/2">
-                    <div className='menuGlobal__general__left'>
-                      <Link href={newRoutes.nosotros}>
-                        <Image src={"/header_partner/logogeneral.png"} width={50} height={50} alt='logo'/>
-
-                      </Link>
-                    </div>
-                  </div>
-                  <div className="w-1/2">
-                    <div className='menuGlobal__general__right text-right'>
-                      <button>
-                        <Image src={"/header_partner/menuright.png"} className='ml-auto' width={50} height={50} alt='logo'/>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              <div className='menuGlobal__general__item'>
-                <ul>
-                  <li>
-                    <Link href={newRoutes.perfil}>
-                      Información personal
-                      <span>
-                        <img src={"/header_partner/user.png"}  alt='logo'/>
-
-                      </span>
-                    </Link>
-
-                  </li>
-                  <li>
-                    <Link href={newRoutes.reservaciones}>
-                      Reservaciones
-                      <span>
-                        <img src={"/header_partner/sibaritta.png"}  alt='logo'/>
-
-                      </span>
-                    </Link>
-
-                  </li>
-                  <li>
-                    <Link href={newRoutes.nosotros}>
-                      Pagos
-                      <span>
-                        <img src={"/header_partner/funciona.png"}  alt='logo'/>
-
-                      </span>
-                    </Link>
-
-                  </li>
-                  <li>
-                    <Link href={newRoutes.nosotros}>
-                      Seguridad
-                      <span>
-                        <img src={"/header_partner/lock.png"}  alt='logo'/>
-
-                      </span>
-                    </Link>
-
-                  </li>
-                  <li>
-                    <Link href={newRoutes.nosotros}>
-                      Soporte en línea
-                      <span>
-                        <img src={"/header_partner/soporte.png"}  alt='logo'/>
-
-                      </span>
-                    </Link>
-
-                  </li>
-                  <li>
-                    <Link href={newRoutes.home}>
-                      Cerrar sesión
-                      <span>
-                        <img src={"/header_partner/cerrar.png"}  alt='logo'/>
-
-                      </span>
-                    </Link>
-
-                  </li>
-                </ul>
-              </div>
-            </div>
-        </div>
         <div className="migajaPan">
           <div className="container-general">
             <div className="migajaPan__card ">
@@ -847,7 +704,7 @@ useEffect(() => {
                     CAUTÍVATE CON<br/>CADA DETALLE
                   </h2>
                   <div className="boton ">
-                    <Link href={'#'}>RESERVA TU EXPERIENCIA</Link>
+                    <Link href={`#reserva_experiencia`}>RESERVA TU EXPERIENCIA</Link>
                   </div>
                 </div>
               </div>
@@ -862,7 +719,7 @@ useEffect(() => {
             </div>
           </div>
         </div>
-        <div className="internaExperiencia__lugar">
+        <div className="internaExperiencia__lugar" id='ubication'>
           <div className="container-general">
             <div className="lg:flex">
               <div className="w-full lg:w-3/5">
@@ -870,7 +727,7 @@ useEffect(() => {
                   <h2 className="tituloh2">EL LUGAR</h2>
                   <p>{data?.description}</p>
                   <div className="boton boton--transparente ">
-                    <a href="#">UBICACIÓN</a>
+                    <a href="#ubication" onClick={() => setModalLocation(true)} >UBICACIÓN</a>
                   </div>
                 </div>
               </div>
@@ -900,9 +757,10 @@ useEffect(() => {
                 </div>
               </div>
               <div className="w-100 lg:w-2/5">
-                <div className="home__colecciona__left">
+                <div className="home__colecciona__left" >
                   <div className="relative">
                     <h2 className="tituloh2">TU CAMINO SIBARITTA</h2>
+                    <div id="reserva_experiencia"></div>
                     <p>
                       Con esta experiencia, desbloquearás estas insignias y estarás a un paso menos de convertirte en Maestro Sibaritta
                     </p>
@@ -917,9 +775,9 @@ useEffect(() => {
         </div>
         <div className="internaExperiencia__reserva">
           <div className="container-general">
-            <div className="lg:flex justify-center">
+            <div className="lg:flex items-center justify-center">
               <div className="lg:w-2/5">
-                <div className="internaExperiencia__reserva__left">
+                <div className="internaExperiencia__reserva__left scroll_ref">
                   <h2 className="tituloh2">
                     RESERVA TU<br/>EXPERIENCIA
                   </h2>
@@ -928,19 +786,27 @@ useEffect(() => {
                     Valor de la experiencia · <span className="textoNaranja">${data?.regular_price}</span><br/>
                     Duración: <span className='textoNaranja'>{data?.duration} Horas</span>
                   </p>
+                  <div className="boton ">
+                    <Link href={`#reserva_experiencia`}>VER RESERVACIONES</Link>
+                  </div>
                 </div>
               </div>
               <div className="lg:w-1/2">
-                <div className="internaExperiencia__reserva__right">
-                  <div className="internaExperiencia__reserva__right__contenedor">
+                <div >
+                  <div >
                     {/* <Eventos data={data}/> */}
 
-                    {
+                    {/* {
                       data.events &&
                       data.events
                         .map((el:Events, i) => (
                         <Event event={el} key={i} callback={selectEvent} active={selectedEvent} />
                       ))
+                    } */}
+                    {
+                      events && events.length > 0 && (
+                        <CarrouselEvents data={events} selectEvent={selectEvent} active={selectedEvent} />
+                      )
                     }
                     {/* <div className="internaExperiencia__reserva__right__contenedor__card">
                       <h3 className="tituloh3">
@@ -971,7 +837,11 @@ useEffect(() => {
                   <div className="internaExperiencia__reserva__right__limite text-center mt-5">
                     {selectedEvent && (
                     <>
-                      {remainingSeats > 0 ? (
+
+                    {
+                      loading 
+                      ? <p className="">...</p>
+                      : (remainingSeats > 0) ? (
                         <p className="">
                           Quedan {remainingSeats} cupos para este día en este
                           horario
@@ -981,7 +851,9 @@ useEffect(() => {
                           No hay asientos disponibles para este día en este
                           horario
                         </p>
-                      )}
+                      )
+                    }
+                      
                     </>
                   )}
                   </div>
@@ -1056,6 +928,7 @@ useEffect(() => {
           openConfirmacion={openConfirmacion}
         />
       )}
+      <ModalUbication isOpen={modalLocation} closeCallback={triggerLocation} />
     </main>
   );
 }

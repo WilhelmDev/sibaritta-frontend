@@ -19,7 +19,7 @@ export default function Nosotros () {
     const update = document.querySelector('body')
     update?.classList.add('fondoNosotros')
   }, [])
-
+ 
   return (
     <main className="quienesSomos">
 

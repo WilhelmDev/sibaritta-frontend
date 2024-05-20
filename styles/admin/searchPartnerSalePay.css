@@ -46,7 +46,7 @@
 
         }
         @screen laptop {
-          @apply right-[0rem] top-[10rem] w-[24rem]
+          @apply right-[0rem] top-[5rem] w-[24rem]
         }
       }
       

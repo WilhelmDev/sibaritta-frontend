@@ -4,7 +4,7 @@ import { useObserver } from "@/hook/useObserver";
 
 const ObserverTop = () => {
   const { isTopZero, setIsTopZero } = useNavbarContext();
-  const { setElements, entries } = useObserver({ threshold: 1 });
+  const { setElements, entries } = useObserver({ threshold: 0 });
 
   useEffect(() => {
     const elements = document.querySelectorAll("#ObserverTop");
@@ -16,7 +16,7 @@ const ObserverTop = () => {
       if (!entry.isIntersecting) {
         setIsTopZero(true);
       } else {
-        setIsTopZero(false);
+        setIsTopZero(true);
       }
     });
   }, [isTopZero, setIsTopZero, entries]);

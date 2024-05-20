@@ -68,7 +68,7 @@ const CardVentasSibaritta = ({ DataSibaritta }: CardVentasSibaritta) => {
           </div>
         </div>
       </div>
-      <div className="sale-especific-3-general">
+      <div className="sale-especific-3-general hidden">
         <div className="sale-especific-3-left">
           <p className="text-left-left">Factura electrónica:</p>
           <p className="text-right-left">SI</p>
@@ -78,6 +78,7 @@ const CardVentasSibaritta = ({ DataSibaritta }: CardVentasSibaritta) => {
           <p className="text-right-right">NO</p>
         </div>
       </div>
+      <h5 className="tituloh5 informacionAdicional textoNaranja text-uppercase mt-5 pt-4">INFORMACIÓN ADICIONAL </h5>
       <div className="sale-especific-4-general">
         <p className="paragraph-bill">
           <span className="paragraph-bill-left">

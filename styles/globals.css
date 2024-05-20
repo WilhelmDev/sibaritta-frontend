@@ -305,3 +305,9 @@ h6{
   justify-content: center;
   color: white;
 }
+
+.top-xl-1-5rem{
+  @media(min-width: 1200px){
+    top: 1.5rem !important;
+  }
+}

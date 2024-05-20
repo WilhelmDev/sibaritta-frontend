@@ -14,6 +14,7 @@ import { Providers } from "@/redux/Provider";
 import { useEffect, useState } from "react";
 import { CustomLoading } from "@/components/atoms/CustomLoading";
 import { PrimeReactProvider } from "primereact/api";
+import Aos from "aos";
 
 export default function App({ Component, pageProps }: AppProps) {
   // const [loading, setLoading] = useState<boolean>(true);
@@ -31,6 +32,10 @@ export default function App({ Component, pageProps }: AppProps) {
   const appIDGoogle = process.env.NEXT_PUBLIC_APP_ID_GOOGLE|| ""
   
   // clientId="84497751954-oou3o3tntmeevtjfnej92881gim7v8as.apps.googleusercontent.com"
+
+  useEffect(() => {
+    Aos.init();
+  }, [])
   return (
     <>
       <Providers>

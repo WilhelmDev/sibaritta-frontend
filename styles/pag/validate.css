@@ -48,7 +48,18 @@
     } 
 }
 
-
+.logo-spinner{
+  @media(min-width: 1200px){
+    width: 200px;
+    margin-right: -65px;
+  }
+  margin-bottom: -750px;
+  width: 160px;
+  height: auto;
+  @media (max-width: 1199px) {
+    margin-right: 20px;
+  }
+}
 
 .lds-spinner {
     color: official;
@@ -66,8 +77,8 @@
     display: block;
     position: absolute;
     top: 3px;
-    left: 37px;
-    width: 6px;
+    left: 34px;
+    width: 5px;
     height: 18px;
     border-radius: 20%;
     background: #f89c53;

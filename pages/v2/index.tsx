@@ -1,4 +1,4 @@
- 'use client'
+'use client'
 
 import Image from 'next/image'
 import HomeBanner from '@/components/organisms/HomeBanner';
@@ -12,6 +12,7 @@ import { Toaster, toast } from 'sonner';
 import { saveNewSuscriber } from '@/services/suscriptors.service';
 import Link from 'next/link';
 import { newRoutes } from '@/utils/routes';
+import AlertCard from "@/components3/alerts/AlertCard"
 
 export default function Home2 () {
   const [ModalAcuerdo, setModalAcuerdo] = useState(false)
@@ -48,6 +49,7 @@ export default function Home2 () {
       terms: false
     })
   }
+  
 
   const triggerToast = (title: string, error:boolean) => {
     toast(title, {
@@ -71,25 +73,34 @@ export default function Home2 () {
     }
   }
 
+  const [visible, setVisible] = useState<boolean>(false);
+  const [alert, setAlert] = useState<string>('')
+
   const handleSubmit = async () => {
 
     try {
 
       //validate fields
       if (Object.values(formData).some((value) => value.trim() === '')) {
-        triggerToast('Todos los campos son obligatorios', true)
+        // triggerToast('Todos los campos son obligatorios', true)
+        setAlert('Todos los campos son obligatorios')
+        setVisible(true)
         return
       }
 
       //validate terms
       if (!checkboxs.terms) {
-        triggerToast('Debes aceptar nuestros terminos y condiciones para continuar', true)
+        // triggerToast('Debes aceptar nuestros terminos y condiciones para continuar', true)
+        setAlert('Debes aceptar nuestros terminos y condiciones para continuar')
+        setVisible(true)
         return
       }
 
       //validate adult
       if (!checkboxs.adult) {
-        triggerToast('Debes ser mayor de edad para continuar', true)
+        // triggerToast('Debes ser mayor de edad para continuar', true)
+        setAlert('Debes ser mayor de edad para continuar')
+        setVisible(true)
         return
       }
 
@@ -102,8 +113,9 @@ export default function Home2 () {
       triggerToast('Ha ocurrido un error al suscribirse a la plataforma', true)
       return
     }
-
   }
+
+
   return (
 
     <div className="home">
@@ -113,7 +125,7 @@ export default function Home2 () {
           <div className="flex flex-wrap">
             <div className="w-full lg:w-2/5  lg:flex block items-center ">
               <div className="home__intro__left" data-aos="fade-right" data-aos-duration="3000">
-                <h2 className="tituloh2">¿Y TÚ, ERES<br/> UN SIBARITA?</h2>
+                <h2 className="tituloh2">¿Y TÚ, ERES<br/> UN SIBARITTA?</h2>
                 <p>
                   Para los selectos y curiosos, los sensibles a la estética y el buen gusto … <br/><br/>Aquí te contamos quién es Sibaritta 
                 </p>
@@ -198,8 +210,8 @@ export default function Home2 () {
                     Obtén acceso prioritario e información sobre experiencias gastronómicas exclusivas antes de que se abran al público.
 
 
-                  </p>        
-                  <p>Tendrás la oportunidad de ser uno de los primeros en reservar tu experiencia en restaurantes exclusivos de la ciudad de Monterrey.</p>            
+                  </p>
+                  <p>Tendrás la oportunidad de ser uno de los primeros en reservar tu experiencia en restaurantes exclusivos de la ciudad de Monterrey.</p>
                   <br/><br/>
 
                   <form>
@@ -262,27 +274,20 @@ export default function Home2 () {
               </div>
               <Toaster />
               <ModalAcerudoComp setVisible={setModalAcuerdo} visible={ModalAcuerdo} />
+              <AlertCard
+                content={alert}
+                visible={visible}
+                setVisible={setVisible}
+              />
             </div>
 
           </div>
         </div>
       </div>
-      <div className='alertaCard'>
-        <div className='alertaCard__card'>
-          <Image src={"/alerta.png"} width={66} height={61} className='m-auto' alt='logo' data-aos="fade-left" data-aos-duration="3000"/>
-          <p>PUEDES SOLICITAR EL REEMBOLSO SOLO HASTA 24 HORAS ANTES DE LA HORA DE TU RESERVACIÓN</p>
-          <div className="boton   text-center boton--transparente cursor-pointer" onClick={() => handleSubmit()}>
-            <span className="m-auto span">CONTINUAR</span>
-          </div>
-        </div>
-      </div>
-      <div className='alertaCard'>
-        <div className='alertaCard__card'>
-          <Image src={"/alerta2.png"} width={66} height={61} className='m-auto' alt='logo' data-aos="fade-left" data-aos-duration="3000"/>
-          <p>ACEPTA TODOS LOS CAMPOS OBLIGATORIOS *</p>
 
-        </div>
-      </div>
+
     </div>
+
+    
   );
 }
